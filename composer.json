@@ -1,0 +1,24 @@
+{
+	"name": "humanmade/platform-documentation",
+	"description": "Human Made Platform Local Server",
+	"license": "GPL-2.0-or-later",
+	"version": "0.0.1",
+	"authors": [
+		{
+			"name": "Human Made",
+			"email": "hello@humanmade.com"
+		}
+	],
+	"autoload": {
+		"files": [
+			"load.php"
+		],
+		"classmap": [
+			"inc/"
+		]
+	},
+	"require": {
+		"erusev/parsedown": "^1.7",
+		"mustangostang/spyc": "^0.6.2"
+	}
+}

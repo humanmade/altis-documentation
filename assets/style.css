@@ -1,0 +1,51 @@
+.hm-platform-ui {
+	background: #fff;
+	margin: 0 0 0 -20px;
+}
+
+.hm-platform-ui > header {
+	display: flex;
+	align-items: center;
+	height: 52px;
+	box-shadow: 0 1px 2px 0 #E1E1E1;
+	padding: 0 14px;
+	font-size: 1.3em;
+	text-transform: uppercase;
+}
+
+.hm-platform-ui__main {
+	display: flex;
+	margin-left: 30px;
+	padding: 52px 0;
+}
+
+.hm-platform-ui__main > nav {
+	width: 196px;
+	margin-right: 69px;
+}
+
+.hm-platform-ui__main > nav > ul {
+	list-style: circle;
+}
+
+.hm-platform-ui__main > nav .current {
+	list-style: disc;
+}
+
+.hm-platform-ui__main > nav > ul ul {
+	display: none;
+	margin-left: 1em;
+}
+
+.hm-platform-ui__main > nav .current ul {
+	display: block;
+}
+
+.hm-platform-ui__main > article {
+	width: 540px;
+	margin-right: 31px;
+}
+
+.hm-platform-ui__main > aside {
+	width: 222px;
+}
