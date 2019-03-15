@@ -1,6 +1,6 @@
 {
-	"name": "humanmade/platform-documentation",
-	"description": "Human Made Platform Local Server",
+	"name": "humanmade/documentation",
+	"description": "Human Made Platform Documentation",
 	"license": "GPL-2.0-or-later",
 	"version": "0.0.1",
 	"authors": [
