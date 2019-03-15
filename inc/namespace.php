@@ -54,6 +54,15 @@ function generate_docs() : bool {
 		$docs[ $id ] = $module_docs;
 	}
 
+	/**
+	 * Filter available documentation groups.
+	 *
+	 * This allows modules to register additional documentation groups.
+	 *
+	 * @param Group[] $docs Map of group ID to Group object.
+	 */
+	$docs = apply_filters( 'hm-platform.documentation.groups', $docs );
+
 	$result = wp_cache_set( 'docs', $docs, CACHE_GROUP );
 	if ( ! $result ) {
 		trigger_error( 'Could not store documentation in cache', E_USER_NOTICE );
