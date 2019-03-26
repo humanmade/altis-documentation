@@ -49,3 +49,13 @@
 .hm-platform-ui__main > aside {
 	width: 222px;
 }
+
+.hm-platform-ui__main > article img {
+	max-width: 100%;
+}
+
+.hm-platform-ui__main > article ul {
+	list-style: disc;
+	margin-left: 20px;
+
+}
