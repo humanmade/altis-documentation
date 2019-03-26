@@ -63,4 +63,27 @@ class MarkdownParser extends Parsedown {
 
 		return $result;
 	}
+
+	/**
+	 * Parse a header block
+	 *
+	 * Override the blockHeader method to add anchor links.
+	 *
+	 * @param array $data
+	 * @return array
+	 */
+	protected function blockHeader( $data ) {
+		$block = parent::blockHeader( $data );
+		$id = str_replace( ' ', '-', strtolower( strip_tags( $block['element']['handler']['argument'] ) ) );
+		return [
+			'element' => [
+				'name' => 'a',
+				'attributes' => [
+					'href' => '#' . $id,
+					'id' => $id,
+				],
+				'elements' => [ $block ]
+			]
+		];
+	}
 }
