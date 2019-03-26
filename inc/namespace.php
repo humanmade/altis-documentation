@@ -7,8 +7,6 @@ use FilesystemIterator;
 use HM\Platform\Module;
 use Spyc;
 
-const CACHE_GROUP = 'platform_documentation';
-
 /**
  * Register module.
  */
@@ -32,11 +30,11 @@ function bootstrap() {
 }
 
 /**
- * Load module data for documentation.
+ * Get all documentation groups.
  *
- * @return bool True if docs were successfully generated, false otherwise.
+ * @return Group[] Sorted list of groupse
  */
-function generate_docs() : bool {
+function get_documentation() : array {
 	$modules = Module::get_all();
 
 	$docs = [
@@ -51,12 +49,16 @@ function generate_docs() : bool {
 		$docs[ $id ] = $module_docs;
 	}
 
-	$result = wp_cache_set( 'docs', $docs, CACHE_GROUP );
-	if ( ! $result ) {
-		trigger_error( 'Could not store documentation in cache', E_USER_NOTICE );
-	}
+	/**
+	 * Filter available documentation groups.
+	 *
+	 * This allows modules to register additional documentation groups.
+	 *
+	 * @param Group[] $docs Map of group ID to Group object.
+	 */
+	$docs = apply_filters( 'hm-platform.documentation.groups', $docs );
 
-	return $result;
+	return $docs;
 }
 
 /**
@@ -145,20 +147,6 @@ function get_page_for_dir( string $dir, string $root_dir ) : Page {
 function get_slug_from_path( $root, $path ) {
 	$out_path = substr( $path, strlen( $root ) );
 	return trim( preg_replace( '/README\.md/i', '', $out_path ), '/' );
-}
-
-/**
- * Get all documentation group.
- *
- * @return Group[]|null Sorted list of groups if available, null otherwise
- */
-function get_documentation() : ?array {
-	// $cache = wp_cache_get( 'docs', CACHE_GROUP );
-	if ( empty( $cache ) ) {
-		generate_docs();
-		$cache = wp_cache_get( 'docs', CACHE_GROUP );
-	}
-	return $cache ?: null;
 }
 
 /**
