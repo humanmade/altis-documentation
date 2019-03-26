@@ -23,6 +23,12 @@ class Page {
 	protected $meta;
 
 	/**
+	 * Sub pages of the
+	 *
+	 * @param Page[]
+	 */
+	protected $sub_pages = [];
+	/**
 	 * Constructor.
 	 *
 	 * @param string $content Raw content of the page
@@ -70,5 +76,33 @@ class Page {
 
 	public function set_meta( string $key, $value ) {
 		$this->meta[ $key ] = $value;
+	}
+
+	/**
+	 * Add sub page to the page.
+	 *
+	 * @param string $id Page ID
+	 * @param Page $page
+	 */
+	public function add_sub_page( string $id, Page $page ) {
+		$this->sub_pages[ $id ] = $page;
+	}
+
+	/**
+	 * Get all pages which belong to the page.
+	 *
+	 * @return Page[]
+	 */
+	public function get_sub_pages() : array {
+		return $this->sub_pages;
+	}
+
+	/**
+	 * Get a single sub page by ID.
+	 *
+	 * @return Page|null Page if set, null otherwise.
+	 */
+	public function get_sub_page( string $id ) : ?Page {
+		return $this->sub_pages[ $id ] ?? null;
 	}
 }

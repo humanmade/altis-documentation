@@ -2,15 +2,12 @@
 
 namespace HM\Platform\Documentation;
 
+use DirectoryIterator;
 use FilesystemIterator;
 use HM\Platform\Module;
-use Parsedown;
-use RecursiveDirectoryIterator;
-use RecursiveIteratorIterator;
 use Spyc;
 
 const CACHE_GROUP = 'platform_documentation';
-const ITERATOR_FLAGS = FilesystemIterator::KEY_AS_PATHNAME | FilesystemIterator::CURRENT_AS_FILEINFO | FilesystemIterator::SKIP_DOTS;
 
 /**
  * Register module.
@@ -79,14 +76,19 @@ function generate_docs_for_module( $id, Module $module ) : ?Group {
 	$group = new Group( $module->get_title() );
 
 	// Generate objects for each file.
-	$iterator = new RecursiveIteratorIterator(
-		new RecursiveDirectoryIterator(
-			$doc_dir,
-			ITERATOR_FLAGS
-		)
-	);
+	$iterator = new DirectoryIterator( $doc_dir );
 	foreach ( $iterator as $leaf ) {
 		/** @var \SplFileInfo $leaf */
+		if ( $leaf->isDir() ) {
+			if ( $leaf->isDot() ) {
+				continue;
+			}
+			// Special handling for sub dirs, to add a page (and sub pages).
+			$doc = get_page_for_dir( $leaf->getPathname(), $doc_dir );
+			$group->add_page( get_slug_from_path( $doc_dir, $leaf->getPathname() ), $doc );
+			continue;
+		}
+
 		if ( $leaf->getExtension() !== 'md' ) {
 			continue;
 		}
@@ -99,6 +101,39 @@ function generate_docs_for_module( $id, Module $module ) : ?Group {
 	}
 
 	return $group;
+}
+
+/**
+ * Get a page for a given directory.
+ *
+ * This will recurse into sub directories, adding all those as sub pages of the Page object.
+ *
+ * @param string $dir       The directory to add the page for.
+ * @param string $root_dir  The root directory of the group, used to calculate page ids.
+ * @return Page
+ */
+function get_page_for_dir( string $dir, string $root_dir ) : Page {
+	// A directory's page is always build from a README.md inside the dir.
+	$doc = parse_file( $dir . '/README.md' );
+
+	$iterator = new DirectoryIterator( $dir );
+	foreach ( $iterator as $leaf ) {
+		/** @var \SplFileInfo $leaf */
+		if ( $leaf->isDir() ) {
+			if ( $leaf->isDot() ) {
+				continue;
+			}
+			// Recurse directories, recursively calling this function
+			$sub_page = get_page_for_dir( $leaf->getPathname(), $root_dir );
+		} else if ( $leaf->getFilename() === 'README.md' ) {
+			continue;
+		} else {
+			$sub_page = parse_file( $leaf->getPathname() );
+
+		}
+		$doc->add_sub_page( get_slug_from_path( $root_dir, $leaf->getPathname() ), $sub_page );
+	}
+	return $doc;
 }
 
 /**
