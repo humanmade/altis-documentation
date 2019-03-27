@@ -60,9 +60,9 @@ class Group {
 	 * @return Page|null Page if set, null otherwise.
 	 */
 	public function get_page( $id ) : ?Page {
-		/*
-		Parse IDs with slashes to be sub pages. code-review/process.md means
-		"get the page with id: code-review, then get a subpage of code-review with id: process.md"
+		// Parse IDs with slashes to be sub pages. code-review/process.md means
+		// "get the page with id: code-review, then get a sub page of code-review
+		// with id: process.md"
 		*/
 		$parts = explode( '/', $id );
 		$id    = array_shift( $parts );

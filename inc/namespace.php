@@ -3,7 +3,6 @@
 namespace HM\Platform\Documentation;
 
 use DirectoryIterator;
-use FilesystemIterator;
 use HM\Platform\Module;
 use Spyc;
 
@@ -127,7 +126,7 @@ function get_page_for_dir( string $dir, string $root_dir ) : Page {
 			}
 			// Recurse directories, recursively calling this function
 			$sub_page = get_page_for_dir( $leaf->getPathname(), $root_dir );
-		} else if ( $leaf->getFilename() === 'README.md' ) {
+		} elseif ( $leaf->getFilename() === 'README.md' ) {
 			continue;
 		} else {
 			$sub_page = parse_file( $leaf->getPathname() );

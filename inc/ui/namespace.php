@@ -66,7 +66,9 @@ function render_page() {
 							<ul>
 								<?php
 								foreach ( $gobj->get_pages() as $id => $page ) :
-									if ( $id === '' ) continue;
+									if ( $id === '' ) {
+										continue;
+									}
 									?>
 									<li>
 										<a href="<?php echo add_query_arg( compact( 'group', 'id' ) ) ?>">
@@ -111,9 +113,12 @@ function render_page_sub_pages( Page $page, string $group ) {
 	}
 	?>
 	<ul>
-		<?php foreach ( $page->get_sub_pages() as $sub_page_id => $sub_page ) : ?>
+		<?php
+		foreach ( $page->get_sub_pages() as $sub_page_id => $sub_page ) :
+			$permalink = add_query_arg( [ 'group' => $group, 'id' => $sub_page_id ] );
+			?>
 		<li>
-			<a href="<?php echo add_query_arg( [ 'group' => $group, 'id' => $sub_page_id ] ) ?>">
+			<a href="<?php echo esc_url( $permalink ) ?>">
 				<?php echo esc_html( $sub_page->get_meta( 'title' ) ) ?>
 			</a>
 			<?php render_page_sub_pages( $sub_page, $group ) ?>
