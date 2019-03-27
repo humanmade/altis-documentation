@@ -74,7 +74,7 @@ class MarkdownParser extends Parsedown {
 	 */
 	protected function blockHeader( $data ) {
 		$block = parent::blockHeader( $data );
-		$id = str_replace( ' ', '-', strtolower( strip_tags( $block['element']['handler']['argument'] ) ) );
+		$id = sanitize_title_with_dashes( $block['element']['handler']['argument'] );
 		return [
 			'element' => [
 				'name' => 'a',
