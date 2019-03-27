@@ -115,7 +115,10 @@ function render_page_sub_pages( Page $page, string $group ) {
 	<ul>
 		<?php
 		foreach ( $page->get_sub_pages() as $sub_page_id => $sub_page ) :
-			$permalink = add_query_arg( [ 'group' => $group, 'id' => $sub_page_id ] );
+			$permalink = add_query_arg( [
+				'group' => $group,
+				'id' => $sub_page_id,
+			] );
 			?>
 		<li>
 			<a href="<?php echo esc_url( $permalink ) ?>">

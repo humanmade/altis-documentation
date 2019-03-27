@@ -63,7 +63,6 @@ class Group {
 		// Parse IDs with slashes to be sub pages. code-review/process.md means
 		// "get the page with id: code-review, then get a sub page of code-review
 		// with id: process.md"
-		*/
 		$parts = explode( '/', $id );
 		$id    = array_shift( $parts );
 		$page  = $this->pages[ $id ] ?? null;
