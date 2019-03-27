@@ -59,3 +59,9 @@
 	margin-left: 20px;
 
 }
+
+.hm-platform-ui__main > article pre code {
+	display: block;
+	font-size: 12px;
+	overflow: auto;
+}
