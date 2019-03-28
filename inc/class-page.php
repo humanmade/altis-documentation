@@ -23,11 +23,11 @@ class Page {
 	protected $meta;
 
 	/**
-	 * Sub pages of the
+	 * Subpages of the page.
 	 *
 	 * @param Page[]
 	 */
-	protected $sub_pages = [];
+	protected $subpages = [];
 	/**
 	 * Constructor.
 	 *
@@ -79,13 +79,13 @@ class Page {
 	}
 
 	/**
-	 * Add sub page to the page.
+	 * Add subpage to the page.
 	 *
 	 * @param string $id Page ID
 	 * @param Page $page
 	 */
-	public function add_sub_page( string $id, Page $page ) {
-		$this->sub_pages[ $id ] = $page;
+	public function add_subpage( string $id, Page $page ) {
+		$this->subpages[ $id ] = $page;
 	}
 
 	/**
@@ -93,16 +93,16 @@ class Page {
 	 *
 	 * @return Page[]
 	 */
-	public function get_sub_pages() : array {
-		return $this->sub_pages;
+	public function get_subpages() : array {
+		return $this->subpages;
 	}
 
 	/**
-	 * Get a single sub page by ID.
+	 * Get a single subpage by ID.
 	 *
 	 * @return Page|null Page if set, null otherwise.
 	 */
-	public function get_sub_page( string $id ) : ?Page {
-		return $this->sub_pages[ $id ] ?? null;
+	public function get_subpage( string $id ) : ?Page {
+		return $this->subpages[ $id ] ?? null;
 	}
 }

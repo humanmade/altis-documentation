@@ -84,7 +84,7 @@ function generate_docs_for_module( $id, Module $module ) : ?Group {
 			if ( $leaf->isDot() ) {
 				continue;
 			}
-			// Special handling for sub dirs, to add a page (and sub pages).
+			// Special handling for sub dirs, to add a page (and subpages).
 			$doc = get_page_for_dir( $leaf->getPathname(), $doc_dir );
 			$group->add_page( get_slug_from_path( $doc_dir, $leaf->getPathname() ), $doc );
 			continue;
@@ -107,7 +107,7 @@ function generate_docs_for_module( $id, Module $module ) : ?Group {
 /**
  * Get a page for a given directory.
  *
- * This will recurse into sub directories, adding all those as sub pages of the Page object.
+ * This will recurse into sub directories, adding all those as subpages of the Page object.
  *
  * @param string $dir       The directory to add the page for.
  * @param string $root_dir  The root directory of the group, used to calculate page ids.
@@ -125,14 +125,14 @@ function get_page_for_dir( string $dir, string $root_dir ) : Page {
 				continue;
 			}
 			// Recurse directories, recursively calling this function
-			$sub_page = get_page_for_dir( $leaf->getPathname(), $root_dir );
+			$subpage = get_page_for_dir( $leaf->getPathname(), $root_dir );
 		} elseif ( $leaf->getFilename() === 'README.md' ) {
 			continue;
 		} else {
-			$sub_page = parse_file( $leaf->getPathname() );
+			$subpage = parse_file( $leaf->getPathname() );
 
 		}
-		$doc->add_sub_page( get_slug_from_path( $root_dir, $leaf->getPathname() ), $sub_page );
+		$doc->add_subpage( get_slug_from_path( $root_dir, $leaf->getPathname() ), $subpage );
 	}
 	return $doc;
 }

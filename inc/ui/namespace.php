@@ -75,7 +75,7 @@ function render_page() {
 											<?php echo esc_html( $page->get_meta( 'title' ) ) ?>
 										</a>
 									</li>
-									<?php render_page_sub_pages( $page, $group ) ?>
+									<?php render_page_subpages( $page, $group ) ?>
 								<?php endforeach ?>
 							</ul>
 						</li>
@@ -102,29 +102,29 @@ function render_page() {
 /**
  * Output the menu for a page's subp ages.
  *
- * This recurses all sub pages.
+ * This recurses all subpages.
  *
  * @param Page $page
  * @param string $group
  */
-function render_page_sub_pages( Page $page, string $group ) {
-	if ( ! $page->get_sub_pages() ) {
+function render_page_subpages( Page $page, string $group ) {
+	if ( ! $page->get_subpages() ) {
 		return;
 	}
 	?>
 	<ul>
 		<?php
-		foreach ( $page->get_sub_pages() as $sub_page_id => $sub_page ) :
+		foreach ( $page->get_subpages() as $subpage_id => $subpage ) :
 			$permalink = add_query_arg( [
 				'group' => $group,
-				'id' => $sub_page_id,
+				'id' => $subpage_id,
 			] );
 			?>
 		<li>
 			<a href="<?php echo esc_url( $permalink ) ?>">
-				<?php echo esc_html( $sub_page->get_meta( 'title' ) ) ?>
+				<?php echo esc_html( $subpage->get_meta( 'title' ) ) ?>
 			</a>
-			<?php render_page_sub_pages( $sub_page, $group ) ?>
+			<?php render_page_subpages( $subpage, $group ) ?>
 		</li>
 		<?php endforeach ?>
 	</ul>
