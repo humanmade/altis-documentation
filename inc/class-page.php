@@ -28,6 +28,7 @@ class Page {
 	 * @param Page[]
 	 */
 	protected $subpages = [];
+
 	/**
 	 * Constructor.
 	 *

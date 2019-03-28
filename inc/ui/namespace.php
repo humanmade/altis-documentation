@@ -120,12 +120,12 @@ function render_page_subpages( Page $page, string $group ) {
 				'id' => $subpage_id,
 			] );
 			?>
-		<li>
-			<a href="<?php echo esc_url( $permalink ) ?>">
-				<?php echo esc_html( $subpage->get_meta( 'title' ) ) ?>
-			</a>
-			<?php render_page_subpages( $subpage, $group ) ?>
-		</li>
+			<li>
+				<a href="<?php echo esc_url( $permalink ) ?>">
+					<?php echo esc_html( $subpage->get_meta( 'title' ) ) ?>
+				</a>
+				<?php render_page_subpages( $subpage, $group ) ?>
+			</li>
 		<?php endforeach ?>
 	</ul>
 	<?php

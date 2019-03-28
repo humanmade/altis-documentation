@@ -130,8 +130,8 @@ function get_page_for_dir( string $dir, string $root_dir ) : Page {
 			continue;
 		} else {
 			$subpage = parse_file( $leaf->getPathname() );
-
 		}
+
 		$doc->add_subpage( get_slug_from_path( $root_dir, $leaf->getPathname() ), $subpage );
 	}
 	return $doc;
