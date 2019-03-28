@@ -60,6 +60,25 @@ class Group {
 	 * @return Page|null Page if set, null otherwise.
 	 */
 	public function get_page( $id ) : ?Page {
-		return $this->pages[ $id ] ?? null;
+		// Parse IDs with slashes to be subpages. code-review/process.md means
+		// "get the page with id: code-review, then get a subpage of code-review
+		// with id: process.md"
+		$parts = explode( '/', $id );
+		$id    = array_shift( $parts );
+		$page  = $this->pages[ $id ] ?? null;
+
+		if ( ! $page ) {
+			return null;
+		}
+
+		$current_path = $id;
+		// Crawl through all the url parts (seperated by /) to get the
+		// subpage from the parent at each step.
+		while ( $subpage_id = array_shift( $parts ) ) {
+			$current_path = $current_path . '/' . $subpage_id;
+			$page = $page->get_subpage( $current_path );
+		}
+
+		return $page;
 	}
 }

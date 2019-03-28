@@ -69,13 +69,16 @@ function render_page() {
 							<ul>
 								<?php
 								foreach ( $gobj->get_pages() as $id => $page ) :
-									if ( $id === '' ) continue;
-								?>
+									if ( $id === '' ) {
+										continue;
+									}
+									?>
 									<li>
 										<a href="<?php echo add_query_arg( compact( 'group', 'id' ) ) ?>">
 											<?php echo esc_html( $page->get_meta( 'title' ) ) ?>
 										</a>
 									</li>
+									<?php render_page_subpages( $page, $group ) ?>
 								<?php endforeach ?>
 							</ul>
 						</li>
@@ -96,6 +99,38 @@ function render_page() {
 		</div>
 	</div>
 
+	<?php
+}
+
+/**
+ * Output the menu for a page's subp ages.
+ *
+ * This recurses all subpages.
+ *
+ * @param Page $page
+ * @param string $group
+ */
+function render_page_subpages( Page $page, string $group ) {
+	if ( ! $page->get_subpages() ) {
+		return;
+	}
+	?>
+	<ul>
+		<?php
+		foreach ( $page->get_subpages() as $subpage_id => $subpage ) :
+			$permalink = add_query_arg( [
+				'group' => $group,
+				'id' => $subpage_id,
+			] );
+			?>
+			<li>
+				<a href="<?php echo esc_url( $permalink ) ?>">
+					<?php echo esc_html( $subpage->get_meta( 'title' ) ) ?>
+				</a>
+				<?php render_page_subpages( $subpage, $group ) ?>
+			</li>
+		<?php endforeach ?>
+	</ul>
 	<?php
 }
 
