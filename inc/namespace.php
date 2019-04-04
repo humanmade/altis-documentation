@@ -39,6 +39,11 @@ function get_documentation() : array {
 	$docs = [
 		'guides' => new Group( 'Guides' ),
 	];
+
+	uasort( $modules, function ( Module $a, Module $b ) : int {
+		return $a->get_title() <=> $b->get_title();
+	} );
+
 	foreach ( $modules as $id => $module ) {
 		$module_docs = generate_docs_for_module( $id, $module );
 		if ( empty( $module_docs ) ) {
