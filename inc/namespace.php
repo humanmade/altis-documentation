@@ -36,7 +36,11 @@ function bootstrap() {
 function get_documentation() : array {
 	$modules = Module::get_all();
 
+	$getting_started = new Group( 'Getting Started' );
+	add_docs_for_gruop( $getting_started, dirname( __DIR__ ) . '/other-docs/getting-started' );
+
 	$docs = [
+		'getting-started' => $getting_started,
 		'guides' => new Group( 'Guides' ),
 	];
 	foreach ( $modules as $id => $module ) {
@@ -76,6 +80,17 @@ function generate_docs_for_module( $id, Module $module ) : ?Group {
 
 	$group = new Group( $module->get_title() );
 
+	return add_docs_for_gruop( $group, $doc_dir );
+}
+
+/**
+ * Generate documentation for a module.
+ *
+ * @param string $id Module ID.
+ * @param Module $module Module object.
+ * @return Group Documentation group for the module.
+ */
+function add_docs_for_gruop( Group $group, string $doc_dir ) : ?Group {
 	// Generate objects for each file.
 	$iterator = new DirectoryIterator( $doc_dir );
 	foreach ( $iterator as $leaf ) {
