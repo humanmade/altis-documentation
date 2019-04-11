@@ -81,6 +81,7 @@ class MarkdownParser extends Parsedown {
 				'attributes' => [
 					'href' => '#' . $id,
 					'id' => $id,
+					'class' => 'header-anchor',
 				],
 				'elements' => [ $block ],
 			],
