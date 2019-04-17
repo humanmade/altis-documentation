@@ -79,7 +79,7 @@ This will add Local Server to your development dependencies and prepare it to be
 
 To start Local Server, run `composer local-server start`.
 
-The first time you run Local Server, it may take a little longer, as it sets up services on your computer. Once this is complete, you will now have a working local site at https://your-project.altis.dev/
+The first time you run Local Server, it may take a little longer, as it sets up services on your computer. Once this is complete, you will now have a working local site at `https://your-project.altis.dev/`.
 
 
 ### Setting up Chassis
