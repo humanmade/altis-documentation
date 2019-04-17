@@ -25,7 +25,6 @@ function register_menu() {
 }
 
 function admin_bar_menu( WP_Admin_Bar $wp_admin_bar ) {
-	// Add WordPress.org link
 	$wp_admin_bar->add_menu( [
 		'parent'    => 'hm-platform',
 		'id'        => 'documentation',
