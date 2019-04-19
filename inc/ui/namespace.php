@@ -45,6 +45,11 @@ function admin_bar_menu( WP_Admin_Bar $wp_admin_bar ) {
 	] );
 }
 
+/**
+ * Callback for the load-$page admin action.
+ *
+ * We enqueue all the scripts and styles for the documentation page here.
+ */
 function load_page() {
 	wp_enqueue_style( 'highlightjs', 'https://cdnjs.cloudflare.com/ajax/libs/highlight.js/9.15.6/styles/vs2015.min.css' );
 	wp_enqueue_script( 'highlightjs', 'https://cdnjs.cloudflare.com/ajax/libs/highlight.js/9.15.6/highlight.min.js' );
@@ -54,6 +59,9 @@ function load_page() {
 	wp_enqueue_script( __NAMESPACE__, plugins_url( '/assets/script.js', Documentation\DIRECTORY . '/wp-is-dumb' ), [ 'highlightjs' ], '2019-04-19' );
 }
 
+/**
+ * Documentation page render callback.
+ */
 function render_page() {
 	$documentation = Documentation\get_documentation();
 	$current_group = $_GET['group'] ?? 'guides';
@@ -141,7 +149,13 @@ function render_page_subpages( Page $page, string $group, ?Page $current_page ) 
 	<?php
 }
 
-function render_content( ?Page $page ) {
+/**
+ * Render the content for a page.
+ *
+ * @param Page|null $page
+ * @return string
+ */
+function render_content( ?Page $page ) : string {
 	if ( empty( $page ) ) {
 		return '404: Unable to find page.';
 	}
