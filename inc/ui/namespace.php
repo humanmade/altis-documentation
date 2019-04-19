@@ -11,11 +11,18 @@ function bootstrap() {
 	add_action( 'admin_bar_menu', __NAMESPACE__ . '\\admin_bar_menu', 11 );
 }
 
+/**
+ * Register the Documentation admin page.
+ *
+ * We use a bit of a hack to not actually have the page added to the
+ * admin-menu by setting the parent to `null`. This is then added
+ * to the admin bar.
+ */
 function register_menu() {
 	$hook = add_submenu_page(
 		null,
-		'Documentation',
-		'Documentation',
+		'',
+		'',
 		'edit_posts',
 		'hm-platform-documentation',
 		__NAMESPACE__ . '\\render_page'
@@ -24,12 +31,17 @@ function register_menu() {
 	add_action( sprintf( 'load-%s', $hook ), __NAMESPACE__ . '\\load_page' );
 }
 
+/**
+ * Add the Documentation link to the admin bar
+ *
+ * @param WP_Admin_Bar $wp_admin_bar
+ */
 function admin_bar_menu( WP_Admin_Bar $wp_admin_bar ) {
 	$wp_admin_bar->add_menu( [
-		'parent'    => 'hm-platform',
-		'id'        => 'documentation',
-		'title'     => 'Documentation',
-		'href'      => add_query_arg( 'page', 'hm-platform-documentation', admin_url( 'admin.php' ) ),
+		'parent' => 'hm-platform',
+		'id'     => 'documentation',
+		'title'  => __( 'Documentation', 'hm-platform' ),
+		'href'   => add_query_arg( 'page', 'hm-platform-documentation', admin_url( 'admin.php' ) ),
 	] );
 }
 
