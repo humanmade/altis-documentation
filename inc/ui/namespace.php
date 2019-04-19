@@ -52,12 +52,7 @@ function render_page() {
 
 	<div class="hm-platform-ui wrap">
 		<header>
-			Documentation
-
-			<input
-				placeholder="Future search field…"
-				type="search"
-			/>
+			<?php echo esc_html_e( 'Documentation', 'hm-platform' ) ?>
 		</header>
 
 		<div class="hm-platform-ui__main">
