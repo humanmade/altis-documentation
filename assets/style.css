@@ -1,9 +1,5 @@
 /**
- * Admin theme for HM Platform
- *
- * This file contains all HM Platform admin theme styling. Because it's an
- * "override" rile, this isn't exactly the most pretty CSS in the world.
- * Very limited use of !important, but necessary in some places.
+ * Documentation styles for HM Platform
  */
 
 .admin_page_hm-platform-documentation #wpbody-content {
