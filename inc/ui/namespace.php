@@ -73,6 +73,7 @@ function load_page() {
  * @return string Group ID if set, otherwise the default group.
  */
 function get_current_group_id() {
+	// @codingStandardsIgnoreLine
 	return $_GET['group'] ?? 'guides';
 }
 
@@ -82,6 +83,7 @@ function get_current_group_id() {
  * @return string Page ID if set, otherwise the default page.
  */
 function get_current_page_id() {
+	// @codingStandardsIgnoreLine
 	return $_GET['id'] ?? '';
 }
 
