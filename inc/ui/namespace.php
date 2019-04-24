@@ -60,14 +60,31 @@ function load_page() {
 }
 
 /**
+ * Get the current group ID.
+ *
+ * @return string Group ID if set, otherwise the default group.
+ */
+function get_current_group_id() {
+	return $_GET['group'] ?? 'guides';
+}
+
+/**
+ * Get the current page ID.
+ *
+ * @return string Page ID if set, otherwise the default page.
+ */
+function get_current_page_id() {
+	return $_GET['id'] ?? '';
+}
+
+/**
  * Documentation page render callback.
  */
 function render_page() {
 	$documentation = Documentation\get_documentation();
-	$current_group = $_GET['group'] ?? 'guides';
-	$id = $_GET['id'] ?? '';
-	$current_page_id = $id;
-	$current_page = $documentation[ $current_group ]->get_page( $id );
+	$current_group = get_current_group_id();
+	$current_page_id = get_current_page_id();
+	$current_page = Documentation\get_page_by_id( $current_group, $current_page_id );
 	?>
 
 	<div class="hm-platform-ui wrap">
