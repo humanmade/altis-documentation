@@ -120,7 +120,7 @@ function render_page() {
 										continue;
 									}
 									?>
-									<li class="<?php echo $current_page === $page ? 'active' : '' ?>">
+									<li class="<?php echo ( $current_group === $group && $current_page_id === $id ) ? 'active' : '' ?>">
 										<a href="<?php echo add_query_arg( compact( 'group', 'id' ) ) ?>">
 											<?php echo esc_html( $page->get_meta( 'title' ) ) ?>
 										</a>
