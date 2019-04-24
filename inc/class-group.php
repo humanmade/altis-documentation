@@ -51,7 +51,16 @@ class Group {
 	 * @return Page[]
 	 */
 	public function get_pages() : array {
-		return $this->pages;
+		// Sort pages by their order.
+		$pages = $this->pages;
+		uasort( $pages, function ( Page $a, Page $b ) {
+			$order_a = $a->get_meta( 'order' ) ?? 0;
+			$order_b = $b->get_meta( 'order' ) ?? 0;
+
+			return $order_a <=> $order_b;
+		} );
+
+		return $pages;
 	}
 
 	/**
