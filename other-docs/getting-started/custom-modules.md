@@ -49,10 +49,10 @@ Within your module's entrypoint file, your module needs to register itself with 
 A basic registration call looks like:
 
 ```php
-use HM\Platform\Module;
+use function HM\Platform\register_module;
 
 add_action( 'hm-platform.modules.init', function () {
-	Module::register(
+	register_module(
 		// Module ID:
 		'your-module',
 
@@ -91,7 +91,7 @@ Your entrypoint file can declare constants or load in other files as necessary t
 
 namespace YourProject;
 
-use HM\Platform\Module;
+use function HM\Platform\register_module;
 
 const DIRECTORY = __DIR__;
 
@@ -104,7 +104,7 @@ if ( ! function_exists( 'add_action' ) ) {
 }
 
 add_action( 'hm-platform.modules.init', function () {
-	Module::register(
+	register_module(
 		'your-module',
 		DIRECTORY,
 		'Your Module',
