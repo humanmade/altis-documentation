@@ -1,3 +1,11 @@
+/**
+ * Documentation styles for HM Platform
+ */
+
+.admin_page_hm-platform-documentation #wpbody-content {
+	padding-bottom: 0;
+}
+
 .hm-platform-ui {
 	background: #fff;
 	margin: 0 0 0 -20px;
@@ -7,47 +15,83 @@
 	display: flex;
 	align-items: center;
 	height: 52px;
-	box-shadow: 0 1px 2px 0 #E1E1E1;
+	box-shadow: 0 1px 2px 0 #e1e1e1;
 	padding: 0 14px;
 	font-size: 1.3em;
 	text-transform: uppercase;
+	justify-content: space-between;
 }
 
 .hm-platform-ui__main {
 	display: flex;
-	margin-left: 30px;
-	padding: 52px 0;
 }
 
 .hm-platform-ui__main > nav {
 	width: 196px;
-	margin-right: 69px;
+	max-width: 220px;
+	margin-right: 49px;
+	background: #f6fbfd;
+	border-right: #e1e1e1 1px solid;
+	padding-left: 10px;
+	flex: 1;
+	box-shadow: inset 0 0px 2px 0 #e1e1e1;
 }
 
 .hm-platform-ui__main > nav > ul {
 	list-style: circle;
 }
 
-.hm-platform-ui__main > nav .current {
-	list-style: disc;
+.hm-platform-ui__main > nav > ul li {
+	margin-bottom: 0;
+}
+
+.hm-platform-ui__main > nav > ul a {
+	text-decoration: none;
+}
+
+.hm-platform-ui__main > nav > ul > li a {
+	line-height: 18px;
+	padding: 5px 5px 5px 12px;
+	display: block;
+	border-top: transparent 1px solid;
+	border-bottom: transparent 1px solid;
+	border-left: 2px solid transparent;
+}
+
+.hm-platform-ui__main > nav li.active > a {
+	display: block;
+	background: white;
+	border-top: #e1e1e1 1px solid;
+	border-bottom: #e1e1e1 1px solid;
+	border-left: 2px solid #00a0d2;
+	transform: translateX(1px);
+	margin-left: -1px;
+	box-shadow: 0 2px 0 rgba(0, 0, 0, 0.02), 0 1px 0 rgba(0, 0, 0, 0.02);
 }
 
 .hm-platform-ui__main > nav > ul ul {
 	display: none;
-	margin-left: 1em;
+	margin-left: 2em;
 }
 
 .hm-platform-ui__main > nav .current ul {
 	display: block;
 }
 
-.hm-platform-ui__main > article {
-	width: 540px;
-	margin-right: 31px;
-}
-
 .hm-platform-ui__main > aside {
 	width: 222px;
+}
+
+.hm-platform-ui__main > article {
+	max-width: 740px;
+	flex: 1;
+	margin-right: 31px;
+	margin-top: 30px;
+	padding-bottom: 30px;
+}
+
+.hm-platform-ui__main > article p {
+	line-height: 1.7;
 }
 
 .hm-platform-ui__main > article img {
@@ -57,11 +101,47 @@
 .hm-platform-ui__main > article ul {
 	list-style: disc;
 	margin-left: 20px;
-
 }
 
 .hm-platform-ui__main > article pre code {
 	display: block;
 	font-size: 12px;
 	overflow: auto;
+	line-height: 1.8;
+}
+
+.hm-platform-ui__main > article .header-anchor {
+	text-decoration: none;
+}
+
+.hljs {
+	padding: 0;
+}
+
+td.hljs-ln-numbers {
+	-webkit-touch-callout: none;
+	-webkit-user-select: none;
+	-khtml-user-select: none;
+	-moz-user-select: none;
+	-ms-user-select: none;
+	user-select: none;
+	text-align: center;
+	color: #666;
+	background: rgba(0, 0, 0, 0.3);
+	vertical-align: top;
+	padding: 0 5px !important;
+}
+
+table.hljs-ln tr:first-child td .hljs-ln-n,
+table.hljs-ln tr:first-child td.hljs-ln-code {
+	padding-top: 10px;
+}
+
+table.hljs-ln tr:last-child td .hljs-ln-n,
+table.hljs-ln tr:last-child td.hljs-ln-code {
+	padding-bottom: 10px;
+}
+
+.hljs-ln-code {
+	padding-left: 5px !important;
 }
