@@ -57,6 +57,14 @@ function load_page() {
 
 	wp_enqueue_style( __NAMESPACE__, plugins_url( '/assets/style.css', Documentation\DIRECTORY . '/wp-is-dumb' ), [], '2019-04-19' );
 	wp_enqueue_script( __NAMESPACE__, plugins_url( '/assets/script.js', Documentation\DIRECTORY . '/wp-is-dumb' ), [ 'highlightjs' ], '2019-04-19' );
+
+	// Determine the current page title.
+	$page = Documentation\get_page_by_id( get_current_group_id(), get_current_page_id() );
+	if ( $page ) {
+		$GLOBALS['title'] = $page->get_meta( 'title' );
+	} else {
+		$GLOBALS['title'] = __( 'Page Not Found', 'hm-platform' );
+	}
 }
 
 /**
