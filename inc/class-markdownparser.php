@@ -62,7 +62,7 @@ class MarkdownParser extends Parsedown {
 
 		// Override href.
 		$slug = get_slug_from_path( $root, $resolved );
-		$url = add_query_arg( [ 'id' => urlencode( $slug ) ] );
+		$url = get_url_for_page( UI\get_current_group_id(), $slug );
 		$result['element']['attributes']['href'] = $url;
 
 		return $result;
@@ -84,10 +84,7 @@ class MarkdownParser extends Parsedown {
 
 		// Override href.
 		$slug = get_slug_from_path( '', $path );
-		$url = add_query_arg( [
-			'group' => urlencode( $group ),
-			'id' => urlencode( $slug ),
-		] );
+		$url = get_url_for_page( $group, $slug );
 		$result['element']['attributes']['href'] = $url;
 
 		return $result;
