@@ -70,6 +70,22 @@ function get_documentation() : array {
 }
 
 /**
+ * Get a specific documentation page by ID.
+ *
+ * @param string $group Group ID.
+ * @param string $id Page ID.
+ * @return Page|null Page if available.
+ */
+function get_page_by_id( string $group, string $id ) {
+	$documentation = get_documentation();
+	if ( empty( $documentation[ $group ] ) ) {
+		return null;
+	}
+
+	return $documentation[ $group ]->get_page( $id );
+}
+
+/**
  * Generate documentation for a module.
  *
  * @param string $id Module ID.
