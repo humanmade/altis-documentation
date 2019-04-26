@@ -6,6 +6,8 @@ use HM\Platform\Documentation;
 use HM\Platform\Documentation\Page;
 use WP_Admin_Bar;
 
+const PAGE_SLUG = 'hm-platform-documentation';
+
 function bootstrap() {
 	add_action( 'admin_menu', __NAMESPACE__ . '\\register_menu' );
 	add_action( 'admin_bar_menu', __NAMESPACE__ . '\\admin_bar_menu', 11 );
@@ -24,7 +26,7 @@ function register_menu() {
 		'',
 		'',
 		'edit_posts',
-		'hm-platform-documentation',
+		PAGE_SLUG,
 		__NAMESPACE__ . '\\render_page'
 	);
 
@@ -41,7 +43,7 @@ function admin_bar_menu( WP_Admin_Bar $wp_admin_bar ) {
 		'parent' => 'hm-platform',
 		'id'     => 'documentation',
 		'title'  => __( 'Documentation', 'hm-platform' ),
-		'href'   => add_query_arg( 'page', 'hm-platform-documentation', admin_url( 'admin.php' ) ),
+		'href'   => add_query_arg( 'page', PAGE_SLUG, admin_url( 'admin.php' ) ),
 	] );
 }
 
@@ -57,6 +59,34 @@ function load_page() {
 
 	wp_enqueue_style( __NAMESPACE__, plugins_url( '/assets/style.css', Documentation\DIRECTORY . '/wp-is-dumb' ), [], '2019-04-19' );
 	wp_enqueue_script( __NAMESPACE__, plugins_url( '/assets/script.js', Documentation\DIRECTORY . '/wp-is-dumb' ), [ 'highlightjs' ], '2019-04-19' );
+
+	// Determine the current page title.
+	$page = Documentation\get_page_by_id( get_current_group_id(), get_current_page_id() );
+	if ( $page ) {
+		$GLOBALS['title'] = $page->get_meta( 'title' );
+	} else {
+		$GLOBALS['title'] = __( 'Page Not Found', 'hm-platform' );
+	}
+}
+
+/**
+ * Get the current group ID.
+ *
+ * @return string Group ID if set, otherwise the default group.
+ */
+function get_current_group_id() {
+	// @codingStandardsIgnoreLine
+	return $_GET['group'] ?? 'guides';
+}
+
+/**
+ * Get the current page ID.
+ *
+ * @return string Page ID if set, otherwise the default page.
+ */
+function get_current_page_id() {
+	// @codingStandardsIgnoreLine
+	return $_GET['id'] ?? '';
 }
 
 /**
@@ -64,10 +94,9 @@ function load_page() {
  */
 function render_page() {
 	$documentation = Documentation\get_documentation();
-	$current_group = $_GET['group'] ?? 'guides';
-	$id = $_GET['id'] ?? '';
-	$current_page_id = $id;
-	$current_page = $documentation[ $current_group ]->get_page( $id );
+	$current_group = get_current_group_id();
+	$current_page_id = get_current_page_id();
+	$current_page = Documentation\get_page_by_id( $current_group, $current_page_id );
 	?>
 
 	<div class="hm-platform-ui wrap">
@@ -95,7 +124,7 @@ function render_page() {
 										continue;
 									}
 									?>
-									<li class="<?php echo $current_page === $page ? 'active' : '' ?>">
+									<li class="<?php echo ( $current_group === $group && $current_page_id === $id ) ? 'active' : '' ?>">
 										<a href="<?php echo add_query_arg( compact( 'group', 'id' ) ) ?>">
 											<?php echo esc_html( $page->get_meta( 'title' ) ) ?>
 										</a>
