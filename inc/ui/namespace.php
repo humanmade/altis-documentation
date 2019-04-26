@@ -6,6 +6,8 @@ use HM\Platform\Documentation;
 use HM\Platform\Documentation\Page;
 use WP_Admin_Bar;
 
+const PAGE_SLUG = 'hm-platform-documentation';
+
 function bootstrap() {
 	add_action( 'admin_menu', __NAMESPACE__ . '\\register_menu' );
 	add_action( 'admin_bar_menu', __NAMESPACE__ . '\\admin_bar_menu', 11 );
@@ -24,7 +26,7 @@ function register_menu() {
 		'',
 		'',
 		'edit_posts',
-		'hm-platform-documentation',
+		PAGE_SLUG,
 		__NAMESPACE__ . '\\render_page'
 	);
 
@@ -41,7 +43,7 @@ function admin_bar_menu( WP_Admin_Bar $wp_admin_bar ) {
 		'parent' => 'hm-platform',
 		'id'     => 'documentation',
 		'title'  => __( 'Documentation', 'hm-platform' ),
-		'href'   => add_query_arg( 'page', 'hm-platform-documentation', admin_url( 'admin.php' ) ),
+		'href'   => add_query_arg( 'page', PAGE_SLUG, admin_url( 'admin.php' ) ),
 	] );
 }
 

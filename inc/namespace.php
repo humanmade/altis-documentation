@@ -237,3 +237,29 @@ function render_page( Page $page ) : string {
 	$parsedown = new MarkdownParser( $page );
 	return $parsedown->text( $page->get_content() );
 }
+
+/**
+ * Get the URL to view a given page.
+ *
+ * @param string $group_id Group ID.
+ * @param string $page_id Page ID.
+ * @return string Absolute URL to the page.
+ */
+function get_url_for_page( $group_id, $page_id ) {
+	$base_url = admin_url( 'admin.php' );
+	$args = [
+		'page' => UI\PAGE_SLUG,
+		'group' => $group_id,
+		'id' => $page_id,
+	];
+	$url = add_query_arg( urlencode_deep( $args ), $base_url );
+
+	/**
+	 * Filter generated URL for a page.
+	 *
+	 * @param string $url Default generated URL.
+	 * @param string $group_id Group ID.
+	 * @param string $page_id Page ID.
+	 */
+	return apply_filters( 'hm-platform.documentation.url_for_page', $url, $group_id, $page_id );
+}

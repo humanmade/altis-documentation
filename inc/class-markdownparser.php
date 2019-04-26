@@ -44,6 +44,10 @@ class MarkdownParser extends Parsedown {
 
 		// Is the link relative?
 		$parts = wp_parse_url( $href );
+		if ( ! empty( $parts['scheme'] ) && $parts['scheme'] === 'docs' ) {
+			return $this->inlineInternalLink( $result, $parts );
+		}
+
 		if ( ! empty( $parts['host'] ) ) {
 			return $result;
 		}
@@ -58,7 +62,29 @@ class MarkdownParser extends Parsedown {
 
 		// Override href.
 		$slug = get_slug_from_path( $root, $resolved );
-		$url = add_query_arg( [ 'id' => urlencode( $slug ) ] );
+		$url = get_url_for_page( UI\get_current_group_id(), $slug );
+		$result['element']['attributes']['href'] = $url;
+
+		return $result;
+	}
+
+	/**
+	 * Generate an internal link to another module.
+	 *
+	 * This handles generating links across modules. It transforms links in
+	 * the format `docs://group/id` to `?group=&id=` internal URLs.
+	 *
+	 * @param array $result Parsed result from parent::inlineLink
+	 * @param array $parts Parsed data from the link's HREF
+	 * @return array Result with modified URL
+	 */
+	protected function inlineInternalLink( $result, $parts ) {
+		$group = $parts['host'];
+		$path = $parts['path'];
+
+		// Override href.
+		$slug = get_slug_from_path( '', $path );
+		$url = get_url_for_page( $group, $slug );
 		$result['element']['attributes']['href'] = $url;
 
 		return $result;
