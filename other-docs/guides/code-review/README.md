@@ -6,8 +6,7 @@ It is required that all code review be performed on Git branches, via a GitHub P
 
 1. Open a Pull Request against the "mainline" branch (typically `master` or `staging`)
 1. Assign the Pull Request to the `@humanmade-cloud` GitHub user.
-1. Make sure your Pull Request passes any status checks and [WordPress Coding Standards](https://developer.wordpress.org/coding-standards/).
-1. Make sure your Pull Request is free from merge conflicts. The Pull Request opener is responsible for resolving merge conflicts.
+1. Make sure your Pull Request passes any status checks and WordPress Coding Standards.
 
 Once the Pull Request is submitted, it's possible an automated code review will be performed by the HM Linter bot. In this case, the Pull Request will be marked as "Changes Requested" and you should fix up any errors to do with formatting for the manual review to continue.
 

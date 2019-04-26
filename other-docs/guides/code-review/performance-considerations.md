@@ -6,7 +6,7 @@ For performance reasons, there are several WordPress functions, arguments and pr
 
 There are several areas in WordPress that _allow_ for poorly performing code.
 
-### `WP_Query`
+### WP_Query
 
 When using `WP_Query`, `get_posts`, `get_children` or other wrapping functions, you should avoid using the following parameters:
 
@@ -14,47 +14,7 @@ When using `WP_Query`, `get_posts`, `get_children` or other wrapping functions, 
 - `showposts => -1` (or similar): Never make unbounded `WP_Query` instances.
 - `s`: Using the in-build `WP_Query` is very slow, though this parameter is OK to use if you have Elasticsearch enabled.
 
-## Bounded Queries
-
-To solve the issue of processing a large number of posts or terms, refer to these example queries:
-
-`get_posts()`:
-```php
-$posts_per_page = 1000;
-$offset = 0;
-$args = [
-	'posts_per_page' => $posts_per_page,
-	'offset'         => $offset,
-];
-
-while ( $posts = get_posts( $args ) ) {
-    $args['offset'] += $posts_per_page;
-	foreach ( $posts as $post ) {
-		// process $post
-	}
-}
-```
-
-`get_terms()`:
-
-```php
-$number = 1000;
-$offset = 0;
-
-$args = [
-	'number' => $number,
-	'offset' => $offset,
-];
-
-while ( $terms = get_terms( $args ) ) {
-	$args['offset'] += $number;
-	foreach ( $terms as $term ) {
-		// process $term
-	}
-}
-```
-
-### `attachment_url_to_postid`
+### attachment_url_to_postid
 
 This function uses a `meta_value` query internally, avoid using it wherever possible. If you need to, make sure you cache the results in a long-lived object cache item.
 
