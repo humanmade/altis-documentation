@@ -123,7 +123,7 @@ When registering your module, you pass various parameters to `register_module()`
 
 Your module's directory is used for automated loading and parsing of documentation. The Documentation module automatically looks for a `docs` subdirectory within this directory and parses Markdown files from this.
 
-The default configuration passed in integrates with the [configuration system](configuration.md), and can be used to configure your module on different environments, or to provide an easy way to enable and disable specific functionality. Within your module, you can use `HM\Platform\get_config()` to retrieve the resolved configuration; your module configuration can be accessed as `get_config( $id )`, where `$id` is the same ID you pass to the module registration.
+The default configuration passed in integrates with the [configuration system](configuration.md), and can be used to configure your module on different environments, or to provide an easy way to enable and disable specific functionality. Within your module, you can use `HM\Platform\get_config()` to retrieve the resolved configuration; your module configuration can be accessed as `get_config()[ $id ]`, where `$id` is the same ID you pass to the module registration.
 
 
 ## Reusable Modules
