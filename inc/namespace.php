@@ -36,12 +36,15 @@ function bootstrap() {
 function get_documentation() : array {
 	$modules = Module::get_all();
 
+	$other_docs = dirname( __DIR__ ) . '/other-docs';
 	$docs = [
+		'welcome' => new Group( 'Welcome' ),
 		'getting-started' => new Group( 'Getting Started' ),
 		'guides' => new Group( 'Guides' ),
 	];
-	add_docs_for_group( $docs['getting-started'], dirname( __DIR__ ) . '/other-docs/getting-started' );
-	add_docs_for_group( $docs['guides'], dirname( __DIR__ ) . '/other-docs/guides' );
+	$docs['welcome']->add_page( '', parse_file( $other_docs . '/welcome.md' ) );
+	add_docs_for_group( $docs['getting-started'], $other_docs . '/getting-started' );
+	add_docs_for_group( $docs['guides'], $other_docs . '/guides' );
 
 	uasort( $modules, function ( Module $a, Module $b ) : int {
 		return $a->get_title() <=> $b->get_title();
