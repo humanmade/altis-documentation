@@ -1,3 +1,6 @@
+---
+order: 20
+---
 # Configuration
 
 Configuration of HM Platform is done the `composer.json` file in the root of your project. To configure specifics modules, feature and settings for HM Platform, add an `extra.platform` section to your `composer.json`.
@@ -114,3 +117,8 @@ $token = HM\Platform\get_config()['my-project']['twitter-oauth2-token'];
 
 new TwitterClient( $token );
 ```
+
+
+## Next Steps
+
+With your site configured, you can begin developing [custom modules](custom-modules.md) for your project.
