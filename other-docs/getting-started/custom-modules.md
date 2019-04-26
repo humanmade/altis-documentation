@@ -44,7 +44,7 @@ After adding this, run `composer dump-autoload` to regenerate the autoload files
 
 ### Registering Your Module
 
-Within your module's entrypoint file, your module needs to register itself with the Platform core. To do this, you need to add an action on `hm-platform.modules.init` which calls `HM\Platform\Module::register`. This function call registers the module as well as any default configuration and a callback for the module.
+Within your module's entrypoint file, your module needs to register itself with the Platform core. To do this, you need to add an action on `hm-platform.modules.init` which calls `HM\Platform\register_module()`. This function call registers the module as well as any default configuration and a callback for the module.
 
 A basic registration call looks like:
 
@@ -119,7 +119,7 @@ add_action( 'hm-platform.modules.init', function () {
 
 ### Module Settings
 
-When registering your module, you pass various parameters to `Module::register`. These are used to control the behaviour of your module.
+When registering your module, you pass various parameters to `register_module()`. These are used to control the behaviour of your module.
 
 Your module's directory is used for automated loading and parsing of documentation. The Documentation module automatically looks for a `docs` subdirectory within this directory and parses Markdown files from this.
 
