@@ -122,8 +122,13 @@ function add_docs_for_group( Group $group, string $doc_dir ) : Group {
 			if ( $leaf->isDot() ) {
 				continue;
 			}
+
 			// Special handling for sub dirs, to add a page (and subpages).
 			$doc = get_page_for_dir( $leaf->getPathname(), $doc_dir );
+			if ( empty( $doc ) ) {
+				continue;
+			}
+
 			$group->add_page( get_slug_from_path( $doc_dir, $leaf->getPathname() ), $doc );
 			continue;
 		}
@@ -149,11 +154,13 @@ function add_docs_for_group( Group $group, string $doc_dir ) : Group {
  *
  * @param string $dir       The directory to add the page for.
  * @param string $root_dir  The root directory of the group, used to calculate page ids.
- * @return Page
+ * @return Page|null
  */
-function get_page_for_dir( string $dir, string $root_dir ) : Page {
+function get_page_for_dir( string $dir, string $root_dir ) : ?Page {
 	// A directory's page is always build from a README.md inside the dir.
-	$doc = parse_file( $dir . '/README.md' );
+	$readme = $dir . '/README.md';
+	$doc = file_exists( $readme ) ? parse_file( $readme ) : new Page( '' );
+	$has_subpages = false;
 
 	$iterator = new DirectoryIterator( $dir );
 	foreach ( $iterator as $leaf ) {
@@ -162,16 +169,29 @@ function get_page_for_dir( string $dir, string $root_dir ) : Page {
 			if ( $leaf->isDot() ) {
 				continue;
 			}
+
 			// Recurse directories, recursively calling this function
 			$subpage = get_page_for_dir( $leaf->getPathname(), $root_dir );
+			if ( empty( $subpage ) ) {
+				continue;
+			}
+		} elseif ( $leaf->getExtension() !== 'md' ) {
+			continue;
 		} elseif ( $leaf->getFilename() === 'README.md' ) {
 			continue;
 		} else {
 			$subpage = parse_file( $leaf->getPathname() );
 		}
 
+		$has_subpages = true;
 		$doc->add_subpage( get_slug_from_path( $root_dir, $leaf->getPathname() ), $subpage );
 	}
+
+	// If we don't have any actual files, bail.
+	if ( ! file_exists( $readme ) && ! $has_subpages ) {
+		return null;
+	}
+
 	return $doc;
 }
 

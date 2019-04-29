@@ -24,14 +24,59 @@ class MarkdownParser extends Parsedown {
 	}
 
 	/**
+	 * Parse an inline image.
+	 *
+	 * Overridden to resolve relative URLs based on the current page.
+	 *
+	 * @param mixed $data Raw data from the Markdown tokeniser
+	 * @return array
+	 */
+	protected function inlineImage( $data ) {
+		$result = parent::inlineImage( $data );
+		if ( empty( $result ) ) {
+			return $result;
+		}
+
+		// Re-parse the link data.
+		$link = $data;
+		$link['text'] = substr( $link['text'], 1 );
+		$link_result = parent::inlineLink( $link );
+		if ( empty( $link_result ) ) {
+			return $result;
+		}
+
+		$src = $link_result['element']['attributes']['href'];
+
+		// Is the link relative?
+		$parts = wp_parse_url( $src );
+		if ( ! empty( $parts['host'] ) ) {
+			return $result;
+		}
+
+		// Resolve relative to the current file.
+		$base = $this->current_page->get_meta( 'path' );
+		$root = $this->current_page->get_meta( 'root' );
+		$resolved = realpath( path_join( dirname( $base ), $src ) );
+		if ( empty( $resolved ) ) {
+			return $result;
+		}
+
+		// Override src.
+		$slug = get_slug_from_path( $root, $resolved );
+		$result['element']['attributes']['src'] = plugins_url( $slug, $root . '/wp-is-dumb' );
+
+		return $result;
+	}
+
+	/**
 	 * Parse an inline link.
 	 *
 	 * Overridden to resolve relative URLs based on the current page.
 	 *
-	 * @param mixed $data
+	 * @param mixed $data Raw data from the Markdown tokeniser
 	 * @return array
 	 */
-    protected function inlineLink( $data ) {
+	protected function inlineLink( $data ) {
 		$result = parent::inlineLink( $data );
 		if ( $result['element']['name'] !== 'a' ) {
 			return $result;
@@ -54,7 +99,7 @@ class MarkdownParser extends Parsedown {
 
 		// Resolve relative to the current file.
 		$base = $this->current_page->get_meta( 'path' );
-		$root= $this->current_page->get_meta( 'root' );
+		$root = $this->current_page->get_meta( 'root' );
 		$resolved = realpath( path_join( dirname( $base ), $href ) );
 		if ( empty( $resolved ) ) {
 			return $result;
