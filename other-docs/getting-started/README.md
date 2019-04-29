@@ -30,6 +30,8 @@ To get started, run:
 composer create-project humanmade/skeleton:1.0.0-beta1 my-project
 ```
 
+**Note:** You must have Composer v1.5 or newer. Run `composer self-update` to ensure you're using the latest version.
+
 Follow the interactive prompts to get started.
 
 This will create a new directory called `my-project`, set up the project, and install the Composer dependencies. This directory is now ready for you to start working on.
