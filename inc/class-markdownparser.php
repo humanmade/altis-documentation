@@ -54,15 +54,22 @@ class MarkdownParser extends Parsedown {
 
 		// Resolve relative to the current file.
 		$base = $this->current_page->get_meta( 'path' );
-		$root= $this->current_page->get_meta( 'root' );
+		$root = $this->current_page->get_meta( 'root' );
 		$resolved = realpath( path_join( dirname( $base ), $href ) );
 		if ( empty( $resolved ) ) {
 			return $result;
 		}
 
 		// Override href.
-		$slug = get_slug_from_path( $root, $resolved );
-		$url = get_url_for_page( UI\get_current_group_id(), $slug );
+
+		// Support URLs to assets directories in a module's docs directory.
+		if ( strpos( $href, './assets/' ) === 0 ) {
+			$url = plugins_url( $href, $root . '/wp-is-dumb' );
+		} else {
+			$slug = get_slug_from_path( $root, $resolved );
+			$url = get_url_for_page( UI\get_current_group_id(), $slug );
+		}
+
 		$result['element']['attributes']['href'] = $url;
 
 		return $result;

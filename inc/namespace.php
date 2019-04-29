@@ -120,6 +120,9 @@ function add_docs_for_group( Group $group, string $doc_dir ) : Group {
 			if ( $leaf->isDot() ) {
 				continue;
 			}
+			if ( $leaf->getFilename() === 'assets' ) {
+				continue;
+			}
 			// Special handling for sub dirs, to add a page (and subpages).
 			$doc = get_page_for_dir( $leaf->getPathname(), $doc_dir );
 			$group->add_page( get_slug_from_path( $doc_dir, $leaf->getPathname() ), $doc );
@@ -158,6 +161,9 @@ function get_page_for_dir( string $dir, string $root_dir ) : Page {
 		/** @var \SplFileInfo $leaf */
 		if ( $leaf->isDir() ) {
 			if ( $leaf->isDot() ) {
+				continue;
+			}
+			if ( $leaf->getFilename() === 'assets' ) {
 				continue;
 			}
 			// Recurse directories, recursively calling this function
