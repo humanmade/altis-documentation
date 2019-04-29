@@ -34,10 +34,10 @@ function bootstrap() {
  * @return Group[] Sorted list of groupse
  */
 function get_documentation() : array {
-	static $documentation;
+	static $docs;
 
-	if ( empty( $documentation ) ) {
-		return $documentation;
+	if ( empty( $docs ) ) {
+		return $docs;
 	}
 
 	$modules = Module::get_all();
@@ -72,7 +72,6 @@ function get_documentation() : array {
 	 */
 	$docs = apply_filters( 'hm-platform.documentation.groups', $docs );
 
-	$documentation = $docs;
 	return $docs;
 }
 
