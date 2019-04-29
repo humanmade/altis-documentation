@@ -168,6 +168,8 @@ function get_page_for_dir( string $dir, string $root_dir ) : Page {
 			}
 			// Recurse directories, recursively calling this function
 			$subpage = get_page_for_dir( $leaf->getPathname(), $root_dir );
+		} elseif ( $leaf->getExtension() !== 'md' ) {
+			continue;
 		} elseif ( $leaf->getFilename() === 'README.md' ) {
 			continue;
 		} else {
