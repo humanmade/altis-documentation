@@ -36,7 +36,7 @@ function bootstrap() {
 function get_documentation() : array {
 	static $documentation;
 
-	if ( $documentation ) {
+	if ( empty( $documentation ) ) {
 		return $documentation;
 	}
 
