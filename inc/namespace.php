@@ -34,6 +34,12 @@ function bootstrap() {
  * @return Group[] Sorted list of groupse
  */
 function get_documentation() : array {
+	static $documentation;
+
+	if ( $documentation ) {
+		return $documentation;
+	}
+
 	$modules = Module::get_all();
 
 	$getting_started = new Group( 'Getting Started' );
@@ -66,6 +72,7 @@ function get_documentation() : array {
 	 */
 	$docs = apply_filters( 'hm-platform.documentation.groups', $docs );
 
+	$documentation = $docs;
 	return $docs;
 }
 
