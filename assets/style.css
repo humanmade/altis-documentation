@@ -37,10 +37,6 @@
 	box-shadow: inset 0 0px 2px 0 #e1e1e1;
 }
 
-.hm-platform-ui__main > nav > ul {
-	list-style: circle;
-}
-
 .hm-platform-ui__main > nav > ul li {
 	margin-bottom: 0;
 }
