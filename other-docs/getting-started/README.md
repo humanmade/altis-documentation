@@ -65,7 +65,6 @@ Chassis requires [Vagrant](https://www.vagrantup.com/) and [VirtualBox](https://
 To set up Chassis for HM Platform, run the following inside your project's directory:
 
 ```
-composer require --dev humanmade/platform-local-chassis
 composer chassis init
 ```
 
