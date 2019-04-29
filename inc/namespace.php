@@ -167,11 +167,12 @@ function get_page_for_dir( string $dir, string $root_dir ) : ?Page {
 			if ( $leaf->isDot() ) {
 				continue;
 			}
-			if ( $leaf->getFilename() === 'assets' ) {
-				continue;
-			}
+
 			// Recurse directories, recursively calling this function
 			$subpage = get_page_for_dir( $leaf->getPathname(), $root_dir );
+			if ( empty( $subpage ) ) {
+				continue;
+			}
 		} elseif ( $leaf->getExtension() !== 'md' ) {
 			continue;
 		} elseif ( $leaf->getFilename() === 'README.md' ) {
