@@ -56,36 +56,9 @@ To start using your project, you'll need to set up a development environment.
 
 ## Running your project locally
 
-For local development, you'll also need to add a local server to your development dependencies. HM Platform offers two options:
+For local development, you'll also need to add a local server to your development dependencies. HM Platform includes support out-of-the-box for Chassis. Chassis is a virtual-machine environment, built on Vagrant and VirtualBox.
 
-* Local Server, for a lightweight development environment, built on Docker
-* Chassis, for a full virtual machine environment, built on Vagrant and VirtualBox
-
-We recommend Local Server for new projects and developers, and Chassis for developers familiar with Chassis.
-
-
-### Setting up Local Server
-
-HM Platform Local Server is a lightweight development environment based on [Docker](https://www.docker.com/).
-
-Local Server requires Docker. We recommend [Docker Desktop](https://www.docker.com/products/docker-desktop) for Windows and Mac.
-
-To set up Local Server, run the following inside your project's directory:
-
-```
-composer require --dev humanmade/local-server
-```
-
-This will add Local Server to your development dependencies and prepare it to be run.
-
-To start Local Server, run `composer local-server start`.
-
-The first time you run Local Server, it may take a little longer, as it sets up services on your computer. Once this is complete, you will now have a working local site at `https://your-project.altis.dev/`.
-
-
-### Setting up Chassis
-
-Chassis for HM Platform is a fully-featured development environment based on [Chassis](https://chassis.io/).
+*Note:* We are working on a Docker-based environment called Local Server, currently in preview. To try the preview version, see [the Local Server documentation](docs://local-server/)
 
 Chassis requires [Vagrant](https://www.vagrantup.com/) and [VirtualBox](https://www.virtualbox.org/).
 
