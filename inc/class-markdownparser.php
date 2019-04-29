@@ -31,7 +31,7 @@ class MarkdownParser extends Parsedown {
 	 * @param mixed $data
 	 * @return array
 	 */
-    protected function inlineLink( $data ) {
+	protected function inlineLink( $data ) {
 		$result = parent::inlineLink( $data );
 		if ( $result['element']['name'] !== 'a' ) {
 			return $result;
