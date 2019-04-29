@@ -61,15 +61,8 @@ class MarkdownParser extends Parsedown {
 		}
 
 		// Override href.
-
-		// Support URLs to assets directories in a module's docs directory.
-		if ( strpos( $href, './assets/' ) === 0 ) {
-			$url = plugins_url( $href, $root . '/wp-is-dumb' );
-		} else {
-			$slug = get_slug_from_path( $root, $resolved );
-			$url = get_url_for_page( UI\get_current_group_id(), $slug );
-		}
-
+		$slug = get_slug_from_path( $root, $resolved );
+		$url = get_url_for_page( UI\get_current_group_id(), $slug );
 		$result['element']['attributes']['href'] = $url;
 
 		return $result;
