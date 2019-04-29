@@ -72,7 +72,7 @@ This will add Chassis to your development dependencies and prepare it to be run.
 
 To start Chassis, run `composer chassis start`.
 
-The first time you run Chassis, it may take a little longer, as it sets up the virtual machine. Once this is complete, you will now have a working local site at http://vagrant.local/
+The first time you run Chassis, it may take a little longer, as it sets up the virtual machine. Once this is complete, you will now have a working local site at http://platform.local/
 
 To stop the virtual machine, run `composer chassis stop`. You can also run [Vagrant commands](https://www.vagrantup.com/docs/cli/) inside the `chassis` directory.
 
