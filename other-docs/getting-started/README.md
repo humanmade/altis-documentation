@@ -27,7 +27,7 @@ The quickest way to get started with HM Platform is to use Composer. If you don'
 To get started, run:
 
 ```
-composer create-project -s dev humanmade/skeleton my-project
+composer create-project humanmade/skeleton:1.0.0-beta1 my-project
 ```
 
 Follow the interactive prompts to get started.
