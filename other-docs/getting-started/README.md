@@ -85,7 +85,7 @@ The first time you run Local Server, it may take a little longer, as it sets up 
 
 ### Setting up Chassis
 
-Chassis for HM Platform is a fully-featured development environment based on [Chassis](https://chassis.io/).
+Chassis for HM Platform is a fully-featured development environment based on [Chassis](http://chassis.io/).
 
 Chassis requires [Vagrant](https://www.vagrantup.com/) and [VirtualBox](https://www.virtualbox.org/).
 
