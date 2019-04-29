@@ -28,7 +28,7 @@ class MarkdownParser extends Parsedown {
 	 *
 	 * Overridden to resolve relative URLs based on the current page.
 	 *
-	 * @param mixed $data
+	 * @param mixed $data Raw data from the Markdown tokeniser
 	 * @return array
 	 */
 	protected function inlineImage( $data ) {
@@ -73,7 +73,7 @@ class MarkdownParser extends Parsedown {
 	 *
 	 * Overridden to resolve relative URLs based on the current page.
 	 *
-	 * @param mixed $data
+	 * @param mixed $data Raw data from the Markdown tokeniser
 	 * @return array
 	 */
 	protected function inlineLink( $data ) {
