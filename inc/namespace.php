@@ -34,6 +34,12 @@ function bootstrap() {
  * @return Group[] Sorted list of groupse
  */
 function get_documentation() : array {
+	static $docs;
+
+	if ( ! empty( $docs ) ) {
+		return $docs;
+	}
+
 	$modules = Module::get_all();
 
 	$other_docs = dirname( __DIR__ ) . '/other-docs';
