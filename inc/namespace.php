@@ -120,9 +120,7 @@ function add_docs_for_group( Group $group, string $doc_dir ) : Group {
 			if ( $leaf->isDot() ) {
 				continue;
 			}
-			if ( $leaf->getFilename() === 'assets' ) {
-				continue;
-			}
+
 			// Special handling for sub dirs, to add a page (and subpages).
 			$doc = get_page_for_dir( $leaf->getPathname(), $doc_dir );
 			if ( empty( $doc ) ) {
