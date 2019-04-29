@@ -76,7 +76,7 @@ function load_page() {
  */
 function get_current_group_id() {
 	// @codingStandardsIgnoreLine
-	return $_GET['group'] ?? 'guides';
+	return $_GET['group'] ?? 'welcome';
 }
 
 /**
