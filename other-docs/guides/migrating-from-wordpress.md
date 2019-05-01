@@ -131,7 +131,7 @@ As this guide is for migrating a non-HM Platform project to use HM Platform, it'
 
 There are some features of HM Platform that are user-facing and default-on that you might want to audit. For example, image [lazy loading](docs://media/lazy-loading.md) via Guassholder is on by default. Smart Media with Cropping UI is enabled by default. You should consult the HM Platform documentation for behavior of specific modules. Again, unless there is specific reason to disable feature and modules, we recommend keeping them on.
 
-Any module can be disabled by setting its `disabled` setting to `false`:
+Any module can be disabled by setting its `enabled` setting to `false`:
 
 ```json
 "extra": {
