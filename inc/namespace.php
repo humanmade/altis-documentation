@@ -48,7 +48,7 @@ function get_documentation() : array {
 		'getting-started' => new Group( 'Getting Started' ),
 		'guides' => new Group( 'Guides' ),
 	];
-	$docs['welcome']->add_page( '', parse_file( $other_docs . '/welcome.md' ) );
+	$docs['welcome']->add_page( '', parse_file( $other_docs . '/welcome.md', $other_docs ) );
 	add_docs_for_group( $docs['getting-started'], $other_docs . '/getting-started' );
 	add_docs_for_group( $docs['guides'], $other_docs . '/guides' );
 
@@ -144,8 +144,7 @@ function add_docs_for_group( Group $group, string $doc_dir ) : Group {
 		}
 
 		$file = $leaf->getRealPath();
-		$doc = parse_file( $file );
-		$doc->set_meta( 'root', $doc_dir );
+		$doc = parse_file( $file, $doc_dir );
 		$out_path = get_slug_from_path( $doc_dir, $file );
 		$group->add_page( $out_path, $doc );
 	}
@@ -165,7 +164,7 @@ function add_docs_for_group( Group $group, string $doc_dir ) : Group {
 function get_page_for_dir( string $dir, string $root_dir ) : ?Page {
 	// A directory's page is always build from a README.md inside the dir.
 	$readme = $dir . '/README.md';
-	$doc = file_exists( $readme ) ? parse_file( $readme ) : new Page( '' );
+	$doc = file_exists( $readme ) ? parse_file( $readme, $root_dir ) : new Page( '' );
 	$has_subpages = false;
 
 	$iterator = new DirectoryIterator( $dir );
@@ -186,7 +185,7 @@ function get_page_for_dir( string $dir, string $root_dir ) : ?Page {
 		} elseif ( $leaf->getFilename() === 'README.md' ) {
 			continue;
 		} else {
-			$subpage = parse_file( $leaf->getPathname() );
+			$subpage = parse_file( $leaf->getPathname(), $root_dir );
 		}
 
 		$has_subpages = true;
@@ -227,9 +226,10 @@ function get_documentation_group( $id ) : ?Group {
  * Parse Markdown file into a Page.
  *
  * @param string $file Path to the file to parse
+ * @param string $root Root directory for the file's owner
  * @return Page Parsed data for the file
  */
-function parse_file( $file ) : Page {
+function parse_file( string $file, string $root ) : Page {
 	$raw = file_get_contents( $file );
 
 	// Find YAML frontmatter.
@@ -251,6 +251,7 @@ function parse_file( $file ) : Page {
 		$data->set_all_meta( $meta );
 	}
 	$data->set_meta( 'path', $file );
+	$data->set_meta( 'root', $root );
 
 	return $data;
 }
