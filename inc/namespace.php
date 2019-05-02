@@ -229,7 +229,7 @@ function get_documentation_group( $id ) : ?Group {
  * @param string $root Root directory for the file's owner
  * @return Page Parsed data for the file
  */
-function parse_file( $file, $root ) : Page {
+function parse_file( string $file, string $root ) : Page {
 	$raw = file_get_contents( $file );
 
 	// Find YAML frontmatter.
