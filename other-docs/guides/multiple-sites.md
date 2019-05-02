@@ -43,6 +43,19 @@ To create a site, start by going to the Network Admin dashboard. This is availab
 By default, sites will be created underneath the main site's domain; for example, if your main site is at `platform.local`, new sites will be created at `platform.local/{site}/`. Once a site has been created, you can edit the site's address to use a subdomain or custom domain instead.
 
 
+## Building cross-site functionality
+
+Functionality can be built in custom modules and plugins to operate across multiple sites. This may include fetching data from other sites, or storing settings or other data on the main site.
+
+Internally, WordPress has a concept of the "current" site, which acts as context to many low-level functions. This is determined during the bootstrap process using the URL. This is used to determine (amongst other things) the database table prefix.
+
+To build cross-site functionality, you can use the multisite APIs to access and change the current site. To access data on another site, you "switch" to it, and "restore" when you are finished using the site. WordPress maintains a stack of sites, allowing you to switch multiple times.
+
+**Important:** Ensure you always restore after switching, to avoid breaking other functionality which uses the current site.
+
+The primary functions for this functionality are [`switch_to_blog()`](https://developer.wordpress.org/reference/functions/switch_to_blog/), [`restore_current_blog()`](https://developer.wordpress.org/reference/functions/restore_current_blog/), and [`get_current_blog_id()`](https://developer.wordpress.org/reference/functions/get_current_blog_id/). Note that uses outdated terminology, and "blog" refers to the site.
+
+
 ## Limitations
 
 ### Shared Content
