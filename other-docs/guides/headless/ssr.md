@@ -6,12 +6,15 @@ Server-side rendering allows you to provide faster load times to users, as well 
 
 This server-side rendering is done through [v8js](https://github.com/phpv8/v8js), a JavaScript engine integrated into PHP. v8js is installed and configured on HM Cloud servers, as well as the local development environment provided by HM Platform.
 
-
-## Using react-wp-ssr
-
 Platform maintains the [react-wp-ssr library](https://github.com/humanmade/react-wp-ssr) which can be plugged into an existing React application to enable server-side rendering.
 
-This guide will assume you're adding server-side rendering to an existing React-based theme using react-wp-scripts. Consult the [react-wp-ssr documentation](https://github.com/humanmade/react-wp-ssr) for information about setting up react-wp-ssr with other projects.
+
+## Prerequisites
+
+This guide will assume you're adding server-side rendering to an existing React-based theme using react-wp-scripts. Follow the [Building a React app guide](react-app.md) to set up a new theme, or consult the [react-wp-ssr documentation](https://github.com/humanmade/react-wp-ssr) for information about setting up react-wp-ssr with other projects.
+
+
+## Adding the JavaScript library
 
 To get started, add the JS library to your application:
 
@@ -31,6 +34,9 @@ render( () => <App /> );
 ```
 
 You do not need to provide a root container ID, as this will provided by the PHP framework.
+
+
+## Enabling server-side rendering
 
 To enable server-side rendering, first add react-wp-ssr to your project's Composer packages:
 
