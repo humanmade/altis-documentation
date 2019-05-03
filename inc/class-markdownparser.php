@@ -56,7 +56,7 @@ class MarkdownParser extends Parsedown {
 		// Resolve relative to the current file.
 		$base = $this->current_page->get_meta( 'path' );
 		$root = $this->current_page->get_meta( 'root' );
-		$resolved = realpath( path_join( dirname( $base ), $src ) );
+		$resolved = realpath( path_join( dirname( $base ), $parts['path'] ) );
 		if ( empty( $resolved ) ) {
 			return $result;
 		}
@@ -104,7 +104,7 @@ class MarkdownParser extends Parsedown {
 		// Resolve relative to the current file.
 		$base = $this->current_page->get_meta( 'path' );
 		$root = $this->current_page->get_meta( 'root' );
-		$resolved = realpath( path_join( dirname( $base ), $href ) );
+		$resolved = realpath( path_join( dirname( $base ), $parts['path'] ) );
 		if ( empty( $resolved ) ) {
 			return $result;
 		}
