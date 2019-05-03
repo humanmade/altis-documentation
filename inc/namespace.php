@@ -343,5 +343,11 @@ function convert_internal_link( $url ) {
 		$new_url .= '#' . $parts['fragment'];
 	}
 
-	return $new_url;
+	/**
+	 * Filter generated URL for internal links.
+	 *
+	 * @param string $new_url Full URL after scheme parsing.
+	 * @param string $url Original URL supplied by the user.
+	 */
+	return apply_filters( 'hm-platform.documentation.internal_link', $new_url, $url );
 }
