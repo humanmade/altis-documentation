@@ -11,7 +11,7 @@ After reading this guide, you'll know:
 
 ## Core concepts in HM Platform
 
-Before you get started, it's important to be aware of a few core concepts in HM Platform. These concepts affect how you think about and build sites for HM Platform.
+Before you get started, it's important to be aware of a few core concepts which affect how you think about and build sites for HM Platform.
 
 With HM Platform, you will work on a **project**. This encompasses the codebase and the hosting provided by HM Cloud. Each project can have multiple **sites**, which can represent multiple domains, subdomains, or other distinct websites. Sites within a single project share a common codebase, but can have different customisations applied to each site.
 
@@ -34,7 +34,7 @@ composer create-project humanmade/skeleton:1.0.0-beta1 my-project
 
 Follow the interactive prompts to get started.
 
-This will create a new directory called `my-project`, set up the project, and install the Composer dependencies. This directory is now ready for you to start working on.
+This will create a new directory called `my-project`, set up the project, and install the Composer dependencies. This directory is now ready for you to start working on your project.
 
 
 ## Your project's layout
@@ -58,7 +58,7 @@ To start using your project, you'll need to set up a development environment.
 
 ## Running your project locally
 
-For local development, you'll also need to add a local server to your development dependencies. HM Platform includes support out-of-the-box for Chassis. Chassis is a virtual-machine environment, built on Vagrant and VirtualBox.
+For local development, you'll also need to add a local server to your development dependencies. HM Platform includes out-of-the-box support for [Chassis](http://chassis.io), a virtual-machine environment built on Vagrant and VirtualBox.
 
 *Note:* We are working on a Docker-based environment called Local Server, currently in preview. To try the preview version, see [the Local Server documentation](docs://local-server/)
 
@@ -74,7 +74,7 @@ This will add Chassis to your development dependencies and prepare it to be run.
 
 To start Chassis, run `composer chassis start`.
 
-The first time you run Chassis, it may take a little longer, as it sets up the virtual machine. Once this is complete, you will now have a working local site at http://platform.local/
+The first time you run Chassis, it may take a little longer than usual, as it sets up the virtual machine. Once this is complete, you will now have a working local site at http://platform.local/
 
 To stop the virtual machine, run `composer chassis stop`. You can also run [Vagrant commands](https://www.vagrantup.com/docs/cli/) inside the `chassis` directory.
 
