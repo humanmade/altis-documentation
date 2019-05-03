@@ -89,8 +89,12 @@ class MarkdownParser extends Parsedown {
 
 		// Is the link relative?
 		$parts = wp_parse_url( $href );
-		if ( ! empty( $parts['scheme'] ) && $parts['scheme'] === 'docs' ) {
-			return $this->inlineInternalLink( $result, $parts );
+		if ( ! empty( $parts['scheme'] ) ) {
+			$new_url = convert_internal_link( $href );
+			if ( $new_url !== $href ) {
+				$result['element']['attributes']['href'] = $new_url;
+			}
+			return $result;
 		}
 
 		if ( ! empty( $parts['host'] ) ) {
