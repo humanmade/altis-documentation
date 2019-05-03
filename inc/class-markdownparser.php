@@ -112,6 +112,9 @@ class MarkdownParser extends Parsedown {
 		// Override href.
 		$slug = get_slug_from_path( $root, $resolved );
 		$url = get_url_for_page( UI\get_current_group_id(), $slug );
+		if ( ! empty( $parts['fragment'] ) ) {
+			$url .= '#' . $parts['fragment'];
+		}
 		$result['element']['attributes']['href'] = $url;
 
 		return $result;
@@ -134,6 +137,9 @@ class MarkdownParser extends Parsedown {
 		// Override href.
 		$slug = get_slug_from_path( '', $path );
 		$url = get_url_for_page( $group, $slug );
+		if ( ! empty( $parts['fragment'] ) ) {
+			$url .= '#' . $parts['fragment'];
+		}
 		$result['element']['attributes']['href'] = $url;
 
 		return $result;
