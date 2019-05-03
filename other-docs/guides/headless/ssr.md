@@ -18,7 +18,7 @@ This guide will assume you're adding server-side rendering to an existing React-
 
 To get started, add the JS library to your application:
 
-```
+```sh
 npm install --save react-wp-ssr
 ```
 
@@ -40,13 +40,13 @@ You do not need to provide a root container ID, as this will provided by the PHP
 
 To enable server-side rendering, first add react-wp-ssr to your project's Composer packages:
 
-```
+```sh
 composer require humanmade/react-wp-ssr
 ```
 
 Next, call the PHP API's `render` function in your theme. This should replace the root container for your application. We recommend using a minimal `index.php`:
 
-```
+```php
 <?php
 
 get_header();
@@ -58,7 +58,7 @@ get_footer();
 
 Your site should now render your application as before. In your browser's console, you should see a message from react-wp-ssr:
 
-```
+```txt
 Skipping server-side render in development.
 
 Rendering in development may cause hydration errors, as the server renders
@@ -70,7 +70,7 @@ in development
 
 To test out server-side rendering, first ensure the built version of your application is up-to-date by rebuilding:
 
-```
+```sh
 npm run build
 ```
 
