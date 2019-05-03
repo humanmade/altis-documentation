@@ -24,7 +24,7 @@ npx create-react-app --scripts-version react-wp-scripts --php-namespace="Headles
 
 You should see the following:
 
-```
+```txt
 Creating a new React app in /your/project/content/themes/headless-theme.
 
 Installing packages. This might take a couple minutes.
