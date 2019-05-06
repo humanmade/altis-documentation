@@ -14,7 +14,7 @@ We’ll need to remove all the dependencies that are part of HM Platform, as tho
 2. `git rm -rf wordpress`
 3. `rm -rf .git/modules/wordpress`
 
-Do the same for `hm-platform` if you have this project dependency. HM Platform also includes the following WordPress plugins, so if you project uses git submodules or uses composer to include them, you should remove them from your project (unless you plan to disable the HM Platform module that makes use of the plugin, and continue with the plugin directly):
+Do the same for `hm-platform` if you have this project dependency. HM Platform also includes the following WordPress plugins, so if your project uses git submodules or composer to include them, you should remove them from your project (unless you plan to disable the HM Platform module that makes use of the plugin, and continue with the plugin directly):
 
 - `smart-media`
 - `gaussholder`
