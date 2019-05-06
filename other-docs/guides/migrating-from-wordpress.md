@@ -4,7 +4,7 @@ This guide covers how to migrate a typical WordPress project to HM Platform.
 
 ### Setup Composer
 
-If the project does not already have a `composer.json` in the root of the repository, you should run `composer init` from the project root. This will prompt for any fields. For now, don’t bother adding any dependancies. If you already have a `composer.json` move to Remove Dependencies.
+If the project does not already have a `composer.json` in the root of the repository, you should run `composer init` from the project root. This will prompt you fill out the required fields. For now, don’t bother adding any dependencies. If you already have a `composer.json` move to Remove Dependencies.
 
 ### Remove Dependencies
 
