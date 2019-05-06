@@ -117,7 +117,7 @@ It's quite possible your project specifies the wp mail sending domain via the `w
 
 ### Optionally disable HM Platform branding
 
-As this guide is for migrating a non-HM Platform project to use HM Platform, it's possible the client relationship and understanding does warrant changing anything visible or user-facing. If you are sure this is an "under the hood" migration, and the client has not been on-boarded with HM Platform as a brand, you can disable the branding via the `platform.cms.branding` setting:
+As this guide is for migrating a non-HM Platform project to use HM Platform, it's possible the client relationship and understanding does warrant changing anything visible or user-facing. If you are sure this is an "under the hood" migration, and the client has not been on-boarded with HM Platform as a brand, you can disable the branding via the `platform.modules.cms.branding` setting:
 
 ```json
 "modules": {
