@@ -43,7 +43,7 @@ Installing HM Platform will replace your `wp-config.php` so you should back it u
 
 Now you have your composer project up and running, it’s time to add HM Platform to the project. Do so by running `composer require humanmade/platform`.
 
-Once HM Platform has been installed, you should see the `wordpress` directory back in the project root, a new `wp-config.php` and `index.php`. You should now also see these 3 paths added to your `.gitignore`.
+Once HM Platform has been installed, you should see the `wordpress` directory back in the project root, a new `wp-config.php` and `index.php`. Add these 3 files to your project's `.gitignore` file, as they should not be committed to version control. If your project had no `.gitignore` file, one will have been created for you.
 
 ## Restore site configuration
 
