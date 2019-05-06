@@ -137,7 +137,9 @@ Any module can be disabled by setting its `enabled` setting to `false`:
 "extra": {
 	"platform": {
 		"modules": {
-			"seo": false
+			"seo": {
+				"enabled": false
+			}
 		}
 	}
 }
