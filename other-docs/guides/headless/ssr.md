@@ -4,7 +4,7 @@ Platform provides the ability to render JavaScript-based frontends on the server
 
 Server-side rendering allows you to provide faster load times to users, as well as a better experience for users without JavaScript or search engines.
 
-This server-side rendering is done through [v8js](https://github.com/phpv8/v8js), a JavaScript engine integrated into PHP. v8js is installed and configured on HM Cloud servers, as well as the local development environment provided by HM Platform.
+This server-side rendering is done through [v8js](https://github.com/phpv8/v8js), a JavaScript engine integrated into PHP. v8js is installed and configured on HM Cloud, as well as the local development environment provided by HM Platform.
 
 Platform maintains the [react-wp-ssr library](https://github.com/humanmade/react-wp-ssr) which can be plugged into an existing React application to enable server-side rendering.
 
