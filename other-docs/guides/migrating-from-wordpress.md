@@ -54,11 +54,13 @@ Only copy across constants that your custom code actually needs. There should be
 To make `.config/load.php` actually be included and executed, you have to add it as a Composer autoload file. To do so, add an `autoload` section to your `composer.json` if you don’t already have one, and add `.config/load.php` as an autoload files.
 
 ```json
+{
 	"autoload": {
 		"files": [
 			".config/load.php"
 		]
-	},
+	}
+}
 ```
 
 You’ll need to run `composer dump-autoload` after doing this to make sure it’s actually loaded.
@@ -68,16 +70,17 @@ You’ll need to run `composer dump-autoload` after doing this to make sure it�
 In your old `wp-config.php` you’ll see there is a `global $hm_platform` that sets options for hm-platform. Only migrate anything that you specifically need to, as most likely HM Platform will have better defaults. In rare cases though, things will be disabled for good reason. In HM Platform, most of the same settings are supported, but it’s now done via the `composer.json` for configuration (as is all HM Platform configuration). You should be familiar with [HM Platform configuration](docs://getting-started/configuration.md) before continuing. `$hm_platform` options should go in the `platform.modules.cloud` section of the `extra` block in the `composer.json`.
 
 ```json
-"extra": {
-	"platform": {
-		"modules": {
-			"cloud": {
-				"batcache": false
+{
+	"extra": {
+		"platform": {
+			"modules": {
+				"cloud": {
+					"batcache": false
+				}
 			}
 		}
 	}
-},
-
+}
 ```
 
 ## Rename content/plugins-mu to content/mu-plugins
@@ -108,10 +111,12 @@ Once completed, install and start your local server with `composer chassis init`
 It's quite possible your project specifies the wp mail sending domain via the `wp_mail_from` hook. This can now be specified as setting in the `composer.json`'s `extra.platform.modules.cloud.email.email-from-address` setting:
 
 ```json
-"modules": {
-    "cloud": {
-        "email-from-address": "webmaster@mydomainname.com"
-    }
+{
+	"modules": {
+		"cloud": {
+			"email-from-address": "webmaster@mydomainname.com"
+		}
+	}
 }
 ```
 
@@ -120,10 +125,12 @@ It's quite possible your project specifies the wp mail sending domain via the `w
 As this guide is for migrating a non-HM Platform project to use HM Platform, it's possible the client relationship and understanding does warrant changing anything visible or user-facing. If you are sure this is an "under the hood" migration, and the client has not been on-boarded with HM Platform as a brand, you can disable the branding via the `platform.modules.cms.branding` setting:
 
 ```json
-"modules": {
-    "cms": {
-        "branding": false
-    }
+{
+	"modules": {
+		"cms": {
+			"branding": false
+		}
+	}
 }
 ```
 
@@ -134,11 +141,13 @@ There are some features of HM Platform that are user-facing and default-on that 
 Any module can be disabled by setting its `enabled` setting to `false`:
 
 ```json
-"extra": {
-	"platform": {
-		"modules": {
-			"seo": {
-				"enabled": false
+{
+	"extra": {
+		"platform": {
+			"modules": {
+				"seo": {
+					"enabled": false
+				}
 			}
 		}
 	}
