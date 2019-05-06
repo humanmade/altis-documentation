@@ -74,11 +74,11 @@ CRA created a PHP helper at `react-wp-scripts.php`, move this to `inc/loader.php
 mv react-wp-scripts.php inc/loader.php
 ```
 
-On your local site, head to [Network Admin > Themes](/wp-admin/network/themes.php) and Network Enable the new "Example Headless Theme" entry. This will make the theme usable on your sites.
+On your local site, head to [Network Admin > Themes](internal://network-admin/themes.php) and Network Enable the new "Example Headless Theme" entry. This will make the theme usable on your sites.
 
-Next, head to the [Appearance page](/wp-admin/themes.php) on a test site and Activate the "Example Headless Theme". This will activate the theme on your site.
+Next, head to the [Appearance page](internal://admin/themes.php) on a test site and Activate the "Example Headless Theme". This will activate the theme on your site.
 
-Open [the frontend](/) and you should see an unstyled example page.
+Open [the frontend](internal://home/) and you should see an unstyled example page.
 
 
 ## Convert app to a theme
@@ -119,7 +119,7 @@ get_header();
 get_footer();
 ```
 
-Open [the frontend](/) and you should now see the React splash screen again. However, you should now see it with the Platform admin toolbar at the top of the page:
+Open [the frontend](internal://home/) and you should now see the React splash screen again. However, you should now see it with the Platform admin toolbar at the top of the page:
 
 ![](./react-theme.png)
 
