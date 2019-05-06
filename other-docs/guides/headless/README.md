@@ -49,6 +49,8 @@ Headless frontends can be beneficial in allowing separate teams and skills to ha
 
 Additionally, this may require separate and complex infrastructure for serving web requests. This can increase running and maintenance costs, as multiple systems need to be run.
 
+Many of the features provided by the CMS module (and WordPress) are not available in decoupled frontends, as they are tied to the theme frontend system. This includes the Customizer, the admin bar, and some of the developer tooling. Many other features assumed to work by users may require significant work to integrate into decoupled frontends, including post previews and varying behaviour for authenticated/authorised users.
+
 Decoupling can also have overhead as compared to monolithic systems, as data needs to be passed between multiple systems. This can cause both technical overhead with latency on round-trips, as well as mental overhead during development, as systems need to be specifically built to accomodate this. Consider whether the additional development time is worth the cost of decoupling.
 
 In many cases, a semi-decoupled architecture can achieve the best of both worlds. This uses parts of the theming system for some frontend functionality, while moving much of the work off to a separate frontend. This can help avoid duplication across systems while still providing many of the benefits of a decoupled architecture. In combination with server-side rendering, data can be generated at the same time as rendering the frontend for users, providing an fluid interactive experience to users with little overhead.
