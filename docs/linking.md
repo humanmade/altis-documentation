@@ -41,3 +41,21 @@ Consult the [branding documentation](docs://cms/branding.md)
 ```
 
 **Note:** while documentation group IDs generally align with module IDs, some special groups exist for meta documentation. This includes the Getting Started (ID `getting-started`) and Guides (ID `guides`) documentation, which are located in the `other-docs` directory of the Documentation module.
+
+
+## Internal Linking
+
+To enable rich documentation, you can link to internal resources on the site.
+
+These links use the special `internal://` URL scheme. This is followed by the type of internal link, followed by a slash, followed by an optional additional path. The following types are available:
+
+* `internal://home/{path}` - URL on the frontend, equivalent to `home_url( $path )`
+* `internal://site/{path}` - URL on the backend, equivalent to `site_url( $path )`
+* `internal://admin/{path}` - Page in the admin, equivalent to `admin_url( $path )`
+* `internal://network-admin/{path}` - Page in the network admin, equivalent to `network_admin_url( $path )`
+
+For example, to link to the current user's profile page:
+
+```md
+[View your profile](internal://admin/profile.php)
+```
