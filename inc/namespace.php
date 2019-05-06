@@ -292,3 +292,62 @@ function get_url_for_page( $group_id, $page_id ) {
 	 */
 	return apply_filters( 'hm-platform.documentation.url_for_page', $url, $group_id, $page_id );
 }
+
+/**
+ * Convert an internal link (e.g. docs://foo/bar) to a usable URL.
+ *
+ * Note that relative links are not resolved, as there is no context to use.
+ *
+ * @param string $url Raw link (e.g. `docs://foo/bar`)
+ * @return string URL for usage in a browser
+ */
+function convert_internal_link( $url ) {
+	$parts = wp_parse_url( $url );
+	if ( empty( $parts['scheme'] ) ) {
+		return $url;
+	}
+
+	$host = $parts['host'] ?? '';
+	$path = $parts['path'] ?? '';
+
+	switch ( $parts['scheme'] ) {
+		case 'docs':
+			// Override href.
+			$slug = get_slug_from_path( '', $path );
+			$new_url = get_url_for_page( $host, $slug );
+			break;
+
+		case 'internal':
+			$map = [
+				'home' => 'home_url',
+				'site' => 'site_url',
+				'admin' => 'admin_url',
+				'network-admin' => 'network_admin_url',
+			];
+			$function = $map[ $host ] ?? null;
+			if ( empty( $function ) ) {
+				return $url;
+			}
+
+			$new_url = call_user_func( $function, $path );
+			if ( ! empty( $parts['query'] ) ) {
+				$new_url .= '?' . $parts['query'];
+			}
+			break;
+
+		default:
+			return $url;
+	}
+
+	if ( ! empty( $parts['fragment'] ) ) {
+		$new_url .= '#' . $parts['fragment'];
+	}
+
+	/**
+	 * Filter generated URL for internal links.
+	 *
+	 * @param string $new_url Full URL after scheme parsing.
+	 * @param string $url Original URL supplied by the user.
+	 */
+	return apply_filters( 'hm-platform.documentation.internal_link', $new_url, $url );
+}

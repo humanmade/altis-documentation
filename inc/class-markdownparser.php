@@ -56,7 +56,7 @@ class MarkdownParser extends Parsedown {
 		// Resolve relative to the current file.
 		$base = $this->current_page->get_meta( 'path' );
 		$root = $this->current_page->get_meta( 'root' );
-		$resolved = realpath( path_join( dirname( $base ), $src ) );
+		$resolved = realpath( path_join( dirname( $base ), $parts['path'] ) );
 		if ( empty( $resolved ) ) {
 			return $result;
 		}
@@ -89,8 +89,12 @@ class MarkdownParser extends Parsedown {
 
 		// Is the link relative?
 		$parts = wp_parse_url( $href );
-		if ( ! empty( $parts['scheme'] ) && $parts['scheme'] === 'docs' ) {
-			return $this->inlineInternalLink( $result, $parts );
+		if ( ! empty( $parts['scheme'] ) ) {
+			$new_url = convert_internal_link( $href );
+			if ( $new_url !== $href ) {
+				$result['element']['attributes']['href'] = $new_url;
+			}
+			return $result;
 		}
 
 		if ( ! empty( $parts['host'] ) ) {
@@ -100,7 +104,7 @@ class MarkdownParser extends Parsedown {
 		// Resolve relative to the current file.
 		$base = $this->current_page->get_meta( 'path' );
 		$root = $this->current_page->get_meta( 'root' );
-		$resolved = realpath( path_join( dirname( $base ), $href ) );
+		$resolved = realpath( path_join( dirname( $base ), $parts['path'] ) );
 		if ( empty( $resolved ) ) {
 			return $result;
 		}
@@ -108,6 +112,9 @@ class MarkdownParser extends Parsedown {
 		// Override href.
 		$slug = get_slug_from_path( $root, $resolved );
 		$url = get_url_for_page( UI\get_current_group_id(), $slug );
+		if ( ! empty( $parts['fragment'] ) ) {
+			$url .= '#' . $parts['fragment'];
+		}
 		$result['element']['attributes']['href'] = $url;
 
 		return $result;
@@ -130,6 +137,9 @@ class MarkdownParser extends Parsedown {
 		// Override href.
 		$slug = get_slug_from_path( '', $path );
 		$url = get_url_for_page( $group, $slug );
+		if ( ! empty( $parts['fragment'] ) ) {
+			$url .= '#' . $parts['fragment'];
+		}
 		$result['element']['attributes']['href'] = $url;
 
 		return $result;
