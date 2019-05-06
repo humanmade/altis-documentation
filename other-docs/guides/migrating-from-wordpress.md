@@ -8,7 +8,7 @@ If the project does not already have a `composer.json` in the root of the reposi
 
 ### Remove Dependencies
 
-We’ll need to remove all the dependencies that are part of HM Platform, as those will be installed by HM Platform itself. Firstly, remove the any submodules that are included in HM Platform. For example, `wordpress` and `hm-platform` submodules. To correctly remove a submodule:
+We’ll need to remove all the dependencies that are part of HM Platform, as those will be installed by HM Platform itself. Firstly, remove any submodules that are included in HM Platform. For example, `wordpress` and `hm-platform` submodules. To correctly remove a submodule:
 
 1. `git submodule deinit -f wordpress`
 2. `git rm -rf wordpress`
