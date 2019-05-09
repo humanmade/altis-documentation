@@ -1,6 +1,6 @@
 # Headless Frontends
 
-Platform supports fully-decoupled headless frontends, such as single-page apps (SPAs). Rather than being rendered directly via the theming system, these frontends are rendered by a separate frontend; this may be in-browser rendering, or a third-party system such as Node.js.
+Altis supports fully-decoupled headless frontends, such as single-page apps (SPAs). Rather than being rendered directly via the theming system, these frontends are rendered by a separate frontend; this may be in-browser rendering, or a third-party system such as Node.js.
 
 
 ## Architecture types
@@ -18,7 +18,7 @@ A fully coupled architecture is the traditional architecture used for web applic
 
 With a fully coupled system, the frontend is deeply-integrated into the backend, and is managed in conjunction with the backend. Often a single development team will be responsible for the entire application. The frontend and backend are both built in PHP.
 
-Platform is built and configured for a fully coupled frontend by default, through the theming system. Consult the [theming documentation](docs://getting-started/first-theme.md) for further information about building themes.
+Altis is built and configured for a fully coupled frontend by default, through the theming system. Consult the [theming documentation](docs://getting-started/first-theme.md) for further information about building themes.
 
 
 ### Fully decoupled
@@ -27,7 +27,7 @@ A fully decoupled architecture is a commonly-used architecture for large web app
 
 With fully decoupled systems, the frontend is built entirely separately, and is typically managed by a separate frontend team. The frontend can be built in any desired language, regardless of the backend being powered by PHP. The frontend is also typically run on entirely separate infrastructure, as the performance characteristics may be entirely different to the backend.
 
-Platform provides a REST API to allow building fully decoupled frontends. With a fully decoupled architecture, the frontend is hosted and managed on third-party infrastructure, with Platform acting as the backend only.
+Altis provides a REST API to allow building fully decoupled frontends. With a fully decoupled architecture, the frontend is hosted and managed on third-party infrastructure, with Altis acting as the backend only.
 
 
 ### Semi-decoupled
@@ -36,9 +36,9 @@ A semi-decoupled architecture is a hybrid architecture incorporating parts of bo
 
 With a semi-decoupled system, the frontend is built as a part of the application, but has only a few, well-defined integration points between the frontend and backend. These are kept small and manageable to allow teams to work mostly independently. The frontend is built in JavaScript, allowing in-browser rendering in combination with [server-side rendering](ssr.md). Both the frontend and backend run on the same infrastructure.
 
-Platform provides a REST API to allow building semi-decoupled frontends, in addition to tools and libraries to facilitate building these frontends. The [Building a React App guide](react-app.md) guide walks through building a semi-decoupled React app from scratch.
+Altis provides a REST API to allow building semi-decoupled frontends, in addition to tools and libraries to facilitate building these frontends. The [Building a React App guide](react-app.md) guide walks through building a semi-decoupled React app from scratch.
 
-Additionally, Platform provides infrastructure to allow for [server-side rendering](ssr.md).
+Additionally, Altis provides infrastructure to allow for [server-side rendering](ssr.md).
 
 
 ## Deciding on architecture
@@ -55,4 +55,4 @@ Decoupling can also have overhead as compared to monolithic systems, as data nee
 
 In many cases, a semi-decoupled architecture can achieve the best of both worlds. This uses parts of the theming system for some frontend functionality, while moving much of the work off to a separate frontend. This can help avoid duplication across systems while still providing many of the benefits of a decoupled architecture. In combination with server-side rendering, data can be generated at the same time as rendering the frontend for users, providing an fluid interactive experience to users with little overhead.
 
-Generally, we recommend using a semi-decoupled architecture, but each case is different. The HM Platform team can provide consultancy and support to guide you through this process.
+Generally, we recommend using a semi-decoupled architecture, but each case is different. The Altis team can provide consultancy and support to guide you through this process.

@@ -3,14 +3,14 @@ order: 40
 ---
 # Third-Party Plugins
 
-Platform is built atop the open-source WordPress CMS. In addition to custom Platform modules, you can also use third-party WordPress plugins to take advantage of the open-source ecosystem.
+Altis is built atop the open-source WordPress CMS. In addition to custom Altis modules, you can also use third-party WordPress plugins to take advantage of the open-source ecosystem.
 
 There are two ways to add plugins to your project: either commit the plugin to your project (or use submodules), or manage it via Composer.
 
 
 ## Managing Plugins via Composer
 
-Plugins can be managed via Composer dependencies, similar to how Platform modules are added.
+Plugins can be managed via Composer dependencies, similar to how Altis modules are added.
 
 Some plugins are natively available via Composer, and can be found on Packagist via the [`wordpress-plugin` type](https://packagist.org/?type=wordpress-plugin).
 

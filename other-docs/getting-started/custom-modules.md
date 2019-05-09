@@ -3,7 +3,7 @@ order: 30
 ---
 # Custom Modules
 
-Platform is designed in a modular way, allowing your project to turn on and off individual modules as appropriate. You can use this same infrastructure for your own custom modules, allowing you to take advantage of frameworks such as the configuration and documentation modules.
+Altis is designed in a modular way, allowing your project to turn on and off individual modules as appropriate. You can use this same infrastructure for your own custom modules, allowing you to take advantage of frameworks such as the configuration and documentation modules.
 
 
 ## Location
@@ -22,12 +22,12 @@ To start a new project-specific module to your project, first create a directory
 
 Your module's file structure can be structured however you like, but we recommend following the [Human Made plugin structure](https://engineering.hmn.md/standards/structure/#plugin-structure). This structure ensures your code remains maintainable.
 
-There are two basic parts required to creating a module: load your module's file in using the Composer autoloader, and register your module with the Platform core. We recommend having a main entrypoint file (conventionally called `load.php`) which handles loading and registering your module, with other code split into functions and classes in separate files (conventionally within an `inc` directory).
+There are two basic parts required to creating a module: load your module's file in using the Composer autoloader, and register your module with the Altis core. We recommend having a main entrypoint file (conventionally called `load.php`) which handles loading and registering your module, with other code split into functions and classes in separate files (conventionally within an `inc` directory).
 
 
 ### Loading Your Module
 
-In order to use your module, the module needs to be loaded in by the Composer autoloader. This allows the module to register itself with the Platform core, as well as load in any functions or classes it needs.
+In order to use your module, the module needs to be loaded in by the Composer autoloader. This allows the module to register itself with the Altis core, as well as load in any functions or classes it needs.
 
 To load in your module's entrypoint file, add it to a `autoload.files` entry in your project's `composer.json`. For example, for a module called `your-module` with an entrypoint file called `load.php`, your `composer.json` should contain:
 
@@ -44,14 +44,14 @@ After adding this, run `composer dump-autoload` to regenerate the autoload files
 
 ### Registering Your Module
 
-Within your module's entrypoint file, your module needs to register itself with the Platform core. To do this, you need to add an action on `hm-platform.modules.init` which calls `HM\Platform\register_module()`. This function call registers the module as well as any default configuration and a callback for the module.
+Within your module's entrypoint file, your module needs to register itself with the Altis core. To do this, you need to add an action on `altis.modules.init` which calls `Altis\register_module()`. This function call registers the module as well as any default configuration and a callback for the module.
 
 A basic registration call looks like:
 
 ```php
-use function HM\Platform\register_module;
+use function Altis\register_module;
 
-add_action( 'hm-platform.modules.init', function () {
+add_action( 'altis.modules.init', function () {
 	register_module(
 		// Module ID:
 		'your-module',
@@ -75,10 +75,10 @@ add_action( 'hm-platform.modules.init', function () {
 } );
 ```
 
-We recommend using a function-exists-guard to only register your action if running in a Platform context, as the autoloader can also be used by static analysis and other tools including PHPUnit. Your function-exists-guard should look like:
+We recommend using a function-exists-guard to only register your action if running in an Altis context, as the autoloader can also be used by static analysis and other tools including PHPUnit. Your function-exists-guard should look like:
 
 ```php
-// Don't self-initialize if this is not a Platform execution.
+// Don't self-initialize if this is not an Altis execution.
 if ( ! function_exists( 'add_action' ) ) {
 	return;
 }
@@ -91,19 +91,19 @@ Your entrypoint file can declare constants or load in other files as necessary t
 
 namespace YourProject;
 
-use function HM\Platform\register_module;
+use function Altis\register_module;
 
 const DIRECTORY = __DIR__;
 
 // Load in namespaced-functions.
 require_once __DIR__ . '/inc/namespace.php';
 
-// Don't self-initialize if this is not a Platform execution.
+// Don't self-initialize if this is not an Altis execution.
 if ( ! function_exists( 'add_action' ) ) {
 	return;
 }
 
-add_action( 'hm-platform.modules.init', function () {
+add_action( 'altis.modules.init', function () {
 	register_module(
 		'your-module',
 		DIRECTORY,
@@ -123,16 +123,16 @@ When registering your module, you pass various parameters to `register_module()`
 
 Your module's directory is used for automated loading and parsing of documentation. The Documentation module automatically looks for a `docs` subdirectory within this directory and parses Markdown files from this.
 
-The default configuration passed in integrates with the [configuration system](configuration.md), and can be used to configure your module on different environments, or to provide an easy way to enable and disable specific functionality. Within your module, you can use `HM\Platform\get_config()` to retrieve the resolved configuration; your module configuration can be accessed as `get_config()[ $id ]`, where `$id` is the same ID you pass to the module registration.
+The default configuration passed in integrates with the [configuration system](configuration.md), and can be used to configure your module on different environments, or to provide an easy way to enable and disable specific functionality. Within your module, you can use `Altis\get_config()` to retrieve the resolved configuration; your module configuration can be accessed as `get_config()[ $id ]`, where `$id` is the same ID you pass to the module registration.
 
 
 ## Reusable Modules
 
-For reusable modules, follow the project-specific module development process above. Reusable modules are simply regular Composer packages, so you can follow existing guides on how to publish Composer packages, or follow the Platform-specific guide below.
+For reusable modules, follow the project-specific module development process above. Reusable modules are simply regular Composer packages, so you can follow existing guides on how to publish Composer packages, or follow the Altis-specific guide below.
 
 Once you're ready to convert your module into a reusable module, the first step is to split your module's code into a separate repository. Composer requires separate packages to be published from separate repositories.
 
-In your new repository, your module needs a `composer.json` to specify dependencies, the package's name, and autoloading code. Your package should declare a dependency on the core Platform package, fixed to the major Platform version you are working with. The autoloader specification should be migrated from your project's `composer.json` to the module's.
+In your new repository, your module needs a `composer.json` to specify dependencies, the package's name, and autoloading code. Your package should declare a dependency on the core Altis package, fixed to the major Altis version you are working with. The autoloader specification should be migrated from your project's `composer.json` to the module's.
 
 A basic `composer.json` should look like:
 
@@ -148,7 +148,7 @@ A basic `composer.json` should look like:
 		]
 	},
 	"require": {
-		"humanmade/platform-core": "~1.0"
+		"altis/core": "~1.0"
 	}
 }
 ```
@@ -162,4 +162,4 @@ Once published, this can then be added to your project's `composer.json` file vi
 
 ## Next Steps
 
-Platform is built atop the open-source WordPress CMS. In addition to custom Platform modules, you can also use [third-party WordPress plugins](third-party-plugins.md) to take advantage of the open-source ecosystem.
+Altis is built atop the open-source WordPress CMS. In addition to custom Altis modules, you can also use [third-party WordPress plugins](third-party-plugins.md) to take advantage of the open-source ecosystem.

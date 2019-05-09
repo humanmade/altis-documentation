@@ -1,12 +1,12 @@
 # Server-Side Rendering
 
-Platform provides the ability to render JavaScript-based frontends on the server.
+Altis provides the ability to render JavaScript-based frontends on the server.
 
 Server-side rendering allows you to provide faster load times to users, as well as a better experience for users without JavaScript or search engines.
 
-This server-side rendering is done through [v8js](https://github.com/phpv8/v8js), a JavaScript engine integrated into PHP. v8js is installed and configured on HM Cloud, as well as the local development environment provided by HM Platform.
+This server-side rendering is done through [v8js](https://github.com/phpv8/v8js), a JavaScript engine integrated into PHP. v8js is installed and configured on HM Cloud, as well as the local development environment provided by Altis.
 
-Platform maintains the [react-wp-ssr library](https://github.com/humanmade/react-wp-ssr) which can be plugged into an existing React application to enable server-side rendering.
+Altis maintains the [react-wp-ssr library](https://github.com/humanmade/react-wp-ssr) which can be plugged into an existing React application to enable server-side rendering.
 
 
 ## Prerequisites
@@ -92,7 +92,7 @@ Refresh the page and view the page's source. You should see your application ren
 
 react-wp-ssr comes with [several limitations](https://github.com/humanmade/react-wp-ssr/blob/master/docs/limitations.md) that you should be aware of. Most well-built applications will work without any modifications, but some applications may require modifications to adapt to these modifications.
 
-For questions about adapting your application to server-side rendering, consult the HM Platform team.
+For questions about adapting your application to server-side rendering, consult the Altis team.
 
 
 ## Using v8js Directly

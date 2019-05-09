@@ -2,7 +2,7 @@
 
 This guide will walk through creating a semi-decoupled frontend with React. This frontend will act as a theme on your site, blending the agility and responsiveness of a React web app with the performance of a theme.
 
-We'll first create a standalone React application, then turn it into a functional theme for use on your Platform site.
+We'll first create a standalone React application, then turn it into a functional theme for use on your Altis site.
 
 
 ## Prerequisites
@@ -119,7 +119,7 @@ get_header();
 get_footer();
 ```
 
-Open [the frontend](internal://home/) and you should now see the React splash screen again. However, you should now see it with the Platform admin toolbar at the top of the page:
+Open [the frontend](internal://home/) and you should now see the React splash screen again. However, you should now see it with the Altis admin toolbar at the top of the page:
 
 ![](./react-theme.png)
 
