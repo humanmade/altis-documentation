@@ -2,7 +2,7 @@
 	<tr>
 		<td align="left" width="70">
 			<strong>Documentation</strong><br />
-			Documentation module for Platform.
+			Documentation module for Altis.
 		</td>
 		<td align="right" width="20%">
 		</td>
@@ -19,4 +19,4 @@
 
 # Documentation
 
-The Documentation module provides a developer-facing interface to read the bundled documentation for Platform modules. It also provides APIs to programmatically work with documentation.
+The Documentation module provides a developer-facing interface to read the bundled documentation for Altis modules. It also provides APIs to programmatically work with documentation.
