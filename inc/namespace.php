@@ -1,16 +1,17 @@
 <?php
 
-namespace HM\Platform\Documentation;
+namespace Altis\Documentation;
 
+use function Altis\register_module;
+use Altis\Module;
 use DirectoryIterator;
-use HM\Platform\Module;
 use Spyc;
 
 /**
  * Register module.
  */
 function register() {
-	Module::register(
+	register_module(
 		'documentation',
 		DIRECTORY,
 		'Documentation',
@@ -72,7 +73,7 @@ function get_documentation() : array {
 	 *
 	 * @param Group[] $docs Map of group ID to Group object.
 	 */
-	$docs = apply_filters( 'hm-platform.documentation.groups', $docs );
+	$docs = apply_filters( 'altis.documentation.groups', $docs );
 
 	return $docs;
 }
@@ -290,7 +291,7 @@ function get_url_for_page( $group_id, $page_id ) {
 	 * @param string $group_id Group ID.
 	 * @param string $page_id Page ID.
 	 */
-	return apply_filters( 'hm-platform.documentation.url_for_page', $url, $group_id, $page_id );
+	return apply_filters( 'altis.documentation.url_for_page', $url, $group_id, $page_id );
 }
 
 /**
@@ -349,5 +350,5 @@ function convert_internal_link( $url ) {
 	 * @param string $new_url Full URL after scheme parsing.
 	 * @param string $url Original URL supplied by the user.
 	 */
-	return apply_filters( 'hm-platform.documentation.internal_link', $new_url, $url );
+	return apply_filters( 'altis.documentation.internal_link', $new_url, $url );
 }

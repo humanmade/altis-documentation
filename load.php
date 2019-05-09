@@ -1,6 +1,6 @@
 <?php
 
-namespace HM\Platform\Documentation;
+namespace Altis\Documentation;
 
 const DIRECTORY = __DIR__;
 
@@ -12,4 +12,4 @@ if ( ! function_exists( 'add_action' ) ) {
 	return;
 }
 
-add_action( 'hm-platform.modules.init', __NAMESPACE__ . '\\register' );
+add_action( 'altis.modules.init', __NAMESPACE__ . '\\register' );
