@@ -100,12 +100,9 @@ function render_page() {
 	?>
 
 	<div class="hm-platform-ui wrap">
-		<header>
-			<?php echo esc_html_e( 'Documentation', 'hm-platform' ) ?>
-		</header>
-
 		<div class="hm-platform-ui__main">
 			<nav>
+				<p class="hm-platform-ui__doc-title"><?php echo esc_html_e( 'Documentation', 'hm-platform' ) ?></p>
 				<ul>
 					<?php foreach ( $documentation as $group => $gobj ) : ?>
 						<li
