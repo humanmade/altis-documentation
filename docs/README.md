@@ -1,3 +1,3 @@
 # Documentation
 
-The Documentation module provides documentation for Platform.
+The Documentation module provides documentation for Altis.

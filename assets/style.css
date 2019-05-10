@@ -1,17 +1,18 @@
 /**
- * Documentation styles for HM Platform
+ * Documentation styles for Altis
  */
 
-.admin_page_hm-platform-documentation #wpbody-content {
+.admin_page_altis-documentation #wpbody-content {
 	padding-bottom: 0;
 }
 
-.hm-platform-ui {
+.altis-ui,
+.wrap.altis-ui {
 	background: #fff;
 	margin: 0 0 0 -20px;
 }
 
-.hm-platform-ui > header {
+.altis-ui > header {
 	display: flex;
 	align-items: center;
 	height: 52px;
@@ -22,11 +23,17 @@
 	justify-content: space-between;
 }
 
-.hm-platform-ui__main {
+.altis-ui__doc-title {
+	font-size: 18px;
+	color: #152a4e;
+	margin: 1.4em 0 0;
+}
+
+.altis-ui__main {
 	display: flex;
 }
 
-.hm-platform-ui__main > nav {
+.altis-ui__main > nav {
 	width: 196px;
 	max-width: 220px;
 	margin-right: 49px;
@@ -37,15 +44,15 @@
 	box-shadow: inset 0 0px 2px 0 #e1e1e1;
 }
 
-.hm-platform-ui__main > nav > ul li {
+.altis-ui__main > nav > ul li {
 	margin-bottom: 0;
 }
 
-.hm-platform-ui__main > nav > ul a {
+.altis-ui__main > nav > ul a {
 	text-decoration: none;
 }
 
-.hm-platform-ui__main > nav > ul > li a {
+.altis-ui__main > nav > ul > li a {
 	line-height: 18px;
 	padding: 5px 5px 5px 12px;
 	display: block;
@@ -54,7 +61,7 @@
 	border-left: 2px solid transparent;
 }
 
-.hm-platform-ui__main > nav li.active > a {
+.altis-ui__main > nav li.active > a {
 	display: block;
 	background: white;
 	border-top: #e1e1e1 1px solid;
@@ -65,20 +72,20 @@
 	box-shadow: 0 2px 0 rgba(0, 0, 0, 0.02), 0 1px 0 rgba(0, 0, 0, 0.02);
 }
 
-.hm-platform-ui__main > nav > ul ul {
+.altis-ui__main > nav > ul ul {
 	display: none;
 	margin-left: 2em;
 }
 
-.hm-platform-ui__main > nav .current ul {
+.altis-ui__main > nav .current ul {
 	display: block;
 }
 
-.hm-platform-ui__main > aside {
+.altis-ui__main > aside {
 	width: 222px;
 }
 
-.hm-platform-ui__main > article {
+.altis-ui__main > article {
 	max-width: 740px;
 	flex: 1;
 	margin-right: 31px;
@@ -86,27 +93,27 @@
 	padding-bottom: 30px;
 }
 
-.hm-platform-ui__main > article p {
+.altis-ui__main > article p {
 	line-height: 1.7;
 }
 
-.hm-platform-ui__main > article img {
+.altis-ui__main > article img {
 	max-width: 100%;
 }
 
-.hm-platform-ui__main > article ul {
+.altis-ui__main > article ul {
 	list-style: disc;
 	margin-left: 20px;
 }
 
-.hm-platform-ui__main > article pre code {
+.altis-ui__main > article pre code {
 	display: block;
 	font-size: 12px;
 	overflow: auto;
 	line-height: 1.8;
 }
 
-.hm-platform-ui__main > article .header-anchor {
+.altis-ui__main > article .header-anchor {
 	text-decoration: none;
 }
 

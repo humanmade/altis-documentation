@@ -1,6 +1,6 @@
 # Migrating a WordPress Codebase
 
-This guide covers how to migrate a typical WordPress project to HM Platform.
+This guide covers how to migrate a typical WordPress project to Altis.
 
 ## Setup Composer
 
@@ -8,13 +8,13 @@ If the project does not already have a `composer.json` in the root of the reposi
 
 ## Remove Dependencies
 
-We’ll need to remove all the dependencies that are part of HM Platform, as those will be installed by HM Platform itself. Firstly, remove any submodules that are included in HM Platform. For example, `wordpress` and `hm-platform` submodules. To correctly remove a submodule:
+We’ll need to remove all the dependencies that are part of Altis, as those will be installed by Altis itself. Firstly, remove any submodules that are included in Altis. For example, `wordpress` and `hm-platform` submodules. To correctly remove a submodule:
 
 1. `git submodule deinit -f wordpress`
 2. `git rm -rf wordpress`
 3. `rm -rf .git/modules/wordpress`
 
-Do the same for `hm-platform` if you have this project dependency. HM Platform also includes the following WordPress plugins, so if your project uses git submodules or composer to include them, you should remove them from your project (unless you plan to disable the HM Platform module that makes use of the plugin, and continue with the plugin directly):
+Do the same for `hm-platform` if you have this project dependency. Altis also includes the following WordPress plugins, so if your project uses git submodules or composer to include them, you should remove them from your project (unless you plan to disable the Altis module that makes use of the plugin, and continue with the plugin directly):
 
 - `smart-media`
 - `gaussholder`
@@ -37,13 +37,13 @@ Do the same for `hm-platform` if you have this project dependency. HM Platform a
 
 ## Move wp-config.php
 
-Installing HM Platform will replace your `wp-config.php` so you should back it up if you have application level configuration in your `wp-config.php`.
+Installing Altis will replace your `wp-config.php` so you should back it up if you have application level configuration in your `wp-config.php`.
 
-## Installing HM Platform
+## Installing Altis
 
-Now you have your composer project up and running, it’s time to add HM Platform to the project. Do so by running `composer require humanmade/platform`.
+Now you have your composer project up and running, it’s time to add Altis to the project. Do so by running `composer require altis/altis`.
 
-Once HM Platform has been installed, you should see the `wordpress` directory back in the project root, a new `wp-config.php` and `index.php`. Add these 3 files to your project's `.gitignore` file, as they should not be committed to version control. If your project had no `.gitignore` file, one will have been created for you.
+Once Altis has been installed, you should see the `wordpress` directory back in the project root, a new `wp-config.php` and `index.php`. Add these 3 files to your project's `.gitignore` file, as they should not be committed to version control. If your project had no `.gitignore` file, one will have been created for you.
 
 ## Restore site configuration
 
@@ -67,12 +67,12 @@ You’ll need to run `composer dump-autoload` after doing this to make sure it�
 
 ## Migrate $hm_platform options (when applicable)
 
-In your old `wp-config.php` you’ll see there is a `global $hm_platform` that sets options for hm-platform. Only migrate anything that you specifically need to, as most likely HM Platform will have better defaults. In rare cases though, things will be disabled for good reason. In HM Platform, most of the same settings are supported, but it’s now done via the `composer.json` for configuration (as is all HM Platform configuration). You should be familiar with [HM Platform configuration](docs://getting-started/configuration.md) before continuing. `$hm_platform` options should go in the `platform.modules.cloud` section of the `extra` block in the `composer.json`.
+In your old `wp-config.php` you’ll see there is a `global $hm_platform` that sets options for hm-platform. Only migrate anything that you specifically need to, as most likely Altis will have better defaults. In rare cases though, things will be disabled for good reason. In Altis, most of the same settings are supported, but it’s now done via the `composer.json` for configuration (as is all Altis configuration). You should be familiar with [Altis configuration](docs://getting-started/configuration.md) before continuing. `$hm_platform` options should go in the `altis.modules.cloud` section of the `extra` block in the `composer.json`.
 
 ```json
 {
 	"extra": {
-		"platform": {
+		"altis": {
 			"modules": {
 				"cloud": {
 					"batcache": false
@@ -85,7 +85,7 @@ In your old `wp-config.php` you’ll see there is a `global $hm_platform` that s
 
 ## Rename content/plugins-mu to content/mu-plugins
 
-HM Platform uses the standard WordPress must-use plugins directory of `content/mu-plugins` so if your project is using something different, it should be renamed.
+Altis uses the standard WordPress must-use plugins directory of `content/mu-plugins` so if your project is using something different, it should be renamed.
 
 ## Add composer install to the build script
 
@@ -97,18 +97,18 @@ composer install --no-dev
 
 ## Setup the local server
 
-Assuming your project uses Chassis for local development, we’ll be removing the local Chassis install, and installing the HM Platform module. If you have a setup script (such as `.bin/setup.sh`) you should remove any Chassis setup / installation steps.
-Once you have cleaned out Chassis, install the `humanmade/platform-local-chassis` composer package as a dev dependency.
+Assuming your project uses Chassis for local development, we’ll be removing the local Chassis install, and installing the Altis module. If you have a setup script (such as `.bin/setup.sh`) you should remove any Chassis setup / installation steps.
+Once you have cleaned out Chassis, install the `altis/local-chassis` composer package as a dev dependency.
 
 ```
-composer require --dev humanmade/platform-local-chassis
+composer require --dev altis/local-chassis
 ```
 
-Once completed, install and start your local server with `composer chassis init` and then `composer chassis start`. You should now be able to navigate to http://platform.local to see the site!
+Once completed, install and start your local server with `composer chassis init` and then `composer chassis start`. You should now be able to navigate to http://altis.local to see the site!
 
 ## Migrating email sending domain
 
-It's quite possible your project specifies the wp mail sending domain via the `wp_mail_from` hook. This can now be specified as setting in the `composer.json`'s `extra.platform.modules.cloud.email.email-from-address` setting:
+It's quite possible your project specifies the wp mail sending domain via the `wp_mail_from` hook. This can now be specified as setting in the `composer.json`'s `extra.altis.modules.cloud.email.email-from-address` setting:
 
 ```json
 {
@@ -120,9 +120,9 @@ It's quite possible your project specifies the wp mail sending domain via the `w
 }
 ```
 
-## Optionally disable HM Platform branding
+## Optionally disable Altis branding
 
-As this guide is for migrating a non-HM Platform project to use HM Platform, it's possible the client relationship and understanding does warrant changing anything visible or user-facing. If you are sure this is an "under the hood" migration, and the client has not been on-boarded with HM Platform as a brand, you can disable the branding via the `platform.modules.cms.branding` setting:
+As this guide is for migrating a non-Altis project to use Altis, it's possible the client relationship and understanding does warrant changing anything visible or user-facing. If you are sure this is an "under the hood" migration, and the client has not been on-boarded with Altis as a brand, you can disable the branding via the `altis.modules.cms.branding` setting:
 
 ```json
 {
@@ -134,16 +134,16 @@ As this guide is for migrating a non-HM Platform project to use HM Platform, it'
 }
 ```
 
-## Optionally disable HM Platform features
+## Optionally disable Altis features
 
-There are some features of HM Platform that are user-facing and default-on that you might want to audit. For example, image [lazy loading](docs://media/lazy-loading.md) via Guassholder is on by default. Smart Media with Cropping UI is enabled by default. You should consult the HM Platform documentation for the behaviour of specific modules. Again, unless there is specific reason to disable feature and modules, we recommend keeping them on.
+There are some features of Altis that are user-facing and default-on that you might want to audit. For example, image [lazy loading](docs://media/lazy-loading.md) via Guassholder is on by default. Smart Media with Cropping UI is enabled by default. You should consult the Altis documentation for the behaviour of specific modules. Again, unless there is specific reason to disable feature and modules, we recommend keeping them on.
 
 Any module can be disabled by setting its `enabled` setting to `false`:
 
 ```json
 {
 	"extra": {
-		"platform": {
+		"altis": {
 			"modules": {
 				"seo": {
 					"enabled": false
@@ -156,6 +156,6 @@ Any module can be disabled by setting its `enabled` setting to `false`:
 
 ## Deploying to Cloud
 
-The first time HM Platform is deployed, depending on the exact configuration, there may be tasks to perform on deploy. HM Platform is always configured to be a WordPress multisite, as such any sites that are not on installed as Multisite already, will need converting via the `multisite-convert` WP CLI command.
+The first time Altis is deployed, depending on the exact configuration, there may be tasks to perform on deploy. Altis is always configured to be a WordPress multisite, as such any sites that are not on installed as Multisite already, will need converting via the `multisite-convert` WP CLI command.
 
 As always, be sure to test the migration and deployment in `development` or `staging` environments before rolling out to production.

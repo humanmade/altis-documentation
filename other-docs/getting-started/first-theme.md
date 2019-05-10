@@ -7,7 +7,7 @@ Themes are used to control the visual style of your sites. Themes can be shared 
 
 Themes are a core concept of WordPress, the underlying implementation of the CMS module. For further documentation, consult the [WordPress theme documentation](https://developer.wordpress.org/themes/).
 
-HM Platform includes a minimal starter theme out-of-the-box which simply renders a placeholder. Due to the custom nature of HM Platform projects, this only includes the bare basics of a theme, allowing you to build your themes from scratch with minimal boilerplate.
+Altis includes a minimal starter theme out-of-the-box which simply renders a placeholder. Due to the custom nature of Altis projects, this only includes the bare basics of a theme, allowing you to build your themes from scratch with minimal boilerplate.
 
 
 ## Theme Structure

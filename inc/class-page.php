@@ -1,6 +1,6 @@
 <?php
 
-namespace HM\Platform\Documentation;
+namespace Altis\Documentation;
 
 class Page {
 	/**

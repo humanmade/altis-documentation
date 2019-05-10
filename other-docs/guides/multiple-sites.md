@@ -1,13 +1,13 @@
 # Multiple Sites
 
-Platform includes support for multiple independent sites out-of-the-box. This functionality can be used to provide different sites for regional or multilingual content, or for independent microsites.
+Altis includes support for multiple independent sites out-of-the-box. This functionality can be used to provide different sites for regional or multilingual content, or for independent microsites.
 
-This functionality is referred to as **multisite**, and is enabled out-of-the-box on all Platform projects.
+This functionality is referred to as **multisite**, and is enabled out-of-the-box on all Altis projects.
 
 
 ## Terminology
 
-With HM Platform, you work on a **project**. This encompasses the codebase and the hosting provided by HM Cloud.
+With Altis, you work on a **project**. This encompasses the codebase and the hosting provided by HM Cloud.
 
 Each project can have multiple **sites**, which can represent multiple domains, subdomains, or other distinct websites. These are all powered by the same codebase and hosting.
 
@@ -22,7 +22,7 @@ In a multisite project, your codebase is used to power multiple sites. Some func
 
 A single database is used by all sites, and individual sites use separate tables for site-specific content. Site-specific tables are prefixed with the site's ID. Some tables are shared across sites
 
-Platform modules and [custom modules](docs://getting-started/custom-modules.md) are enabled across every site on your project. For per-site functionality, you can develop plugins, which can be activated for individual sites. They can also optionally be activated for all sites (called "Network-Wide Activation").
+Altis modules and [custom modules](docs://getting-started/custom-modules.md) are enabled across every site on your project. For per-site functionality, you can develop plugins, which can be activated for individual sites. They can also optionally be activated for all sites (called "Network-Wide Activation").
 
 [Themes](docs://getting-started/first-theme.md) are activated on a site-by-site basis as sites can only have a single theme active at any one time. Child themes can be used to build site-specific themes which inherit common templates.
 
@@ -32,7 +32,7 @@ Users and profile information are shared across all sites in the project, but us
 
 ## Setting up new sites
 
-On all new Platform sites, you will start with a single site. This is called the "main" site. To take advantage of multisite, you'll need to create multiple sites.
+On all new Altis sites, you will start with a single site. This is called the "main" site. To take advantage of multisite, you'll need to create multiple sites.
 
 In the backend user interface, a separate "Network Admin" dashboard is provided for management of your network. The Network Admin contains site management tools, as well as settings for the network.
 
@@ -40,7 +40,7 @@ To create a site, start by going to the Network Admin dashboard. This is availab
 
 **Note:** You must be authenticated as a super-admin to access the Network Admin.
 
-By default, sites will be created underneath the main site's domain; for example, if your main site is at `platform.local`, new sites will be created at `platform.local/{site}/`. Once a site has been created, you can edit the site's address to use a subdomain or custom domain instead.
+By default, sites will be created underneath the main site's domain; for example, if your main site is at `altis.local`, new sites will be created at `altis.local/{site}/`. Once a site has been created, you can edit the site's address to use a subdomain or custom domain instead.
 
 
 ## Building cross-site functionality

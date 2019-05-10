@@ -1,12 +1,12 @@
 <?php
 
-namespace HM\Platform\Documentation\UI;
+namespace Altis\Documentation\UI;
 
-use HM\Platform\Documentation;
-use HM\Platform\Documentation\Page;
+use Altis\Documentation;
+use Altis\Documentation\Page;
 use WP_Admin_Bar;
 
-const PAGE_SLUG = 'hm-platform-documentation';
+const PAGE_SLUG = 'altis-documentation';
 
 function bootstrap() {
 	add_action( 'admin_menu', __NAMESPACE__ . '\\register_menu' );
@@ -40,9 +40,9 @@ function register_menu() {
  */
 function admin_bar_menu( WP_Admin_Bar $wp_admin_bar ) {
 	$wp_admin_bar->add_menu( [
-		'parent' => 'hm-platform',
+		'parent' => 'altis',
 		'id'     => 'documentation',
-		'title'  => __( 'Documentation', 'hm-platform' ),
+		'title'  => __( 'Documentation', 'altis' ),
 		'href'   => add_query_arg( 'page', PAGE_SLUG, admin_url( 'admin.php' ) ),
 	] );
 }
@@ -65,7 +65,7 @@ function load_page() {
 	if ( $page ) {
 		$GLOBALS['title'] = $page->get_meta( 'title' );
 	} else {
-		$GLOBALS['title'] = __( 'Page Not Found', 'hm-platform' );
+		$GLOBALS['title'] = __( 'Page Not Found', 'altis' );
 	}
 }
 
@@ -99,13 +99,10 @@ function render_page() {
 	$current_page = Documentation\get_page_by_id( $current_group, $current_page_id );
 	?>
 
-	<div class="hm-platform-ui wrap">
-		<header>
-			<?php echo esc_html_e( 'Documentation', 'hm-platform' ) ?>
-		</header>
-
-		<div class="hm-platform-ui__main">
+	<div class="altis-ui wrap">
+		<div class="altis-ui__main">
 			<nav>
+				<p class="altis-ui__doc-title"><?php echo esc_html_e( 'Documentation', 'altis' ) ?></p>
 				<ul>
 					<?php foreach ( $documentation as $group => $gobj ) : ?>
 						<li
