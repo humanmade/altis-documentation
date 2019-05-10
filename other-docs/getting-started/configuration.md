@@ -118,6 +118,23 @@ $token = Altis\get_config()['my-project']['twitter-oauth2-token'];
 new TwitterClient( $token );
 ```
 
+## Configuration in PHP
+
+While it is preferred to use the JSON configuration wherever possible in some cases you may need an escape hatch or some further processing of the JSON config such as defining constants.
+
+Altis will automatically load a file located at `.config/load.php` in the root directory of your project if present. This is designed to be an entry point for loading files with more appropriate names. In addition the [Core Module functions](docs://core/README.md) will be available to you. For example:
+
+```php
+<?php
+// Configure post revision behaviour.
+require_once __DIR__ . '/revisions.php';
+
+// Load custom local config.
+if ( get_environment_type() === 'local' ) {
+	require_once __DIR__ . '/local-config.php';
+}
+```
+
 
 ## Next Steps
 
