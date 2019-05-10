@@ -51,19 +51,7 @@ If you have any custom configuration in your old `wp-config.php` (such as custom
 
 Only copy across constants that your custom code actually needs. There should be no database constants, or any other WordPress type constants. If you have these already in your `.config` directory, you should delete those.
 
-To make `.config/load.php` actually be included and executed, you have to add it as a Composer autoload file. To do so, add an `autoload` section to your `composer.json` if you don’t already have one, and add `.config/load.php` as an autoload files.
-
-```json
-{
-	"autoload": {
-		"files": [
-			".config/load.php"
-		]
-	}
-}
-```
-
-You’ll need to run `composer dump-autoload` after doing this to make sure it’s actually loaded.
+The `.config/load.php` file will be automatically included from the generated `wp-config.php`.
 
 ## Migrate $hm_platform options (when applicable)
 
