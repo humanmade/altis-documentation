@@ -155,7 +155,8 @@ class MarkdownParser extends Parsedown {
 	 */
 	protected function blockHeader( $data ) {
 		$block = parent::blockHeader( $data );
-		$id = sanitize_title_with_dashes( $block['element']['handler']['argument'] );
+		$id = sanitize_title_with_dashes( $block['element']['text'] );
+
 		return [
 			'element' => [
 				'name' => 'a',
@@ -164,7 +165,8 @@ class MarkdownParser extends Parsedown {
 					'id' => $id,
 					'class' => 'header-anchor',
 				],
-				'elements' => [ $block ],
+				'handler' => 'elements',
+				'text' => [ $block['element'] ],
 			],
 		];
 	}
