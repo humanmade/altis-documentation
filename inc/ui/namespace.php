@@ -109,7 +109,7 @@ function render_page() {
 							class="<?php echo $group === $current_group ? 'current' : '' ?> <?php echo $group === $current_group && ! $current_page_id ? 'active' : '' ?>"
 						>
 							<a
-								href="<?php echo add_query_arg( [ 'group' => $group, 'id' => '' ] ) ?>"
+								href="<?php echo add_query_arg( [ 'group' => $group, 'id' => '' ] ) // @codingStandardsIgnoreLine ?>"
 							>
 								<?php echo esc_html( $gobj->get_title() ) ?>
 							</a>

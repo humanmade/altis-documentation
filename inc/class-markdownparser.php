@@ -3,7 +3,6 @@
 namespace Altis\Documentation;
 
 use Parsedown;
-use WP_Http;
 
 class MarkdownParser extends Parsedown {
 	/**

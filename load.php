@@ -1,6 +1,6 @@
 <?php
 
-namespace Altis\Documentation;
+namespace Altis\Documentation; // @codingStandardsIgnoreLine
 
 const DIRECTORY = __DIR__;
 

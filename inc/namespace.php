@@ -2,9 +2,9 @@
 
 namespace Altis\Documentation;
 
-use function Altis\register_module;
 use Altis\Module;
 use DirectoryIterator;
+use function Altis\register_module;
 use Spyc;
 
 /**
@@ -231,6 +231,7 @@ function get_documentation_group( $id ) : ?Group {
  * @return Page Parsed data for the file
  */
 function parse_file( string $file, string $root ) : Page {
+	// @codingStandardsIgnoreLine
 	$raw = file_get_contents( $file );
 
 	// Find YAML frontmatter.
