@@ -1,5 +1,7 @@
 # Welcome
 
+![](./assets/banner-welcome.png)
+
 Welcome to the Altis documentation. This documentation provides a comprehensive guide to building sites on Altis.
 
 Altis is designed in a modular way, and the documentation reflects this. Each module provides documentation on its configuration, features, and available internal APIs.
