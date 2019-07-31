@@ -8,10 +8,12 @@ To switch the version of Altis for your project, modify the version constraint f
 {
 	"name": "company-name/my-site",
 	"require": {
-		"altis/altis": "2.0.0"
+		"altis/altis": "^2.0.0"
 	}
 }
 ```
+
+*Note:* due to an issue in how Composer handles installation, some components of Altis may be installed in the wrong location. If you experience this, run `composer update` a second time.
 
 Next, run `composer update` to pull in the latest version of the package. This will generate a new `composer.lock` file. Both the `composer.json` and `composer.lock` should be committed to version control, and deployed.
 
