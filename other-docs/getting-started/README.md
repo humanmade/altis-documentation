@@ -1,6 +1,6 @@
 # Getting Started
 
-![](../assets/banner-getting-started.png)
+![](./assets/banner-getting-started.png)
 
 This guide covers getting started with a brand new Altis project.
 
