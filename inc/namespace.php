@@ -208,6 +208,11 @@ function get_page_for_dir( string $dir, string $root_dir ) : ?Page {
  * @return string Hierarchical slug for the document
  */
 function get_slug_from_path( $root, $path ) {
+	if ( substr( $path, 0, strlen( $root ) ) !== $root ) {
+		trigger_error( sprintf( 'Relative path %s is not within root %s', $path, $root ), E_USER_WARNING );
+		return $path;
+	}
+
 	$out_path = substr( $path, strlen( $root ) );
 	return trim( preg_replace( '/README\.md/i', '', $out_path ), '/' );
 }
