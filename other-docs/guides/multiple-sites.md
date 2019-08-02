@@ -7,7 +7,7 @@ This functionality is referred to as **multisite**, and is enabled out-of-the-bo
 
 ## Terminology
 
-With Altis, you work on a **project**. This encompasses the codebase and the hosting provided by HM Cloud.
+With Altis, you work on a **project**. This encompasses the codebase and the hosting provided by Altis.
 
 Each project can have multiple **sites**, which can represent multiple domains, subdomains, or other distinct websites. These are all powered by the same codebase and hosting.
 
