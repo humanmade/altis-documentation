@@ -15,7 +15,7 @@ After reading this guide, you'll know:
 
 Before you get started, it's important to be aware of a few core concepts which affect how you think about and build sites for Altis.
 
-With Altis, you will work on a **project**. This encompasses the codebase and the hosting provided by Altis Cloud. Each project can have multiple **sites**, which can represent multiple domains, subdomains, or other distinct websites. Sites within a single project share a common codebase, but can have different customisations applied to each site.
+With Altis, you will work on a **project**. This encompasses the codebase and the hosting provided by Altis Cloud. Each project can have multiple **sites**, which can represent multiple domains, subdomains, or other distinct websites. Sites within a single project share a common codebase, but can have different customizations applied to each site.
 
 Custom functionality on top of the Altis platform is implemented via **plugins**. Each major feature generally has a separate plugin, and these can be enabled or disabled for each site. They can also be enabled across the entire project.
 

@@ -106,6 +106,6 @@ $v8 = new V8Js();
 $result = $v8->executeString( '42 * 3.14;' );
 ```
 
-Generally, we recommend avoiding using v8js directly, as it can be complex to configure, secure, and make performant. As v8js uses a full JavaScript engine, it can have considerably different performance characteristics. Additionally, data that is passed between PHP and JavaScript needs to be correctly sanitised and escaped for both contexts.
+Generally, we recommend avoiding using v8js directly, as it can be complex to configure, secure, and make performant. As v8js uses a full JavaScript engine, it can have considerably different performance characteristics. Additionally, data that is passed between PHP and JavaScript needs to be correctly sanitized and escaped for both contexts.
 
 Ensure that any custom code is heavily tested on development and staging environments before deploying to production.

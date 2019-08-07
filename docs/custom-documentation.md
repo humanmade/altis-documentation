@@ -30,7 +30,7 @@ order: 0
 ```
 
 
-## Custom Behaviour
+## Custom Behavior
 
 Internally, the Documentation module stores an ordered list of "groups", which have an ID and associated top-level pages. Each page has metadata, content, and potentially sub-pages.
 
