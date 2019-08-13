@@ -12,7 +12,7 @@ Altis includes a minimal starter theme out-of-the-box which simply renders a pla
 
 ## Theme Structure
 
-Themes include several specially-named files which are used to control the theme's behaviour. These files must always exist.
+Themes include several specially-named files which are used to control the theme's behavior. These files must always exist.
 
 * `style.css` - This CSS file must exist and contain a comment header which specifies metadata about the theme.
 * `functions.php` - This PHP file acts as the entrypoint to PHP code in your theme. It is loaded like a plugin, but only when the theme is active.
@@ -111,7 +111,7 @@ endwhile;
 
 Reload your site, and you'll see the example post created on installation rendered onto the page.
 
-This basic loop uses template tags, recognisable by the `the_` prefix. These functions output their data directly to the page, and are escaped automatically for their typical contexts. To access this data instead, most template tags also have a `get_the_` variant, which returns the data instead.
+This basic loop uses template tags, recognizable by the `the_` prefix. These functions output their data directly to the page, and are escaped automatically for their typical contexts. To access this data instead, most template tags also have a `get_the_` variant, which returns the data instead.
 
 
 ### More Complex Loops and Templates

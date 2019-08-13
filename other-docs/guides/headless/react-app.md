@@ -12,7 +12,7 @@ Before starting this guide, you should have some familiarity with React. We reco
 Additionally, you should have experience creating a theme. Consult the [First Theme](docs://getting-started/first-theme.md) documentation for more information.
 
 
-## Initialising a new app
+## Initializing a new app
 
 Start by opening your terminal and opening the `content/themes/` directory. We'll first create a standalone React app in this directory.
 

@@ -126,7 +126,7 @@ Altis will automatically load a file located at `.config/load.php` in the root d
 
 ```php
 <?php
-// Configure post revision behaviour.
+// Configure post revision behavior.
 require_once __DIR__ . '/revisions.php';
 
 // Load custom local config.

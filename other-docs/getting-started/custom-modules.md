@@ -119,7 +119,7 @@ add_action( 'altis.modules.init', function () {
 
 ### Module Settings
 
-When registering your module, you pass various parameters to `register_module()`. These are used to control the behaviour of your module.
+When registering your module, you pass various parameters to `register_module()`. These are used to control the behavior of your module.
 
 Your module's directory is used for automated loading and parsing of documentation. The Documentation module automatically looks for a `docs` subdirectory within this directory and parses Markdown files from this.
 

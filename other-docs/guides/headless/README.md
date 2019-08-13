@@ -32,7 +32,7 @@ Altis provides a REST API to allow building fully decoupled frontends. With a fu
 
 ### Semi-decoupled
 
-A semi-decoupled architecture is a hybrid architecture incorporating parts of both coupled and decoupled architectures. It allows many of the benefits of decoupled architectures to be realised while avoiding much of the overhead.
+A semi-decoupled architecture is a hybrid architecture incorporating parts of both coupled and decoupled architectures. It allows many of the benefits of decoupled architectures to be realized while avoiding much of the overhead.
 
 With a semi-decoupled system, the frontend is built as a part of the application, but has only a few, well-defined integration points between the frontend and backend. These are kept small and manageable to allow teams to work mostly independently. The frontend is built in JavaScript, allowing in-browser rendering in combination with [server-side rendering](ssr.md). Both the frontend and backend run on the same infrastructure.
 
@@ -49,7 +49,7 @@ Headless frontends can be beneficial in allowing separate teams and skills to ha
 
 Additionally, this may require separate and complex infrastructure for serving web requests. This can increase running and maintenance costs, as multiple systems need to be run.
 
-Many of the features provided by the CMS module (and WordPress) are not available in decoupled frontends, as they are tied to the theme frontend system. This includes the Customizer, the admin bar, and some of the developer tooling. Many other features assumed to work by users may require significant work to integrate into decoupled frontends, including post previews and varying behaviour for authenticated/authorised users.
+Many of the features provided by the CMS module (and WordPress) are not available in decoupled frontends, as they are tied to the theme frontend system. This includes the Customizer, the admin bar, and some of the developer tooling. Many other features assumed to work by users may require significant work to integrate into decoupled frontends, including post previews and varying behavior for authenticated/authorized users.
 
 Decoupling can also have overhead as compared to monolithic systems, as data needs to be passed between multiple systems. This can cause both technical overhead with latency on round-trips, as well as mental overhead during development, as systems need to be specifically built to accomodate this. Consider whether the additional development time is worth the cost of decoupling.
 

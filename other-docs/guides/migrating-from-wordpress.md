@@ -124,7 +124,7 @@ As this guide is for migrating a non-Altis project to use Altis, it's possible t
 
 ## Optionally disable Altis features
 
-There are some features of Altis that are user-facing and default-on that you might want to audit. For example, image [lazy loading](docs://media/lazy-loading.md) via Guassholder is on by default. Smart Media with Cropping UI is enabled by default. You should consult the Altis documentation for the behaviour of specific modules. Again, unless there is specific reason to disable feature and modules, we recommend keeping them on.
+There are some features of Altis that are user-facing and default-on that you might want to audit. For example, image [lazy loading](docs://media/lazy-loading.md) via Guassholder is on by default. Smart Media with Cropping UI is enabled by default. You should consult the Altis documentation for the behavior of specific modules. Again, unless there is specific reason to disable feature and modules, we recommend keeping them on.
 
 Any module can be disabled by setting its `enabled` setting to `false`:
 

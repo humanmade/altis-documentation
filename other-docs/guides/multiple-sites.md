@@ -73,6 +73,6 @@ For sharing media between sites, install the [Network Media Library](https://git
 
 Multi-region or multilingual sites can be handled through multisite. With these sites, you typically want to share as much of the codebase across sites, while keeping content managed separately for each site.
 
-This can be handled by building functionality in [custom modules](docs://getting-started/custom-modules.md), along with a [common theme](docs://getting-started/first-theme.md) used across all sites. Adjustments to the style and behaviour of the site can be done through child themes, which can extend the common theme.
+This can be handled by building functionality in [custom modules](docs://getting-started/custom-modules.md), along with a [common theme](docs://getting-started/first-theme.md) used across all sites. Adjustments to the style and behavior of the site can be done through child themes, which can extend the common theme.
 
 Consult the [multilingual module guide](docs://multilingual/) for information on how to configure a multilingual setup.
