@@ -29,13 +29,21 @@ There are two basic parts required to creating a module: load your module's file
 
 In order to use your module, the module needs to be loaded in by the Composer autoloader. This allows the module to register itself with the Altis core, as well as load in any functions or classes it needs.
 
-To load in your module's entrypoint file, add it to a `autoload.files` entry in your project's `composer.json`. For example, for a module called `your-module` with an entrypoint file called `load.php`, your `composer.json` should contain:
+To load in your module's entrypoint file, add it to the module's configuration in your project's `composer.json`. For example, for a module called `your-module` with an entrypoint file called `load.php`, your `composer.json` should contain:
 
 ```json
-"autoload": {
-    "files": [
-        "content/mu-plugins/your-module/load.php"
-    ]
+{
+  "extra": {
+    "altis": {
+      "modules": {
+        "your-module": {
+          "entrypoint": [
+            "content/mu-plugins/your-module/load.php"
+          ]
+        }
+      }
+    }
+  }
 }
 ```
 
@@ -75,15 +83,6 @@ add_action( 'altis.modules.init', function () {
 } );
 ```
 
-We recommend using a function-exists-guard to only register your action if running in an Altis context, as the autoloader can also be used by static analysis and other tools including PHPUnit. Your function-exists-guard should look like:
-
-```php
-// Don't self-initialize if this is not an Altis execution.
-if ( ! function_exists( 'add_action' ) ) {
-	return;
-}
-```
-
 Your entrypoint file can declare constants or load in other files as necessary to load functions and classes. A typical entrypoint file looks like:
 
 ```php
@@ -97,11 +96,6 @@ const DIRECTORY = __DIR__;
 
 // Load in namespaced-functions.
 require_once __DIR__ . '/inc/namespace.php';
-
-// Don't self-initialize if this is not an Altis execution.
-if ( ! function_exists( 'add_action' ) ) {
-	return;
-}
 
 add_action( 'altis.modules.init', function () {
 	register_module(
@@ -134,24 +128,31 @@ Once you're ready to convert your module into a reusable module, the first step 
 
 In your new repository, your module needs a `composer.json` to specify dependencies, the package's name, and autoloading code. Your package should declare a dependency on the core Altis package, fixed to the major Altis version you are working with. The autoloader specification should be migrated from your project's `composer.json` to the module's.
 
-A basic `composer.json` should look like:
+The entrypoint file _must_ be called `load.php` in a reusable module.
 
-```
+A basic `composer.json` could look like:
+
+```json
 {
-	"name": "company-name/your-project",
-	"autoload": {
-		"files": [
-			"load.php"
-		],
-		"classmap": [
-			"inc/",
-		]
-	},
-	"require": {
-		"altis/core": "~1.0"
-	}
+  "name": "company-name/your-project",
+  "autoload": {
+    "files": [
+      "inc/namespace.php"
+    ],
+    "classmap": [
+      "inc/",
+    ]
+  },
+  "require": {
+    "altis/core": "~1.0"
+  },
+  "extra": {
+    "altis": {}
+  }
 }
 ```
+
+The crucial portion is the `extra.altis` property. This will ensure the module's `load.php` file that contains the module registration code will only be run in the appropriate context.
 
 For open-source packages, you should then publish this package to [Packagist](https://packagist.org/).
 
