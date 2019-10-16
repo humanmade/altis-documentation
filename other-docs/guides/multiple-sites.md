@@ -53,7 +53,7 @@ To build cross-site functionality, you can use the multisite APIs to access and 
 
 **Important:** Ensure you always restore after switching, to avoid breaking other functionality which uses the current site.
 
-The primary functions for this functionality are [`switch_to_blog()`](https://developer.wordpress.org/reference/functions/switch_to_blog/), [`restore_current_blog()`](https://developer.wordpress.org/reference/functions/restore_current_blog/), and [`get_current_blog_id()`](https://developer.wordpress.org/reference/functions/get_current_blog_id/). Note that uses outdated terminology, and "blog" refers to the site.
+The primary functions for this functionality are [`switch_to_blog()`](https://developer.wordpress.org/reference/functions/switch_to_blog/), [`restore_current_blog()`](https://developer.wordpress.org/reference/functions/restore_current_blog/), and [`get_current_blog_id()`](https://developer.wordpress.org/reference/functions/get_current_blog_id/). Note that these use outdated terminology, and "blog" refers to the site.
 
 
 ## Limitations
