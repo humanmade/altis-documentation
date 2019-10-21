@@ -10,7 +10,8 @@
 	],
 	"autoload": {
 		"files": [
-			"load.php"
+			"inc/namespace.php",
+			"inc/ui/namespace.php"
 		],
 		"classmap": [
 			"inc/"
@@ -20,5 +21,8 @@
 		"php": ">=7.1",
 		"erusev/parsedown": "~1.7.0",
 		"mustangostang/spyc": "^0.6.2"
+	},
+	"extra": {
+		"altis": {}
 	}
 }
