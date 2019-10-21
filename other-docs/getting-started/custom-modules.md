@@ -29,16 +29,16 @@ There are two basic parts required to creating a module: load your module's file
 
 In order to use your module, the module needs to be loaded in by the Composer autoloader. This allows the module to register itself with the Altis core, as well as load in any functions or classes it needs.
 
-To load in your module's entrypoint file, add it to the module's configuration in your project's `composer.json`. For example, for a module called `your-module` with an entrypoint file called `load.php`, your `composer.json` should contain:
+To load in your module's entrypoint file, add it to the module's configuration in your project's `composer.json`. For example, for a module called `custom-module` placed in the `mu-plugins` directory and with an entrypoint file called `load.php`, your `composer.json` should contain the following:
 
 ```json
 {
   "extra": {
     "altis": {
       "modules": {
-        "your-module": {
+        "custom-module": {
           "entrypoint": [
-            "content/mu-plugins/your-module/load.php"
+            "content/mu-plugins/custom-module/load.php"
           ]
         }
       }
