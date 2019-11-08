@@ -74,11 +74,11 @@ composer chassis init
 
 This will add Chassis to your development dependencies and prepare it to be run.
 
-To start Chassis, run `composer chassis start`.
-
 The first time you run Chassis, it may take a little longer than usual, as it sets up the virtual machine. Once this is complete, you will now have a working local site at http://altis.local/
 
 To stop the virtual machine, run `composer chassis stop`. You can also run [Vagrant commands](https://www.vagrantup.com/docs/cli/) inside the `chassis` directory.
+
+To start the virtual machine again run `composer chassis start`.
 
 
 ## Ready for development!
