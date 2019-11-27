@@ -14,7 +14,7 @@ composer require altis/<module> <version>@RC --update-with-dependencies
 
 This will override the version constraint in the `altis/altis` meta package. The `@RC` modifier also overrides your project's minimum stability setting.
 
-The reason these are released as "Release Candidates" is because we do not provide long term support for them. For instance if there is a `2.1.0-rc` version as soon `2.2.0-rc` is released then `2.1.0-rc` will no longer be patched. The features provided in these release candidates will always be part of the following major Altis release.
+Module pre-releases are "Release Candidates" and are not covered by the long term support policy. For instance if there is a `2.1.0-rc` version as soon `2.2.0-rc` is released then `2.1.0-rc` will no longer be maintained. The features provided in these release candidates will always be part of the following major Altis release.
 
 ## Example
 
