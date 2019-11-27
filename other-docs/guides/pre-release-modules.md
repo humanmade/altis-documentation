@@ -18,7 +18,7 @@ The reason these are released as "Release Candidates" is because we do not provi
 
 ## Example
 
-The following is an example of updating to WordPress 5.3 in Altis v2. From your project root folder in an Altis v2 install you would run the following command.
+The following is an example of updating to Altis CMS 2.1 (which contains WordPress 5.3) in Altis v2. From your project root folder in an Altis v2 install you would run the following command.
 
 ```
 composer require altis/cms ^2.1.0@RC --update-with-dependencies
