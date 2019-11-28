@@ -74,7 +74,9 @@ composer chassis init
 
 This will add Chassis to your development dependencies and prepare it to be run.
 
-The first time you run Chassis, it may take a little longer than usual, as it sets up the virtual machine. Once this is complete, you will now have a working local site at http://altis.local/. Visit `/wp-admin/` and login with `admin` / `password` to get started!
+The first time you run Chassis, it may take a little longer than usual, as it sets up the virtual machine. Once this is complete, you will now have a working local site at http://my-project.local/. Visit `/wp-admin/` and login with `admin` / `password` to get started!
+
+If you used a directory name other than `my-project` the default URL will be `http://<directory name>.local`.
 
 To stop the virtual machine, run `composer chassis stop`. You can also run [Vagrant commands](https://www.vagrantup.com/docs/cli/) inside the `chassis` directory.
 
