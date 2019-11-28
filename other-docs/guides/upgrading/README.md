@@ -19,7 +19,7 @@ To switch the version of Altis for your project, modify the version constraint f
 
 Next run `rm -rf vendor` on MacOS or Linux, or on Windows `rmdir vendor`.
 
-*Note:* this is due to an issue in how Composer handles installation of `composer-plugin` type packages, and ensures the latest version of the package is used during the upgrade process. We are wokring to improve this process in future to make upgrades simple to do.
+*Note:* this is due to an issue in how Composer handles installation of `composer-plugin` type packages, and ensures the latest version of the package is used during the upgrade process. We are working to improve this process in future releases.
 
 Next, run `composer update` to pull in the latest version of the packages.
 
