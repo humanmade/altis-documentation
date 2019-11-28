@@ -9,12 +9,25 @@ To switch the version of Altis for your project, modify the version constraint f
 	"name": "company-name/my-site",
 	"require": {
 		"altis/altis": "^2.0.0"
+	},
+	"require-dev": {
+		"altis/local-chassis": "^2.0.0",
+		"altis/local-server": "^2.0.0"
 	}
 }
 ```
 
-*Note:* due to an issue in how Composer handles installation, some components of Altis may be installed in the wrong location. If you experience this, run `composer update` a second time.
+Next run `rm -rf vendor` on MacOS or Linux, or on Windows `rmdir vendor`.
 
-Next, run `composer update` to pull in the latest version of the package. This will generate a new `composer.lock` file. Both the `composer.json` and `composer.lock` should be committed to version control, and deployed.
+*Note:* this is due to an issue in how Composer handles installation of `composer-plugin` type packages, and ensures the latest version of the package is used during the upgrade process. We are working to improve this process in future releases.
+
+Next, run `composer update` to pull in the latest version of the packages.
+
+This will generate a new `composer.lock` file. Both the `composer.json` and `composer.lock` should be committed to version control, and deployed.
 
 Any upgrade will usually require some modification to your project (for example, deprecated APIs, new features you may want to implement). Altis is conservative about breaking backwards compatibility. Any known issues will be prefixed with "BREAKING: " in the version release notes.
+
+## Upgrade Guides
+
+- [Version 3](./v3.md)
+- [Version 2](./v2.md)
