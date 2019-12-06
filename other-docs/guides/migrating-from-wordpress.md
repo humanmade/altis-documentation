@@ -122,7 +122,7 @@ To install the docker environment run:
 composer require --dev altis/local-server
 ```
 
-To start the docker server run `composer serve`. You should now be able to see the site at https://my-project.altis.dev where "my-project" is the project directory name.
+To start the docker server run `composer local-server start`. You should now be able to see the site at https://my-project.altis.dev where "my-project" is the project directory name.
 
 ## Migrating email sending domain
 
