@@ -41,7 +41,12 @@ Installing Altis will replace your `wp-config.php` so you should back it up if y
 
 ## Installing Altis
 
-Now you have your composer project up and running, it’s time to add Altis to the project. Do so by running `composer require altis/altis`.
+Now you have your composer project up and running, it’s time to add Altis to the project. Do so by following these steps:
+
+1. Remove existing `vendor` directory and `composer.lock` if present
+  - Mac / Linux: `rm -rf vendor composer.lock`
+  - Windows: `rmdir vendor && del composer.lock`
+1. Run `composer require altis/altis`
 
 Once Altis has been installed, you should see the `wordpress` directory back in the project root, a new `wp-config.php` and `index.php`. Add these 3 files to your project's `.gitignore` file, as they should not be committed to version control. If your project had no `.gitignore` file, one will have been created for you.
 
@@ -53,7 +58,7 @@ Only copy across constants that your custom code actually needs. There should be
 
 The `.config/load.php` file will be automatically included from the generated `wp-config.php`.
 
-## Migrate $hm_platform options (when applicable)
+## Migrate `$hm_platform` options (when applicable)
 
 In your old `wp-config.php` you’ll see there is a `global $hm_platform` that sets options for hm-platform. Only migrate anything that you specifically need to, as most likely Altis will have better defaults. In rare cases though, things will be disabled for good reason. In Altis, most of the same settings are supported, but it’s now done via the `composer.json` for configuration (as is all Altis configuration). You should be familiar with [Altis configuration](docs://getting-started/configuration.md) before continuing. `$hm_platform` options should go in the `altis.modules.cloud` section of the `extra` block in the `composer.json`.
 
@@ -71,6 +76,18 @@ In your old `wp-config.php` you’ll see there is a `global $hm_platform` that s
 }
 ```
 
+## Remove the `SUBDOMAIN_INSTALL` constant
+
+The `SUBDOMAIN_INSTALL` constant is not required any more but may have been present in your old `wp-config.php` file. WordPress will handle subdomain, subdirectory and custom domain names without this constant set. To accommodate this Altis has a modified "Add New Site" page in the network admin to allow you to choose from the different types of URL.
+
+If you still require this constant for any reason then you must wrap it in a check to see if WordPress is in its initial installation step:
+
+```php
+if ( ! defined( 'WP_INITIAL_INSTALL' ) ) {
+	define( 'SUBDOMAIN_INSTALL', true );
+}
+```
+
 ## Rename content/plugins-mu to content/mu-plugins
 
 Altis uses the standard WordPress must-use plugins directory of `content/mu-plugins` so if your project is using something different, it should be renamed.
@@ -79,20 +96,33 @@ Altis uses the standard WordPress must-use plugins directory of `content/mu-plug
 
 If you project was not previously using composer, you'll need to add a `composer install --no-dev` to your projects `.build-script`. Simply add the following line to your `.build-script` or create that file if it doesn't already exist.
 
-```
+```sh
 composer install --no-dev
 ```
 
 ## Setup the local server
 
 Assuming your project uses Chassis for local development, we’ll be removing the local Chassis install, and installing the Altis module. If you have a setup script (such as `.bin/setup.sh`) you should remove any Chassis setup / installation steps.
+
 Once you have cleaned out Chassis, install the `altis/local-chassis` composer package as a dev dependency.
 
-```
+```sh
 composer require --dev altis/local-chassis
 ```
 
-Once completed, install and start your local server with `composer chassis init` and then `composer chassis start`. You should now be able to navigate to http://altis.local to see the site!
+Once completed, install and start your local server with `composer chassis init` and then `composer chassis start`. You should now be able to navigate to http://my-project.local to see the site, where "my-project" is your project directory name.
+
+### Chassis alternative
+
+We also recommend installing the new docker based local environment. This environment has a few extra developer tools such as Kibana and avoids issues where Chassis and extension versions can get out of sync across your team's machines.
+
+To install the docker environment run:
+
+```sh
+composer require --dev altis/local-server
+```
+
+To start the docker server run `composer serve`. You should now be able to see the site at https://my-project.altis.dev where "my-project" is the project directory name.
 
 ## Migrating email sending domain
 
