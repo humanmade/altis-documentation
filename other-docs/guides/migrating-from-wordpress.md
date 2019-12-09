@@ -49,11 +49,13 @@ composer require altis/altis
 
 Once Altis has been installed, you should see the `wordpress` directory back in the project root, a new `wp-config.php` and `index.php`. Add these 3 files to your project's `.gitignore` file, as they should not be committed to version control. If your project had no `.gitignore` file, one will have been created for you.
 
-**Note**: If you run into any package version conflicts you can try the following steps:
+### Troubleshooting
+
+If you run into any package version conflicts you can try the following steps:
 
 1. Remove existing `vendor` directory and `composer.lock` if present and try again
-  - Mac / Linux: `rm -rf vendor composer.lock`
-  - Windows: `rmdir vendor && del composer.lock`
+   - Mac / Linux: `rm -rf vendor composer.lock`
+   - Windows: `rmdir vendor && del composer.lock`
 1. Run `composer show <package>` on the conflicting package to see where it's required and try rolling back to an older version until it works
 1. If you still face issues raise a support request with a copy of the composer output
 
