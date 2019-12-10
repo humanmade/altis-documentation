@@ -15,7 +15,7 @@ The `<platform major>.0` version is treated as the [long-term support](./long-te
 
 ## Bugfix Releases
 
-Each module releases bugfix releases separately, as and when necessary. You should ensure you are always running the latest bugfix version of each module by periodically running `composer update` and committing the updated `composer.lock` file.
+Each module releases bugfixes separately when necessary. You should ensure you are always running the latest bugfix version of each module by periodically running `composer update` and committing the updated `composer.lock` file.
 
 These bugfix versions are generally not synchronised. Bugs occurring across multiple modules may trigger bugfix releases for each module.
 
