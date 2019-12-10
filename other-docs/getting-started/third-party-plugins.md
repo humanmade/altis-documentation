@@ -56,3 +56,8 @@ composer require wpackagist-plugin/akismet
 Third-party plugins should be placed inside the `content/plugins/` directory. Each plugin should be contained in its own directory within the plugins directory, with one file containing a [comment header](https://developer.wordpress.org/plugins/plugin-basics/#getting-started).
 
 Generally speaking, we recommend using Git submodules if you're installing modules manually. This reduces the amount of code necessary in your repository, and makes managing updates much easier.
+
+
+## Pre-Approved Plugins
+
+We maintain a list of trusted 3rd party plugins that you can refer to for recommendations, [read more about our pre-approved plugins here](docs://guides/pre-approved-plugins.md).
