@@ -24,7 +24,7 @@ For example, the latest versions for Altis version 42 may include CMS version 42
 
 ## Module Releases
 
-Modules may release new features periodically, and outside of the Altis major version. These new features are stable and production-ready, but may be incomplete, so we treat them as preview releases. Once they are feature-complete, they will be included in the next Altis major release.
+Modules may preview new features periodically, and outside of the Altis major version. These new features are stable and production-ready, but may be incomplete, so we treat them as preview releases. Once they are feature-complete, they will be included in the next Altis major release.
 
 These preview releases always have a `<module major>` component larger than `0`.
 
