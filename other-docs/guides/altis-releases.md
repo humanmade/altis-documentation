@@ -30,6 +30,6 @@ These preview releases always have a `<module major>` component larger than `0`.
 
 For example: with latest version of Altis at version 42, the CMS module may preview a new feature. We will release 42.1.0 with this new feature, and those who want to use it could opt-in to using 42.1.0, while keeping the other modules at 42.0.0
 
-Only the latest module major release and the `0` release are supported. For example, if the CMS module has releases at 42.0, 42.1, 42.2, and 42.3, only the 42.0 and 42.3 release lines would be supported.
+Only the latest module major release and the `0` release are supported. For example, if the CMS module has releases at 42.0.0, 42.1.0, 42.2.0, and 42.3.0, only the 42.0.0 and 42.3.0 release lines would be supported.
 
 [Learn how to opt in to module preview releases here](./module-preview-releases.md)
