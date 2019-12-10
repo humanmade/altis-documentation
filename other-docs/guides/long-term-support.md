@@ -5,7 +5,7 @@ To provide stability to Altis users, major Altis releases will be supported for 
 
 [Learn more about how Altis releases work here](./altis-releases.md).
 
-At any one time, only a single major Altis version is fully supported, and is the "active" release. When a new major version of Altis is published, the previously active release moves into long-term support mode.
+At all times, only a single major Altis version is fully supported, and is the "active" release. When a new major version of Altis is published, the previously active release moves into long-term support mode.
 
 For example, if Altis has quarterly releases (i.e. four releases per year), each release will be the "latest" for 3 months, and will be supported under the long-term support policy for a further 9 months:
 
