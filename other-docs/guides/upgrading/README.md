@@ -1,5 +1,7 @@
 # Upgrading
 
+_If you are migrating an existing install to Altis check out the [migrating guide here](../migrating-from-wordpress.md) first._
+
 When new versions of Altis are released you will need to manually upgrade your project to the new version. New versions can bring anything from breaking changes to new features. It's important you read the changelog / upgrade notes for the specific version you are upgrading to. When upgrading multiple versions at once, be sure to follow the release notes on all intermediate versions.
 
 To switch the version of Altis for your project, modify the version constraint for the `altis/altis` dependency in your `composer.json`. For example, to upgrade to Altis version 2.
