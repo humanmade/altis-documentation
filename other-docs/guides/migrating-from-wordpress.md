@@ -92,8 +92,20 @@ The `SUBDOMAIN_INSTALL` constant is not required any more but may have been pres
 If you still require this constant for any reason then you must wrap it in a check to see if WordPress is in its initial installation step:
 
 ```php
-if ( ! defined( 'WP_INITIAL_INSTALL' ) ) {
+if ( ! defined( 'WP_INITIAL_INSTALL' ) || ! WP_INITIAL_INSTALL ) {
 	define( 'SUBDOMAIN_INSTALL', true );
+}
+```
+
+## Ensure `SUNRISE` is not defined during install
+
+The `SUNRISE` constant puts WordPress into multisite mode which will cause problems during the initial installation.
+
+If your site uses `sunrise.php` update the code where you define `SUNRISE` like so:
+
+```php
+if ( ! defined( 'WP_INITIAL_INSTALL' ) || ! WP_INITIAL_INSTALL ) {
+	define( 'SUNRISE', true );
 }
 ```
 
