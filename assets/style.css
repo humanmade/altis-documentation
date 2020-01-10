@@ -63,10 +63,10 @@
 
 .altis-ui__main > nav li.active > a {
 	display: block;
-	background: white;
+	background: #f3f5f9;
 	border-top: #e1e1e1 1px solid;
 	border-bottom: #e1e1e1 1px solid;
-	border-left: 2px solid #00a0d2;
+	border-left: 2px solid #4667de;
 	transform: translateX(1px);
 	margin-left: -1px;
 	box-shadow: 0 2px 0 rgba(0, 0, 0, 0.02), 0 1px 0 rgba(0, 0, 0, 0.02);
