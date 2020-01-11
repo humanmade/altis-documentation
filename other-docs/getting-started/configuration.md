@@ -130,7 +130,7 @@ Altis will automatically load a file located at `.config/load.php` in the root d
 require_once __DIR__ . '/revisions.php';
 
 // Load custom local config.
-if ( get_environment_type() === 'local' ) {
+if ( Altis\get_environment_type() === 'local' ) {
 	require_once __DIR__ . '/local-config.php';
 }
 ```
