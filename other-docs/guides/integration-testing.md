@@ -1,10 +1,10 @@
 # Integration Testing
 
-**Note**: It is recommended to upgrade to Altis v3 to get access to the built in zero config integration testing feature.
+**Note**: We recommend to upgrading to Altis v3 and using the built-in zero-config integration testing feature.
 
 Integration testing allows you to run unit tests in the context of the full Altis application. This is important for testing the behaviour of custom code that needs to interact with the database and other services.
 
-Because of the way Altis is loaded `phpunit` must be run in a specific way to ensure all modules and custom modules are set up correctly.
+Due to the way Altis is loaded, `phpunit` must be run in a specific way to ensure all modules and custom modules are set up correctly.
 
 ## Setting Up PHPUnit
 
