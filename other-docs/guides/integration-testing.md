@@ -42,7 +42,7 @@ Feel free to make any updates to match the location of where you want your tests
 
 The bootstrap file is loaded before the tests run, and is used to load Altis. Copy the following code to a file called `tests/bootstrap.php` (or wherever you configured the bootstrap file to be located in `phpunit.xml`).
 
-If you already have a `bootstrap.php` you should only need to copy over any custom `tests_add_filter()` calls not presetn below to this template.
+If you already have a `bootstrap.php` you should only need to copy over any custom `tests_add_filter()` calls not present below to this template.
 
 ```php
 <?php
