@@ -139,7 +139,7 @@ if ( Altis\get_environment_type() === 'local' ) {
 
 Altis will also load a file located at `.config/load-early.php` as soon as possible in the loading process. This file is loaded before the plugin API (`add_action`/`apply_filters`), and before Composer autoloads.
 
-This should only be used as an escape hatch where necessary, as configuration should be set in the above files where possible.
+This should **only** be used as an escape hatch where absolutely necessary, as configuration should be set in the above files wherever possible.
 
 If you need to use `load-early.php`, consider filing a feature request for an Altis configuration option.
 
