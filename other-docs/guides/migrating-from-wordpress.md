@@ -16,23 +16,23 @@ We’ll need to remove all the dependencies that are part of Altis, as those wil
 
 Do the same for `hm-platform` if you have this project dependency. Altis also includes the following WordPress plugins, so if your project uses git submodules or composer to include them, you should remove them from your project (unless you plan to disable the Altis module that makes use of the plugin, and continue with the plugin directly):
 
-- `smart-media`
-- `gaussholder`
+- `amp`
 - `aws-rekognition`
-- `two-factor`
-- `stream`
-- `wp-simple-saml`
 - `delegated-oauth`
 - `elasticpress`
-- `hm-redirects`
-- `msm-sitemap`
-- `wp-seo`
-- `amp`
 - `facebook-instant-articles-wp`
-- `meta-tags`
-- `query-monitor`
+- `gaussholder`
 - `hm-gtm`
+- `hm-redirects`
+- `meta-tags`
+- `msm-sitemap`
+- `query-monitor`
+- `smart-media`
+- `stream`
+- `two-factor`
 - `workflows`
+- `wp-seo`
+- `wp-simple-saml`
 - `wp-user-signups`
 
 ## Move wp-config.php
