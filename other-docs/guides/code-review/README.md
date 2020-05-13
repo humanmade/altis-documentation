@@ -33,19 +33,15 @@ The ACR process is similar to the current process and is kicked off when a Pull 
 ### How will I know if there are issues with my code?
 Errors are highlighted within GitHub, under the review section.
 
-![](../assets/hm-required-failed.png)
+![](../assets/altis-review-pr-failed.png)
 
 Details:
 
-![](../assets/hm-required-failed-details.png)
+![](../assets/altis-review-pr-failed-details.png)
 
 If no errors are found:
 
-![](../assets/hm-required-pr.png)
-
-Details:
-
-![](../assets/hm-required-pr-details.png)
+![](../assets/altis-review-pr.png)
 
 ### What types of code are checked?
 The types of code that are reviewed are JavaScript (unbuilt) and PHP. CSS files can also be reviewed but are not at this point.
@@ -61,7 +57,7 @@ The ACR focus on security and performance issues. At a high level, the following
 For a more detailed breakdown of the automated code review standards visit [Standards](./standards.md).
 
 ### What should I do if errors are found?
-Before a pull request can be merged, the ACR (hm-required) check MUST pass. In general, the errors should be addressed, using the provided details in order to resolve the issue. In certain cases, the error may be a false positive or a result where the check does not possess the required logic to adequately evaluate the part of code. If you are certain this is the case, the error may be ignored, using the method below.  
+Before a pull request can be merged, the ACR (altis-review) check MUST pass. In general, the errors should be addressed, using the provided details in order to resolve the issue. In certain cases, the error may be a false positive or a result where the check does not possess the required logic to adequately evaluate the part of code. If you are certain this is the case, the error may be ignored, using the method below.  
 
 ### Is there a way I can have the ACR ignored?
 Lines of code can be ignored however entire files and folders can not. A comment is also required so that future reviewers understand why the part of code is ignored from ACR. 
