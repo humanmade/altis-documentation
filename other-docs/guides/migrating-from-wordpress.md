@@ -20,6 +20,7 @@ Do the same for `hm-platform` if you have this project dependency. Altis also in
 - `aws-rekognition`
 - `delegated-oauth`
 - `elasticpress`
+- `extended-cpts`
 - `facebook-instant-articles-wp`
 - `gaussholder`
 - `hm-gtm`
