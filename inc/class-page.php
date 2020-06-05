@@ -2,7 +2,7 @@
 /**
  * Altis Documentation Page.
  *
- * @package altis-documentation
+ * @package altis/documentation
  */
 
 namespace Altis\Documentation;
@@ -10,7 +10,7 @@ namespace Altis\Documentation;
 /**
  * Altis Documentation Page Object.
  *
- * @package altis-documentation
+ * @package altis/documentation
  */
 class Page {
 	/**

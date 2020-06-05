@@ -2,7 +2,7 @@
 /**
  * Altis Documentation Module.
  *
- * @package altis-documentation
+ * @package altis/documentation
  */
 
 namespace Altis\Documentation; // phpcs:ignore

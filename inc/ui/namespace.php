@@ -2,7 +2,7 @@
 /**
  * Altis Documentation.
  *
- * @package altis-documentation
+ * @package altis/documentation
  */
 
 namespace Altis\Documentation\UI;

@@ -2,7 +2,7 @@
 /**
  * Altis Documentation Markdown Parser.
  *
- * @package altis-documentation
+ * @package altis/documentation
  */
 
 namespace Altis\Documentation;
@@ -12,7 +12,7 @@ use Parsedown;
 /**
  * Altis Documentation MarkdownParser Object.
  *
- * @package altis-documentation
+ * @package altis/documentation
  */
 class MarkdownParser extends Parsedown {
 	/**
