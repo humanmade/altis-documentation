@@ -1,14 +1,24 @@
 <?php
+/**
+ * Altis Documentation Page.
+ *
+ * @package altis-documentation
+ */
 
 namespace Altis\Documentation;
 
+/**
+ * Altis Documentation Page Object.
+ *
+ * @package altis-documentation
+ */
 class Page {
 	/**
 	 * Page content.
 	 *
 	 * Raw content for the page in Markdown format.
 	 *
-	 * @param string
+	 * @var string
 	 */
 	protected $content;
 
@@ -18,21 +28,21 @@ class Page {
 	 * Metadata properties for the page, typically parsed from the file's
 	 * header or filesystem information.
 	 *
-	 * @param string
+	 * @var array
 	 */
 	protected $meta;
 
 	/**
 	 * Subpages of the page.
 	 *
-	 * @param Page[]
+	 * @var Page[]
 	 */
 	protected $subpages = [];
 
 	/**
 	 * Constructor.
 	 *
-	 * @param string $content Raw content of the page
+	 * @param string $content Raw content of the page.
 	 */
 	public function __construct( string $content ) {
 		$this->content = $content;
@@ -75,6 +85,13 @@ class Page {
 		$this->meta = $meta;
 	}
 
+	/**
+	 * Set page meta data by key.
+	 *
+	 * @param string $key The metadata key.
+	 * @param mixed $value The value for the metadata.
+	 * @return void
+	 */
 	public function set_meta( string $key, $value ) {
 		$this->meta[ $key ] = $value;
 	}
@@ -82,8 +99,8 @@ class Page {
 	/**
 	 * Add subpage to the page.
 	 *
-	 * @param string $id Page ID
-	 * @param Page $page
+	 * @param string $id Page ID.
+	 * @param Page $page The page object.
 	 */
 	public function add_subpage( string $id, Page $page ) {
 		$this->subpages[ $id ] = $page;
@@ -101,6 +118,7 @@ class Page {
 	/**
 	 * Get a single subpage by ID.
 	 *
+	 * @param string $id The subpage ID to find.
 	 * @return Page|null Page if set, null otherwise.
 	 */
 	public function get_subpage( string $id ) : ?Page {

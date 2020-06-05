@@ -1,9 +1,19 @@
 <?php
+/**
+ * Altis Documentation Markdown Parser.
+ *
+ * @package altis-documentation
+ */
 
 namespace Altis\Documentation;
 
 use Parsedown;
 
+/**
+ * Altis Documentation MarkdownParser Object.
+ *
+ * @package altis-documentation
+ */
 class MarkdownParser extends Parsedown {
 	/**
 	 * Current page being parsed.
@@ -16,7 +26,6 @@ class MarkdownParser extends Parsedown {
 	 * Constructor.
 	 *
 	 * @param Page $page Current page, used to contextualise relative references.
-	 * @param string $root Root directory for documentation.
 	 */
 	public function __construct( Page $page ) {
 		$this->current_page = $page;
@@ -27,7 +36,7 @@ class MarkdownParser extends Parsedown {
 	 *
 	 * Overridden to resolve relative URLs based on the current page.
 	 *
-	 * @param mixed $data Raw data from the Markdown tokeniser
+	 * @param mixed $data Raw data from the Markdown tokeniser.
 	 * @return array
 	 */
 	protected function inlineImage( $data ) {
@@ -72,7 +81,7 @@ class MarkdownParser extends Parsedown {
 	 *
 	 * Overridden to resolve relative URLs based on the current page.
 	 *
-	 * @param mixed $data Raw data from the Markdown tokeniser
+	 * @param mixed $data Raw data from the Markdown tokeniser.
 	 * @return array
 	 */
 	protected function inlineLink( $data ) {
@@ -125,8 +134,8 @@ class MarkdownParser extends Parsedown {
 	 * This handles generating links across modules. It transforms links in
 	 * the format `docs://group/id` to `?group=&id=` internal URLs.
 	 *
-	 * @param array $result Parsed result from parent::inlineLink
-	 * @param array $parts Parsed data from the link's HREF
+	 * @param array $result Parsed result from parent::inlineLink.
+	 * @param array $parts Parsed data from the link's HREF.
 	 * @return array Result with modified URL
 	 */
 	protected function inlineInternalLink( $result, $parts ) {
@@ -149,7 +158,7 @@ class MarkdownParser extends Parsedown {
 	 *
 	 * Override the blockHeader method to add anchor links.
 	 *
-	 * @param array $data
+	 * @param array $data Element data.
 	 * @return array
 	 */
 	protected function blockHeader( $data ) {

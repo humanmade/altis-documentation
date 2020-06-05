@@ -1,17 +1,22 @@
 <?php
+/**
+ * Altis Documentation.
+ *
+ * @package altis-documentation
+ */
 
 namespace Altis\Documentation;
 
+use Altis;
 use Altis\Module;
 use DirectoryIterator;
-use function Altis\register_module;
 use Spyc;
 
 /**
  * Register module.
  */
 function register() {
-	register_module(
+	Altis\register_module(
 		'documentation',
 		DIRECTORY,
 		'Documentation',
@@ -176,7 +181,7 @@ function get_page_for_dir( string $dir, string $root_dir ) : ?Page {
 				continue;
 			}
 
-			// Recurse directories, recursively calling this function
+			// Recurse directories, recursively calling this function.
 			$subpage = get_page_for_dir( $leaf->getPathname(), $root_dir );
 			if ( empty( $subpage ) ) {
 				continue;
@@ -204,11 +209,13 @@ function get_page_for_dir( string $dir, string $root_dir ) : ?Page {
 /**
  * Convert a (relative) Markdown path to a slug.
  *
- * @param string $path Path for Markdown file (relative to documentation root)
- * @return string Hierarchical slug for the document
+ * @param string $root A root path to match against the relative path.
+ * @param string $path Path for Markdown file (relative to documentation root).
+ * @return string Hierarchical slug for the document.
  */
 function get_slug_from_path( $root, $path ) {
 	if ( substr( $path, 0, strlen( $root ) ) !== $root ) {
+		// phpcs:ignore WordPress.Security.EscapeOutput.OutputNotEscaped
 		trigger_error( sprintf( 'Relative path %s is not within root %s', $path, $root ), E_USER_WARNING );
 		return $path;
 	}
@@ -220,8 +227,8 @@ function get_slug_from_path( $root, $path ) {
 /**
  * Get a documentation group.
  *
- * @param string $id Group ID
- * @return Group|null Group if available, null otherwise
+ * @param string $id Group ID.
+ * @return Group|null Group if available, null otherwise.
  */
 function get_documentation_group( $id ) : ?Group {
 	$docs = get_documentation();
@@ -231,8 +238,8 @@ function get_documentation_group( $id ) : ?Group {
 /**
  * Parse Markdown file into a Page.
  *
- * @param string $file Path to the file to parse
- * @param string $root Root directory for the file's owner
+ * @param string $file Path to the file to parse.
+ * @param string $root Root directory for the file's owner.
  * @return Page Parsed data for the file
  */
 function parse_file( string $file, string $root ) : Page {
@@ -244,11 +251,11 @@ function parse_file( string $file, string $root ) : Page {
 	preg_match( '#^---(.+)---\n+#Us', $raw, $yaml_matches );
 	if ( $yaml_matches ) {
 		$meta = Spyc::YAMLLoadString( $yaml_matches[1] );
-		// Strip YAML doc from the header
+		// Strip YAML doc from the header.
 		$raw = substr( $raw, strlen( $yaml_matches[0] ) );
 	}
 
-	// Default title if not set in YAML
+	// Default title if not set in YAML.
 	if ( empty( $meta['title'] ) && preg_match( '/^\n*#\s([^\n]+)/', $raw, $matches ) ) {
 		$meta['title'] = $matches[1];
 	}
@@ -266,8 +273,8 @@ function parse_file( string $file, string $root ) : Page {
 /**
  * Render a page from Markdown.
  *
- * @param Page $page Page to render
- * @return string HTML content for the page
+ * @param Page $page Page to render.
+ * @return string HTML content for the page.
  */
 function render_page( Page $page ) : string {
 	$parsedown = new MarkdownParser( $page );
@@ -305,8 +312,8 @@ function get_url_for_page( $group_id, $page_id ) {
  *
  * Note that relative links are not resolved, as there is no context to use.
  *
- * @param string $url Raw link (e.g. `docs://foo/bar`)
- * @return string URL for usage in a browser
+ * @param string $url Raw link (e.g. `docs://foo/bar`).
+ * @return string URL for usage in a browser.
  */
 function convert_internal_link( $url ) {
 	$parts = wp_parse_url( $url );

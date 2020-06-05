@@ -1,4 +1,9 @@
 <?php
+/**
+ * Altis Documentation.
+ *
+ * @package altis-documentation
+ */
 
 namespace Altis\Documentation\UI;
 
@@ -8,6 +13,11 @@ use WP_Admin_Bar;
 
 const PAGE_SLUG = 'altis-documentation';
 
+/**
+ * Set up hooks.
+ *
+ * @return void
+ */
 function bootstrap() {
 	add_action( 'admin_menu', __NAMESPACE__ . '\\register_menu' );
 	add_action( 'admin_bar_menu', __NAMESPACE__ . '\\admin_bar_menu', 11 );
@@ -36,7 +46,7 @@ function register_menu() {
 /**
  * Add the Documentation link to the admin bar
  *
- * @param WP_Admin_Bar $wp_admin_bar
+ * @param WP_Admin_Bar $wp_admin_bar The admin bar manager class.
  */
 function admin_bar_menu( WP_Admin_Bar $wp_admin_bar ) {
 	$wp_admin_bar->add_menu( [
@@ -109,7 +119,7 @@ function render_page() {
 							class="<?php echo $group === $current_group ? 'current' : '' ?> <?php echo $group === $current_group && ! $current_page_id ? 'active' : '' ?>"
 						>
 							<a
-								href="<?php echo add_query_arg( [ 'group' => $group, 'id' => '' ] ) // @codingStandardsIgnoreLine ?>"
+								href="<?php echo esc_attr( add_query_arg( [ 'group' => $group, 'id' => '' ] ) ); // phpcs:ignore ?>"
 							>
 								<?php echo esc_html( $gobj->get_title() ) ?>
 							</a>
@@ -122,8 +132,8 @@ function render_page() {
 									}
 									?>
 									<li class="<?php echo ( $current_group === $group && $current_page_id === $id ) ? 'active' : '' ?>">
-										<a href="<?php echo add_query_arg( compact( 'group', 'id' ) ) ?>">
-											<?php echo esc_html( $page->get_meta( 'title' ) ) ?>
+										<a href="<?php echo esc_attr( add_query_arg( compact( 'group', 'id' ) ) ); ?>">
+											<?php echo esc_html( $page->get_meta( 'title' ) ); ?>
 										</a>
 									</li>
 									<?php render_page_subpages( $page, $group, $current_page ) ?>
@@ -135,7 +145,10 @@ function render_page() {
 			</nav>
 
 			<article>
-				<?php echo render_content( $current_page ) ?>
+				<?php
+					// phpcs:ignore WordPress.Security.EscapeOutput.OutputNotEscaped
+					echo render_content( $current_page );
+				?>
 			</article>
 		</div>
 	</div>
@@ -148,8 +161,9 @@ function render_page() {
  *
  * This recurses all subpages.
  *
- * @param Page $page
- * @param string $group
+ * @param Page $page Documentation page object.
+ * @param string $group The documentation page group.
+ * @param Page|null $current_page The current page object if set.
  */
 function render_page_subpages( Page $page, string $group, ?Page $current_page ) {
 	if ( ! $page->get_subpages() ) {
@@ -178,7 +192,7 @@ function render_page_subpages( Page $page, string $group, ?Page $current_page ) 
 /**
  * Render the content for a page.
  *
- * @param Page|null $page
+ * @param Page|null $page The page object to render content for.
  * @return string
  */
 function render_content( ?Page $page ) : string {
