@@ -94,8 +94,8 @@ class Group {
 		$current_path = $id;
 		// Crawl through all the url parts (seperated by /) to get the
 		// subpage from the parent at each step.
-		// phpcs:ignore WordPress.CodeAnalysis.AssignmentInCondition.FoundInWhileCondition
-		while ( $subpage_id = array_shift( $parts ) ) {
+		while ( count( $parts ) > 0 ) {
+			$subpage_id = array_shift( $parts )
 			$current_path = $current_path . '/' . $subpage_id;
 			$page = $page->get_subpage( $current_path );
 		}
