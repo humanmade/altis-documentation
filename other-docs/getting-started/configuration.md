@@ -135,6 +135,8 @@ if ( Altis\get_environment_type() === 'local' ) {
 }
 ```
 
+This will conditionally load a PHP file when the site is running within a local environment. This file can be used to define developer-oriented constants like `WP_DEBUG` while developing locally.
+
 ### Early Loading Escape Hatch
 
 Altis will also load a file located at `.config/load-early.php` as soon as possible in the loading process. This file is loaded before the plugin API (`add_action`/`apply_filters`), and before Composer autoloads.
