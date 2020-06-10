@@ -5,7 +5,7 @@
  * @package altis/documentation
  */
 
-namespace Altis\Documentation; // phpcs:ignore
+namespace Altis\Documentation;
 
 const DIRECTORY = __DIR__;
 
