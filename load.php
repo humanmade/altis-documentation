@@ -1,6 +1,11 @@
 <?php
+/**
+ * Altis Documentation Module.
+ *
+ * @package altis/documentation
+ */
 
-namespace Altis\Documentation; // @codingStandardsIgnoreLine
+namespace Altis\Documentation;
 
 const DIRECTORY = __DIR__;
 

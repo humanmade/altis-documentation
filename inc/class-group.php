@@ -1,7 +1,17 @@
 <?php
+/**
+ * Altis Documentation Group.
+ *
+ * @package altis/documentation
+ */
 
 namespace Altis\Documentation;
 
+/**
+ * Altis Documentation Group Object.
+ *
+ * @package altis/documentation
+ */
 class Group {
 	/**
 	 * Group title (typically a module name)
@@ -20,7 +30,7 @@ class Group {
 	/**
 	 * Constructor.
 	 *
-	 * @param string $title Group title
+	 * @param string $title Group title.
 	 */
 	public function __construct( string $title ) {
 		$this->title = $title;
@@ -38,8 +48,8 @@ class Group {
 	/**
 	 * Add page to the documentation group.
 	 *
-	 * @param string $id Page ID
-	 * @param Page $page
+	 * @param string $id Page ID.
+	 * @param Page $page Page object.
 	 */
 	public function add_page( string $id, Page $page ) {
 		$this->pages[ $id ] = $page;
@@ -66,12 +76,13 @@ class Group {
 	/**
 	 * Get a single page by ID.
 	 *
+	 * @param string $id The page path, also used as an ID.
 	 * @return Page|null Page if set, null otherwise.
 	 */
 	public function get_page( $id ) : ?Page {
 		// Parse IDs with slashes to be subpages. code-review/process.md means
 		// "get the page with id: code-review, then get a subpage of code-review
-		// with id: process.md"
+		// with id: process.md".
 		$parts = explode( '/', $id );
 		$id    = array_shift( $parts );
 		$page  = $this->pages[ $id ] ?? null;
@@ -83,7 +94,8 @@ class Group {
 		$current_path = $id;
 		// Crawl through all the url parts (seperated by /) to get the
 		// subpage from the parent at each step.
-		while ( $subpage_id = array_shift( $parts ) ) {
+		while ( count( $parts ) > 0 ) {
+			$subpage_id = array_shift( $parts )
 			$current_path = $current_path . '/' . $subpage_id;
 			$page = $page->get_subpage( $current_path );
 		}
