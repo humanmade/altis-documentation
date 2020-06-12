@@ -95,7 +95,7 @@ class Group {
 		// Crawl through all the url parts (seperated by /) to get the
 		// subpage from the parent at each step.
 		while ( count( $parts ) > 0 ) {
-			$subpage_id = array_shift( $parts )
+			$subpage_id = array_shift( $parts );
 			$current_path = $current_path . '/' . $subpage_id;
 			$page = $page->get_subpage( $current_path );
 		}
