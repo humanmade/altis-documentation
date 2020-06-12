@@ -1,0 +1,28 @@
+# Automating Updates
+
+The recommended approach to automating updates to Altis is to use GitHub's Dependabot feature.
+
+The service monitors the dependencies in your project and creates automatic pull requests whenever there are updates. This will help you to keep your projects healthy and always running the latest patch release of all Altis modules.
+
+To get started create a `dependabot.yml` file in your project root.
+
+The minimum recommended configuration for Altis is as follows:
+
+```yaml
+version: 2
+updates:
+  # Enable version updates for npm
+  - package-ecosystem: "composer"
+    # Look for `composer.json` and `composer.lock` files in the `root` directory
+    directory: "/"
+    # Check packagist registry for updates every day (weekdays)
+    schedule:
+      interval: "daily"
+    # Increase the version requirements for Composer
+    # only when required
+    versioning-strategy: increase-if-necessary
+```
+
+There are many more configuration options available and you can add additional update rules for different package ecosystems to this file as well.
+
+[Full Dependabot configuration documentation can be found here](https://help.github.com/en/github/administering-a-repository/configuration-options-for-dependency-updates).
