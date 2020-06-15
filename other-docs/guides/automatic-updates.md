@@ -1,6 +1,6 @@
 # Automating Updates
 
-The recommended approach to automating updates to Altis is to use GitHub's Dependabot feature.
+The recommended approach to automating updates to Altis is to use GitHub's Dependabot feature. This feature is provided for free by GitHub.
 
 The service monitors the dependencies in your project and creates automatic pull requests whenever there are updates. This will help you to keep your projects healthy and always running the latest patch release of all Altis modules.
 
@@ -17,7 +17,7 @@ updates:
   - package-ecosystem: "composer"
     # Look for `composer.json` and `composer.lock` files in the `root` directory
     directory: "/"
-    # Create pull requests as soon as updates are made avilable
+    # Create pull requests as soon as updates are made available
     schedule:
       interval: "live"
     # Increase the version requirements for Composer
