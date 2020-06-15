@@ -13,13 +13,13 @@ The minimum recommended configuration for Altis is as follows:
 ```yaml
 version: 2
 updates:
-  # Enable version updates for npm
+  # Enable version updates for Composer
   - package-ecosystem: "composer"
     # Look for `composer.json` and `composer.lock` files in the `root` directory
     directory: "/"
-    # Check packagist registry for updates every day (weekdays)
+    # Create pull requests as soon as updates are made avilable
     schedule:
-      interval: "daily"
+      interval: "live"
     # Increase the version requirements for Composer
     # only when required
     versioning-strategy: increase-if-necessary
