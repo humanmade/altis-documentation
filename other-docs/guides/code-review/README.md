@@ -58,7 +58,7 @@ Note that [JavaScript code should not be minified](./minified-code.md), and inst
 
 ### What is looked for?
 
-Code review focusses on security, performance, and stability, by testing specifically for common vulnerabilities and problems, such as the OWASP Top Ten.
+Code review focuses on security, performance, and stability by testing for common vulnerabilities and problems, such as the OWASP Top Ten.
 
 This includes, but is not limited to:
 
