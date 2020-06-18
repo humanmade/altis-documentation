@@ -165,6 +165,12 @@ class MarkdownParser extends Parsedown {
 		$block = parent::blockHeader( $data );
 		$id = sanitize_title_with_dashes( $block['element']['text'] );
 
+		// Use a manual ID if provided.
+		if ( preg_match( '/^(.+) ?\{#(.+?)\}$/', $block['element']['text'], $matches ) ) {
+			$id = $matches[2];
+			$block['element']['text'] = $matches[1];
+		}
+
 		return [
 			'element' => [
 				'name' => 'a',
