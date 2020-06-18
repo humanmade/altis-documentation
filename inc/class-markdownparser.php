@@ -109,6 +109,11 @@ class MarkdownParser extends Parsedown {
 			return $result;
 		}
 
+		// Is this a fragment link?
+		if ( empty( $parts['path'] ) ) {
+			return $result;
+		}
+
 		// Resolve relative to the current file.
 		$base = $this->current_page->get_meta( 'path' );
 		$root = $this->current_page->get_meta( 'root' );
@@ -164,6 +169,12 @@ class MarkdownParser extends Parsedown {
 	protected function blockHeader( $data ) {
 		$block = parent::blockHeader( $data );
 		$id = sanitize_title_with_dashes( $block['element']['text'] );
+
+		// Use a manual ID if provided.
+		if ( preg_match( '/^(.+) ?\{#(.+?)\}$/', $block['element']['text'], $matches ) ) {
+			$id = $matches[2];
+			$block['element']['text'] = $matches[1];
+		}
 
 		return [
 			'element' => [
