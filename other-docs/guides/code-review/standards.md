@@ -87,7 +87,7 @@ Nonces should be checked on every request which performs a destructive action, a
 
 *Sniff: `WordPress.Security.PluginMenuSlug`*
 
-`__FILE__` should not be used in admin menu slugs, as it exposes information to users about the underlying filesystem. While this is not a security issue directly, it can make issue escalation much easier, so is to be avoided as part of a security-in-depth mentality.
+`__FILE__` should not be used in admin menu slugs, as it exposes information to users about the underlying filesystem. While this is not a security issue directly, it can make privilege escalation much easier, so is to be avoided as part of a security-in-depth mentality.
 
 
 ### Do not output debugging information {#development-functions}
