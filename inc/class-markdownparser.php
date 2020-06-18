@@ -109,6 +109,11 @@ class MarkdownParser extends Parsedown {
 			return $result;
 		}
 
+		// Is this a fragment link?
+		if ( empty( $parts['path'] ) ) {
+			return $result;
+		}
+
 		// Resolve relative to the current file.
 		$base = $this->current_page->get_meta( 'path' );
 		$root = $this->current_page->get_meta( 'root' );
