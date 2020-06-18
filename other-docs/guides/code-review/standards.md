@@ -72,13 +72,13 @@ But the difference is more than just conceptual. With validation, we store the d
 With sanitization, we take the data, and remove everything we don’t want. This means that we might change the data during the sanitization process. So in the case of user input, it is not guaranteed that all the input is kept. So it’s important that you choose the right sanitization functions, to keep the data intact.
 
 
-## Check CSRF tokens (nonces) on all requests {#nonce}
+## Check CSRF tokens (nonces) on destructive requests {#nonce}
 
 *Sniff: `HM.Security.NonceVerification`*
 
 Altis provides a system called [nonces](https://developer.wordpress.org/plugins/security/nonces/) which prevent [cross-site request forgery (CSRF)](https://cheatsheetseries.owasp.org/cheatsheets/Cross-Site_Request_Forgery_Prevention_Cheat_Sheet.html) vulnerabilities.
 
-Nonces should be checked on every request which performs a destructive action, as they check the user intended to take the action.
+Nonces should be checked on every request which performs a destructive action, as they check the user intended to take the action. This should be paired with checking user capabilities, so that you are checking both user authorization and user intent.
 
 
 ## Hide debugging data
