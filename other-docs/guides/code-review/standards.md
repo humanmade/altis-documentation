@@ -2,6 +2,8 @@
 
 All code deployed on the Altis platform must pass a minimum set of coding standards. These standards ensure that your code is performant, secure, and stable by checking for known issues.
 
+Each standard has one or more corresponding sniff codes, which are also shown in the ACR output. These sniffs can be used to [ignore the error](README.md#ignore) if they are false positives, but note that this will then require manual code review by the Altis Cloud team.
+
 
 ## Database
 

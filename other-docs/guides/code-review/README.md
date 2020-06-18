@@ -59,7 +59,9 @@ For a more detailed breakdown of the automated code review standards visit [Stan
 ### What should I do if errors are found?
 Before a pull request can be merged, the ACR (altis-review) check MUST pass. In general, the errors should be addressed, using the provided details in order to resolve the issue. In certain cases, the error may be a false positive or a result where the check does not possess the required logic to adequately evaluate the part of code. If you are certain this is the case, the error may be ignored, using the method below.  
 
-### Is there a way I can have the ACR ignored?
+
+### Is there a way I can have lines ignored? {#ignore}
+
 Lines of code can be ignored however entire files and folders can not. A comment is also required so that future reviewers understand why the part of code is ignored from ACR. 
 
 Example
@@ -71,8 +73,10 @@ $test = 'Hello World';
 echo $test;
 ```
 
+Note that when adding or changing these ignore comments, manual review of the codebase by the Altis Cloud team will be required per the Manual Code Review section.
+
 ### What if an issue found in ACR is a false positive?
-A false positive can be ignored using the method in [Is there a way I can have the ACR ignored?](#is-there-a-way-I-can-have-the-acr-ignored?). In addition to ignoring the specific sniff that was causing an issue within PHPCS you should also include a note next to the sniff, giving a brief explanation why the sniff was ignored.
+A false positive can be ignored using the method in [Is there a way I can have the ACR ignored?](#ignore). In addition to ignoring the specific sniff that was causing an issue within PHPCS you should also include a note next to the sniff, giving a brief explanation why the sniff was ignored.
 
 ### What are the benefits to ACR?
 Allows for initial and immediate checks to a code base for errors to ensure a website’s security and performance is not compromised before the code is deployed to the Cloud. A basis of standards are set so code review is consistent when involving internal and external reviewers.
