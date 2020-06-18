@@ -14,7 +14,7 @@ Many of the rules in the ACR ruleset (HM-Required) have a comment that outline w
 - The backtick operator is not allowed as PHP will attempt to execute the contents as a shell command.
 - When using `in_array()` specify the strict parameter `bool $strict` is also specified.
 
-## Maintain query best practices and check against slow database queries 
+## Maintain query best practices and check against slow database queries
 - Queries against post meta can be very slow if queries are performed against `meta_value` or `meta_key`. In addition, user `orderby` in a query has poor performance.
 - To maintain performance, queries should only return less than or equal to a 100 posts.
 - Raw SQL statements should be wrapped in a prepare, `$wpdb->prepare()`.
