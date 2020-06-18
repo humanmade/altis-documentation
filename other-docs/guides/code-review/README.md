@@ -71,9 +71,11 @@ The [coding standards documentation](./standards) contains much more detail abou
 
 ### What should I do if errors are found?
 
-Before a pull request can be merged, the ACR (altis-review) check MUST pass. In general, the errors should be addressed, using the provided details in order to resolve the issue. In certain cases, the error may be a false positive or a result where the check does not possess the required logic to adequately evaluate the part of code.
+Before a pull request can be merged, the altis-review check must pass.
 
-If you are certain this is the case (such as for false positives), the error may be ignored, using the method below.
+In general, the errors should be addressed, using the provided details in order to resolve the issue. The Altis Cloud team is happy to provide guidance on how to solve specific errors, or potential changes to your architecture to avoid these.
+
+In rare cases, the error may be a false positive or a result where the check does not possess the required logic to adequately evaluate the part of code. If you are certain this is the case (such as for false positives), the error may be ignored, using the method below.
 
 
 ### Is there a way I can have lines ignored? {#ignore}
@@ -89,7 +91,7 @@ $test = 'Hello World';
 echo $test;
 ```
 
-Note that when adding or changing these ignore comments, manual review of the codebase by the Altis Cloud team will be required per the Manual Code Review section.
+**Note:** When adding or changing these ignore comments, manual review of the codebase by the Altis Cloud team will be required per the Manual Code Review section.
 
 
 ### Can I run this process locally? {#local}
