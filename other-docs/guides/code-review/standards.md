@@ -63,13 +63,13 @@ It also avoids introducing security issues by accident. If the contents of a var
 
 All user input must be validated and sanitized before being used in the codebase.
 
-Validation and sanitisation are two separate but related concepts.
+Validation and sanitization are two separate but related concepts.
 
 When validating data, you are looking for certain criteria in the data. Or simply put, you’re saying “I want the data to have this, this, and this”. Sanitisation on the other hand is about removing all the harmful elements from the data. In essence you’re saying “I don’t want the data to have this, this, and this”.
 
 But the difference is more than just conceptual. With validation, we store the data once we have verified it’s valid. If not, we discard it.
 
-With sanitisation, we take the data, and remove everything we don’t want. This means that we might change the data during the sanitisation process. So in the case of user input, it is not guaranteed that all the input is kept. So it’s important that you choose the right sanitisation functions, to keep the data intact.
+With sanitization, we take the data, and remove everything we don’t want. This means that we might change the data during the sanitization process. So in the case of user input, it is not guaranteed that all the input is kept. So it’s important that you choose the right sanitization functions, to keep the data intact.
 
 
 ## Check CSRF tokens (nonces) on all requests {#nonce}
