@@ -125,7 +125,7 @@ Deprecated functions should not be used, as they often contain out-moded functio
 
 Certain Altis functions and constants have alternatives, prefer the better alternative.
 
-For example, use `wp_safe_redirect()` instead of `wp_redirect()`. This validates the redirect is to an allowed domain (site by default), and avoids the [open redirect vulnerability class](https://cwe.mitre.org/data/definitions/601.html).
+For example, use `wp_safe_redirect()` instead of `wp_redirect()`. This validates the redirect is to an allowed domain (current site by default), and avoids the [open redirect vulnerability class](https://cwe.mitre.org/data/definitions/601.html).
 
 
 
