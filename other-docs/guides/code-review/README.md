@@ -53,7 +53,7 @@ If no errors are found:
 
 The types of code that are reviewed are JavaScript and PHP. CSS files can also be reviewed but are not at this point.
 
-Note that [JavaScript code should not be minified](./minified-code.md), and instead should be built via the build process.
+Note that [JavaScript code should not be minified](./minified-code.md), and instead should be built via the [build process](docs://cloud/build-scripts.md).
 
 
 ### What is looked for?
