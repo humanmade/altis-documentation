@@ -29,6 +29,12 @@ order: 0
 ---
 ```
 
+Headers have automatically generated fragment IDs attached for in-page linking. This automatic ID can be overridden if desired by suffixing with `{#id-name}`:
+
+```md
+# Header Name {#override-id}
+```
+
 
 ## Custom Behavior
 

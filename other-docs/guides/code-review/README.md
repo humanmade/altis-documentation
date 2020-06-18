@@ -24,13 +24,18 @@ If you only want code reviewed, but not yet merged and deployed then you don't n
 
 Note: If you have requested Code Reviews from other users, we will not merge and deploy a Pull Request until those users have also Approved the Pull Request.
 
-## Automated Code Review
-Automated Code Review (commonly referred to as ACR) is used to check a code base for errors to ensure a website and overall stack’s security and performance is not compromised. This tool is used to perform a preliminary check for potential problem areas and ensure a better consistency of the standards we apply to the code we review rather than being dependent on the reviewer. 
 
-### When is it performed?
-The ACR process is similar to the current process and is kicked off when a Pull Request (PR) is created. Every commit pushed to a branch after the PR is created will have the ACR process executed against it.
+## Automated Code Review
+
+With v4, Altis is beginning the rollout of a new automated process for code review, which aims to eventually replace the manual code review process. This process will speed up the review and deployment process, allowing for faster iteration on your project. Additionally, [programmatic coding standards](./standards.md) will ensure that reviews are more consistent, and can be run ahead of time [using local tooling](#local).
+
+Automated Code Review (ACR) is similar to the manual process and is kicked off when a Pull Request (PR) is created. Every commit pushed to a branch after the PR is created will have the ACR process executed against it.
+
+During the initial roll-out of this process, manual reviews will still be performed by the Altis Cloud team, but they will be assisted by the ACR tooling.
+
 
 ### How will I know if there are issues with my code?
+
 Errors are highlighted within GitHub, under the review section.
 
 ![](../assets/altis-review-pr-failed.png)
@@ -43,24 +48,39 @@ If no errors are found:
 
 ![](../assets/altis-review-pr.png)
 
+
 ### What types of code are checked?
-The types of code that are reviewed are JavaScript (unbuilt) and PHP. CSS files can also be reviewed but are not at this point.
+
+The types of code that are reviewed are JavaScript and PHP. CSS files can also be reviewed but are not at this point.
+
+Note that [JavaScript code should not be minified](./minified-code.md), and instead should be built via the [build process](docs://cloud/build-scripts.md).
+
 
 ### What is looked for?
-The ACR focus on security and performance issues. At a high level, the following are checked:
+
+Code review focuses on security, performance, and stability by testing for common vulnerabilities and problems, such as the OWASP Top Ten.
+
+This includes, but is not limited to:
+
 - SQL Injection
 - XSS and XSRF attacks
-- Escaping Output and Sanitising Input
-- Composer and NPM Dependency vulnerabilities
-- Meta Value queries, Database related queries, Disk Access, Object Caching, WP_Query Specifics, Differently named cookies 
+- Escaping output and sanitizing input
+- Dependency vulnerabilities
 
-For a more detailed breakdown of the automated code review standards visit [Standards](./standards.md).
+The [coding standards documentation](./standards) contains much more detail about the specific rules your code must pass.
 
 ### What should I do if errors are found?
-Before a pull request can be merged, the ACR (altis-review) check MUST pass. In general, the errors should be addressed, using the provided details in order to resolve the issue. In certain cases, the error may be a false positive or a result where the check does not possess the required logic to adequately evaluate the part of code. If you are certain this is the case, the error may be ignored, using the method below.  
 
-### Is there a way I can have the ACR ignored?
-Lines of code can be ignored however entire files and folders can not. A comment is also required so that future reviewers understand why the part of code is ignored from ACR. 
+Before a pull request can be merged, the altis-review check must pass.
+
+In general, the errors should be addressed, using the provided details in order to resolve the issue. The Altis Cloud team is happy to provide guidance on how to solve specific errors, or potential changes to your architecture to avoid these.
+
+In rare cases, the error may be a false positive or a result where the check does not possess the required logic to adequately evaluate the part of code. If you are certain this is the case (such as for false positives), the error may be ignored, using the method below.
+
+
+### Is there a way I can have lines ignored? {#ignore}
+
+Lines of code can be ignored however entire files and folders can not. A comment is also required so that future reviewers understand why the part of code is ignored from ACR/
 
 Example
 ```php
@@ -71,15 +91,11 @@ $test = 'Hello World';
 echo $test;
 ```
 
-### What if an issue found in ACR is a false positive?
-A false positive can be ignored using the method in [Is there a way I can have the ACR ignored?](#is-there-a-way-I-can-have-the-acr-ignored?). In addition to ignoring the specific sniff that was causing an issue within PHPCS you should also include a note next to the sniff, giving a brief explanation why the sniff was ignored.
+**Note:** When adding or changing these ignore comments, manual review of the codebase by the Altis Cloud team will be required per the Manual Code Review section.
 
-### What are the benefits to ACR?
-Allows for initial and immediate checks to a code base for errors to ensure a website’s security and performance is not compromised before the code is deployed to the Cloud. A basis of standards are set so code review is consistent when involving internal and external reviewers.
 
-### Can I run this process locally?
+### Can I run this process locally? {#local}
+
 To do so ensure you have the [humanmade/coding-standards](https://github.com/humanmade/coding-standards) cloned into your repo using composer `composer require --dev humanmade/coding-standards`.
 
-An Altis command is still in development, however, since the ACR is based on a custom PHPCS standard the process executed locally by running the following command `vendor/bin/phpcs -e --standard=HM-Required`.
-
-![](../assets/hm-required-phpcs.png)
+An Altis command is still in development, however, since the ACR is based on a custom PHPCS standard the process can be executed locally by running the following command `vendor/bin/phpcs -e --standard=HM-Minimum`.
