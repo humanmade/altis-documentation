@@ -65,7 +65,7 @@ All user input must be validated and sanitized before being used in the codebase
 
 Validation and sanitization are two separate but related concepts.
 
-When validating data, you are looking for certain criteria in the data. Or simply put, you’re saying “I want the data to have this, this, and this”. Sanitisation on the other hand is about removing all the harmful elements from the data. In essence you’re saying “I don’t want the data to have this, this, and this”.
+When validating data, you are looking for certain criteria in the data. Or simply put, you’re saying "I want the data to have this, this, and this". Sanitisation on the other hand is about removing all the harmful elements from the data. In essence you’re saying "I don’t want the data to have this, this, and this".
 
 But the difference is more than just conceptual. With validation, we store the data once we have verified it’s valid. If not, we discard it.
 
