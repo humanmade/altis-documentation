@@ -99,6 +99,14 @@ class MarkdownParser extends Parsedown {
 		$parts = wp_parse_url( $href );
 		if ( ! empty( $parts['scheme'] ) ) {
 			$new_url = convert_internal_link( $href );
+
+			// Allow shortcircuiting (e.g. for public display)
+			if ( $new_url === null ) {
+				$result['element']['name'] = 'span';
+				$result['element']['attributes'] = [];
+				return $result;
+			}
+
 			if ( $new_url !== $href ) {
 				$result['element']['attributes']['href'] = $new_url;
 			}
