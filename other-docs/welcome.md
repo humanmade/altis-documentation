@@ -16,7 +16,7 @@ A [series of Guides](docs://guides/) is provided to guide you through specific t
 
 ## Upgrading
 
-If you are upgrading from one version of Altis to another make to thoroughly read and follow the steps in [the upgrading guides](docs://guides/upgrading/).
+If you are upgrading from one version of Altis to another make sure to thoroughly read and follow the steps in [the upgrading guides](docs://guides/upgrading/).
 
 ## Releases
 
