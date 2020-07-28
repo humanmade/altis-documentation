@@ -9,7 +9,7 @@ There are generally three types of project architecture concerning frontends:
 
 * Fully coupled: The backend system and frontend system are a single monolithic application running on the same server. Most traditional web apps follow this pattern.
 * Fully decoupled: The backend system and frontend system are completely separate applications running on separate servers. These systems communicate purely via web protocols, typically a REST API.
-* Semi-decoupled: The backend system and frontend system are separated, but form parts of the same application typically running on the same server. These systems communicate primarily via web prococols (typically a REST API), but may also pass data internally inside the application.
+* Semi-decoupled: The backend system and frontend system are separated, but form parts of the same application typically running on the same server. These systems communicate primarily via web protocols (typically a REST API), but may also pass data internally inside the application.
 
 
 ### Fully coupled
