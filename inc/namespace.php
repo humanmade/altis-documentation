@@ -359,7 +359,7 @@ function convert_internal_link( $url ) {
 			}
 
 			$stack_name = Altis\get_environment_name();
-			$new_url .= '?applications[]=' . $stack_name;
+			$new_url .= '?applications[]=' . urlencode( $stack_name );
 			break;
 
 		default:
