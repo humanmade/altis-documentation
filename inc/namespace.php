@@ -349,6 +349,19 @@ function convert_internal_link( $url ) {
 			}
 			break;
 
+		case 'support':
+			$map = [
+				'new' => 'https://dashboard.altis-dxp.com/#/support/new',
+			];
+			$new_url = $map[ $host ] ?? null;
+			if ( empty( $new_url ) ) {
+				return $url;
+			}
+
+			$stack_name = Altis\get_environment_name();
+			$new_url .= '?applications[]=' . urlencode( $stack_name );
+			break;
+
 		default:
 			return $url;
 	}

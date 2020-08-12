@@ -62,3 +62,14 @@ For example, to link to the current user's profile page:
 ```md
 [View your profile](internal://admin/profile.php)
 ```
+
+
+## Link to support
+
+You can easily display a direct link to the Altis support ticket system, pre-filled with the current environment stack name.
+
+These links use the special `support://` URL scheme, followed by the keyword `new`:
+
+```md
+[Open a support ticket](support://new)
+```
