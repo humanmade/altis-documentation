@@ -2,6 +2,10 @@
 
 This guide covers how to migrate a typical WordPress project to Altis.
 
+## Before You Begin -- Database Configuration
+
+Altis uses the `utf8mb4` MySQL database character set. It's important to check the charset configuration of the site you're migrating from and update it before importing the database into Altis to prevent data corruption.
+
 ## Setup Composer
 
 If the project does not already have a `composer.json` in the root of the repository, you should run `composer init` from the project root. This will prompt you fill out the required fields. For now, don’t bother adding any dependencies. If you already have a `composer.json` move to Remove Dependencies.
