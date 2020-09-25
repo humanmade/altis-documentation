@@ -19,7 +19,7 @@ updates:
     directory: "/"
     # Create pull requests as soon as updates are made available
     schedule:
-      interval: "live"
+      interval: "daily"
     # Increase the version requirements for Composer
     # only when required
     versioning-strategy: increase-if-necessary
