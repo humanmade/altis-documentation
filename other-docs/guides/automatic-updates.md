@@ -17,12 +17,11 @@ updates:
   - package-ecosystem: "composer"
     # Look for `composer.json` and `composer.lock` files in the `root` directory
     directory: "/"
-    # Create pull requests as soon as updates are made available
-    schedule:
-      interval: "live"
+    # Create pull requests for updates (if any) once a day:
+      interval: "daily"
     # Increase the version requirements for Composer
     # only when required
-    versioning-strategy: increase-if-necessary
+    versioning-strategy: lockfile-only
 ```
 
 Finally commit this file to your repo, and you're done.
