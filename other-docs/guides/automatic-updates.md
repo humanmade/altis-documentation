@@ -18,6 +18,7 @@ updates:
     # Look for `composer.json` and `composer.lock` files in the `root` directory
     directory: "/"
     # Create pull requests for updates (if any) once a day:
+    schedule:
       interval: "daily"
     # Increase the version requirements for Composer
     # only when required
