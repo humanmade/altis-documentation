@@ -3,7 +3,7 @@ order: 20
 ---
 # Configuration
 
-Configuration of Altis is done the `composer.json` file in the root of your project. To configure specific modules, feature and settings for Altis, add an `extra.altis` section to your `composer.json`.
+Configuration of Altis is done via the `composer.json` file in the root of your project. To configure specific modules, features and settings for Altis, add an `extra.altis` section to your `composer.json`.
 
 ```
 {
