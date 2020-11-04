@@ -166,7 +166,7 @@ It's quite possible your project specifies the wp mail sending domain via the `w
 
 ## Optionally disable Altis branding
 
-As this guide is for migrating a non-Altis project to use Altis, it's possible the client relationship and understanding does warrant changing anything visible or user-facing. If you are sure this is an "under the hood" migration, and the client has not been on-boarded with Altis as a brand, you can disable the branding via the `altis.modules.cms.branding` setting:
+As this guide is for migrating a non-Altis project to use Altis, it's possible the client relationship and understanding does not warrant changing anything visible or user-facing. If you are sure this is an "under the hood" migration, and the client has not been on-boarded with Altis as a brand, you can disable the branding via the `altis.modules.cms.branding` setting:
 
 ```json
 {
