@@ -196,6 +196,6 @@ Any module can be disabled by setting its `enabled` setting to `false`:
 
 ## Deploying to Cloud
 
-The first time Altis is deployed, depending on the exact configuration, there may be tasks to perform on deploy. Altis is always configured to be a WordPress multisite, as such any sites that are not on installed as Multisite already, will need converting via the `multisite-convert` WP CLI command.
+The first time Altis is deployed, depending on the exact configuration, there may be tasks to perform on deploy. Altis is always configured to be a WordPress multisite, as such any sites that are not installed as multisite already, will need converting via the `multisite-convert` WP CLI command.
 
 As always, be sure to test the migration and deployment in `development` or `staging` environments before rolling out to production.
