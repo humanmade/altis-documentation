@@ -115,7 +115,7 @@ Altis uses the standard WordPress must-use plugins directory of `content/mu-plug
 
 ## Add composer install to the build script
 
-If your project was not previously using composer, you'll need to add a `composer install --no-dev` to your projects `.build-script`. Simply add the following line to your `.build-script` or create that file if it doesn't already exist.
+If your project was not previously using composer, you'll need to add a `composer install --no-dev` to your project's `.build-script`. Simply add the following line to your `.build-script` or create that file if it doesn't already exist.
 
 ```sh
 composer install --no-dev
