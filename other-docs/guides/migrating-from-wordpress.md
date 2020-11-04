@@ -148,7 +148,7 @@ To start the docker server run `composer local-server start`. You should now be 
 
 ## Migrating email sending domain
 
-It's quite possible your project specifies the wp mail sending domain via the `wp_mail_from` hook. This can now be specified as setting in the `composer.json`'s `extra.altis.modules.cloud.email.email-from-address` setting:
+It's quite possible your project specifies the wp mail sending domain via the `wp_mail_from` hook. This can now be specified as setting in the `composer.json`'s `extra.altis.modules.cloud.email-from-address` setting:
 
 ```json
 {
