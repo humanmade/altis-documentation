@@ -36,7 +36,7 @@ A semi-decoupled architecture is a hybrid architecture incorporating parts of bo
 
 With a semi-decoupled system, the frontend is built as a part of the application, but has only a few, well-defined integration points between the frontend and backend. These are kept small and manageable to allow teams to work mostly independently. The frontend is built in JavaScript, allowing in-browser rendering in combination with [server-side rendering](ssr.md). Both the frontend and backend run on the same infrastructure.
 
-Altis provides a REST API to allow building semi-decoupled frontends, in addition to tools and libraries to facilitate building these frontends. The [Building a React App guide](react-app.md) guide walks through building a semi-decoupled React app from scratch.
+Altis provides a REST API to allow building semi-decoupled frontends, in addition to tools and libraries to facilitate building these frontends. The [Building a React App guide](react-app.md) walks through building a semi-decoupled React app from scratch.
 
 Additionally, Altis provides infrastructure to allow for [server-side rendering](ssr.md).
 
