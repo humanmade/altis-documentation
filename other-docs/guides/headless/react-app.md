@@ -76,7 +76,7 @@ mv react-wp-scripts.php inc/loader.php
 
 On your local site, head to [Network Admin > Themes](internal://network-admin/themes.php) and Network Enable the new "Example Headless Theme" entry. This will make the theme usable on your sites.
 
-Next, head to the [Appearance page](internal://admin/themes.php) on a test site and Activate the "Example Headless Theme". This will activate the theme on your site.
+Next, head to the [Appearance page](internal://admin/themes.php) on a test site and activate the "Example Headless Theme". This will activate the theme on your site.
 
 Open [the frontend](internal://home/) and you should see an unstyled example page.
 
