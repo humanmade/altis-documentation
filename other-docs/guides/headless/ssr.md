@@ -33,7 +33,7 @@ import App from './App';
 render( () => <App /> );
 ```
 
-You do not need to provide a root container ID, as this will provided by the PHP framework.
+You do not need to provide a root container ID, as this will be provided by the PHP framework.
 
 
 ## Enabling server-side rendering
