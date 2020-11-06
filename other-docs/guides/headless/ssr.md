@@ -33,7 +33,7 @@ import App from './App';
 render( () => <App /> );
 ```
 
-You do not need to provide a root container ID, as this will provided by the PHP framework.
+You do not need to provide a root container ID, as this will be provided by the PHP framework.
 
 
 ## Enabling server-side rendering
@@ -90,7 +90,7 @@ Refresh the page and view the page's source. You should see your application ren
 
 ## Limitations
 
-react-wp-ssr comes with [several limitations](https://github.com/humanmade/react-wp-ssr/blob/master/docs/limitations.md) that you should be aware of. Most well-built applications will work without any modifications, but some applications may require modifications to adapt to these modifications.
+react-wp-ssr comes with [several limitations](https://github.com/humanmade/react-wp-ssr/blob/master/docs/limitations.md) that you should be aware of. Most well-built applications will work without any modifications, but some applications may require modifications to adapt to these limitations.
 
 For questions about adapting your application to server-side rendering, consult the Altis team.
 

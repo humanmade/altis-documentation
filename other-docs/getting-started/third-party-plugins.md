@@ -5,7 +5,7 @@ order: 40
 
 Altis is built atop the open-source WordPress CMS. In addition to custom Altis modules, you can also use third-party WordPress plugins to take advantage of the open-source ecosystem.
 
-There are two ways to add plugins to your project: either commit the plugin to your project (or use submodules), or manage it via Composer.
+There are two ways to add plugins to your project: either by managing them via Composer, or commit the plugins to your project (or use submodules).
 
 
 ## Managing Plugins via Composer
