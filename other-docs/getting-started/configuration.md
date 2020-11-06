@@ -3,7 +3,7 @@ order: 20
 ---
 # Configuration
 
-Configuration of Altis is done the `composer.json` file in the root of your project. To configure specific modules, feature and settings for Altis, add an `extra.altis` section to your `composer.json`.
+Configuration of Altis is done via the `composer.json` file in the root of your project. To configure specific modules, features and settings for Altis, add an `extra.altis` section to your `composer.json`.
 
 ```
 {
@@ -21,7 +21,7 @@ Configuration of Altis is done the `composer.json` file in the root of your proj
 
 ```
 
-When documentation refers to the configuration file, its referring to this section of the `composer.json` file.
+When documentation refers to the configuration file, it's referring to this section of the `composer.json` file.
 
 By convention, most module's settings reside in the path `altis.modules.$module.$setting`. For example, to require all users be logged in to view the website, you'd set the `modules.security.require-login` setting to `true`.
 

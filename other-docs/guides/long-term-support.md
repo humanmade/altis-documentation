@@ -14,7 +14,7 @@ For example, if Altis has quarterly releases (i.e. four releases per year), each
 
 ## Long-term support policy
 
-The long-term support policy will provide limited support for older releases, while still providing a stable and secure product.
+The long-term support (LTS) policy will provide limited support for older releases, while still providing a stable and secure product.
 
 Releases covered by this policy will only receive bugfix updates, and will not receive new features. These bugfix updates will be provided to ensure stability of existing sites.
 
