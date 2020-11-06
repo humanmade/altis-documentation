@@ -115,7 +115,7 @@ Altis uses the standard WordPress must-use plugins directory of `content/mu-plug
 
 ## Add composer install to the build script
 
-If you project was not previously using composer, you'll need to add a `composer install --no-dev` to your projects `.build-script`. Simply add the following line to your `.build-script` or create that file if it doesn't already exist.
+If your project was not previously using composer, you'll need to add a `composer install --no-dev` to your project's `.build-script`. Simply add the following line to your `.build-script` or create that file if it doesn't already exist.
 
 ```sh
 composer install --no-dev
@@ -147,7 +147,7 @@ To start the docker server run `composer local-server start`. You should now be 
 
 ## Migrating email sending domain
 
-It's quite possible your project specifies the wp mail sending domain via the `wp_mail_from` hook. This can now be specified as setting in the `composer.json`'s `extra.altis.modules.cloud.email.email-from-address` setting:
+It's quite possible your project specifies the wp mail sending domain via the `wp_mail_from` hook. This can now be specified as setting in the `composer.json`'s `extra.altis.modules.cloud.email-from-address` setting:
 
 ```json
 {
@@ -161,7 +161,7 @@ It's quite possible your project specifies the wp mail sending domain via the `w
 
 ## Optionally disable Altis branding
 
-As this guide is for migrating a non-Altis project to use Altis, it's possible the client relationship and understanding does warrant changing anything visible or user-facing. If you are sure this is an "under the hood" migration, and the client has not been on-boarded with Altis as a brand, you can disable the branding via the `altis.modules.cms.branding` setting:
+As this guide is for migrating a non-Altis project to use Altis, it's possible the client relationship and understanding does not warrant changing anything visible or user-facing. If you are sure this is an "under the hood" migration, and the client has not been on-boarded with Altis as a brand, you can disable the branding via the `altis.modules.cms.branding` setting:
 
 ```json
 {
@@ -195,6 +195,6 @@ Any module can be disabled by setting its `enabled` setting to `false`:
 
 ## Deploying to Cloud
 
-The first time Altis is deployed, depending on the exact configuration, there may be tasks to perform on deploy. Altis is always configured to be a WordPress multisite, as such any sites that are not on installed as Multisite already, will need converting via the `multisite-convert` WP CLI command.
+The first time Altis is deployed, depending on the exact configuration, there may be tasks to perform on deploy. Altis is always configured to be a WordPress multisite, as such any sites that are not installed as multisite already, will need converting via the `multisite-convert` WP CLI command.
 
 As always, be sure to test the migration and deployment in `development` or `staging` environments before rolling out to production.
