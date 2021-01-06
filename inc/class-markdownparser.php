@@ -100,7 +100,7 @@ class MarkdownParser extends Parsedown {
 		if ( ! empty( $parts['scheme'] ) ) {
 			$new_url = convert_internal_link( $href );
 
-			// Allow shortcircuiting (e.g. for public display)
+			// Allow shortcircuiting (e.g. for public display).
 			if ( $new_url === null ) {
 				$result['element']['name'] = 'span';
 				$result['element']['attributes'] = [];

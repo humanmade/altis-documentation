@@ -129,7 +129,11 @@ function add_docs_for_group( Group $group, string $doc_dir ) : Group {
 	// Generate objects for each file.
 	$iterator = new DirectoryIterator( $doc_dir );
 	foreach ( $iterator as $leaf ) {
-		/** @var \SplFileInfo $leaf */
+		/**
+		 * Current iterator file object.
+		 *
+		 * @var \SplFileInfo $leaf
+		 */
 		if ( $leaf->isDir() ) {
 			if ( $leaf->isDot() ) {
 				continue;
@@ -175,7 +179,11 @@ function get_page_for_dir( string $dir, string $root_dir ) : ?Page {
 
 	$iterator = new DirectoryIterator( $dir );
 	foreach ( $iterator as $leaf ) {
-		/** @var \SplFileInfo $leaf */
+		/**
+		 * Current iterator file object.
+		 *
+		 * @var \SplFileInfo $leaf
+		 */
 		if ( $leaf->isDir() ) {
 			if ( $leaf->isDot() ) {
 				continue;
