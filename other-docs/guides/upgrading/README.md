@@ -1,3 +1,7 @@
+---
+order: 0
+---
+
 # Upgrading
 
 _If you are migrating an existing install to Altis check out the [migrating guide here](../migrating-from-wordpress.md) first._
@@ -31,6 +35,8 @@ Any upgrade will usually require some modification to your project (for example,
 
 ## Upgrade Guides
 
+- [Version 6](./v6.md)
+- [Version 5](./v5.md)
 - [Version 4](./v4.md)
 - [Version 3](./v3.md)
 - [Version 2](./v2.md)
