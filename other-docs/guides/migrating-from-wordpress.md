@@ -20,12 +20,10 @@ We’ll need to remove all the dependencies that are part of Altis, as those wil
 
 Do the same for `hm-platform` if you have this project dependency. Altis also includes the following WordPress plugins, so if your project uses git submodules or composer to include them, you should remove them from your project (unless you plan to disable the Altis module that makes use of the plugin, and continue with the plugin directly):
 
-- `amp`
 - `aws-rekognition`
 - `delegated-oauth`
 - `elasticpress`
 - `extended-cpts`
-- `facebook-instant-articles-wp`
 - `gaussholder`
 - `hm-gtm`
 - `hm-redirects`
