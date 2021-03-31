@@ -24,7 +24,7 @@ Incidents focus on immediate attention, with an emphisis on immediate remediatio
 
 Problems are the cause of, or potential cause of an Incidents. Incidents revolve around something the unexpected. If a site is down, that’s an Incident, but the Problem is a known cause of an issue you wish to track, and coordinate help with, problems typically take longer to resolve, as an appropriate solution is thoughtout, and worked on.
 
-# Tasks 
+# Task 
 
 There’s an array of tasks that might you need help with. Typically this might mean provisioning of infrastucture to accomodate some need. It might be providing access to some tool or service used by the team. Or run an operation that requires a cloud engineer. Tasks should be well described.
 
