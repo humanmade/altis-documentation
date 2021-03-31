@@ -36,7 +36,7 @@ If you need some kind of consultancy, technical question, clarification on a pie
 
 # Other methods of support
 
-I mentioned at the top of this page there was two main ways, and we’ve just covered the primary method. The second method is email, which is typically discouraged, but it’s useful to have thia ability when needed.
+Mentioned at the top of this page were two main ways of receiving Altis support, covered thus far is just the primary method. The second method is email, which is typically discouraged, but it’s useful to have this ability when needed.
 
 We have a few email addresses linked to our support, so we can ticket issues that come in, and they’re linked to different support types.
 
