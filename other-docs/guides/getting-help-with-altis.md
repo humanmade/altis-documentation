@@ -40,8 +40,11 @@ Mentioned at the top of this page were two main ways of receiving Altis support,
 
 We have a few email addresses linked to our support so we can track issues that come in. Those are linked to different support types.
 
-hosting@humanmade.com is the most commonly used, and this linked to an Incident type (non-urgent).
+- hosting@altis-dxp.com 
+This linked to an Incident type (non-urgent).
 
-support@humanmade.com is rarely used, but this is linked to the Question support type.
+- support@altis-dxp.com
+This is linked to the Question support type.
 
-sysops@humanmade.com is the linked to an ‘Urgent’ Incidident type, and is linked to PagerDuty, which alerts on-call engineers to the emergency. 
+- sysops@altis-dxp.com 
+This linked to an ‘Urgent’ Incident type, and is linked to PagerDuty, which alerts on-call engineers to the emergency. 
