@@ -8,7 +8,7 @@ While we support a few methods, the primary method and the route you should choo
 
 We break down support into different types. Each have their own language and proccesses. But they're somewhat intuitive once you internalise the language a little. Let's go over the types.
 
-<img width="1282" alt="Screenshot-2021-01-26-at-10 14 18" src="https://user-images.githubusercontent.com/1263370/113014673-b2630600-9174-11eb-88ae-ed3cc6b98078.png">
+<img width="1282" alt="Altis Dashboard Create Support Ticket page, Question selected in Type dropdown menu" src="https://user-images.githubusercontent.com/1263370/113014673-b2630600-9174-11eb-88ae-ed3cc6b98078.png">
 
 In the above you can see we currently have four types of support. I’ll break down how they differ from eachother.
 
