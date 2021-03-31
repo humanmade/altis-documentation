@@ -38,7 +38,7 @@ If you need some kind of consultancy, technical question, clarification on a pie
 
 Mentioned at the top of this page were two main ways of receiving Altis support, covered thus far is just the primary method. The second method is email, which is typically discouraged, but it’s useful to have this ability when needed.
 
-We have a few email addresses linked to our support, so we can ticket issues that come in, and they’re linked to different support types.
+We have a few email addresses linked to our support so we can track issues that come in. Those are linked to different support types.
 
 hosting@humanmade.com is the most commonly used, and this linked to an Incident type (non-urgent).
 
