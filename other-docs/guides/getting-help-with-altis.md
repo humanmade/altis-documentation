@@ -4,7 +4,7 @@ If you need help, this guide will show you how to most effectively get you the h
 
 While we support a few methods, the primary method and the route you should choose, is the Altis Dashboard Support button.
 
-<img width="1398" alt="Screenshot 2021-03-30 at 14 44 16" src="https://user-images.githubusercontent.com/1263370/113014595-a119f980-9174-11eb-95d6-0e2a9718c5e5.png">
+<img width="1398" alt="Altis Dashboard support link" src="https://user-images.githubusercontent.com/1263370/113014595-a119f980-9174-11eb-95d6-0e2a9718c5e5.png">
 
 We break down support into different types. Each have their own language and proccesses. But they're somewhat intuitive once you internalise the language a little. Let's go over the types.
 
