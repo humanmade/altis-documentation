@@ -10,7 +10,7 @@ We break down support into different types. Each has their own language and proc
 
 <img width="1282" alt="Altis Dashboard Create Support Ticket page, Question selected in Type dropdown menu" src="https://user-images.githubusercontent.com/1263370/113014673-b2630600-9174-11eb-88ae-ed3cc6b98078.png">
 
-In the above you can see we currently have four types of support. I’ll break down how they differ from eachother.
+We currently have four types of support. Below is a description of each and how they are different from each other.
 
 # Incident
 
