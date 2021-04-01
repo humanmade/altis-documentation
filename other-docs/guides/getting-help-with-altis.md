@@ -18,7 +18,7 @@ Incidents are unplanned events that negatively impact service, or quality of ser
 
 From the support side, Incidents are the things that make us scamble to respond and jump on the problem. If the site is down, this is an Incident, with a prioriy of ‘Urgent’. Alarm bells will ring, and we’ll put out the fires to get things running again by any means neccessary.
 
-Incidents focus on immediate attention, with an emphisis on immediate remediation. Remediating an Incident can take the form of temporary patches, which brings us to the next support type.
+Incidents focus on immediate attention, with an emphasis on immediate remediation. Remediating an Incident can take the form of temporary patches, which brings us to the next support type.
 
 # Problem
 
