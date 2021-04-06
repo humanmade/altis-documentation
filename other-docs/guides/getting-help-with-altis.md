@@ -14,7 +14,7 @@ We break down support into different types. Each has their own language and proc
 
 We currently have four types of support. Below is a description of each and how they are different from each other.
 
-# Incident
+### Incident
 
 Incidents are unplanned events that negatively impact service, or quality of service of Altis. Be this part of the hosting infrastructure, or on the software side of Altis, if something isn’t getting the expected result, this would be an Incident, and requires investigation.
 
@@ -22,15 +22,15 @@ From the support side, Incidents get a rapid response. If the site is down, this
 
 Incidents focus on immediate attention, with an emphasis on immediate remediation. Remediating an Incident can take the form of temporary patches, which brings us to the next support type.
 
-# Problem
+### Problem
 
 Problems are the cause of, or potential cause of Incidents. Incidents revolve around something unexpected. If a site is down, that’s an Incident, but the Problem is a known cause of an issue you wish to track, and coordinate help with. Problems typically take longer to resolve, as an appropriate solution is thought out and worked on.
 
-# Task 
+### Task 
 
 There’s an array of tasks that might you need help with. Typically, this might mean provisioning of infrastructure to accommodate some need, it might be providing access to some tool or service used by the team, or it could be to run an operation that requires a cloud engineer. Tasks should be well described.
 
-# Question
+### Question
 
 This type is fairly self explanatory. Have a question for us? Ask!
 
