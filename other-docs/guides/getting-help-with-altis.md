@@ -34,7 +34,7 @@ There’s an array of tasks that might you need help with. Typically, this might
 
 This type is fairly self explanatory. Have a question for us? Ask!
 
-If you need some kind of consultancy, technical question, clarification on a piece of the product, just open a support question.
+If you have a technical question or require clarification on a feature, just open a support question.
 
 # Other methods of support
 
