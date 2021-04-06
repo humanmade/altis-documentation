@@ -36,7 +36,7 @@ This type is fairly self explanatory. Have a question for us? Ask!
 
 If you have a technical question or require clarification on a feature, just open a support question.
 
-# Other methods of support
+## Email
 
 Mentioned at the top of this page were two main ways of receiving Altis support, covered thus far is just the primary method. The second method is email, which is typically discouraged, but it’s useful to have this ability when needed.
 
