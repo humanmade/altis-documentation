@@ -2,6 +2,8 @@
 
 If you need help, this guide will show you how to most effectively get you the help you need.
 
+## Altis Dashboard
+
 While we support a few methods, the primary method and the route you should choose, is the Altis Dashboard Support button.
 
 <img width="1398" alt="Altis Dashboard support link" src="https://user-images.githubusercontent.com/1263370/113014595-a119f980-9174-11eb-95d6-0e2a9718c5e5.png">
