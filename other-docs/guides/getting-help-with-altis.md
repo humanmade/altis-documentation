@@ -38,7 +38,7 @@ If you have a technical question or require clarification on a feature, just ope
 
 ## Email
 
-Mentioned at the top of this page were two main ways of receiving Altis support, covered thus far is just the primary method. The second method is email, which is typically discouraged, but it’s useful to have this ability when needed.
+The second method for creating a support ticket is email. This is offered as a backup option should you be unable to open tickets via the Altis Dashboard for any reason.
 
 We have a few email addresses linked to our support so we can track issues that come in. Those are linked to different support types.
 
