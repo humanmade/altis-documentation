@@ -42,11 +42,9 @@ The second method for creating a support ticket is email. This is offered as a b
 
 The following email addresses can be used to create different types of ticket as indicated:
 
-- hosting@altis-dxp.com 
-This linked to an Incident type (non-urgent).
-
-- support@altis-dxp.com
-This is linked to the Question support type.
-
-- sysops@altis-dxp.com 
-This linked to an ‘Urgent’ Incident type, and is linked to PagerDuty, which alerts on-call engineers to the emergency. 
+- **hosting@altis-dxp.com**<br />
+   This will create an Incident type ticket (non-urgent).
+- **support@altis-dxp.com**<br />
+   This will create a Question type ticket.
+- **sysops@altis-dxp.com**<br />
+   This will create an ‘Urgent’ Incident type ticket, and is linked to PagerDuty. This will alert on-call engineers to the emergency. 
