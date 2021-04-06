@@ -18,7 +18,7 @@ We currently have four types of support. Below is a description of each and how 
 
 Incidents are unplanned events that negatively impact service, or quality of service of Altis. Be this part of the hosting infrastructure, or on the software side of Altis, if something isn’t getting the expected result, this would be an Incident, and requires investigation.
 
-From the support side, Incidents are the things that make us scamble to respond and jump on the problem. If the site is down, this is an Incident, with a prioriy of ‘Urgent’. Alarm bells will ring, and we’ll put out the fires to get things running again by any means neccessary.
+From the support side, Incidents get a rapid response. If the site is down, this is an Incident, with a priority of ‘Urgent’. Alarm bells will ring, and we’ll put out the fires to get things running again by any means necessary.
 
 Incidents focus on immediate attention, with an emphasis on immediate remediation. Remediating an Incident can take the form of temporary patches, which brings us to the next support type.
 
