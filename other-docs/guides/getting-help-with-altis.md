@@ -30,7 +30,7 @@ Problems are the cause of, or potential cause of Incidents. Incidents revolve ar
 
 There’s an array of tasks that might you need help with. Typically, this might mean provisioning of infrastructure to accommodate some need, it might be providing access to some tool or service used by the team, or it could be to run an operation that requires a cloud engineer. Tasks should be well described.
 
-# Question (Service Requests)
+# Question
 
 This type is fairly self explanatory. Have a question for us? Ask!
 
