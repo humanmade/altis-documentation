@@ -40,7 +40,7 @@ If you have a technical question or require clarification on a feature, just ope
 
 The second method for creating a support ticket is email. This is offered as a backup option should you be unable to open tickets via the Altis Dashboard for any reason.
 
-We have a few email addresses linked to our support so we can track issues that come in. Those are linked to different support types.
+The following email addresses can be used to create different types of ticket as indicated:
 
 - hosting@altis-dxp.com 
 This linked to an Incident type (non-urgent).
