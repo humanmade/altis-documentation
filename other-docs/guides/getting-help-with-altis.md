@@ -1,4 +1,4 @@
-# Getting help with Altis.
+# Getting help with Altis
 
 If you need help, this guide will show you how to most effectively get you the help you need.
 
