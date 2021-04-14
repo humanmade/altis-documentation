@@ -2,7 +2,7 @@
 
 All code deployed on the Altis platform must pass a minimum set of coding standards. These standards ensure that your code is performant, secure, and stable by checking for known issues.
 
-Each standard has one or more corresponding sniff codes, which are also shown in the ACR output. These sniffs can be used to [ignore the error](README.md#ignore) if they are false positives, but note that this will then require manual code review by the Altis Cloud team.
+Each standard has one or more corresponding sniff codes, which are also shown in the [Automated Code Review](README.md#automated-code-review) (ACR) output. These sniffs can be used to [ignore the error](README.md#ignore) if they are false positives, but note that this will then require manual code review by the Altis Cloud team.
 
 
 ## Database
@@ -131,13 +131,13 @@ For example, use `wp_safe_redirect()` instead of `wp_redirect()`. This validates
 
 ## Best practices
 
-### Only use long-hand PHP tags {#php-tags}
+### Only use full PHP tags {#php-tags}
 
 *Sniff: `Generic.PHP.DisallowShortOpenTag`*
 
-Only long-hand php tags (`<?php`) should be used. Do not use shorthand tags (`<?`) or legacy tags ASP-style tags (`<%`, `%>`, `<%=`, and `<script language="php">`).
+Only full php tags (`<?php`) should be used. Do not use short tags (`<?`), legacy ASP-style tags (`<%`, `%>`, `<%=`), or the `<script language="php">` tag.
 
-Generally, all data must be escaped before being output to the browser. All escaping functions in Altis have echoing equivalents with the `_e` suffix, so the short-echo syntax (`<?=`) is not recommended (but is allowed).
+Generally, all data must be escaped before being output to the browser. All escaping functions in Altis have echoing equivalents with the `_e` suffix, so the short echo syntax (`<?=`) is not recommended (but is allowed).
 
 
 ### Do not change the timezone {#timezone}
