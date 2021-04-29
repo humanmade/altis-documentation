@@ -30,6 +30,7 @@ Do the same for `hm-platform` if you have this project dependency. Altis also in
 - `meta-tags`
 - `msm-sitemap`
 - `query-monitor`
+- `require-login`
 - `smart-media`
 - `stream`
 - `two-factor`
