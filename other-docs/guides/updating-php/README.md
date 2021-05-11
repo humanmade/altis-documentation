@@ -1,6 +1,6 @@
 # Updating PHP Version
 
-On occasion Altis will make a PHP version update available and once a particular version of PHP is out of support updating will become mandatory to help protect the security of your application.
+On occasion Altis will make a PHP version update available. Once a particular version of PHP is out of support, updating to a later version will become mandatory to help protect the security of your application.
 
 There are 2 key steps to getting ready for a new version of PHP:
 
@@ -21,7 +21,7 @@ There are 2 key steps to getting ready for a new version of PHP:
 
 ## Checking PHP Version Compatibiliity
 
-**Note:** Before carrying out the following tasks locally ensure your application is fully installed so that all code that will be deployed to the cloud is present.
+**Note:** Before carrying out the following tasks locally, ensure your application is fully installed so that all code that will be deployed to the cloud is present.
 
 ### Switch Off Composer's Platform Check
 
