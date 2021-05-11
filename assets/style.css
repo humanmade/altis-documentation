@@ -68,9 +68,9 @@
 	border-top: #e1e1e1 1px solid;
 	border-bottom: #e1e1e1 1px solid;
 	border-left: 2px solid #4667de;
-	transform: translateX(1px);
+	transform: translateX( 1px );
 	margin-left: -1px;
-	box-shadow: 0 2px 0 rgba(0, 0, 0, 0.02), 0 1px 0 rgba(0, 0, 0, 0.02);
+	box-shadow: 0 2px 0 rgba( 0, 0, 0, 0.02 ), 0 1px 0 rgba( 0, 0, 0, 0.02 );
 }
 
 .altis-ui__main > nav > ul ul {
@@ -131,7 +131,7 @@ td.hljs-ln-numbers {
 	user-select: none;
 	text-align: center;
 	color: #666;
-	background: rgba(0, 0, 0, 0.3);
+	background: rgba( 0, 0, 0, 0.3 );
 	vertical-align: top;
 	padding: 0 5px !important;
 }
