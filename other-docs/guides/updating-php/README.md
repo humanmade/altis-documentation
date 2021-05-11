@@ -11,7 +11,7 @@ There are 2 key steps to getting ready for a new version of PHP:
 
 |Altis|PHP Version|
 |-|-|
-|v7|7.2-7.4|
+|v7|7.4|
 |v6|7.2-7.4|
 |v5|7.2-7.4|
 |v4|7.0-7.4|
@@ -22,6 +22,32 @@ There are 2 key steps to getting ready for a new version of PHP:
 ## Checking PHP Version Compatibiliity
 
 **Note:** Before carrying out the following tasks locally ensure your application is fully installed so that all code that will be deployed to the cloud is present.
+
+### Switch Off Composer's Platform Check
+
+In your `composer.json` you may have some code like the following:
+
+```json
+{
+    "config": {
+        "platform": {
+            "php": "7.2"
+        }
+    }
+}
+```
+
+If present, and the PHP version does not match the version you are upgrading to you should update it to reflect the new target PHP version.
+
+In addition you _must_ add the following setting in your `composer.json`:
+
+```json
+{
+    "platform-check": false
+}
+```
+
+This will prevent Composer from exiting your application early while your cloud environment is being updated.
 
 ### Update All Altis Modules
 
