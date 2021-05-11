@@ -1,6 +1,7 @@
 /**
  * Documentation styles for Altis
  */
+ /* stylelint-disable declaration-no-important, declaration-property-unit-blacklist, selector-class-pattern */
 
 .admin_page_altis-documentation #wpbody-content {
 	padding-bottom: 0;
