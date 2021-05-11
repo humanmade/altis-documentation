@@ -59,7 +59,7 @@ Fix any reported errors (ignoring those listed in the section below) by upgradin
 
 #### Known Warnings and Errors
 
-There are some known warnings in the following packages that you can safely ignore. Altis garuantees its core packages and their dependencies are verified as working with the versions outlined in the compatiblity chart at the top of this page.
+There are some known warnings in the following packages that you can safely ignore. Altis guarantees its core packages and their dependencies are verified as working with the versions outlined in the compatibility chart at the top of this page.
 
 - `aws/aws-sdk-php`
 - `guzzlehttp/promises`
