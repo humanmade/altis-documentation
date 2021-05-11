@@ -50,25 +50,27 @@ phpcs -p . --standard=PHPCompatibility
   --runtime-set testVersion 7.4 \
   --extensions=php \
   -d memory_limit=1G \
-  --ignore=wordpress,vendor/altis,vendor/humanmade/batcache,vendor/humanmade/ludicrousdb,vendor/humanmade/wp-redis,vendor/wp-phpunit,*/tests/*
+  --ignore=wordpress,vendor/altis,*/tests/*
 ```
-
-The ignored directories in the above command are added because they will show errors and warnings due to backwards compatible code, for example using `mysql_*` vs `mysqli_*` functions. All dependencies of Altis have been tested and verified according to the chart at the top of this page.
 
 **Note:** You _must_ fix anything reported as an "Error". Warnings can be ignored at your discretion.
 
-Fix any reported errors by upgrading affected 3rd party plugins and amending 1st party custom code as needed following your standard code review and deployment processes.
+Fix any reported errors (ignoring those listed in the section below) by upgrading affected third party plugins and amending first party custom code as needed following your standard code review and deployment processes.
 
-#### Known Warnings
+#### Known Warnings and Errors
 
 There are some known warnings in the following packages that you can safely ignore. Altis garuantees its core packages and their dependencies are verified as working with the versions outlined in the compatiblity chart at the top of this page.
 
 - `aws/aws-sdk-php`
 - `guzzlehttp/promises`
+- `humanmade/batcache`
+- `humanmade/ludicrousdb`
+- `humanmade/wp-redis`
 - `phpunit/phpunit`
 - `sebastian/global-state`
 - `sebastian/object-enumerator`
 - `symfony/yaml`
+- `wp-phpunit/wp-phpunit`
 
 
 ## Requesting A Cloud Environment Update
