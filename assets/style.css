@@ -73,6 +73,11 @@
 	box-shadow: 0 2px 0 rgba( 0, 0, 0, 0.02 ), 0 1px 0 rgba( 0, 0, 0, 0.02 );
 }
 
+.altis-ui__main > article ul {
+	list-style: disc;
+	margin-left: 20px;
+}
+
 .altis-ui__main > nav > ul ul {
 	display: none;
 	margin-left: 2em;
@@ -100,11 +105,6 @@
 
 .altis-ui__main > article img {
 	max-width: 100%;
-}
-
-.altis-ui__main > article ul {
-	list-style: disc;
-	margin-left: 20px;
 }
 
 .altis-ui__main > article pre code {
