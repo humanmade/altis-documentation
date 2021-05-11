@@ -72,6 +72,7 @@ There are some known warnings in the following packages that you can safely igno
 - `symfony/yaml`
 - `wp-phpunit/wp-phpunit`
 
+You can add these to the ignored directories in the command when checking if desired; e.g. `--ignore=vendor/aws,vendor/guzzlehttp,...`.
 
 ## Requesting A Cloud Environment Update
 
