@@ -7,7 +7,7 @@ There are 2 key steps to getting ready for a new version of PHP:
 - Checking your application is compatible with the new version and making any necessary updates
 - Requesting the PHP upgrade for your cloud environments
 
-## Altis Compatiblity Chart
+## Altis Compatibility Chart
 
 |Altis|PHP Version|
 |-|-|
