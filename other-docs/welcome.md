@@ -20,4 +20,4 @@ If you are upgrading from one version of Altis to another make sure to thoroughl
 
 ## Releases
 
-There is a [list of current and previous releases here](https://www.altis-dxp.com/resources/releases/), as well as more information on [the Altis release process](docs://guides/altis-releases.md) and the accompanying [long term support policy](docs://guides/long-term-support.md) in our guides.
+There is a [list of current and previous releases here](https://docs.altis-dxp.com/releases/), as well as more information on [the Altis release process](docs://guides/altis-releases.md) and the accompanying [long term support policy](docs://guides/long-term-support.md) in our guides.
