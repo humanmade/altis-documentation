@@ -83,7 +83,6 @@ Once the GitHub issue is created, this information can then be copied into [a su
 * **Who is providing the SSL certificate(s) (Altis or client)?:** 
 * **Who controls the DNS for the client (Altis or client)?:**
 * **Projected traffic:** 
-* **Specific cookies that need to be allow-listed outside these patterns `comment_`, `hm_`, `wordpress_`, `wp-`, `wp_`, `altis_`:**
 * **Any other specifications or challenges?**
 
 
