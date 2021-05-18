@@ -63,14 +63,14 @@ Once the GitHub issue is created, this information can then be copied into [a su
 
 **What domain(s) will email need to be sent from?**
 <!-- Enter as a list -->
-- [ ] noreply@domain.com
-- [ ] etc.
+- noreply@domain.com
+- etc.
 
 **For each site in the network, what will be the FROM email?
 <!-- Enter as a list -->
-- [ ] **Network Admin:** noreply@domain.com
-- [ ] **domain.com:** some-email@domain.com
-- [ ] etc.
+- **Network Admin:** noreply@domain.com
+- **domain.com:** some-email@domain.com
+- etc.
 
 ## Environment
 * **GitHub repository:** https://github.com/{owner}/{repo}
@@ -78,8 +78,8 @@ Once the GitHub issue is created, this information can then be copied into [a su
   * **Production:** `main`
   * **Staging:** `staging`
   * **Development:** `dev`
-* [ ] **Database import link:**
-* [ ] **Uploads import link:**
+* **Database import link:**
+* **Uploads import link:**
 * **Who is providing the SSL certificate(s) (Altis or client)?:** 
 * **Who controls the DNS for the client (Altis or client)?:**
 * **Projected traffic:** 
