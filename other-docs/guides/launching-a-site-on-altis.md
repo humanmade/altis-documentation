@@ -84,6 +84,7 @@ Once the GitHub issue is created, this information can then be copied into [a su
 * **Who controls the DNS for the client (Altis or client)?:**
 * **Projected traffic:** 
 * **Any other specifications or challenges?**
+_Refer to the Altis [Limitations](https://docs.altis-dxp.com/cloud/limitations/) and [Page Caching](https://docs.altis-dxp.com/cloud/page-caching/) guides for specifics around what requests can be supported._
 
 
 ```
