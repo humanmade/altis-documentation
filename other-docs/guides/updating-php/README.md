@@ -39,11 +39,13 @@ In your `composer.json` you may have some code like the following:
 
 If present, and the PHP version does not match the version you are upgrading to you should update it to reflect the new target PHP version.
 
-In addition you _must_ add the following setting in your `composer.json`:
+In addition you _must_ add the following setting in the `config` property of your `composer.json` file:
 
 ```json
 {
-    "platform-check": false
+    "config": {
+        "platform-check": false
+    }
 }
 ```
 
@@ -104,8 +106,10 @@ You can add these to the ignored directories in the command when checking if des
 
 Once you are confident that your application is compatible with the version of PHP to upgrade to you should do the following:
 
-1. Deploy the updated application to the environment you wish to update, we recommend starting with your non production environments first
+1. Deploy your updated application to the environment you wish to update, we recommend starting with your non production environments first
 2. Create a support ticket for the target environment with the type "Task", titled "Upgrade to PHP 7.4", replacing "7.4" with the target version if necessary
+
+**Note:** If you are upgrading to an Altis version that is not compatible with the environment's current PHP version you will need to request that the environment is updated _prior_ to deploying the upgrade.
 
 See the [Getting Help With Altis guide](../getting-help-with-altis.md) for more information on creating support tickets.
 
