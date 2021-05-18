@@ -93,6 +93,5 @@ _Refer to the Altis [Limitations](https://docs.altis-dxp.com/cloud/limitations/)
 
 After the site launch is completed, there may be some items left to clean up or check.
 
-- Do you need to set the default branch back to `main` in your repository?
 - Check the Search Console, Analytics or other similar services or logs for any errors after the deploy is complete.
 - Do the development or staging environments need to be synced?
