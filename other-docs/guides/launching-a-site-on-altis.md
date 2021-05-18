@@ -26,7 +26,7 @@ An [example checklist](#Example-launch-checklist) for your GitHub issue can be f
 
 Once the GitHub issue is created, this information can then be copied into [a support ticket in the Altis Dashboard](https://docs.altis-dxp.com/guides/getting-help-with-altis/) to alert the Altis Support Team.
 
-## Example launch checklist
+### Example launch checklist
 
 ```markdown
 # Goal
