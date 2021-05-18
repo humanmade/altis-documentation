@@ -73,7 +73,7 @@ Once the GitHub issue is created, this information can then be copied into [a su
 - [ ] etc.
 
 ## Environment
-* **GitHub repository:** https://github.com/humanmade/{projectname}
+* **GitHub repository:** https://github.com/{owner}/{repo}
 * **GitHub repository deploy branches:**
   * **Production:** `main`
   * **Staging:** `staging`
