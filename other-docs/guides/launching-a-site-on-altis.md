@@ -56,6 +56,7 @@ Once the GitHub issue is created, this information can then be copied into [a su
 - etc.
 
 ### Development
+<!-- If applicable -->
 - domain-dev.altis.cloud
 - domain2-dev.altis.cloud
 - etc.
