@@ -78,11 +78,8 @@ Once the GitHub issue is created, this information can then be copied into [a su
   * **Production:** `main`
   * **Staging:** `staging`
   * **Development:** `dev`
-  * **Altis integration branch:** `altis` <!-- If applicable -->
-* [ ] **Database exists in Altis Dashboard?**
-  * [ ] If not, provide a link to the database to import:
-* [ ] **Uploads exist in Altis Dashboard?**
-  * [ ] If not, provide a link to the uploads to import:  
+* [ ] **Database import link:**
+* [ ] **Uploads import link:**
 * **Who is providing the SSL certificate(s) (Altis or client)?:** 
 * **Who controls the DNS for the client (Altis or client)?:**
 * **Special requirements or considerations for ElasticSearch:**
