@@ -17,7 +17,6 @@ Create a launch issue in the project repository. This issue should include:
 * Domains hosted on Altis
 * Domain(s) used for email
 * FROM address for each site in the network
-* GitHub repository
 * Deploy branch name per environment
 * A launch checklist containing pre-launch, launch day and post-launch tasks (examples can be found below)
 * Any additional notes or complexities for the project launch
