@@ -39,7 +39,6 @@ Once the GitHub issue is created, this information can then be copied into [a su
 - [ ] Has AWS SES been setup?
 - [ ] Is a content freeze active?
 - [ ] Is the site ready for the DNS switch?
-- [ ] Site is ready for HTTPS?
 - [ ] Are any redirections needed?
 
 ## Domains hosted on Altis
