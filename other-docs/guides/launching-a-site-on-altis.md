@@ -38,7 +38,7 @@ Once the GitHub issue is created, this information can then be copied into [a su
 - [ ] Are we deploying the correct branch?
 - [ ] Has AWS SES been setup?
 - [ ] Is a content freeze active?
-- [ ] Is the client ready for DNS switches?
+- [ ] Is the site ready for the DNS switch?
 - [ ] Site is ready for HTTPS?
 - [ ] Are any redirections needed?
 
