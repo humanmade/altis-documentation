@@ -95,11 +95,7 @@ Once you have environments set up, you should restrict access to them by [requir
 		"altis": {
 			"modules": {
 				"security": {
-					"require-login": true,
-					"php-basic-auth": {
-						"username": "username",
-						"password": "password"
-					}
+					"require-login": true
 				}
 			},
 			"environments": {
