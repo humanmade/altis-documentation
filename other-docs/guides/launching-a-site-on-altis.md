@@ -20,7 +20,7 @@ Create a launch issue in the project repository. This issue should include:
 
 An [example checklist](#Example-launch-checklist) for your GitHub issue can be found below. This issue is primarily for _internal project use_ and compiling all the necessary information. 
 
-Once the GitHub issue is created, this information can then be copied into [a support ticket in the Altis Dashboard](https://docs.altis-dxp.com/guides/getting-help-with-altis/) to alert the Altis Support Team.
+Once you've collected all the information into your GitHub issue, this information can be copied into [a support ticket in the Altis Dashboard](https://docs.altis-dxp.com/guides/getting-help-with-altis/) to alert the Altis Support Team. Set the ticket Type to a "Task", the Priority to "Normal" and the Subject can be "Site Launch Preparation".
 
 ### Example launch checklist
 
