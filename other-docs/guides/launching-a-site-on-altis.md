@@ -93,21 +93,25 @@ After you have submitted your support request in the Altis Dashboard, the Altis 
 Once you have environments set up, you should restrict access to them by [requiring login](https://docs.altis-dxp.com/security/require-login/), forcing [PHP basic authentication](https://docs.altis-dxp.com/security/php-basic-auth/), or both. In your Altis configuration file (`composer.json`), add the following to require login both and PHP authentication. You may omit PHP authentication, but we recommend having at least one of these enabled for all non-production and pre-launch sites. You can override the require login setting to not require login on local environments. PHP authentication is disabled by default on local environments. Refer to the documentation pages for more information about Require Login and PHP Basic Authentication.
 
 ```json
-"altis": {
-	"modules": {
-		"security": {
-			"require-login": true,
-			"php-basic-auth": {
-				"username": "username",
-				"password": "password"
-			}
-		}
-	},
-	"environments": {
-		"local": {
+{
+	"extra": {
+		"altis": {
 			"modules": {
 				"security": {
-					"require-login": false
+					"require-login": true,
+					"php-basic-auth": {
+						"username": "username",
+						"password": "password"
+					}
+				}
+			},
+			"environments": {
+				"local": {
+					"modules": {
+						"security": {
+							"require-login": false
+						}
+					}
 				}
 			}
 		}
