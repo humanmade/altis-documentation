@@ -6,9 +6,6 @@ The process for launching a site on Altis varies depending on the type of projec
 
 Create a launch issue in the project repository. This issue should include:
 
-* Client name
-* Client business region
-* Client contact
 * Launch date
 * Feature freeze date
 * Code freeze date
