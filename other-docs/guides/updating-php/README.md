@@ -106,7 +106,7 @@ You can add these to the ignored directories in the command when checking if des
 
 Once you are confident that your application is compatible with the version of PHP to upgrade to you should do the following:
 
-1. Deploy your updated application to the environment you wish to update, we recommend starting with your non production environments first
+1. Deploy the updated application to the environment you wish to update, we recommend starting with your non production environments first
 2. Create a support ticket for the target environment with the type "Task", titled "Upgrade to PHP 7.4", replacing "7.4" with the target version if necessary
 
 **Note:** If you are upgrading to an Altis version that is not compatible with the environment's current PHP version you will need to request that the environment is updated _prior_ to deploying the upgrade.
