@@ -38,22 +38,10 @@ Once you've collected all the information into your GitHub issue, this informati
 - [ ] Are any redirections needed?
 
 ## Domains hosted on Altis
-<!-- List of domains that will be on the stack -->
+<!-- List of domains that will be on the stack. Dev and staging environments do not need to be included in the list. -->
 
-### Production
 - domain.com
 - domain2.com
-- etc.
-
-### Staging
-- domain-staging.altis.cloud
-- domain2-staging.altis.cloud
-- etc.
-
-### Development
-<!-- If applicable -->
-- domain-dev.altis.cloud
-- domain2-dev.altis.cloud
 - etc.
 
 **What domain(s) will email need to be sent from?**
