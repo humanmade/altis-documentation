@@ -68,11 +68,6 @@ Once the GitHub issue is created, this information can then be copied into [a su
 - etc.
 
 ## Environment
-* **GitHub repository:** https://github.com/{owner}/{repo}
-* **GitHub repository deploy branches:**
-  * **Production:** `main`
-  * **Staging:** `staging`
-  * **Development:** `dev`
 * **Database import link:**
 * **Uploads import link:**
 * **Who is providing the SSL certificate(s) (Altis or client)?:** 
