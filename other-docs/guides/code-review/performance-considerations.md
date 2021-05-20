@@ -28,4 +28,4 @@ This has two main effects: it is almost always faster to load data from the cach
 
 Many of Altis' high-level functions will cache for you, including `get_post()`, `get_post_meta()`, `get_option()`, and many more. Additionally, many queries use Elasticsearch under the hood, which retains a high level of performance even with more complex queries.
 
-When you can predict that a query will happen repeatedly, you can cache this at a higher level, using the [object cache API](https://codex.wordpress.org/Class_Reference/WP_Object_Cache#wp_cache_functions). Zack Tollman has an [excellent article about some of the caching concepts that exist within WordPress and Altis](https://www.tollmanz.com/core-caching-concepts-in-wordpress/).
+When you can predict that a query will happen repeatedly, you can cache this at a higher level, using the [object cache API](https://codex.wordpress.org/Class_Reference/WP_Object_Cache#wp_cache-functions). Zack Tollman has an [excellent article about some of the caching concepts that exist within WordPress and Altis](https://www.tollmanz.com/core-caching-concepts-in-wordpress/).
