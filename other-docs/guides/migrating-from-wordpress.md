@@ -20,20 +20,38 @@ We’ll need to remove all the dependencies that are part of Altis, as those wil
 
 Do the same for `hm-platform` if you have this project dependency. Altis also includes the following WordPress plugins, so if your project uses git submodules or composer to include them, you should remove them from your project (unless you plan to disable the Altis module that makes use of the plugin, and continue with the plugin directly):
 
+- `altis-reusable-blocks`
+- `asset-loader`
 - `aws-rekognition`
+- `aws-ses-wp-mail`
+- `aws-xray`
+- `authorship`
+- `batcache`
+- `browser-security`
+- `cavalcade`
+- `consent`
+- `consent-api`
+- `clean-html`
+- `debug-bar-elasticpress`
 - `delegated-oauth`
 - `elasticpress`
 - `extended-cpts`
 - `gaussholder`
 - `hm-gtm`
 - `hm-redirects`
+- `ludicrousdb`
 - `meta-tags`
-- `msm-sitemap`
+- `publication-checklist`
 - `query-monitor`
+- `require-login`
+- `safe-svg`
 - `smart-media`
 - `stream`
+- `s3-uploads`
+- `tachyon-plugin`
 - `two-factor`
 - `workflows`
+- `wp-redis`
 - `wp-seo`
 - `wp-simple-saml`
 - `wp-user-signups`
