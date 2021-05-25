@@ -99,7 +99,7 @@ In your Altis configuration file (`composer.json`), add the following to both re
 }
 ```
 
-## Post-launch
+## Preparation for launch
 
 After the site launch is completed, there may be some items left to clean up or check.
 
