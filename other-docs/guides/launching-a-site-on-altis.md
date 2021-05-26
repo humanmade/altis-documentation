@@ -4,7 +4,7 @@ The process for launching a site on Altis varies depending on the type of projec
 
 ## Planning
 
-Create a launch issue in the project repository. This issue should include:
+We recommend creating a launch issue in the project repository. This issue should include:
 
 * Launch date
 * Feature freeze date
@@ -18,7 +18,7 @@ Create a launch issue in the project repository. This issue should include:
 * A launch checklist containing pre-launch, launch day and post-launch tasks (examples can be found below)
 * Any additional notes or complexities for the project launch
 
-An [example checklist](#Example-launch-checklist) for your GitHub issue can be found below. This issue is primarily for _internal project use_ and compiling all the necessary information. 
+An [example checklist](#Example-launch-checklist) for your GitHub issue can be found below. This issue is primarily for _internal project use_ and compiling all the necessary information.
 
 Once you've collected all the information into your GitHub issue, this information can be copied into [a support ticket in the Altis Dashboard](https://docs.altis-dxp.com/guides/getting-help-with-altis/) to alert the Altis Support Team. Set the ticket Type to a "Task", the Priority to "Normal" and the Subject can be "Site Launch Preparation".
 
@@ -58,9 +58,9 @@ Once you've collected all the information into your GitHub issue, this informati
 ## Environment
 * **Database import link:**
 * **Uploads import link:**
-* **Who is providing the SSL certificate(s) (Altis or client)?:** 
+* **Who is providing the SSL certificate(s) (Altis or client)?:**
 * **Who controls the DNS for the client (Altis or client)?:**
-* **Projected traffic:** 
+* **Projected traffic:**
 * **Any other specifications or challenges?**
 _Refer to the Altis [Limitations](https://docs.altis-dxp.com/cloud/limitations/) and [Page Caching](https://docs.altis-dxp.com/cloud/page-caching/) guides for specifics around what requests can be supported._
 
