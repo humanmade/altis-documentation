@@ -1,6 +1,6 @@
 # Launching a Site on Altis
 
-The process for launching a site on Altis varies depending on the type of project. Nonetheless, there are common steps that need to be done no matter the context and this guide will walk you through what needs to be done in preparation for your site launch.
+The process for launching a site on Altis varies depending on the type of project. Nonetheless, there are common steps no matter the context and this guide will walk you through what needs to be done in preparation for your site launch.
 
 ## Planning
 
@@ -105,11 +105,11 @@ After the site launch is completed, there may be some items left to clean up or 
 
 - Remove the `require-login` and/or the `php-basic-auth` requirements on the production site. They should remain active on any staging or development environments.
 - Check the Search Console, Analytics or other similar services or logs for any errors after the deploy is complete.
-- Do the development or staging environments need to be synced?
+- If the development or staging environments need to be synced, you can import that data in the Altis Dashboard.
 
 ## Site launch
 
-Before the domain(s) are pointed to the Altis servers, a content migration should be performed to ensure the right content is loaded on the site when the switch is made active. When the most updated data has been imported into the database, a search-and-replace action should be performed so all the database entries that contain the URL of the site have been updated to the _correct_ URL. This can be done in the Altis Dashboard by either opening an SSH connection to the Sandbox Server or running a command on the WP CLI tab.
+Before the domain(s) are pointed to the Altis servers, a content migration should be performed to ensure the right content is loaded on the site when the domain is made active. When the most updated data has been imported into the database, a search-and-replace action should be performed so all the database entries that contain the URL of the site have been updated to the _correct_ URL. This can be done in the Altis Dashboard by either opening an SSH connection to the Sandbox Server or running a command on the WP CLI tab.
 
 The following command would change all entries in the database containing `domain-production.altis.cloud` to `domain.com`. We recommend testing the change first using the `--dry-run` flag to make sure no unexpected tables are affected.
 
