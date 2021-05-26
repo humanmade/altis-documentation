@@ -74,7 +74,7 @@ Once you have environments set up, we recommend limiting access to your sites. B
 
 Logins can be enforced by [requiring user logins](https://docs.altis-dxp.com/security/require-login/), forcing [HTTP basic authentication](https://docs.altis-dxp.com/security/php-basic-auth/), or both.
 
-In your Altis configuration file (`composer.json`), add the following to both require login and HTTP Basic authentication. You may omit Basic authentication, but we recommend having at least one of these enabled for all non-production and pre-launch sites. You can override the require login setting to not require login on local environments. Basic authentication is disabled by default on local environments. Refer to the documentation pages for more information about Require Login and Basic Authentication.
+In your Altis configuration file (`composer.json`), add the following to require login. You may additionally enable HTTP basic authentication if that is desirable for your environment. We recommend having at least one of these security options enabled for all non-production and pre-launch sites. You can override the require login setting to not require login on local environments. Basic authentication is disabled by default on local environments. Refer to the documentation pages for more information about Require Login and Basic Authentication.
 
 ```json
 {
