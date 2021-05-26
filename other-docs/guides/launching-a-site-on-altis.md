@@ -106,3 +106,23 @@ After the site launch is completed, there may be some items left to clean up or 
 - Remove the `require-login` and/or the `php-basic-auth` requirements on the production site. They should remain active on any staging or development environments.
 - Check the Search Console, Analytics or other similar services or logs for any errors after the deploy is complete.
 - Do the development or staging environments need to be synced?
+
+## Site launch
+
+Before the domain(s) are pointed to the Altis servers, a content migration should be performed to ensure the right content is loaded on the site when the switch is made active. When the most updated data has been imported into the database, a search-and-replace action should be performed so all the database entries that contain the URL of the site have been updated to the _correct_ URL. This can be done in the Altis Dashboard by either opening an SSH connection to the Sandbox Server or running a command on the WP CLI tab.
+
+The following command would change all entries in the database containing `domain-production.altis.cloud` to `domain.com`. We recommend testing the change first using the `--dry-run` flag to make sure no unexpected tables are affected.
+
+```bash
+wp search-replace domain-production.altis.cloud domain.com --all-tables --network --url=domain-production.altis.cloud
+```
+
+This step will need to be repeated for any subdomains you have. Be sure to flush the cache when you are done, otherwise the old URLs will still be saved in the object cache.
+
+```bash
+wp cache flush
+```
+
+After the database is updated and the site is ready to go, contact Altis Support to let them know that you are ready for the DNS switch to your new site.
+
+During this period, your temporary production site (e.g. `domain-production.altis.cloud`) will be inaccessible. While the DNS updates are going through, you will want to remove the `require-login` setting in the Altis configuration file unless you have already done so.
