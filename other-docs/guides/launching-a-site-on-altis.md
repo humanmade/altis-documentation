@@ -70,7 +70,7 @@ _Refer to the Altis [Limitations](https://docs.altis-dxp.com/cloud/limitations/)
 ## Preparing Altis Cloud Environments
 After you have submitted your support request in the Altis Dashboard, the Altis Support team will work on setting up your environments and be in touch with your team. When your new cloud environments are set up, you will be contacted and can begin deploying your code to those new environments.
 
-Once you have environments set up, we recommend limiting access to your sites. By default, login will be required on your development and staging environments. Before your site launches, we also recommend requiring login for your production environment as well.
+Once you have environments set up, we recommend limiting access to your sites. By default, login will be required on your development and staging environments. Before your site launches, we recommend requiring some form of login to view your production environment as well.
 
 Logins can be enforced by [requiring user logins](https://docs.altis-dxp.com/security/require-login/), forcing [HTTP basic authentication](https://docs.altis-dxp.com/security/php-basic-auth/), or both.
 
