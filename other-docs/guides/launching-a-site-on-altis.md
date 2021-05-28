@@ -109,7 +109,11 @@ After the site launch is completed, there may be some items left to clean up or 
 
 ## Site launch
 
-Before the domain(s) are pointed to the Altis servers, a content migration should be performed to ensure the right content is loaded on the site when the domain is made active. When the most updated data has been imported into the database, a search-and-replace action should be performed so all the database entries that contain the URL of the site have been updated to the _correct_ URL. This can be done in the Altis Dashboard by either opening an SSH connection to the Sandbox Server or running a command on the WP CLI tab.
+### Content Migration
+
+Before the domain(s) are pointed to the Altis servers, a content migration should be performed to ensure the right content is loaded on the site when the domain is made active. We recommend scheduling a migration sometime during the week when there is more support coverage rather than on weekends. Exceptions may be made on an ad-hoc basis. We ask for a two week lead time on support around migrations so we can ensure the team is on hand and prepared to support the process.
+
+When the most updated data has been imported into the database, a search-and-replace action should be performed so all the database entries that contain the URL of the site have been updated to the _correct_ URL. This can be done in the Altis Dashboard by either opening an SSH connection to the Sandbox Server or running a command on the WP CLI tab.
 
 The following command would change all entries in the database containing `domain-production.altis.cloud` to `domain.com`. We recommend testing the change first using the `--dry-run` flag to make sure no unexpected tables are affected.
 
@@ -122,6 +126,8 @@ This step will need to be repeated for any subdomains you have. Be sure to flush
 ```bash
 wp cache flush
 ```
+
+### DNS Switch
 
 After the database is updated and the site is ready to go, contact Altis Support to let them know that you are ready for the DNS switch to your new site.
 
