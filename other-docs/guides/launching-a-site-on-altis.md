@@ -109,6 +109,8 @@ After the site launch is completed, there may be some items left to clean up or 
 
 ## Site Launch
 
+In the Altis Welcome Guide you should have received, we discuss ways to prepare your content and your site for launch. In addition to those things, there are technical changes that need to be made to the codebase, the database and the infrastructure.
+
 ### Content Migration
 
 Before the domain(s) are pointed to the Altis servers, a content migration should be performed to ensure the right content is loaded on the site when the domain is made active. We recommend scheduling a migration sometime during the week when there is more support coverage rather than on weekends. Exceptions may be made on an ad-hoc basis. We ask for a two week lead time on support around migrations so we can ensure the team is on hand and prepared to support the process.
