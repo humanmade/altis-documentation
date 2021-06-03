@@ -113,7 +113,9 @@ In the Altis Welcome Guide you should have received, we discuss ways to prepare 
 
 ### Content Migration
 
-Before the domain(s) are pointed to the Altis servers, a content migration should be performed to ensure the right content is loaded on the site when the domain is made active. We recommend scheduling a migration sometime during the week when there is more support coverage rather than on weekends. Exceptions may be made on an ad-hoc basis. We ask for a two week lead time on support around migrations so we can ensure the team is on hand and prepared to support the process.
+Before the domain(s) are pointed to the Altis servers, a content migration should be performed to ensure the right content is loaded on the site when the domain is made active. We recommend scheduling a migration on a weekday when there is more support coverage, rather than on weekends. Exceptions may be made on an ad-hoc basis.
+
+If you are migrating from an existing WordPress site that has a lot of data, the Altis Support team can assist with the migration process (e.g. running migration scripts and synchronizing uploads to the server). We ask that you contact Altis Support at least one month in advance if you need support for your migration.
 
 When the most updated data has been imported into the database, a search-and-replace action should be performed so all the database entries that contain the URL of the site have been updated to the _correct_ URL. This can be done in the Altis Dashboard by either opening an SSH connection to the Sandbox Server or running a command on the WP CLI tab.
 
