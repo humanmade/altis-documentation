@@ -22,14 +22,14 @@ An [example checklist](#Example-launch-checklist) for your GitHub issue can be f
 
 Once you've collected all the information into your GitHub issue, this information can be copied into [a support ticket in the Altis Dashboard](https://docs.altis-dxp.com/guides/getting-help-with-altis/) to alert the Altis Support Team. Set the ticket Type to a "Task", the Priority to "Normal" and the Subject can be "Site Launch Preparation".
 
-### Example launch checklist
+### Example Launch Checklist
 
 ```markdown
 # Goal
 
 <!-- A brief overview of the launch objective. Is it a migration? Is it a new site? -->
 
-## Pre-launch checklist
+## Pre-launch Checklist
 <!-- To be filled out by the project team/lead. Not needed for Altis Support ticket. -->
 - [ ] Are we deploying the correct branch?
 - [ ] Has AWS SES been setup?
@@ -37,7 +37,7 @@ Once you've collected all the information into your GitHub issue, this informati
 - [ ] Is the site ready for the DNS switch?
 - [ ] Are any redirections needed?
 
-## Domains hosted on Altis
+## Domains Hosted on Altis
 <!-- List of domains that will be on the stack. Dev and staging environments do not need to be included in the list. -->
 
 - domain.com
@@ -99,7 +99,7 @@ In your Altis configuration file (`composer.json`), add the following to require
 }
 ```
 
-## Preparation for launch
+## Preparation for Launch
 
 After the site launch is completed, there may be some items left to clean up or check.
 
@@ -107,7 +107,7 @@ After the site launch is completed, there may be some items left to clean up or 
 - Check the Search Console, Analytics or other similar services or logs for any errors after the deploy is complete.
 - If the development or staging environments need to be synced, you can import that data in the Altis Dashboard.
 
-## Site launch
+## Site Launch
 
 ### Content Migration
 
