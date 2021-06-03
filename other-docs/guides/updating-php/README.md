@@ -74,11 +74,11 @@ composer global require dealerdirect/phpcodesniffer-composer-installer phpcompat
 Next run the standard against your codebase for the target PHP version, in this example PHP 7.4:
 
 ```
-phpcs -p . --standard=PHPCompatibility
+phpcs -p --standard=PHPCompatibility \
   --runtime-set testVersion 7.4 \
   --extensions=php \
   -d memory_limit=1G \
-  --ignore=wordpress,vendor/altis,*/tests/*
+  --ignore=wordpress,vendor/altis,*/tests/* .
 ```
 
 **Note:** You _must_ fix anything reported as an "Error". Warnings can be ignored at your discretion.
