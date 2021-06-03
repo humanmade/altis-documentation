@@ -114,3 +114,5 @@ Once you are confident that your application is compatible with the version of P
 See the [Getting Help With Altis guide](../getting-help-with-altis.md) for more information on creating support tickets.
 
 The Altis team will follow up with you on the ticket once the environment has been updated.
+
+Once your environment has been upgraded, the PHP upgrade will take effect upon the next application deployment.
