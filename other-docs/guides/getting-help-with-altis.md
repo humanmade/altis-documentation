@@ -1,6 +1,6 @@
 # Getting help with Altis
 
-Everybody needs a little help sometimes, and in this guide will inform you on how to open support requests from the Altis Support Team. 
+Everybody needs a little help sometimes, and in this guide we'll inform you on how to open support requests from the Altis Support Team. 
 
 ## Altis Dashboard
 
@@ -8,11 +8,11 @@ Support happens via the Altis Dashboard. From your Altis Dashboard you will be a
 
 To open a support request, first you'll have to [login to the Altis Dashboard](dashboard.altis-dxp.com/).
 
-From there, you'll find the link to the support page at the top right. See below.
+From there, you'll find the link to the support page in the top right corner. See below.
 
 ![Altis Dashboard support link](./assets/altis-support-button.png)
 
-From this screen you'll be able to view your open issues, all previous issues, and you can also query open and previcious issues if you're looking for something specific. 
+From this screen you'll be able to view your open issues, all previous issues, and you can also query open and previous issues if you're looking for something specific. 
 
 To open a new support ticket, simply click the blue 'Create New Ticket' button.
 
