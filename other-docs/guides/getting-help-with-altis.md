@@ -30,7 +30,7 @@ The type of support ticket, of which there are currently 4. Question, Incident, 
 
 **Priority**
 
-You can change the priority of a support issue, if you need to. In most cases you shouldn't need to change this, but feel free to let us know if something is a priority.
+You can change the priority of a support issue if you need to. In most cases you shouldn't need to change this, but feel free to let us know if something is a priority.
 
 **Subject**
 
