@@ -26,7 +26,7 @@ Select the specific Application or select all Application(s)/Environment(s) to w
 
 **Type**
 
-The type of support ticket, of which there are currently 4. Question, Incident, Problem, and Task. We'll go into more detail about which these categories below, but most tickets will generally fall into one of these four. 
+The type of support ticket. Currently there are four ticket types: Question, Incident, Problem, and Task. We'll go into more detail about which these categories below, but most tickets will generally fall into one of these four. 
 
 **Priority**
 
