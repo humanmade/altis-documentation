@@ -74,7 +74,7 @@ Tasks should be well described with detailed requirements and time scales. We wi
 
 Have a question for us? Ask!
 
-If you have a technical question or require clarification on a feature, just open a support question, and our support team will get back to you.
+If you have a technical question or require clarification on a feature, just open a support question and our support team will get back to you.
 
 ## Email
 
