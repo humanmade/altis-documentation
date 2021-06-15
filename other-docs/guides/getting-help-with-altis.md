@@ -46,7 +46,7 @@ You can CC additional relevant parties to the support request if desired. They w
 
 ## Support Ticket Types
 
-We break down support into different categories. Each has their own language and processes, but they should be somewhat intuitive. Let's go over the types.
+We break down support into different categories. Each has its own language and processes, but it should be somewhat intuitive. Let's go over the types.
 
 ![Altis Dashboard Create Support Ticket page, Question selected in Type dropdown menu](./assets/altis-support-type.png)
 
