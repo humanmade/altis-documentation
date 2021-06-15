@@ -22,7 +22,7 @@ A quick overview of the of the screen:
 
 **Application**
 
-Select the or all Application(s)/Environment(s) to which the support ticket concerns.
+Select the specific Application or select all Application(s)/Environment(s) to which the support ticket concerns.
 
 **Type**
 
