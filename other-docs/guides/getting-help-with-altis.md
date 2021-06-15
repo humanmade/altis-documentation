@@ -1,6 +1,6 @@
 # Getting help with Altis
 
-Everybody needs a little help sometimes, and in this guide we'll inform you on how to open support requests from the Altis Support Team. 
+Everybody needs a little help sometimes, and the purpose of this guide is to help you through the proccess. 
 
 ## Altis Dashboard
 
@@ -57,7 +57,6 @@ We currently have four types of support. Below is a description of each and how 
 Incidents are unplanned events that negatively impact service, or the quality of service of Altis. Be this part of the hosting infrastructure, or on the software side of Altis, if there is an issue which is causing an immediate business impact, this would be an Incident, and you can make a support request to help investigate.
 
 From the support team side, Incidents get a rapid response. Alarm bells will ring, and we’ll put out the fires to get things running again by any means necessary.
-
 If the site is down for example, select the 'Incident' type, with a priority of ‘Urgent’.
 
 ### Problem
