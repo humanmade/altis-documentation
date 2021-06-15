@@ -34,7 +34,7 @@ You can change the priority of a support issue if you need to. In most cases you
 
 **Subject**
 
-Short line describing the support request.
+Short description of the support request.
 
 **Description**
 
