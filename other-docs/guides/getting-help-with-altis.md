@@ -54,7 +54,7 @@ We currently have four types of support. Below is a description of each and how 
 
 ### Incident
 
-Incidents are unplanned events that negatively impact service, or quality of service of Altis. Be this part of the hosting infrastructure, or on the software side of Altis, if there is an issue which is causing an immediate business impact, this would be an Incident, and you can make a support request to help investigate.
+Incidents are unplanned events that negatively impact service, or the quality of service of Altis. Be this part of the hosting infrastructure, or on the software side of Altis, if there is an issue which is causing an immediate business impact, this would be an Incident, and you can make a support request to help investigate.
 
 From the support team side, Incidents get a rapid response. Alarm bells will ring, and we’ll put out the fires to get things running again by any means necessary.
 
