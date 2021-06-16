@@ -65,7 +65,7 @@ Problems are the cause of, or can be the potential cause of future Incidents. If
 
 ### Task 
 
-There’s an array of tasks that might you need help with. Typically, this might mean provisioning of infrastructure to accommodate some need, it might be providing access to some tool or service used by the team, or it could be to run an operation that requires a cloud engineer. 
+There’s an array of tasks that you might need help with. Typically, this might mean provisioning of infrastructure to accommodate some need, it might be providing access to some tool or service used by the team, or it could be to run an operation that requires a cloud engineer. 
 
 Tasks should be well described with detailed requirements and time scales. We will not be able to service same-day requests.
 
