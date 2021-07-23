@@ -60,27 +60,27 @@ To start using your project, you'll need to set up a development environment.
 
 ## Running your project locally
 
-For local development, you'll also need to add a local server to your development dependencies. Altis includes out-of-the-box support for [Chassis](http://chassis.io), a virtual-machine environment built on Vagrant and VirtualBox.
+For local development, you'll also need to add a local server to your development dependencies. Altis includes a Docker based development environment out-of-the-box. See the [Local Server documentation](docs://local-server/) for more details.
 
-*Note:* We are working on a Docker-based environment called Local Server, currently in preview. To try the preview version, see [the Local Server documentation](docs://local-server/)
+Local Server requires [Docker Desktop for Mac or Windows](https://www.docker.com/products/docker-desktop), or Docker Engine on Linux.
 
-Chassis requires [Vagrant](https://www.vagrantup.com/) and [VirtualBox](https://www.virtualbox.org/).
+If you are unable to run Docker Desktop or Docker Engine on your machine you can use the alternative local development environment based on [Chassis](https://chassis.io/). Chassis requires [Vagrant](https://www.vagrantup.com/) and [VirtualBox](https://www.virtualbox.org/).
 
-To set up Chassis for Altis, run the following inside your project's directory:
+To set up Local Server for Altis, run the following inside your project's directory:
 
 ```
-composer chassis init
+composer serve
 ```
 
-This will add Chassis to your development dependencies and prepare it to be run.
+This will download and start all the services needed for Altis development.
 
-The first time you run Chassis, it may take a little longer than usual, as it sets up the virtual machine. Once this is complete, you will now have a working local site at http://my-project.local/. Visit `/wp-admin/` and login with `admin` / `password` to get started!
+The first time you run Local Server, it may take a little longer than usual, as it downloads the containers. Once this is complete, you will now have a working local site at https://my-project.altis.dev/. Visit `/wp-admin/` and login with `admin` / `password` to get started!
 
-If you used a directory name other than `my-project` the default URL will be `http://<directory name>.local`.
+If you used a directory name other than `my-project` the default URL will be `https://<directory name>.altis.dev`.
 
-To stop the virtual machine, run `composer chassis stop`. You can also run [Vagrant commands](https://www.vagrantup.com/docs/cli/) inside the `chassis` directory.
+To stop Local Server, run `composer server stop`.
 
-To start the virtual machine again run `composer chassis start`.
+To start the virtual machine again run `composer serve`.
 
 
 ## Ready for development!
