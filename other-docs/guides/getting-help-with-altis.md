@@ -8,25 +8,49 @@ Support happens via the Altis Dashboard. From your Altis Dashboard you will be a
 
 To open a support request, first you'll have to [login to the Altis Dashboard](dashboard.altis-dxp.com/).
 
-From there, you'll find the link to the support page in the top right corner. See below.
+From there, you'll find the link to the support page in the bottom left corner of the screen. See below.
 
 ![Altis Dashboard support link](./assets/altis-support-button.png)
 
-From this screen you'll be able to view your open issues, all previous issues, and you can also query open and previous issues if you're looking for something specific. 
+From the support panel screen you'll be able to view your open issues, all previous issues, and you can also query open and previously closed issues. 
 
 To open a new support ticket, simply click the blue 'Create New Ticket' button.
 
 ## Create Support Ticket
 
-A quick overview of the of the screen: 
+### Selecting a support issue type
+
+To help guide you to finding the right kind of help, there's four categories a support ticket can fall under. They all have their own labels, but we'll go over them quickly.
+
+**Report an Incident**
+
+Incidents are unplanned events that negatively impact service, or the quality of service of Altis. Be this part of the hosting infrastructure, or on the software side of Altis, if there is an issue which is causing an immediate business impact, this would be an Incident, and you can make a support request to help investigate.
+
+From the support team side, Incidents get a rapid response. Alarm bells will ring, and we’ll put out the fires to get things running again by any means necessary.
+If the site is down for example, select 'Report an Incident'.
+
+**Report an ongoing issue**
+
+Issues, also known as 'Problems' are the cause of, or can be the potential cause of future Incidents. If you're encountering a problem which could cause potential Incidents, or if you've run into a bug, select 'Report an ongoing issue'.
+
+
+**Request an infrastucture change**
+
+There’s an array of tasks that you might need help with. Typically, this might be the provisioning of an additional environemnent, or it could be to run an operation that requires a cloud engineer, upgrading PHP for example.
+
+Tasks should be well described with detailed requirements and time scales. We cannot guarantee will not be able to service same-day requests, if there's capacity to do so, we will.
+
+**Ask a question**
+
+Have a question for us? Ask!
+
+If you have a technical question or require clarification on a feature, just open a support question and our support team will do their best to answer you.
+
+### Filling the form
 
 **Application**
 
 Select the specific Application or select all Application(s)/Environment(s) to which the support ticket concerns.
-
-**Type**
-
-The type of support ticket. Currently there are four ticket types: Question, Incident, Problem, and Task. We'll go into more detail about which these categories below, but most tickets will generally fall into one of these four. 
 
 **Priority**
 
@@ -44,36 +68,6 @@ The body of the support request.
 
 You can CC additional relevant parties to the support request if desired. They will recieve carbon copies of the correspondance.
 
-## Support Ticket Types
-
-We break down support into different categories. Each has its own language and processes, but it should be somewhat intuitive. Let's go over the types.
-
-![Altis Dashboard Create Support Ticket page, Question selected in Type dropdown menu](./assets/altis-support-type.png)
-
-We currently have four types of support. Below is a description of each and how they are different from each other.
-
-### Incident
-
-Incidents are unplanned events that negatively impact service, or the quality of service of Altis. Be this part of the hosting infrastructure, or on the software side of Altis, if there is an issue which is causing an immediate business impact, this would be an Incident, and you can make a support request to help investigate.
-
-From the support team side, Incidents get a rapid response. Alarm bells will ring, and we’ll put out the fires to get things running again by any means necessary.
-If the site is down for example, select the 'Incident' type, with a priority of ‘Urgent’.
-
-### Problem
-
-Problems are the cause of, or can be the potential cause of future Incidents. If you're encountering a problem which could cause potential Incidents, let us know!
-
-### Task 
-
-There’s an array of tasks that you might need help with. Typically, this might mean provisioning of infrastructure to accommodate some need, it might be providing access to some tool or service used by the team, or it could be to run an operation that requires a cloud engineer. 
-
-Tasks should be well described with detailed requirements and time scales. We will not be able to service same-day requests.
-
-### Question
-
-Have a question for us? Ask!
-
-If you have a technical question or require clarification on a feature, just open a support question and our support team will get back to you.
 
 ## Email
 
