@@ -36,9 +36,9 @@ Issues, also known as 'Problems' are the cause of, or can be the potential cause
 
 **Request an infrastucture change**
 
-There’s an array of tasks that you might need help with. Typically, this might be the provisioning of an additional environemnent, or it could be to run an operation that requires a cloud engineer, upgrading PHP for example.
+There’s an array of tasks that you might need help with. Typically, this might be the provisioning of an additional environment, or it could be an operation that requires a cloud engineer to run, such as upgrading the PHP version.
 
-Tasks should be well described with detailed requirements and time scales. We cannot guarantee will not be able to service same-day requests, if there's capacity to do so, we will.
+Tasks should be well described with detailed requirements and time scales. We cannot guarantee we will be able to service same-day requests, however if there is capacity to do so, we will.
 
 **Ask a question**
 
@@ -50,7 +50,7 @@ If you have a technical question or require clarification on a feature, just ope
 
 **Application**
 
-Select the specific Application or select all Application(s)/Environment(s) to which the support ticket concerns.
+Select the specific Application or select all Application(s)/Environment(s) that the support ticket concerns.
 
 **Priority**
 
@@ -66,7 +66,7 @@ The body of the support request.
 
 **CCs**
 
-You can CC additional relevant parties to the support request if desired. They will recieve carbon copies of the correspondance.
+You can CC additional relevant parties to the support request if desired. They will receive carbon copies of the correspondence.
 
 
 ## Email
