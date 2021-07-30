@@ -54,7 +54,7 @@ Select the specific Application or select all Application(s)/Environment(s) that
 
 **Priority**
 
-You can change the priority of a support issue if you need to. In most cases you shouldn't need to change this, but feel free to let us know if something is a priority.
+You can change the priority of a support issue if you need to. In most cases you shouldn't need to change this, but feel free to let us know if something is a priority. For example, the 'Urgent' priority should only be used if your experience a service outage. The other priorities; low to high, can be used to indicate which of your own open tickets you'd like to be prioritised.
 
 **Subject**
 
