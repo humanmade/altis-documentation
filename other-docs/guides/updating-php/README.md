@@ -78,7 +78,7 @@ phpcs -p --standard=PHPCompatibility \
   --runtime-set testVersion 7.4 \
   --extensions=php \
   -d memory_limit=1G \
-  --ignore=wordpress,vendor/altis,*/tests/* .
+  --ignore=wordpress,vendor/altis,\*/tests/\* .
 ```
 
 **Note:** You _must_ fix anything reported as an "Error". Warnings can be ignored at your discretion.
