@@ -20,7 +20,6 @@ It is recommended to update your local environment's Elasticsearch version befor
 1. Destroy your existing local environment:
    - Local Server: `composer server destroy`
    - Local Chassis: `composer chassis destroy`
-
 1. Require Local Server or Local Chassis version 8.1 or higher:
    ```sh
    composer require altis/local-server:^8.1.0-rc
