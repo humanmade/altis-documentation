@@ -11,13 +11,10 @@ There are 2 key steps to getting ready for a new version of PHP:
 
 |Altis|PHP Version|
 |-|-|
-|v7|7.4|
-|v6|7.2-7.4|
-|v5|7.2-7.4|
+|v7+|7.4|
+|v5-v6|7.2-7.4|
 |v4|7.0-7.4|
-|v3|7.0-7.2|
-|v2|7.0-7.2|
-|v1|7.0-7.2|
+|v1-v3|7.0-7.2|
 
 ## Checking PHP Version Compatibiliity
 
