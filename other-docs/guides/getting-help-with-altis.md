@@ -6,7 +6,7 @@ Everybody needs a little help sometimes, and the purpose of this guide is to hel
 
 Support happens via the Altis Dashboard. From your Altis Dashboard you will be able create, view, and reply to open support requests. 
 
-To open a support request, first you'll have to [login to the Altis Dashboard](dashboard.altis-dxp.com/).
+To open a support request, first you'll have to [login to the Altis Dashboard](https://dashboard.altis-dxp.com/).
 
 From there, you'll find the link to the support page in the bottom left corner of the screen. See below.
 
