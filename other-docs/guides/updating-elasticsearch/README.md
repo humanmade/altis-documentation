@@ -10,6 +10,8 @@ Altis v5+ is compatible with the following Elasticsearch versions:
 - 6.8
 - 6.3
 
+For all Altis environments created before 2021-09-01, the default Elasticsearch version is 6.3. For all environments created after this date, the default version is 7.10.
+
 ## Updating Local Environments
 
 It is recommended to update your local environment's Elasticsearch version before requesting an upgrade to your Cloud environments to confirm that any custom code you have that interacts with Elasticsearch still works.
