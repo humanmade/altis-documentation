@@ -73,3 +73,8 @@ echo $test;
 To do so ensure you have the [humanmade/coding-standards](https://github.com/humanmade/coding-standards) cloned into your repo using composer `composer require --dev humanmade/coding-standards`.
 
 An Altis command is still in development, however, since the ACR is based on a custom PHPCS standard the process can be executed locally by running the following command `vendor/bin/phpcs -p --standard=HM-Minimum .`.
+
+
+## Manual Code Review
+
+If your are looking for information on the legacy Manual Code Review process [please refer to version 7 or earlier of this document](https://docs.altis-dxp.com/v7/guides/code-review/#manual-code-review).
