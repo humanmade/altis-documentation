@@ -26,6 +26,7 @@ These requirements will help to avoid any errors and delays.
    - Cloud: `wp elasticpress index --setup --network-wide`
 
 After completing the above steps to ensure your environment is ready for the Elasticsearch upgrade, you can then proceed to the steps below.
+
 ## Updating Local Environments
 
 It is recommended to update your local environment's Elasticsearch version before requesting an upgrade to your Cloud environments to confirm that any custom code you have that interacts with Elasticsearch still works.
