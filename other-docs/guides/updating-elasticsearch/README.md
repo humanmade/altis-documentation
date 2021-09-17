@@ -12,6 +12,21 @@ Altis v5+ is compatible with the following Elasticsearch versions:
 
 For all Altis environments created before 2021-09-01, the default Elasticsearch version is 6.3. For all environments created after this date, the default version is 7.10.
 
+## Prerequisites
+
+There several things you must ensure have been done before updating your Elasticsearch version locally _or_ when requesting an update for a cloud environment.
+
+These requirements will help to avoid any errors and delays.
+
+1. Ensure all Altis modules are fully up to date by running `composer update "altis/*" --with-all-dependencies`
+1. If the upgrade is for a cloud environment, ensure the updated `composer.lock` has been committed and deployed
+1. If any patch updates were downloaded, in particular for the Cloud or Search modules you should reindex your content using one of the following commands:
+   - Local Server: `composer server cli -- elasticpress index --setup --network-wide`
+   - Local Chassis: `composer chassis exec -- wp elasticpress index --setup --network-wide`
+   - Cloud: `wp elasticpress index --setup --network-wide`
+
+After completing the above steps to ensure your environment is ready for the Elasticsearch upgrade, you can then proceed to the steps below.
+
 ## Updating Local Environments
 
 It is recommended to update your local environment's Elasticsearch version before requesting an upgrade to your Cloud environments to confirm that any custom code you have that interacts with Elasticsearch still works.
