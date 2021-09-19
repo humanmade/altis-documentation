@@ -39,8 +39,8 @@ It is recommended to update your local environment's Elasticsearch version befor
    - Local Chassis: `composer chassis destroy`
 1. Require Local Server or Local Chassis version 8.1 or higher:
    ```sh
-   composer require altis/local-server:^8.1.0-rc
-   composer require altis/local-chassis:^8.1.0-rc
+   composer require --dev altis/local-server:^8.1.0-rc
+   composer require --dev altis/local-chassis:^8.1.0-rc
    ```
 1. Upgrade if using Local Chassis by running `composer chassis upgrade`
 1. Start your environment and re-import your data:
