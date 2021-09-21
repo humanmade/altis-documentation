@@ -21,5 +21,5 @@ Module pre-releases are "Release Candidates" and are not covered by the long ter
 The following is an example of updating to Altis CMS 2.1 (which contains WordPress 5.3) in Altis v2. From your project root folder in an Altis v2 install you would run the following command.
 
 ```
-composer require altis/cms ^2.1.0@RC --update-with-dependencies
+composer require altis/cms ^2.1.0-rc@RC --update-with-dependencies
 ```
