@@ -12,11 +12,15 @@ From there, you'll find the link to the support page in the bottom left corner o
 
 ![Altis Dashboard support link](./assets/altis-support-button.png)
 
-From the support panel screen you'll be able to view your open issues, all previous issues, and you can also query open and previously closed issues. 
+From the support panel screen you'll be able to view your open issues, all previous issues, and you can also query open and previously closed issues. Shown below.
+
+![Altis Dashboard support link](./assets/altis-support-overview.png)
 
 To open a new support ticket, simply click the blue 'Create New Ticket' button.
 
 ## Create Support Ticket
+
+![Altis Dashboard support link](./assets/altis-support-ticket-type.png)
 
 ### Selecting a support issue type
 
@@ -47,6 +51,8 @@ Have a question for us? Ask!
 If you have a technical question or require clarification on a feature, just open a support question and our support team will do their best to answer you.
 
 ### Filling the form
+
+![Altis Dashboard support link](./assets/altis-support-ticket-form.png)
 
 **Application**
 
