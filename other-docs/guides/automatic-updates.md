@@ -27,6 +27,14 @@ updates:
     dependency-type: all
   # Increase limit to number of Altis modules
   open-pull-requests-limit: 15
+# Optional: Generic update configuration for top level project dependencies
+- package-ecosystem: composer
+  directory: /
+  schedule:
+    interval: daily
+  versioning-strategy: lockfile-only
+  ignore:
+  - dependency-name: altis/*
 ```
 
 Finally commit this file to your repo, and you're done.
