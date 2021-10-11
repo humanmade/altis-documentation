@@ -6,26 +6,68 @@ The service monitors the dependencies in your project and creates automatic pull
 
 ## Setting Up Dependabot
 
-To get started create a `dependabot.yml` file in your project root.
+To get started create a `dependabot.yml` file in your project's `.github` directory, or if you already have an existing `dependabot.yml`, add the following config to it.
 
-The minimum recommended configuration for Altis is as follows:
+The minimum recommended configuration for Altis updates is as follows:
 
 ```yaml
 version: 2
 updates:
-  # Enable version updates for Composer
-  - package-ecosystem: "composer"
-    # Look for `composer.json` and `composer.lock` files in the `root` directory
-    directory: "/"
-    # Create pull requests for updates (if any) once a day:
-    schedule:
-      interval: "daily"
-    # Increase the version requirements for Composer
-    # only when required
-    versioning-strategy: lockfile-only
+# Enable version updates for Altis modules
+- package-ecosystem: composer
+  # Look for `composer.json` and `composer.lock` files in the `root` directory
+  directory: /
+  # Create pull requests for updates (if any) once a day:
+  schedule:
+    interval: daily
+  versioning-strategy: lockfile-only
+  # Ensure all Altis modules recieve update PRs
+  allow:
+  - dependency-name: altis/*
+    dependency-type: all
+  # Increase limit to number of Altis modules
+  open-pull-requests-limit: 15
+# Optional: Generic update configuration for top level project dependencies
+- package-ecosystem: composer
+  directory: /
+  schedule:
+    interval: daily
+  versioning-strategy: lockfile-only
+  ignore:
+  - dependency-name: altis/*
 ```
 
 Finally commit this file to your repo, and you're done.
+
+## Automatically Merging Dependabot PRs
+
+You can also optionally use the [Dependabot Auto Merge GitHub Action](https://github.com/marketplace/actions/dependabot-auto-merge) to automatically merge Dependabot Pull Requests for Altis modules.
+
+To get started add the following to a new workflow called `.github/workflows/auto-merge.yml`:
+
+```yaml
+name: auto-merge
+
+on:
+  pull_request_target:
+
+jobs:
+  auto-merge:
+    runs-on: ubuntu-latest
+    steps:
+      - uses: ahmadnassri/action-dependabot-auto-merge@v2
+        with:
+          github-token: ${{ secrets.mytoken }}
+```
+
+Secondly to target Altis modules only add a config file called `.github/auto-merge.yml` with the following configuration:
+
+```yaml
+- match:
+    dependency_name: altis/*
+    dependency_type: all
+    update_type: semver:patch
+```
 
 ## Further Configuration
 
