@@ -14,23 +14,22 @@ The minimum recommended configuration for Altis is as follows:
 version: 2
 updates:
 # Enable version updates for Altis modules
-- package-ecosystem: "composer"
+- package-ecosystem: composer
   # Look for `composer.json` and `composer.lock` files in the `root` directory
-  directory: "/"
+  directory: /
   # Create pull requests for updates (if any) once a day:
   schedule:
-    interval: "daily"
-  # Increase the version requirements for Composer
-  # only when required
+    interval: daily
   versioning-strategy: lockfile-only
   # Ensure all Altis modules recieve update PRs
   allow:
   - dependency-name: altis/*
+    dependency-type: all
 # Enable version updates for non Altis Composer packages
-- package-ecosystem: "composer"
-  directory: "/"
+- package-ecosystem: composer
+  directory: /
   schedule:
-    interval: "daily"
+    interval: daily
   versioning-strategy: lockfile-only
 ```
 
