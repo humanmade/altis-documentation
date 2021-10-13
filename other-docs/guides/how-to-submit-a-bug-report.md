@@ -1,6 +1,6 @@
 # How to submit a bug report.
 
-Bugs happen, and we’re here to support you, should you find a bug in Altis.
+Bugs happen, and we’re here to support you. If you find a bug in Altis, we'll handle fixing it.
 
 To help our product team understand your issue, there are some requirements for a bug report that must be met. This allows our team to know how to both identify the problem, and whether it has been resolved.
 
