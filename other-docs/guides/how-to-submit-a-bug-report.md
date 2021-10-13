@@ -2,7 +2,7 @@
 
 Bugs happen, and we’re here to support you, should you find a bug in Altis.
 
-To get the most out of support and to help our product team, there are some requirements for a bug report that must be met, in order for us to help you with your issue.
+To help our product team understand your issue, there are some requirements for a bug report that must be met. This allows our team to know how to both identify the problem, and whether it has been resolved.
 
 When [filing a bug report](./getting-help-with-altis.md) please provide all of the following:
 ## Test Results.
