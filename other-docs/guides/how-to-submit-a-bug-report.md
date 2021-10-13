@@ -18,7 +18,7 @@ Please ensure you provide the reduced test case as the basis of the bug report. 
 
 Customers on Enterprise support plans may wish to use their dedicated technical engineering support to handle bug isolation.
 
-## Steps to reproduce.
+## Steps to Reproduce
 
 If possible, please also provide detailed step-by-step instructions to reproduce the issue. This will ensure that we can replicate the problem, and avoids back-and-forth conversations.
 
