@@ -4,7 +4,7 @@ Bugs happen, and we’re here to support you, should you find a bug in Altis.
 
 To get the most out of support and to help our product team, there are some requirements for a bug report that must be met, in order for us to help you with your issue.
 
-When filing a bug report ( [you can read this guide on how to file support tickets](https://docs.altis-dxp.com/nightly/guides/getting-help-with-altis/) ) please provide all of the following:
+When [filing a bug report](./getting-help-with-altis.md) please provide all of the following:
 ## Test Results.
 
 Please write a brief description of the bug, including what you expect to happen and what is currently happening.
