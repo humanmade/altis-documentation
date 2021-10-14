@@ -16,6 +16,8 @@ Bugs should be isolated to a [reduced test case](https://css-tricks.com/reduced-
 
 Please ensure you provide the reduced test case as the basis of the bug report. If we cannot confirm that the test case is within Altis, we may ask you to reduce the test case further to ensure it isn't caused by your custom code.
 
+The reduced test case can be provided as a code snippet in the report itself or as a link to a [GitHub gist](https://gist.github.com/) if there are multiple files involved.
+
 Customers on Enterprise support plans may wish to use their dedicated technical engineering support to handle bug isolation.
 
 ## Steps to Reproduce
