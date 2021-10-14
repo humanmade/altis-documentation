@@ -24,6 +24,6 @@ Customers on Enterprise support plans may wish to use their dedicated technical 
 
 If possible, please also provide detailed step-by-step instructions to reproduce the issue. This will ensure that we can replicate the problem, and avoids back-and-forth conversations.
 
-## Environment Setup and Configuration.
+## Environment Setup and Configuration
 
 Please let us know what environments the bug is occurring in, what configuration you have in `composer.json` under the `extra.altis` property (making sure to redact any sensitive information like API keys), and whether you were able to reproduce the bug locally or not.
