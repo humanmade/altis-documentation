@@ -6,7 +6,7 @@ To help our product team understand your issue, there are some requirements for 
 
 When [filing a bug report](./getting-help-with-altis.md) please provide all of the following:
 
-## Test Results.
+## Test Results
 
 Please write a brief description of the bug, including what you expect to happen and what is currently happening.
 
