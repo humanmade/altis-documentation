@@ -1,4 +1,4 @@
-# How to submit a bug report.
+# How to Submit a Bug Report
 
 Bugs happen, and we’re here to support you. If you find a bug in Altis, we'll handle fixing it.
 
