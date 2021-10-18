@@ -21,7 +21,9 @@ function register() {
 		DIRECTORY,
 		'Documentation',
 		[
-			'enabled' => true,
+			'defaults' => [
+				'enabled' => true,
+			],
 		],
 		__NAMESPACE__ . '\\bootstrap'
 	);
