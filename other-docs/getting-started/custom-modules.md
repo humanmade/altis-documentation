@@ -107,7 +107,7 @@ add_action( 'altis.modules.init', function () {
 		'Your Module',
 		[
 			'defaults' => [
-			  'enabled' => true,
+				'enabled' => true,
 			],
 		],
 		__NAMESPACE__ . '\\bootstrap'
