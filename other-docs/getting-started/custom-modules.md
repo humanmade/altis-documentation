@@ -72,12 +72,12 @@ add_action( 'altis.modules.init', function () {
 
 		// Module options, as an array:
 		[
-      // Defaults define the default settings for the module.
-      'defaults' => [
-        // `enabled` is a special configuration key, which sets whether the module is
-        // enabled by default or not. Defaults to "false".
-        'enabled' => true,
-      ],
+			// Defaults define the default settings for the module.
+			'defaults' => [
+				// `enabled` is a special configuration key, which sets whether the module is
+				// enabled by default or not. Defaults to "false".
+				'enabled' => true,
+			],
 		],
 
 		// Function to call if the module is enabled.
@@ -106,9 +106,9 @@ add_action( 'altis.modules.init', function () {
 		DIRECTORY,
 		'Your Module',
 		[
-      'defaults' => [
+			'defaults' => [
 			  'enabled' => true,
-      ],
+			],
 		],
 		__NAMESPACE__ . '\\bootstrap'
 	);
