@@ -22,6 +22,7 @@ Do the same for `hm-platform` if you have this project dependency. Altis also in
 
 - `altis-reusable-blocks`
 - `asset-loader`
+- `aws-analytics`
 - `aws-rekognition`
 - `aws-ses-wp-mail`
 - `aws-xray`
@@ -45,14 +46,15 @@ Do the same for `hm-platform` if you have this project dependency. Altis also in
 - `query-monitor`
 - `require-login`
 - `safe-svg`
+- `simple-local-avatars`
 - `smart-media`
 - `stream`
 - `s3-uploads`
 - `tachyon-plugin`
 - `two-factor`
+- `wordpress-seo`
 - `workflows`
 - `wp-redis`
-- `wp-seo`
 - `wp-simple-saml`
 - `wp-user-signups`
 
@@ -144,9 +146,19 @@ composer install --no-dev
 
 ## Setup the local server
 
-Assuming your project uses Chassis for local development, we’ll be removing the local Chassis install, and installing the Altis module. If you have a setup script (such as `.bin/setup.sh`) you should remove any Chassis setup / installation steps.
+To install the [Docker development environment](docs://local-server/README.md) run:
 
-Once you have cleaned out Chassis, install the `altis/local-chassis` composer package as a dev dependency.
+```sh
+composer require --dev altis/local-server
+```
+
+To start the docker server run `composer serve`. You should now be able to see the site at https://my-project.altis.dev where "my-project" is the project directory name.
+
+### Docker alternative
+
+If you are unable to use Docker you can use [Chassis for local development](docs://local-chassis/README.md). You will need to remove the existing Chassis install, and install the Altis module. If you have a setup script (such as `.bin/setup.sh`) you should remove any Chassis setup / installation steps.
+
+Once you have removed any existing Chassis install and related code, install the `altis/local-chassis` composer package as a dev dependency.
 
 ```sh
 composer require --dev altis/local-chassis
@@ -154,17 +166,45 @@ composer require --dev altis/local-chassis
 
 Once completed, install and start your local server with `composer chassis init` and then `composer chassis start`. You should now be able to navigate to http://my-project.local to see the site, where "my-project" is your project directory name.
 
-### Chassis alternative
+## Migrating from a single site install
 
-We also recommend installing the new docker based local environment. This environment has a few extra developer tools such as Kibana and avoids issues where Chassis and extension versions can get out of sync across your team's machines.
+Altis is always configured to be a WordPress multisite, as such any sites that are not installed as multisite already, will need converting via the `multisite-convert` WP CLI command. Note that you will need to do this on your Cloud environments after deploying.
 
-To install the docker environment run:
+To convert an existing single site to a multisite install run the following command:
 
-```sh
-composer require --dev altis/local-server
+```
+wp core multisite-convert
+
+# On Local Server
+composer server cli core multisite-convert
+
+# On Local Chassis
+composer server exec wp core multisite-convert
 ```
 
-To start the docker server run `composer local-server start`. You should now be able to see the site at https://my-project.altis.dev where "my-project" is the project directory name.
+**Important:** Part of the conversion process will reset your main site's permalink structure. You should reset this via the admin Permalinks page immediately.
+
+Once you have reset the permalink structure you should flush the cache:
+
+```
+wp cache flush
+
+# On Local Server
+composer server cli cache flush
+
+# On Local Chassis
+composer server exec wp cache flush
+```
+
+There are several key differences between a single site and a multisite install:
+
+- Network admin area for creating and managing sites
+- Network level administration of themes and plugins
+- Super admin role for Network Admin access
+- Users can be members of any number of sites
+- Users can be removed from a given site rather than deleted
+
+[See the WordPress Multisite Network Administration guide for more detail](https://wordpress.org/support/article/multisite-network-administration/).
 
 ## Migrating email sending domain
 
@@ -216,6 +256,10 @@ Any module can be disabled by setting its `enabled` setting to `false`:
 
 ## Deploying to Cloud
 
-The first time Altis is deployed, depending on the exact configuration, there may be tasks to perform on deploy. Altis is always configured to be a WordPress multisite, as such any sites that are not installed as multisite already, will need converting via the `multisite-convert` WP CLI command.
+The first time Altis is deployed, depending on the exact configuration, there may be tasks to perform on deploy:
+
+- Multisite conversion
+- Resetting permalinks
+- Running the `wp altis migrate` command
 
 As always, be sure to test the migration and deployment in `development` or `staging` environments before rolling out to production.
