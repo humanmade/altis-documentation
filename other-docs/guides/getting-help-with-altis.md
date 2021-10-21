@@ -75,16 +75,12 @@ The body of the support request.
 You can CC additional relevant parties to the support request if desired. They will receive carbon copies of the correspondence.
 
 
-## Email
+## Backup email addresses
 
-The second method for creating a support ticket is email. This is offered as a backup option should you be unable to open tickets via the Altis Dashboard.
+In the event of an outage affecting the Altis Dashboard, we provide a backup method of contact via email.
 
-The following email addresses can be used to create different types of ticket as indicated:
+This email address is only offered for emergency situations where an urgent response (L1) is necessary. Contacting this email will alert on-call engineers to your emergency immediately, and as such, must only be used for serious downtime or malfunctions.
 
+Where possible, use the Altis Dashboard to file tickets instead, as this will ensure that your message is routed to the correct support staff.
 
-- **support@altis-dxp.com**<br />
-   This will create a new support ticket for the support team.
-- **hosting@altis-dxp.com**<br />
-   This will create an Incident type ticket (non-urgent).
-- **sysops@altis-dxp.com**<br />
-   This will create an ‘Urgent’ Incident type ticket, and is linked to PagerDuty. This will alert on-call engineers to the emergency. 
+The email of last resort is: sysops@altis-dxp.com
