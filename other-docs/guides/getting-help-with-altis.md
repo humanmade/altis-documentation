@@ -28,15 +28,17 @@ To help guide you to finding the right kind of help, there's four categories a s
 
 **Report an Incident**
 
-Incidents are unplanned events that negatively impact service, or the quality of service of Altis. Be this part of the hosting infrastructure, or on the software side of Altis, if there is an issue which is causing an immediate business impact, this would be an Incident, and you can make a support request to help investigate.
+Incidents are unplanned events that negatively impact service, or the quality of service of Altis. This can be either a an issue with the hosting infrastructure, or take the form of a breaking issue in the Altis software. 
+If such an issue is causing an immediate, negative impact on business operations, this would be an Incident, and you can make a support request we investigate.
 
-From the support team side, Incidents get a rapid response. Alarm bells will ring, and we’ll put out the fires to get things running again by any means necessary.
-If the site is down for example, select 'Report an Incident'.
+If you're creating a new 'Incident' type ticket, you'll be able to select from a priority field. 
+'Urgent' priority will cause on-call cloud engineers to be paged, and we'll investigate the incident immediately. 
+
+You can still have an 'Incident' which doesn't effect the majority of your users, but still needs attention. For those cases, you can select a priority appropriate to impact of the incident.
 
 **Report an ongoing issue**
 
 Issues, also known as 'Problems' are the cause of, or can be the potential cause of future Incidents. If you're encountering a problem which could cause potential Incidents, or if you've run into a bug, select 'Report an ongoing issue'.
-
 
 **Request an infrastucture change**
 
@@ -58,9 +60,6 @@ If you have a technical question or require clarification on a feature, just ope
 
 Select the specific Application or select all Application(s)/Environment(s) that the support ticket concerns.
 
-**Priority**
-
-If you're opening a ticket which is causing a disruption of service on your production environment, the 'Incident' type ticket will have a priority field. 'Urgent' will cause on-call cloud engineers to be pagered, and review your ticket immediately. You can still have an 'Incident' which doesn't effect the majority of your users, but still needs attention. For those cases, you can select a priority appropriate to impact of the incident.
 
 **Subject**
 
