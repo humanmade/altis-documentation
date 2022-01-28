@@ -60,7 +60,7 @@ Select the specific Application or select all Application(s)/Environment(s) that
 
 **Priority**
 
-You can change the priority of a support issue if you need to. In most cases you shouldn't need to change this, but feel free to let us know if something is a priority. For example, the 'Urgent' priority should only be used if you are experiencing a service outage. The other priorities; low to high, can be used to indicate the order you would like us to tackle your open tickets in.
+If you're opening a ticket which is causing a disruption of service on your production environment, the 'Incident' type ticket will have a priority field. 'Urgent' will cause on-call cloud engineers to be pagered, and review your ticket immediately. You can still have an 'Incident' which doesn't effect the majority of your users, but still needs attention. For those cases, you can select a priority appropriate to impact of the incident.
 
 **Subject**
 
