@@ -93,4 +93,6 @@ To start the virtual machine again run `composer serve`.
 
 When you first view your local site, you'll see the Altis splash page. This indicates that the site has been set up, and is awaiting your custom code.
 
-To get started with development, you can start working on [your first theme](first-theme.md) to change the visual style of your project.
+Not familiar with WordPress already? Check out our guide to working on [your first theme](first-theme.md).
+
+When you're ready to go live with your project, you can [deploy to your cloud environments](deploy.md).
