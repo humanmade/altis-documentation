@@ -1,4 +1,5 @@
 {
+  "extends": "@humanmade/stylelint-config",
   "ignoreFiles": [
     "assets/vs2015.min.css"
   ]
