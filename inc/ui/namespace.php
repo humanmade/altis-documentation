@@ -63,9 +63,9 @@ function admin_bar_menu( WP_Admin_Bar $wp_admin_bar ) {
  * We enqueue all the scripts and styles for the documentation page here.
  */
 function load_page() {
-	wp_enqueue_style( 'highlightjs', 'https://cdnjs.cloudflare.com/ajax/libs/highlight.js/9.15.6/styles/vs2015.min.css' );
-	wp_enqueue_script( 'highlightjs', 'https://cdnjs.cloudflare.com/ajax/libs/highlight.js/9.15.6/highlight.min.js' );
-	wp_enqueue_script( 'highlightjs-line-numbers', 'https://cdn.jsdelivr.net/npm/highlightjs-line-numbers.js@2.7.0/dist/highlightjs-line-numbers.min.js' );
+	wp_enqueue_style( 'highlightjs', plugins_url( '/assets/vs2015.min.css', Documentation\DIRECTORY . '/wp-is-dumb' ) );
+	wp_enqueue_script( 'highlightjs', plugins_url( '/assets/highlight.min.js', Documentation\DIRECTORY . '/wp-is-dumb' ) );
+	wp_enqueue_script( 'highlightjs-line-numbers', plugins_url( '/assets/highlightjs-line-numbers.min.js', Documentation\DIRECTORY . '/wp-is-dumb' ) );
 
 	wp_enqueue_style( __NAMESPACE__, plugins_url( '/assets/style.css', Documentation\DIRECTORY . '/wp-is-dumb' ), [], '2019-04-29' );
 	wp_enqueue_script( __NAMESPACE__, plugins_url( '/assets/script.js', Documentation\DIRECTORY . '/wp-is-dumb' ), [ 'highlightjs' ], '2019-04-19' );
