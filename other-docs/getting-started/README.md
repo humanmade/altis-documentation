@@ -36,11 +36,13 @@ To get started, run:
 composer create-project altis/skeleton my-project
 ```
 
-**Note:** You must have Composer v1.5 or newer. Run `composer self-update` to ensure you're using the latest version.
+**Note:** We recommend Composer v2. Run `composer self-update` to ensure you're using the latest version.
 
 Follow the interactive prompts to get started.
 
 This will create a new directory called `my-project`, set up the project, and install the Composer dependencies. This directory is now ready for you to start working on your project.
+
+Composer is used to manage the version of Altis and its dependencies, and you'll need to be familiar with its commands including `install` and `upgrade`.
 
 
 ## Your project's layout
