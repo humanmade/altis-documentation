@@ -50,6 +50,17 @@ Notably, most backup plugins will not work on Altis. Altis operates [automated b
 Note that we also bundle some plugins as part of Altis; we manage the versions of those via the Altis module they're included in.
 
 
+### Multisite
+
+Unlike out-of-the-box WordPress, **Altis is multisite by default, and multisite only**. This makes it much easier to add additional sites when you eventually need them, but means you'll need to migrate from single site to multisite as part of any WordPress to Altis migrations.
+
+We also create an private site especially for shared network content, called the [Global Content Repository](docs://core/global-content-repository/). This powers the [Global Media Library](docs://media/global-media-library/), and can also be used in your custom code for any content you want to store for usage across the network.
+
+Unlike WordPress, Altis does not distinguish between subdomain and subdirectory multisite types. Users can create sites of either type, or use custom domains.
+
+Altis also sets the [large network flags](https://developer.wordpress.org/reference/functions/wp_is_large_network/) by default. This ensures that sites scale much more predictably as sites expand, but can sometimes lead to compatibility issues in code not designed to properly paginate data.
+
+
 ## Deploying your changes
 
 Our cloud environments use a multi-server architecture based on Docker containers, so you can't (S)FTP into them.
