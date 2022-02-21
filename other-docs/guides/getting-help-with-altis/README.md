@@ -40,6 +40,8 @@ You can still have an 'Incident' which doesn't effect the majority of your users
 
 Issues, also known as 'Problems' are the cause of, or can be the potential cause of future Incidents. If you're encountering a problem which could cause potential Incidents, or if you've run into a bug, select 'Report an ongoing issue'.
 
+Before you report bugs in Altis, please ensure you have [isolated and debugged as much as possible](debugging.md). If an issue cannot be replicated with Altis out-of-the-box, support engineers may not be able to help you.
+
 **Request an infrastucture change**
 
 There’s an array of tasks that you might need help with. Typically, this might be the provisioning of an additional environment, or it could be an operation that requires a cloud engineer to run, such as upgrading the PHP version.
