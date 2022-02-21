@@ -35,3 +35,12 @@ Once created, use [Local Chassis](docs://local-chassis/) or [Local Server](docs:
 We recommend leaving configuration at its default settings initially, and turning on any configuration progressively as necessary.
 
 If you are able to replicate a problem in a fresh installation or with only configuration changes, this is likely to be a bug in Altis. Report the bug to Altis Support; if you made configuration changes, please ensure you include this with your report.
+
+
+## Finding where an error is occurring
+
+For errors which appear to come from Altis, ensure you check the full trace for the error.
+
+A common problem we see is when issues occur due to plugins or custom code incorrectly calling internal APIs. This can trigger an error within Altis modules, but a trace may reveal the source of the issue.
+
+The [Altis dev tools](docs://dev-tools/) can help you to identify the source of issues, as it shows traces for errors which occur. Additionally, [X-Ray](docs://cloud/dashboard/x-ray/) can help identify issues occurring in Cloud environments.
