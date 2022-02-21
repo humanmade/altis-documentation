@@ -1,3 +1,6 @@
+---
+order: 0
+---
 # Manual data migration
 
 For most sites, we recommend using regular WordPress exports and imports. However, for larger or more complex sites, you may want to do a manual migration instead.
