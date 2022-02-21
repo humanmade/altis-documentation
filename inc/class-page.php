@@ -112,7 +112,19 @@ class Page {
 	 * @return Page[]
 	 */
 	public function get_subpages() : array {
-		return $this->subpages;
+		$pages = $this->subpages;
+		uasort( $pages, function ( Page $a, Page $b ) {
+			$order_a = $a->get_meta( 'order' ) ?? 0;
+			$order_b = $b->get_meta( 'order' ) ?? 0;
+
+			if ( $order_a === $order_b ) {
+				return strnatcasecmp( $a->get_meta( 'title' ), $b->get_meta( 'title' ) );
+			}
+
+			return $order_a <=> $order_b;
+		} );
+
+		return $pages;
 	}
 
 	/**
