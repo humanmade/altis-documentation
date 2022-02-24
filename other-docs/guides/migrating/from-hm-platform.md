@@ -1,6 +1,10 @@
-# Migrating a WordPress Codebase
+---
+title: From HM Platform
+order: 10
+---
+# Migrating from HM Platform
 
-This guide covers how to migrate a typical WordPress project to Altis.
+This guide covers how to migrate a HM Platform site to Altis.
 
 ## Before You Begin -- Database Configuration
 
