@@ -54,7 +54,7 @@ Note that we also bundle some plugins as part of Altis; we manage the versions o
 
 Unlike out-of-the-box WordPress, **Altis is multisite by default, and multisite only**. This makes it much easier to add additional sites when you eventually need them, but means you'll need to migrate from single site to multisite as part of any WordPress to Altis migrations.
 
-We also create an private site especially for shared network content, called the [Global Content Repository](docs://core/global-content-repository/). This powers the [Global Media Library](docs://media/global-media-library/), and can also be used in your custom code for any content you want to store for usage across the network.
+We also create a private site especially for shared network content, called the [Global Content Repository](docs://core/global-content-repository/). This powers the [Global Media Library](docs://media/global-media-library/), and can also be used in your custom code for any content you want to store for usage across the network.
 
 Unlike WordPress, Altis does not distinguish between subdomain and subdirectory multisite types. Users can create sites of either type, or use custom domains.
 
