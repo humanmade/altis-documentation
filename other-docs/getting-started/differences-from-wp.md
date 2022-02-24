@@ -12,7 +12,7 @@ We've designed Altis to be the best of WordPress, with extra functionality and t
 
 Unlike traditional WordPress projects, your Altis project's codebase will look a little different. (Altis projects are based off a [WordPress Skeleton pattern](https://github.com/markjaquith/WordPress-Skeleton).)
 
-Your project will contain a `content/` directory, which works just like `wp-content/ that you may be used to already. This can contain your plugins and themes; Altis is compatible with most existing WordPress plugins and themes.
+Your project will contain a `content/` directory, which works just like `wp-content/` that you may be used to already. This can contain your plugins and themes; Altis is compatible with most existing WordPress plugins and themes.
 
 But, unlike a typical WordPress project, you won't see `wp-admin/`, `wp-includes/`, or other WordPress files. Once you've set up your project, you'll see a `wordpress/` directory. This is created dynamically when you install your project's dependencies.
 
