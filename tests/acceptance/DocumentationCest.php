@@ -18,14 +18,12 @@ class DocumentationCest {
 	 * @return void
 	 */
 	public function testDocumentationRender( AcceptanceTester $I ) {
-
 		$I->wantToTest( 'Documentation module renders correctly.' );
 		$I->loginAsAdmin();
-
 		$I->amOnAdminPage( 'admin.php?page=altis-documentation' );
+
 		// Documentation title.
 		$I->seeElement( '.altis-ui__doc-title' );
-
 	}
 
 }
