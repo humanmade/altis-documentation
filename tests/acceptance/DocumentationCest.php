@@ -23,7 +23,7 @@ class DocumentationCest {
 		$I->loginAsAdmin();
 
 		$I->amOnAdminPage( 'admin.php?page=altis-documentation' );
-		// Documentation title
+		// Documentation title.
 		$I->seeElement( '.altis-ui__doc-title' );
 
 	}
