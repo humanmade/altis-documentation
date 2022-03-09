@@ -6,7 +6,7 @@
  */
 
 /**
- * Test core module admin features.
+ * Test documentation module renders correctly.
  */
 class DocumentationCest {
 
