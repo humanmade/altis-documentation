@@ -14,7 +14,6 @@ class DocumentationCest {
 	 * Documantation link is shown.
 	 *
 	 * @param AcceptanceTester $I Tester
-	 *
 	 */
 	public function testDocumentationLink( AcceptanceTester $I ) {
 		$I->wantToTest( 'Documantation link is shown.' );
@@ -60,7 +59,5 @@ class DocumentationCest {
 		// See the CMS H! title.
 		$I->see( 'CMS', 'h1' );
 	}
-
-
 
 }
