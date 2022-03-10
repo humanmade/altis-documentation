@@ -11,52 +11,30 @@
 class DocumentationCest {
 
 	/**
-	 * Documantation link is shown.
+	 * Documentation link is shown, and page renders correctly.
 	 *
 	 * @param AcceptanceTester $I Tester
 	 */
 	public function testDocumentationLink( AcceptanceTester $I ) {
-		$I->wantToTest( 'Documantation link is shown.' );
+		$I->wantToTest( 'Documentation link is shown, and page renders correctly.' );
 		$I->loginAsAdmin();
 		$I->amOnAdminPage( '/' );
 
+		// See the Documentation link in menu.
 		$I->moveMouseOver( '.altis-logo-wrapper' );
 		$I->seeLink( 'Documentation' );
-	}
 
-	/**
-	 * Documentation module renders correctly.
-	 *
-	 * @param AcceptanceTester $I Tester
-	 *
-	 * @return void
-	 */
-	public function testDocumentationRender( AcceptanceTester $I ) {
-		$I->wantToTest( 'Documentation module renders correctly.' );
-		$I->loginAsAdmin();
-		$I->amOnAdminPage( 'admin.php?page=altis-documentation' );
+		// Click the link to open the documentation.
+		$I->click( 'Documentation' );
 
-		// Documentation title.
+		// See the main title.
 		$I->seeElement( '.altis-ui__doc-title' );
-	}
 
-	/**
-	 * Navigate to CMS module and confirm there is content.
-	 *
-	 * @param AcceptanceTester $I Tester
-	 *
-	 * @return void
-	 */
-	public function testDocumentationNavigation( AcceptanceTester $I ) {
-		$I->wantToTest( 'Navigate to CMS module and confirm there is content.' );
-		$I->loginAsAdmin();
-		$I->amOnAdminPage( 'admin.php?page=altis-documentation' );
-
-		// CMS Module.
+		// Click to go to CMS Module docs.
 		$I->see( 'CMS', 'li' );
 		$I->click( 'CMS' );
 
-		// See the CMS H! title.
+		// See the CMS H1 title.
 		$I->see( 'CMS', 'h1' );
 	}
 
