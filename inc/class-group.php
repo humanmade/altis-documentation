@@ -46,6 +46,21 @@ class Group {
 	}
 
 	/**
+	 * Set the group title. Only update if not empty.
+	 *
+	 * @param string $title The new title.
+	 *
+	 * @return string The updated or original title.
+	 */
+	public function set_title( string $title ) : string {
+		if ( ! empty( $title ) ) {
+			$this->title = $title;
+		}
+
+		return $this->title;
+	}
+
+	/**
 	 * Add page to the documentation group.
 	 *
 	 * @param string $id Page ID.

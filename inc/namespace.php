@@ -148,6 +148,7 @@ function add_docs_for_group( Group $group, string $doc_dir ) : Group {
 			}
 
 			$group->add_page( get_slug_from_path( $doc_dir, $leaf->getPathname() ), $doc );
+
 			continue;
 		}
 
@@ -156,7 +157,18 @@ function add_docs_for_group( Group $group, string $doc_dir ) : Group {
 		}
 
 		$file = $leaf->getRealPath();
+
+
 		$doc = parse_file( $file, $doc_dir );
+
+		// If the `group-title` meta is set in the README file, change the group's title.
+		if ( strtolower( $leaf->getBasename() ) === 'readme.md' ) {
+			$group_title = $doc->get_meta( 'group-title' );
+			if ( ! empty( $group_title ) ) {
+				$group->set_title( $group_title );
+			}
+		}
+
 		$out_path = get_slug_from_path( $doc_dir, $file );
 		$group->add_page( $out_path, $doc );
 	}
