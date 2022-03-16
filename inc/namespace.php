@@ -158,7 +158,6 @@ function add_docs_for_group( Group $group, string $doc_dir ) : Group {
 
 		$file = $leaf->getRealPath();
 
-
 		$doc = parse_file( $file, $doc_dir );
 
 		// If the `group-title` meta is set in the README file, change the group's title.
