@@ -49,7 +49,6 @@ class Group {
 	 * Set the group title. Only update if not empty.
 	 *
 	 * @param string $title The new title.
-	 *
 	 */
 	public function set_title( string $title ) {
 		$this->title = $title;
