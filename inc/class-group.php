@@ -50,14 +50,9 @@ class Group {
 	 *
 	 * @param string $title The new title.
 	 *
-	 * @return string The updated or original title.
 	 */
-	public function set_title( string $title ) : string {
-		if ( ! empty( $title ) ) {
-			$this->title = $title;
-		}
-
-		return $this->title;
+	public function set_title( string $title ) {
+		$this->title = $title;
 	}
 
 	/**
