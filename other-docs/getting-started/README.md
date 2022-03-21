@@ -15,11 +15,15 @@ After reading this guide, you'll know:
 
 Before you get started, it's important to be aware of a few core concepts which affect how you think about and build sites for Altis.
 
-With Altis, you will work on a **project**. This encompasses the codebase and the hosting provided by Altis Cloud. Each project can have multiple **sites**, which can represent multiple domains, subdomains, or other distinct websites. Sites within a single project share a common codebase, but can have different customizations applied to each site.
+With Altis, you will work on a **project**. This encompasses the codebase and the hosting provided by Altis Cloud. Each project can have multiple **sites** ("multisite"), which can represent multiple domains, subdomains, or other distinct websites. Sites within a single project share a common codebase, but can have different customizations applied to each site.
 
-Custom functionality on top of the Altis platform is implemented via **plugins**. Each major feature generally has a separate plugin, and these can be enabled or disabled for each site. They can also be enabled across the entire project.
+Altis is built on top of a WordPress foundation. WordPress and other dependencies of Altis are managed for you as part of the Altis version.
 
-Design and styling of sites is implemented via **themes**. Projects can contain many themes, and each site has a single theme active. Themes can be shared across sites, or used on only a single site.
+Custom functionality on top of the Altis platform is implemented via WordPress **plugins**, and Altis is generally compatible with most WordPress plugins. (Subject to our [cloud environment limitations](https://docs.altis-dxp.com/cloud/limitations/).)
+
+Design and styling of sites is implemented via WordPress **themes**. Projects can contain many themes, and each site has a single theme active. Themes can be shared across sites, or used on only a single site.
+
+Development work on your project will take place on your **local environment**, which is a full copy of the cloud environment you run locally with Docker. For testing and quality assurance, you'll use your **non-production cloud environment(s)** including development and staging. And when you're ready to go live, your **production environment** will serve live traffic to users. (Collectively, your cloud environments belong to a single **Altis instance**.)
 
 
 ## Creating a new Altis project
@@ -32,11 +36,13 @@ To get started, run:
 composer create-project altis/skeleton my-project
 ```
 
-**Note:** You must have Composer v1.5 or newer. Run `composer self-update` to ensure you're using the latest version.
+**Note:** We recommend Composer v2. Run `composer self-update` to ensure you're using the latest version.
 
 Follow the interactive prompts to get started.
 
 This will create a new directory called `my-project`, set up the project, and install the Composer dependencies. This directory is now ready for you to start working on your project.
+
+Composer is used to manage the version of Altis and its dependencies, and you'll need to be familiar with its commands including `install` and `upgrade`.
 
 
 ## Your project's layout
@@ -87,4 +93,6 @@ To start the virtual machine again run `composer serve`.
 
 When you first view your local site, you'll see the Altis splash page. This indicates that the site has been set up, and is awaiting your custom code.
 
-To get started with development, you can start working on [your first theme](first-theme.md) to change the visual style of your project.
+Not familiar with WordPress already? Check out our guide to working on [your first theme](first-theme.md).
+
+When you're ready to go live with your project, you can [deploy to your cloud environments](deploy.md).

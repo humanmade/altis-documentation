@@ -10,17 +10,17 @@ To open a support request, first you'll have to [login to the Altis Dashboard](h
 
 From there, you'll find the link to the support page in the bottom left corner of the screen. See below.
 
-![Altis Dashboard support link](./assets/altis-support-button.png)
+![Altis Dashboard support link](../assets/altis-support-button.png)
 
 From the support panel screen you'll be able to view your open issues, all previous issues, and you can also query open and previously closed issues. Shown below.
 
-![Altis Dashboard support link](./assets/altis-support-overview.png)
+![Altis Dashboard support link](../assets/altis-support-overview.png)
 
 To open a new support ticket, simply click the blue 'Create New Ticket' button.
 
 ## Create Support Ticket
 
-![Altis Dashboard support link](./assets/altis-support-ticket-type.png)
+![Altis Dashboard support link](../assets/altis-support-ticket-type.png)
 
 ### Selecting a support issue type
 
@@ -40,6 +40,8 @@ You can still have an 'Incident' which doesn't effect the majority of your users
 
 Issues, also known as 'Problems' are the cause of, or can be the potential cause of future Incidents. If you're encountering a problem which could cause potential Incidents, or if you've run into a bug, select 'Report an ongoing issue'.
 
+Before you report bugs in Altis, please ensure you have [isolated and debugged as much as possible](debugging.md). If an issue cannot be replicated with Altis out-of-the-box, support engineers may not be able to help you.
+
 **Request an infrastucture change**
 
 There’s an array of tasks that you might need help with. Typically, this might be the provisioning of an additional environment, or it could be an operation that requires a cloud engineer to run, such as upgrading the PHP version.
@@ -54,7 +56,7 @@ If you have a technical question or require clarification on a feature, just ope
 
 ### Filling the form
 
-![Altis Dashboard support link](./assets/altis-support-ticket-form.png)
+![Altis Dashboard support link](../assets/altis-support-ticket-form.png)
 
 **Application**
 
