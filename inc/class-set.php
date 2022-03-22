@@ -51,7 +51,7 @@ class Set {
 	 * @param string $id    Group Id
 	 * @param Group  $group Group object.
 	 */
-	public function add_page( string $id, Group $group ) : void {
+	public function add_group( string $id, Group $group ) : void {
 		$this->groups[ $id ] = $group;
 	}
 
