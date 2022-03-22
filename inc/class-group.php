@@ -46,6 +46,15 @@ class Group {
 	}
 
 	/**
+	 * Set the group title.
+	 *
+	 * @param string $title The new title.
+	 */
+	public function set_title( string $title ) {
+		$this->title = $title;
+	}
+
+	/**
 	 * Add page to the documentation group.
 	 *
 	 * @param string $id Page ID.

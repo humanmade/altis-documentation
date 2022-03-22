@@ -157,6 +157,15 @@ function add_docs_for_group( Group $group, string $doc_dir ) : Group {
 
 		$file = $leaf->getRealPath();
 		$doc = parse_file( $file, $doc_dir );
+
+		// If this is the readme.md file, update the group's title.
+		if ( strtolower( $leaf->getBasename() ) === 'readme.md' ) {
+			$title = $doc->get_meta( 'title' );
+			if ( ! empty( $title ) ) {
+				$group->set_title( $title );
+			}
+		}
+
 		$out_path = get_slug_from_path( $doc_dir, $file );
 		$group->add_page( $out_path, $doc );
 	}
