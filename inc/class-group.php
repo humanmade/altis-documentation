@@ -46,7 +46,7 @@ class Group {
 	}
 
 	/**
-	 * Set the group title. Only update if not empty.
+	 * Set the group title.
 	 *
 	 * @param string $title The new title.
 	 */
