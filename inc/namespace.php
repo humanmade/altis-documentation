@@ -160,11 +160,11 @@ function add_docs_for_group( Group $group, string $doc_dir ) : Group {
 
 		$doc = parse_file( $file, $doc_dir );
 
-		// If the `group-title` meta is set in the README file, change the group's title.
+		// If this is the readme.md file, update the group's title.
 		if ( strtolower( $leaf->getBasename() ) === 'readme.md' ) {
-			$group_title = $doc->get_meta( 'group-title' );
-			if ( ! empty( $group_title ) ) {
-				$group->set_title( $group_title );
+			$title = $doc->get_meta( 'title' );
+			if ( ! empty( $title ) ) {
+				$group->set_title( $title );
 			}
 		}
 
