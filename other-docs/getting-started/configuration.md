@@ -147,4 +147,4 @@ If you need to use `load-early.php`, consider filing a feature request for an Al
 
 ## Next Steps
 
-With your site configured, you can begin developing [custom modules](custom-modules.md) for your project.
+With your site configured, you can prepare to [deploy to a cloud environment](deploy.md).
