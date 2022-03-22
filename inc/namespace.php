@@ -148,7 +148,6 @@ function add_docs_for_group( Group $group, string $doc_dir ) : Group {
 			}
 
 			$group->add_page( get_slug_from_path( $doc_dir, $leaf->getPathname() ), $doc );
-
 			continue;
 		}
 
@@ -157,7 +156,6 @@ function add_docs_for_group( Group $group, string $doc_dir ) : Group {
 		}
 
 		$file = $leaf->getRealPath();
-
 		$doc = parse_file( $file, $doc_dir );
 
 		// If this is the readme.md file, update the group's title.
