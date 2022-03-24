@@ -1,6 +1,6 @@
 <?php
 /**
- * Altis Documentation Set.
+ * Altis Documentation Set. A set is a collection of Groups.
  *
  * @package altis/documentation
  */
@@ -8,13 +8,14 @@
 namespace Altis\Documentation;
 
 /**
- * Altis Documentation Group Object.
+ * Altis Documentation Set Object.
+ * Typically, a related set of documentation groups.
  *
  * @package altis/documentation
  */
 class Set {
 	/**
-	 * Set title (typically a related set of documentation). E.g. 'Technical documentation', 'User documentation', etc.
+	 * Set title . E.g. 'Developer documentation', 'User documentation', etc.
 	 *
 	 * @var string
 	 */
@@ -32,7 +33,7 @@ class Set {
 	 *
 	 * @param string $title Set title.
 	 */
-	public function __construct( string $title ) {
+	public function __construct( string $title = '' ) {
 		$this->title = $title;
 	}
 
