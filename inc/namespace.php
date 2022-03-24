@@ -11,6 +11,7 @@ use Altis;
 use Altis\Module;
 use DirectoryIterator;
 use Spyc;
+use function Altis\Documentation\UI\get_current_set_id;
 
 /**
  * Register module.
@@ -39,61 +40,95 @@ function bootstrap() {
 /**
  * Get all documentation groups.
  *
- * @return Group[] Sorted list of groupse
+ * @param string $set_id The required set ID. Defaults to the Developer docs set.
+ *
+ * @return Group[] Sorted list of groups
  */
-function get_documentation() : array {
-	static $docs;
+function get_documentation( string $set_id = '' ) : array {
+	/**
+	 * @var Set[] $all_sets All the documentation sets.
+	 */
+	static $all_sets;
 
-	if ( ! empty( $docs ) ) {
-		return $docs;
-	}
-
-	$modules = Module::get_all();
-
-	$other_docs = dirname( __DIR__ ) . '/other-docs';
-	$docs = [
-		'welcome' => new Group( 'Welcome' ),
-		'getting-started' => new Group( 'Getting Started' ),
-		'guides' => new Group( 'Guides' ),
-	];
-	$docs['welcome']->add_page( '', parse_file( $other_docs . '/welcome.md', $other_docs ) );
-	add_docs_for_group( $docs['getting-started'], $other_docs . '/getting-started' );
-	add_docs_for_group( $docs['guides'], $other_docs . '/guides' );
-
-	uasort( $modules, function ( Module $a, Module $b ) : int {
-		return $a->get_title() <=> $b->get_title();
-	} );
-
-	foreach ( $modules as $id => $module ) {
-		$module_docs = generate_docs_for_module( $id, $module );
-		if ( empty( $module_docs ) ) {
-			continue;
-		}
-
-		$docs[ $id ] = $module_docs;
+	if ( empty( $set_id ) ) {
+		$set_id = get_current_set_id();
 	}
 
 	/**
-	 * Filter available documentation groups.
+	 * Filter available documentation sets.
 	 *
-	 * This allows modules to register additional documentation groups.
+	 * This allows modules to register additional documentation sets or replace the requested set.
+	 *
+	 * @param Set[] $doc_sets Map of set ID to Set object.
+	 * @param string $set_id The required set id.
+	 */
+	$all_sets = apply_filters( 'altis.documentation.sets', $all_sets, $set_id );
+
+	if ( ! empty( $all_sets[ $set_id ] ) ) {
+		return $all_sets[ $set_id ]->get_groups();
+	}
+
+	// Generate the default set
+	if ( $set_id === 'dev-docs' ) {
+		$dev_set = new Set( 'Developer Documentation' );
+
+		$other_docs = dirname( __DIR__ ) . '/other-docs';
+
+		$welcome = new Group( 'Welcome' );
+		$welcome->add_page( '', parse_file( $other_docs . '/welcome.md', $other_docs ) );
+		$dev_set->add_group( 'welcome', $welcome );
+
+		$getting_started = new Group( 'Getting Started' );
+		add_docs_for_group( $getting_started, $other_docs . '/getting-started' );
+		$dev_set->add_group( 'getting-started', $getting_started );
+
+		$guides = new Group( 'Guides' );
+		add_docs_for_group( $guides, $other_docs . '/guides' );
+		$dev_set->add_group( 'guides', $guides );
+
+		// Add all the registered modules
+		$modules = Module::get_all();
+		uasort( $modules, function ( Module $a, Module $b ) : int {
+			return $a->get_title() <=> $b->get_title();
+		} );
+
+		foreach ( $modules as $id => $module ) {
+			$module_docs = generate_docs_for_module( $id, $module );
+			if ( $module_docs === null ) {
+				continue;
+			}
+
+			$dev_set->add_group( $id, $module_docs );
+		}
+
+		$all_sets[ $set_id ] = $dev_set;
+
+	}
+
+	$doc_set = $all_sets[ $set_id ] ?? new Set();
+
+	/**
+	 * Filter documentation groups for this set.
+	 *
+	 * This allows modules to register additional documentation groups in this set.
 	 *
 	 * @param Group[] $docs Map of group ID to Group object.
+	 * @param string $set_id The required set id.
 	 */
-	$docs = apply_filters( 'altis.documentation.groups', $docs );
-
-	return $docs;
+	return apply_filters( 'altis.documentation.groups', $doc_set->get_groups(), $set_id );
 }
 
 /**
  * Get a specific documentation page by ID.
  *
  * @param string $group Group ID.
- * @param string $id Page ID.
+ * @param string $id    Page ID.
+ * @param string $set   Set ID.
+ *
  * @return Page|null Page if available.
  */
-function get_page_by_id( string $group, string $id ) {
-	$documentation = get_documentation();
+function get_page_by_id( string $group, string $id, string $set = '' ) {
+	$documentation = get_documentation( $set );
 	if ( empty( $documentation[ $group ] ) ) {
 		return null;
 	}
