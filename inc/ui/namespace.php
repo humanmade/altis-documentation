@@ -71,12 +71,22 @@ function load_page() {
 	wp_enqueue_script( __NAMESPACE__, plugins_url( '/assets/script.js', Documentation\DIRECTORY . '/wp-is-dumb' ), [ 'highlightjs' ], '2019-04-19' );
 
 	// Determine the current page title.
-	$page = Documentation\get_page_by_id( get_current_group_id(), get_current_page_id() );
+	$page = Documentation\get_page_by_id( get_current_group_id(), get_current_page_id(), get_current_set_id() );
 	if ( $page ) {
 		$GLOBALS['title'] = $page->get_meta( 'title' );
 	} else {
 		$GLOBALS['title'] = __( 'Page Not Found', 'altis' );
 	}
+}
+
+/**
+ * Get the current Set ID.
+ *
+ * @return string Doc set ID if set, otherwise the default set.
+ */
+function get_current_set_id() : string {
+	// @codingStandardsIgnoreLine
+	return $_GET['set'] ?? 'dev-docs';
 }
 
 /**
@@ -103,10 +113,11 @@ function get_current_page_id() {
  * Documentation page render callback.
  */
 function render_page() {
-	$documentation = Documentation\get_documentation();
-	$current_group = get_current_group_id();
+	$set             = get_current_set_id();
+	$documentation   = Documentation\get_documentation( $set );
+	$current_group   = get_current_group_id();
 	$current_page_id = get_current_page_id();
-	$current_page = Documentation\get_page_by_id( $current_group, $current_page_id );
+	$current_page    = Documentation\get_page_by_id( $current_group, $current_page_id, $set );
 	?>
 
 	<div class="altis-ui wrap">
@@ -119,7 +130,7 @@ function render_page() {
 							class="<?php echo $group === $current_group ? 'current' : '' ?> <?php echo $group === $current_group && ! $current_page_id ? 'active' : '' ?>"
 						>
 							<a
-								href="<?php echo esc_attr( add_query_arg( [ 'group' => $group, 'id' => '' ] ) ); // phpcs:ignore ?>"
+								href="<?php echo esc_attr( add_query_arg( [ 'set' => $set, 'group' => $group, 'id' => '' ] ) ); // phpcs:ignore ?>"
 							>
 								<?php echo esc_html( $gobj->get_title() ) ?>
 							</a>
@@ -132,11 +143,11 @@ function render_page() {
 									}
 									?>
 									<li class="<?php echo ( $current_group === $group && $current_page_id === $id ) ? 'active' : '' ?>">
-										<a href="<?php echo esc_attr( add_query_arg( compact( 'group', 'id' ) ) ); ?>">
+										<a href="<?php echo esc_attr( add_query_arg( compact( 'set','group', 'id' ) ) ); ?>">
 											<?php echo esc_html( $page->get_meta( 'title' ) ); ?>
 										</a>
 									</li>
-									<?php render_page_subpages( $page, $group, $current_page ) ?>
+									<?php render_page_subpages( $page, $group, $current_page, $set ) ?>
 								<?php endforeach ?>
 							</ul>
 						</li>
@@ -146,8 +157,8 @@ function render_page() {
 
 			<article>
 				<?php
-					// phpcs:ignore WordPress.Security.EscapeOutput.OutputNotEscaped
-					echo render_content( $current_page );
+				// phpcs:ignore WordPress.Security.EscapeOutput.OutputNotEscaped
+				echo render_content( $current_page );
 				?>
 			</article>
 		</div>
@@ -157,15 +168,16 @@ function render_page() {
 }
 
 /**
- * Output the menu for a page's subp ages.
+ * Output the menu for a page's subpages.
  *
  * This recurses all subpages.
  *
- * @param Page $page Documentation page object.
- * @param string $group The documentation page group.
+ * @param Page      $page         Documentation page object.
+ * @param string    $group        The documentation page group.
  * @param Page|null $current_page The current page object if set.
+ * @param string    $set          The current documentation set.
  */
-function render_page_subpages( Page $page, string $group, ?Page $current_page ) {
+function render_page_subpages( Page $page, string $group, ?Page $current_page, string $set ) {
 	if ( ! $page->get_subpages() ) {
 		return;
 	}
@@ -174,15 +186,16 @@ function render_page_subpages( Page $page, string $group, ?Page $current_page ) 
 		<?php
 		foreach ( $page->get_subpages() as $subpage_id => $subpage ) :
 			$permalink = add_query_arg( [
+				'set'   => $set,
 				'group' => $group,
-				'id' => $subpage_id,
+				'id'    => $subpage_id,
 			] );
 			?>
 			<li class="<?php echo $current_page === $subpage ? 'active' : '' ?>">
 				<a href="<?php echo esc_url( $permalink ) ?>">
 					<?php echo esc_html( $subpage->get_meta( 'title' ) ) ?>
 				</a>
-				<?php render_page_subpages( $subpage, $group, $current_page ) ?>
+				<?php render_page_subpages( $subpage, $group, $current_page, $set ) ?>
 			</li>
 		<?php endforeach ?>
 	</ul>
@@ -193,6 +206,7 @@ function render_page_subpages( Page $page, string $group, ?Page $current_page ) 
  * Render the content for a page.
  *
  * @param Page|null $page The page object to render content for.
+ *
  * @return string
  */
 function render_content( ?Page $page ) : string {
