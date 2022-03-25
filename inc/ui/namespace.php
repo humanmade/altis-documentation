@@ -10,6 +10,8 @@ namespace Altis\Documentation\UI;
 use Altis\Documentation;
 use Altis\Documentation\Page;
 use WP_Admin_Bar;
+use function Altis\Documentation\get_documentation_set;
+use function Altis\Telemetry\track;
 
 const PAGE_SLUG = 'altis-documentation';
 
@@ -31,16 +33,26 @@ function bootstrap() {
  * to the admin bar.
  */
 function register_menu() {
-	$hook = add_submenu_page(
+	// Add top level page
+	$hook = add_menu_page(
 		null,
-		'',
-		'',
+		__( 'Documentation', 'altis' ),
 		'edit_posts',
-		PAGE_SLUG,
-		__NAMESPACE__ . '\\render_page'
+		PAGE_SLUG
 	);
 
-	add_action( sprintf( 'load-%s', $hook ), __NAMESPACE__ . '\\load_page' );
+	// Add our default dev docs.
+	$dev_set = get_documentation_set( 'dev-docs' );
+	add_submenu_page(
+		PAGE_SLUG,
+		'',
+		$dev_set->get_title(),
+		'edit_posts',
+		PAGE_SLUG,
+		__NAMESPACE__ . '\\render_dev_docs_page'
+	);
+
+	add_action( sprintf( 'load-%s', $hook ), __NAMESPACE__ . '\\load_page_assets' );
 }
 
 /**
@@ -62,7 +74,7 @@ function admin_bar_menu( WP_Admin_Bar $wp_admin_bar ) {
  *
  * We enqueue all the scripts and styles for the documentation page here.
  */
-function load_page() {
+function load_page_assets() {
 	wp_enqueue_style( 'highlightjs', plugins_url( '/assets/vs2015.min.css', Documentation\DIRECTORY . '/wp-is-dumb' ) );
 	wp_enqueue_script( 'highlightjs', plugins_url( '/assets/highlight.min.js', Documentation\DIRECTORY . '/wp-is-dumb' ) );
 	wp_enqueue_script( 'highlightjs-line-numbers', plugins_url( '/assets/highlightjs-line-numbers.min.js', Documentation\DIRECTORY . '/wp-is-dumb' ) );
@@ -110,14 +122,22 @@ function get_current_page_id() {
 }
 
 /**
+ * Wrapper function to call render_page with the correct set id. Called from Documentation menu.
+ */
+function render_dev_docs_page() {
+	render_page( 'dev-docs' );
+}
+
+/**
  * Documentation page render callback.
  */
-function render_page() {
-	$set             = get_current_set_id();
-	$documentation   = Documentation\get_documentation( $set );
+function render_page( string $set_id ) {
+
+	$set_id          = $set_id ?? get_current_set_id();
+	$documentation   = Documentation\get_documentation( $set_id );
 	$current_group   = get_current_group_id();
 	$current_page_id = get_current_page_id();
-	$current_page    = Documentation\get_page_by_id( $current_group, $current_page_id, $set );
+	$current_page    = Documentation\get_page_by_id( $current_group, $current_page_id, $set_id );
 	?>
 
 	<div class="altis-ui wrap">
@@ -130,7 +150,7 @@ function render_page() {
 							class="<?php echo $group === $current_group ? 'current' : '' ?> <?php echo $group === $current_group && ! $current_page_id ? 'active' : '' ?>"
 						>
 							<a
-								href="<?php echo esc_attr( add_query_arg( [ 'set' => $set, 'group' => $group, 'id' => '' ] ) ); // phpcs:ignore ?>"
+								href="<?php echo esc_attr( add_query_arg( [ 'set' => $set_id, 'group' => $group, 'id' => '' ] ) ); // phpcs:ignore ?>"
 							>
 								<?php echo esc_html( $gobj->get_title() ) ?>
 							</a>
@@ -143,11 +163,11 @@ function render_page() {
 									}
 									?>
 									<li class="<?php echo ( $current_group === $group && $current_page_id === $id ) ? 'active' : '' ?>">
-										<a href="<?php echo esc_attr( add_query_arg( compact( 'set','group', 'id' ) ) ); ?>">
+										<a href="<?php echo esc_attr( add_query_arg( [ 'set' => $set_id, 'group' => $group, 'id' => $id ] ) ); ?>">
 											<?php echo esc_html( $page->get_meta( 'title' ) ); ?>
 										</a>
 									</li>
-									<?php render_page_subpages( $page, $group, $current_page, $set ) ?>
+									<?php render_page_subpages( $page, $group, $current_page, $set_id ) ?>
 								<?php endforeach ?>
 							</ul>
 						</li>
@@ -165,6 +185,16 @@ function render_page() {
 	</div>
 
 	<?php
+
+	// Track this page view in Altis Telemetry.
+	do_action( 'altis.telemetry.track', [
+		'event'      => 'Documentation',
+		'properties' => [
+			'content_type'   => 'Documentation page view',
+			'content_action' => "$set_id-$current_group-$current_page_id",
+		],
+	] );
+
 }
 
 /**

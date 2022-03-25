@@ -34,42 +34,52 @@ function register() {
  * Bootstrap module, when enabled.
  */
 function bootstrap() {
+	add_filter( 'altis.documentation.sets', __NAMESPACE__ . '\filter_add_dev_docs_set' );
 	UI\bootstrap();
 }
 
 /**
- * Get all documentation groups.
+ * Get the required documentation set.
+ * Returns an empty set if not found.
  *
- * @param string $set_id The required set ID. Defaults to the Developer docs set.
+ * @param string $set_id The required set id.
  *
- * @return Group[] Sorted list of groups
+ * @return Set
  */
-function get_documentation( string $set_id = '' ) : array {
+function get_documentation_set( string $set_id ) : Set {
 	/**
 	 * @var Set[] $all_sets All the documentation sets.
 	 */
-	static $all_sets;
-
-	if ( empty( $set_id ) ) {
-		$set_id = get_current_set_id();
-	}
+	static $all_sets = [];
 
 	/**
 	 * Filter available documentation sets.
 	 *
 	 * This allows modules to register additional documentation sets or replace the requested set.
 	 *
-	 * @param Set[] $doc_sets Map of set ID to Set object.
-	 * @param string $set_id The required set id.
+	 * @param Set[]  $doc_sets Map of set ID to Set object.
+	 * @param string $set_id   The required set id.
 	 */
-	$all_sets = apply_filters( 'altis.documentation.sets', $all_sets, $set_id );
+	$all_sets = apply_filters( 'altis.documentation.sets', $all_sets );
 
 	if ( ! empty( $all_sets[ $set_id ] ) ) {
-		return $all_sets[ $set_id ]->get_groups();
+		return $all_sets[ $set_id ];
 	}
 
-	// Generate the default set
-	if ( $set_id === 'dev-docs' ) {
+	return new Set();
+}
+
+/**
+ * Filter the $all_sets array to add the developer docs Set if it doesn't yet exist.
+ *
+ * @param array $sets
+ *
+ * @return array
+ */
+function filter_add_dev_docs_set( array $sets ) : array {
+
+	if ( empty( $sets['dev-docs'] ) ) {
+		// Generate the default set
 		$dev_set = new Set( 'Developer Documentation' );
 
 		$other_docs = dirname( __DIR__ ) . '/other-docs';
@@ -101,19 +111,34 @@ function get_documentation( string $set_id = '' ) : array {
 			$dev_set->add_group( $id, $module_docs );
 		}
 
-		$all_sets[ $set_id ] = $dev_set;
-
+		$sets['dev-docs'] = $dev_set;
 	}
 
-	$doc_set = $all_sets[ $set_id ] ?? new Set();
+	return $sets;
+}
+
+/**
+ * Get all documentation groups for the specified set.
+ *
+ * @param string $set_id The required set ID. Defaults to the Developer docs set.
+ *
+ * @return Group[] Sorted list of groups
+ */
+function get_documentation( string $set_id = '' ) : array {
+
+	if ( empty( $set_id ) ) {
+		$set_id = get_current_set_id();
+	}
+
+	$doc_set = get_documentation_set( $set_id );
 
 	/**
 	 * Filter documentation groups for this set.
 	 *
 	 * This allows modules to register additional documentation groups in this set.
 	 *
-	 * @param Group[] $docs Map of group ID to Group object.
-	 * @param string $set_id The required set id.
+	 * @param Group[] $docs   Map of group ID to Group object.
+	 * @param string  $set_id The required set id.
 	 */
 	return apply_filters( 'altis.documentation.groups', $doc_set->get_groups(), $set_id );
 }
@@ -121,14 +146,14 @@ function get_documentation( string $set_id = '' ) : array {
 /**
  * Get a specific documentation page by ID.
  *
- * @param string $group Group ID.
- * @param string $id    Page ID.
- * @param string $set   Set ID.
+ * @param string $group  Group ID.
+ * @param string $id     Page ID.
+ * @param string $set_id Set ID.
  *
  * @return Page|null Page if available.
  */
-function get_page_by_id( string $group, string $id, string $set = '' ) {
-	$documentation = get_documentation( $set );
+function get_page_by_id( string $group, string $id, string $set_id = '' ) {
+	$documentation = get_documentation( $set_id );
 	if ( empty( $documentation[ $group ] ) ) {
 		return null;
 	}
@@ -139,8 +164,9 @@ function get_page_by_id( string $group, string $id, string $set = '' ) {
 /**
  * Generate documentation for a module.
  *
- * @param string $id Module ID.
+ * @param string $id     Module ID.
  * @param Module $module Module object.
+ *
  * @return Group Documentation group for the module.
  */
 function generate_docs_for_module( $id, Module $module ) : ?Group {
@@ -158,8 +184,9 @@ function generate_docs_for_module( $id, Module $module ) : ?Group {
 /**
  * Generate documentation for a module.
  *
- * @param Group $group Group object.
+ * @param Group  $group   Group object.
  * @param string $doc_dir The directory to add files from to the Group.
+ *
  * @return Group Documentation group for the module.
  */
 function add_docs_for_group( Group $group, string $doc_dir ) : Group {
@@ -191,7 +218,7 @@ function add_docs_for_group( Group $group, string $doc_dir ) : Group {
 		}
 
 		$file = $leaf->getRealPath();
-		$doc = parse_file( $file, $doc_dir );
+		$doc  = parse_file( $file, $doc_dir );
 
 		// If this is the readme.md file, update the group's title.
 		if ( strtolower( $leaf->getBasename() ) === 'readme.md' ) {
@@ -213,14 +240,15 @@ function add_docs_for_group( Group $group, string $doc_dir ) : Group {
  *
  * This will recurse into sub directories, adding all those as subpages of the Page object.
  *
- * @param string $dir       The directory to add the page for.
- * @param string $root_dir  The root directory of the group, used to calculate page ids.
+ * @param string $dir      The directory to add the page for.
+ * @param string $root_dir The root directory of the group, used to calculate page ids.
+ *
  * @return Page|null
  */
 function get_page_for_dir( string $dir, string $root_dir ) : ?Page {
 	// A directory's page is always build from a README.md inside the dir.
-	$readme = $dir . '/README.md';
-	$doc = file_exists( $readme ) ? parse_file( $readme, $root_dir ) : new Page( '' );
+	$readme       = $dir . '/README.md';
+	$doc          = file_exists( $readme ) ? parse_file( $readme, $root_dir ) : new Page( '' );
 	$has_subpages = false;
 
 	$iterator = new DirectoryIterator( $dir );
@@ -265,16 +293,19 @@ function get_page_for_dir( string $dir, string $root_dir ) : ?Page {
  *
  * @param string $root A root path to match against the relative path.
  * @param string $path Path for Markdown file (relative to documentation root).
+ *
  * @return string Hierarchical slug for the document.
  */
 function get_slug_from_path( $root, $path ) {
 	if ( substr( $path, 0, strlen( $root ) ) !== $root ) {
 		// phpcs:ignore WordPress.Security.EscapeOutput.OutputNotEscaped
 		trigger_error( sprintf( 'Relative path %s is not within root %s', $path, $root ), E_USER_WARNING );
+
 		return $path;
 	}
 
 	$out_path = substr( $path, strlen( $root ) );
+
 	return trim( preg_replace( '/README\.md/i', '', $out_path ), '/' );
 }
 
@@ -282,11 +313,13 @@ function get_slug_from_path( $root, $path ) {
  * Get a documentation group.
  *
  * @param string $id Group ID.
+ *
  * @return Group|null Group if available, null otherwise.
  */
-function get_documentation_group( $id ) : ?Group {
-	$docs = get_documentation();
-	return $docs[ $id ] ?: null;
+function get_documentation_group( $id, string $set_id = '' ) : ?Group {
+	$documentation = get_documentation( $set_id );
+
+	return $documentation[ $id ] ?: null;
 }
 
 /**
@@ -294,6 +327,7 @@ function get_documentation_group( $id ) : ?Group {
  *
  * @param string $file Path to the file to parse.
  * @param string $root Root directory for the file's owner.
+ *
  * @return Page Parsed data for the file
  */
 function parse_file( string $file, string $root ) : Page {
@@ -328,10 +362,12 @@ function parse_file( string $file, string $root ) : Page {
  * Render a page from Markdown.
  *
  * @param Page $page Page to render.
+ *
  * @return string HTML content for the page.
  */
 function render_page( Page $page ) : string {
 	$parsedown = new MarkdownParser( $page );
+
 	return $parsedown->text( $page->get_content() );
 }
 
@@ -339,24 +375,25 @@ function render_page( Page $page ) : string {
  * Get the URL to view a given page.
  *
  * @param string $group_id Group ID.
- * @param string $page_id Page ID.
+ * @param string $page_id  Page ID.
+ *
  * @return string Absolute URL to the page.
  */
 function get_url_for_page( $group_id, $page_id ) {
 	$base_url = admin_url( 'admin.php' );
-	$args = [
-		'page' => UI\PAGE_SLUG,
+	$args     = [
+		'page'  => UI\PAGE_SLUG,
 		'group' => $group_id,
-		'id' => $page_id,
+		'id'    => $page_id,
 	];
-	$url = add_query_arg( urlencode_deep( $args ), $base_url );
+	$url      = add_query_arg( urlencode_deep( $args ), $base_url );
 
 	/**
 	 * Filter generated URL for a page.
 	 *
-	 * @param string $url Default generated URL.
+	 * @param string $url      Default generated URL.
 	 * @param string $group_id Group ID.
-	 * @param string $page_id Page ID.
+	 * @param string $page_id  Page ID.
 	 */
 	return apply_filters( 'altis.documentation.url_for_page', $url, $group_id, $page_id );
 }
@@ -367,6 +404,7 @@ function get_url_for_page( $group_id, $page_id ) {
  * Note that relative links are not resolved, as there is no context to use.
  *
  * @param string $url Raw link (e.g. `docs://foo/bar`).
+ *
  * @return string URL for usage in a browser.
  */
 function convert_internal_link( $url ) {
@@ -381,15 +419,15 @@ function convert_internal_link( $url ) {
 	switch ( $parts['scheme'] ) {
 		case 'docs':
 			// Override href.
-			$slug = get_slug_from_path( '', $path );
+			$slug    = get_slug_from_path( '', $path );
 			$new_url = get_url_for_page( $host, $slug );
 			break;
 
 		case 'internal':
-			$map = [
-				'home' => 'home_url',
-				'site' => 'site_url',
-				'admin' => 'admin_url',
+			$map      = [
+				'home'          => 'home_url',
+				'site'          => 'site_url',
+				'admin'         => 'admin_url',
 				'network-admin' => 'network_admin_url',
 			];
 			$function = $map[ $host ] ?? null;
@@ -404,7 +442,7 @@ function convert_internal_link( $url ) {
 			break;
 
 		case 'support':
-			$map = [
+			$map     = [
 				'new' => 'https://dashboard.altis-dxp.com/#/support/new',
 			];
 			$new_url = $map[ $host ] ?? null;
@@ -413,7 +451,7 @@ function convert_internal_link( $url ) {
 			}
 
 			$stack_name = Altis\get_environment_name();
-			$new_url .= '?applications[]=' . urlencode( $stack_name );
+			$new_url    .= '?applications[]=' . urlencode( $stack_name );
 			break;
 
 		default:
@@ -428,7 +466,7 @@ function convert_internal_link( $url ) {
 	 * Filter generated URL for internal links.
 	 *
 	 * @param string $new_url Full URL after scheme parsing.
-	 * @param string $url Original URL supplied by the user.
+	 * @param string $url     Original URL supplied by the user.
 	 */
 	return apply_filters( 'altis.documentation.internal_link', $new_url, $url );
 }
