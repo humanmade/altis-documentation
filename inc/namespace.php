@@ -35,6 +35,7 @@ function register() {
  */
 function bootstrap() {
 	add_filter( 'altis.documentation.sets', __NAMESPACE__ . '\filter_add_dev_docs_set' );
+	add_filter( 'altis.documentation.default.group', __NAMESPACE__ . '\get_default_group', 10, 2 );
 	UI\bootstrap();
 }
 
@@ -115,6 +116,21 @@ function filter_add_dev_docs_set( array $sets ) : array {
 	}
 
 	return $sets;
+}
+
+/**
+ * Default to our welcome group if it is our set.
+ *
+ * @param string $group_id
+ * @param string $set_id
+ *
+ * @return string
+ */
+function get_default_group( string $group_id, string $set_id ) : string {
+	if ( empty( $group_id ) && ( $set_id === 'dev-docs' ) ) {
+		return 'welcome';
+	}
+	return $group_id;
 }
 
 /**
