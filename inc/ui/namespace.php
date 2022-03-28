@@ -11,7 +11,6 @@ use Altis\Documentation;
 use Altis\Documentation\Page;
 use WP_Admin_Bar;
 use function Altis\Documentation\get_documentation_set;
-use function Altis\Telemetry\track;
 
 const PAGE_SLUG = 'altis-documentation';
 
@@ -33,7 +32,7 @@ function bootstrap() {
  * to the admin bar.
  */
 function register_menu() {
-	// Add top level page
+	// Add top level page.
 	$hook = add_menu_page(
 		null,
 		__( 'Documentation', 'altis' ),
@@ -104,9 +103,11 @@ function get_current_set_id() : string {
 /**
  * Get the current group ID.
  *
+ * @param string $set_id The current Set id.
+ *
  * @return string Group ID if set, otherwise the default group.
  */
-function get_current_group_id( string $set_id = '' ) {
+function get_current_group_id( string $set_id = '' ) : string {
 	$set_id = $set_id ?? get_current_set_id();
 
 	// @codingStandardsIgnoreLine
@@ -132,6 +133,8 @@ function render_dev_docs_page() {
 
 /**
  * Documentation page render callback.
+ *
+ * @param string $set_id The current Set id.
  */
 function render_page( string $set_id ) {
 
@@ -165,7 +168,11 @@ function render_page( string $set_id ) {
 									}
 									?>
 									<li class="<?php echo ( $current_group === $group && $current_page_id === $id ) ? 'active' : '' ?>">
-										<a href="<?php echo esc_attr( add_query_arg( [ 'set' => $set_id, 'group' => $group, 'id' => $id ] ) ); ?>">
+										<a href="<?php echo esc_attr( add_query_arg( [
+											'set' => $set_id,
+											'group' => $group,
+											'id' => $id
+										] ) ); ?>">
 											<?php echo esc_html( $page->get_meta( 'title' ) ); ?>
 										</a>
 									</li>

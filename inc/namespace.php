@@ -80,7 +80,7 @@ function get_documentation_set( string $set_id ) : Set {
 function filter_add_dev_docs_set( array $sets ) : array {
 
 	if ( empty( $sets['dev-docs'] ) ) {
-		// Generate the default set
+		// Generate the default set.
 		$dev_set = new Set( 'Developer Documentation' );
 
 		$other_docs = dirname( __DIR__ ) . '/other-docs';
@@ -97,7 +97,7 @@ function filter_add_dev_docs_set( array $sets ) : array {
 		add_docs_for_group( $guides, $other_docs . '/guides' );
 		$dev_set->add_group( 'guides', $guides );
 
-		// Add all the registered modules
+		// Add all the registered modules.
 		$modules = Module::get_all();
 		uasort( $modules, function ( Module $a, Module $b ) : int {
 			return $a->get_title() <=> $b->get_title();
@@ -119,12 +119,12 @@ function filter_add_dev_docs_set( array $sets ) : array {
 }
 
 /**
- * Default to our welcome group if it is our set.
+ * Default to our welcome group if this is our set.
  *
- * @param string $group_id
- * @param string $set_id
+ * @param string $group_id The current group id.
+ * @param string $set_id   The current set id.
  *
- * @return string
+ * @return string The required default group id.
  */
 function get_default_group( string $group_id, string $set_id ) : string {
 	if ( empty( $group_id ) && ( $set_id === 'dev-docs' ) ) {
@@ -139,7 +139,7 @@ function get_default_group( string $group_id, string $set_id ) : string {
  *
  * @param string $set_id The required set ID. Defaults to the Developer docs set.
  *
- * @return Group[] Sorted list of groups
+ * @return Group[] Sorted list of groups.
  */
 function get_documentation( string $set_id = '' ) : array {
 
