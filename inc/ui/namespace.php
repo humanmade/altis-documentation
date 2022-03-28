@@ -98,7 +98,7 @@ function load_page_assets() {
  */
 function get_current_set_id() : string {
 	// @codingStandardsIgnoreLine
-	return $_GET['set'] ?? 'dev-docs';
+	return $_GET['set'] ?? apply_filters( 'altis.documentation.default.set', 'dev-docs' );
 }
 
 /**
@@ -106,9 +106,11 @@ function get_current_set_id() : string {
  *
  * @return string Group ID if set, otherwise the default group.
  */
-function get_current_group_id() {
+function get_current_group_id( string $set_id = '' ) {
+	$set_id = $set_id ?? get_current_set_id();
+
 	// @codingStandardsIgnoreLine
-	return $_GET['group'] ?? 'welcome';
+	return $_GET['group'] ?? apply_filters( 'altis.documentation.default.group', 'welcome', $set_id );
 }
 
 /**
@@ -135,7 +137,7 @@ function render_page( string $set_id ) {
 
 	$set_id          = $set_id ?? get_current_set_id();
 	$documentation   = Documentation\get_documentation( $set_id );
-	$current_group   = get_current_group_id();
+	$current_group   = get_current_group_id( $set_id );
 	$current_page_id = get_current_page_id();
 	$current_page    = Documentation\get_page_by_id( $current_group, $current_page_id, $set_id );
 	?>
