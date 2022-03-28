@@ -130,6 +130,7 @@ function get_default_group( string $group_id, string $set_id ) : string {
 	if ( empty( $group_id ) && ( $set_id === 'dev-docs' ) ) {
 		return 'welcome';
 	}
+
 	return $group_id;
 }
 
