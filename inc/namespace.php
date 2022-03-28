@@ -51,7 +51,7 @@ function get_documentation_set( string $set_id ) : Set {
 	/**
 	 * All the documentation sets.
 	 *
-	 * @var Set[] $all_sets
+	 * @var Set[] $all_sets All the documentation sets.
 	 */
 	static $all_sets = [];
 
