@@ -10,8 +10,8 @@ namespace Altis\Documentation;
 use Altis;
 use Altis\Module;
 use DirectoryIterator;
-use Spyc;
 use function Altis\Documentation\UI\get_current_set_id;
+use Spyc;
 
 /**
  * Register module.
@@ -45,7 +45,7 @@ function bootstrap() {
  *
  * @param string $set_id The required set id.
  *
- * @return Set
+ * @return Set The required Documentation Set or a new empty one.
  */
 function get_documentation_set( string $set_id ) : Set {
 	/**
@@ -73,7 +73,7 @@ function get_documentation_set( string $set_id ) : Set {
 /**
  * Filter the $all_sets array to add the developer docs Set if it doesn't yet exist.
  *
- * @param array $sets
+ * @param array $sets The array of Documentation sets.
  *
  * @return array
  */

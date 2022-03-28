@@ -9,8 +9,8 @@ namespace Altis\Documentation\UI;
 
 use Altis\Documentation;
 use Altis\Documentation\Page;
-use WP_Admin_Bar;
 use function Altis\Documentation\get_documentation_set;
+use WP_Admin_Bar;
 
 const PAGE_SLUG = 'altis-documentation';
 
@@ -168,11 +168,7 @@ function render_page( string $set_id ) {
 									}
 									?>
 									<li class="<?php echo ( $current_group === $group && $current_page_id === $id ) ? 'active' : '' ?>">
-										<a href="<?php echo esc_attr( add_query_arg( [
-											'set' => $set_id,
-											'group' => $group,
-											'id' => $id
-										] ) ); ?>">
+										<a href="<?php echo esc_attr( add_query_arg( [ 'set' => $set_id, 'group' => $group, 'id' => $id ] ) ); // phpcs:ignore ?>">
 											<?php echo esc_html( $page->get_meta( 'title' ) ); ?>
 										</a>
 									</li>
