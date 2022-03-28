@@ -49,7 +49,9 @@ function bootstrap() {
  */
 function get_documentation_set( string $set_id ) : Set {
 	/**
-	 * @var Set[] $all_sets All the documentation sets.
+	 * All the documentation sets.
+	 *
+	 * @var Set[] $all_sets
 	 */
 	static $all_sets = [];
 
@@ -330,10 +332,11 @@ function get_slug_from_path( $root, $path ) {
  * Get a documentation group.
  *
  * @param string $id Group ID.
+ * @param string $set_id The Set id.
  *
  * @return Group|null Group if available, null otherwise.
  */
-function get_documentation_group( $id, string $set_id = '' ) : ?Group {
+function get_documentation_group( string $id, string $set_id = '' ) : ?Group {
 	$documentation = get_documentation( $set_id );
 
 	return $documentation[ $id ] ?: null;
