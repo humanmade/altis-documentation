@@ -74,7 +74,7 @@ function get_documentation_set( string $set_id ) : Set {
 /**
  * Filter the $all_sets array to add the developer docs Set if it doesn't yet exist.
  *
- * @param array $sets The array of Documentation sets.
+ * @param Set[] $sets The array of Documentation sets.
  *
  * @return array
  */
@@ -82,7 +82,7 @@ function filter_add_dev_docs_set( array $sets ) : array {
 
 	// Are we already set up?
 	if ( ! empty( $sets['dev-docs'] ) ) {
-		return $sets['dev-docs'];
+		return $sets;
 	}
 
 	// Generate the default set.
