@@ -205,10 +205,11 @@ function render_page( string $set_id ) {
 
 	// Track this page view in Altis Telemetry.
 	do_action( 'altis.telemetry.track', [
-		'event'      => 'Documentation',
+		'event' => 'documentation',
 		'properties' => [
-			'content_type'   => 'Documentation page view',
-			'content_action' => "$set_id-$current_group-$current_page_id",
+			'set' => $set_id,
+			'group' => $current_group,
+			'page' => $current_page_id,
 		],
 	] );
 
