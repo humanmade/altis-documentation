@@ -10,7 +10,6 @@ namespace Altis\Documentation;
 use Altis;
 use Altis\Module;
 use DirectoryIterator;
-use function Altis\Documentation\UI\get_current_set_id;
 use Spyc;
 
 /**
@@ -146,7 +145,7 @@ function get_default_group( string $group_id, string $set_id ) : string {
 function get_documentation( string $set_id = '' ) : array {
 
 	if ( empty( $set_id ) ) {
-		$set_id = get_current_set_id();
+		$set_id = UI\get_current_set_id();
 	}
 
 	$doc_set = get_documentation_set( $set_id );

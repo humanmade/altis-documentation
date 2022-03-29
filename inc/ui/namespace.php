@@ -9,7 +9,6 @@ namespace Altis\Documentation\UI;
 
 use Altis\Documentation;
 use Altis\Documentation\Page;
-use function Altis\Documentation\get_documentation_set;
 use WP_Admin_Bar;
 
 const PAGE_SLUG = 'altis-documentation';
@@ -41,7 +40,7 @@ function register_menu() {
 	);
 
 	// Add our default dev docs.
-	$dev_set = get_documentation_set( 'dev-docs' );
+	$dev_set = Documentation\get_documentation_set( 'dev-docs' );
 	add_submenu_page(
 		PAGE_SLUG,
 		'',
