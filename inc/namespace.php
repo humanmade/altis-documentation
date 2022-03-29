@@ -80,41 +80,44 @@ function get_documentation_set( string $set_id ) : Set {
  */
 function filter_add_dev_docs_set( array $sets ) : array {
 
-	if ( empty( $sets['dev-docs'] ) ) {
-		// Generate the default set.
-		$dev_set = new Set( 'Developer Documentation' );
+	// Are we already set up?
+	if ( ! empty($sets['dev-docs']  )) {
+		return $sets['dev-docs'] ;
+	}
 
-		$other_docs = dirname( __DIR__ ) . '/other-docs';
+	// Generate the default set.
+	$dev_set = new Set( 'Developer Documentation' );
 
-		$welcome = new Group( 'Welcome' );
-		$welcome->add_page( '', parse_file( $other_docs . '/welcome.md', $other_docs ) );
-		$dev_set->add_group( 'welcome', $welcome );
+	$other_docs = dirname( __DIR__ ) . '/other-docs';
 
-		$getting_started = new Group( 'Getting Started' );
-		add_docs_for_group( $getting_started, $other_docs . '/getting-started' );
-		$dev_set->add_group( 'getting-started', $getting_started );
+	$welcome = new Group( 'Welcome' );
+	$welcome->add_page( '', parse_file( $other_docs . '/welcome.md', $other_docs ) );
+	$dev_set->add_group( 'welcome', $welcome );
 
-		$guides = new Group( 'Guides' );
-		add_docs_for_group( $guides, $other_docs . '/guides' );
-		$dev_set->add_group( 'guides', $guides );
+	$getting_started = new Group( 'Getting Started' );
+	add_docs_for_group( $getting_started, $other_docs . '/getting-started' );
+	$dev_set->add_group( 'getting-started', $getting_started );
 
-		// Add all the registered modules.
-		$modules = Module::get_all();
-		uasort( $modules, function ( Module $a, Module $b ) : int {
-			return $a->get_title() <=> $b->get_title();
-		} );
+	$guides = new Group( 'Guides' );
+	add_docs_for_group( $guides, $other_docs . '/guides' );
+	$dev_set->add_group( 'guides', $guides );
 
-		foreach ( $modules as $id => $module ) {
-			$module_docs = generate_docs_for_module( $id, $module );
-			if ( $module_docs === null ) {
-				continue;
-			}
+	// Add all the registered modules.
+	$modules = Module::get_all();
+	uasort( $modules, function ( Module $a, Module $b ) : int {
+		return $a->get_title() <=> $b->get_title();
+	} );
 
-			$dev_set->add_group( $id, $module_docs );
+	foreach ( $modules as $id => $module ) {
+		$module_docs = generate_docs_for_module( $id, $module );
+		if ( $module_docs === null ) {
+			continue;
 		}
 
-		$sets['dev-docs'] = $dev_set;
+		$dev_set->add_group( $id, $module_docs );
 	}
+
+	$sets['dev-docs'] = $dev_set;
 
 	return $sets;
 }
