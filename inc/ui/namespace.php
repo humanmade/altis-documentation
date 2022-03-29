@@ -95,6 +95,12 @@ function load_page_assets() {
  * @return string Doc set ID if set, otherwise the default set.
  */
 function get_current_set_id() : string {
+	/**
+	 * Filter the default set ID. If no query string parameter is found, the filter is applied.
+	 *
+	 * @param string $set_id The default set id.
+	 *
+	 */
 	// @codingStandardsIgnoreLine
 	return $_GET['set'] ?? apply_filters( 'altis.documentation.default.set', 'dev-docs' );
 }
@@ -102,13 +108,20 @@ function get_current_set_id() : string {
 /**
  * Get the current group ID.
  *
- * @param string $set_id The current Set id.
+ * @param string $set_id The current set id.
  *
  * @return string Group ID if set, otherwise the default group.
  */
 function get_current_group_id( string $set_id = '' ) : string {
 	$set_id = $set_id ?? get_current_set_id();
 
+	/**
+	 * Filter the default group id for the current set. If no query string parameter is found, the filter is applied.
+	 *
+	 * @param string $group_id The default group id.
+	 * @param string $set_id The current set id.
+	 *
+	 */
 	// @codingStandardsIgnoreLine
 	return $_GET['group'] ?? apply_filters( 'altis.documentation.default.group', 'welcome', $set_id );
 }
