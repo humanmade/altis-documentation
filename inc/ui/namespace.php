@@ -137,11 +137,11 @@ function render_dev_docs_page() {
  */
 function render_page( string $set_id ) {
 
-	$set_id          = $set_id ?? get_current_set_id();
-	$documentation   = Documentation\get_documentation( $set_id );
-	$current_group   = get_current_group_id( $set_id );
+	$set_id = $set_id ?? get_current_set_id();
+	$documentation = Documentation\get_documentation( $set_id );
+	$current_group = get_current_group_id( $set_id );
 	$current_page_id = get_current_page_id();
-	$current_page    = Documentation\get_page_by_id( $current_group, $current_page_id, $set_id );
+	$current_page = Documentation\get_page_by_id( $current_group, $current_page_id, $set_id );
 	?>
 
 	<div class="altis-ui wrap">
@@ -181,8 +181,8 @@ function render_page( string $set_id ) {
 
 			<article>
 				<?php
-				// phpcs:ignore WordPress.Security.EscapeOutput.OutputNotEscaped
-				echo render_content( $current_page );
+					// phpcs:ignore WordPress.Security.EscapeOutput.OutputNotEscaped
+					echo render_content( $current_page );
 				?>
 			</article>
 		</div>
@@ -206,10 +206,10 @@ function render_page( string $set_id ) {
  *
  * This recurses all subpages.
  *
- * @param Page      $page         Documentation page object.
- * @param string    $group        The documentation page group.
+ * @param Page $page Documentation page object.
+ * @param string $group The documentation page group.
  * @param Page|null $current_page The current page object if set.
- * @param string    $set          The current documentation set.
+ * @param string $set The current documentation set.
  */
 function render_page_subpages( Page $page, string $group, ?Page $current_page, string $set ) {
 	if ( ! $page->get_subpages() ) {
@@ -220,9 +220,9 @@ function render_page_subpages( Page $page, string $group, ?Page $current_page, s
 		<?php
 		foreach ( $page->get_subpages() as $subpage_id => $subpage ) :
 			$permalink = add_query_arg( [
-				'set'   => $set,
+				'set' => $set,
 				'group' => $group,
-				'id'    => $subpage_id,
+				'id' => $subpage_id,
 			] );
 			?>
 			<li class="<?php echo $current_page === $subpage ? 'active' : '' ?>">
