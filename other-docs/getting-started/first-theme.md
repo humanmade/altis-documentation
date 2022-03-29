@@ -121,6 +121,13 @@ For more complex loops, we recommend using a more complex starter theme. [Unders
 Consult the [WordPress theme documentation](https://developer.wordpress.org/themes/) for more information about loops, the template hierarchy, and other parts of themes.
 
 
+## Full Site Editing
+
+While the above documentation will guide you through setting up a basic classic theme, you may also wish to explore enabling Full Site Editing for your theme.
+
+[You can read more about the Full Site Editing feature and how to enable it here](docs://cms/full-site-editing.md).
+
+
 ## Next Steps
 
 With a visual style established, the next step to getting started is to begin enabling custom functionality for your site. This is controlled through the [project's configuration](configuration.md).
