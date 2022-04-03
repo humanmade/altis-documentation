@@ -115,4 +115,16 @@ class Group {
 
 		return $page;
 	}
+
+	/**
+	 * Get the default page id. The first in the array or empty string.
+	 *
+	 * @return string
+	 */
+	public function get_default_page_id() : string {
+		if ( count( $this->pages ) ) {
+			return array_keys( $this->pages )[0];
+		}
+		return '';
+	}
 }
