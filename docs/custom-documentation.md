@@ -2,6 +2,7 @@
 
 The documentation module can be used for your own [custom modules](docs://getting-started/custom-modules.md), allowing you to build an internal knowledge base for your development team.
 
+The built-in Documentation Set is intended for developer documentation. To add your documentation to the Developer Docs set, see the information below. To add additional sets of Documentation, perhaps for the users of your system, see [Additional Documentation Sets](./additional-doc-set.md).     
 
 ## Documentation Structure
 
@@ -14,7 +15,7 @@ The Documentation module automatically takes Markdown files from a `docs/` direc
 
 Documentation files are standard Markdown, as supported by [Parsedown](https://parsedown.org/). They also support [relative and in-project links](linking.md).
 
-Markdown files can contain YAML frontmatter, which specifies a list of "meta" information about the page itself. The following fields are supported:
+Markdown files can contain YAML front-matter, which specifies a list of "meta" information about the page itself. The following fields are supported:
 
 ```yaml
 ---
@@ -40,7 +41,7 @@ Headers have automatically generated fragment IDs attached for in-page linking. 
 
 Internally, the Documentation module stores an ordered list of "groups", which have an ID and associated top-level pages. Each page has metadata, content, and potentially sub-pages.
 
-The `altis.documentation.groups` filter is provided the ordered list of `Group` objects, and you can add or remove groups from here, or manipulate existing groups. The `Documentation\add_docs_for_group()` function may be useful for this; see `Documentation\get_documentation()` to see how Altis generates documentation for modules.
+The `altis.documentation.groups` filter is provided the ordered list of `Group` objects, and you can add or remove groups from here, or manipulate existing groups. The `Documentation\add_docs_for_group()` function may be useful for this; see `Documentation\filter_add_dev_docs_set()` to see how Altis generates developer documentation for modules.
 
 For example, to add your own Guides-style section:
 
@@ -48,10 +49,11 @@ For example, to add your own Guides-style section:
 use Altis\Documentation\Group;
 use function Altis\Documentation\add_docs_for_group;
 
-add_filter( 'altis.documentation.groups', function ( array $groups ) {
-	$groups['project-guides'] = new Group( 'Project Guides' );
-	add_docs_for_group( $groups['project-guides'], __DIR__ . '/our-guides' );
-
+add_filter( 'altis.documentation.groups', function ( array $groups, string $set_id ) {
+	if ( $set_id === 'dev-docs' ) {
+		$groups['project-guides'] = new Group( 'Project Guides' );
+		add_docs_for_group( $groups['project-guides'], __DIR__ . '/our-guides' );
+	}
 	return $groups;
 } );
 ```
