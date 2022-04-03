@@ -55,7 +55,8 @@ function register_menu() {
 			static function () use ( $set_id ) {
 				// Render this set of docs.
 				render_page( $set_id );
-			} );
+			}
+		);
 
 		// Add custom call back to load styles and scripts and to set page title tag.
 		add_action( "load-$page_hook", static function () use ( $set_id ) {
