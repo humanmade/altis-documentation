@@ -25,10 +25,8 @@ function bootstrap() {
 
 /**
  * Register the Documentation admin page.
- *
  * We loop through all documentation sets adding a submenu for each.
  * If there are none, we don't add the top level menu.
- *
  */
 function register_menu() {
 	// Add top level page.
@@ -61,13 +59,13 @@ function register_menu() {
 
 		// Add custom call back to load styles and scripts and to set page title tag.
 		add_action( "load-$page_hook", static function () use ( $set_id ) {
-				// Filter default set_id for this page. Add this hook here, so it is set up before the page renders.
-				add_filter( 'altis.documentation.default.set', static function () use ( $set_id ) : string {
-						return $set_id;
-					}, 10 );
+			// Filter default set_id for this page. Add this hook here, so it is set up before the page renders.
+			add_filter( 'altis.documentation.default.set', static function () use ( $set_id ) : string {
+				return $set_id;
+			}, 10 );
 
-				load_page_assets();
-			} );
+			load_page_assets();
+		} );
 
 		$first_child = false;
 	}
@@ -117,7 +115,7 @@ function load_page_assets() {
 	if ( $page ) {
 		$GLOBALS['title'] = $page->get_meta( 'title' );
 	} else {
-		$GLOBALS['title'] = get_admin_page_title(); // get it from the menu
+		$GLOBALS['title'] = get_admin_page_title(); // Get it from the menu.
 	}
 }
 
@@ -132,6 +130,7 @@ function get_current_set_id() : string {
 	 *
 	 * @param string $set_id The default set id.
 	 *
+	 * @return string The default set id.
 	 */
 	// @codingStandardsIgnoreLine
 	return $_GET['set'] ?? apply_filters( 'altis.documentation.default.set', '' );
@@ -176,7 +175,7 @@ function render_page( string $set_id ) {
 	$doc_set = Documentation\get_documentation_set( $set_id );
 	$current_group = $doc_set->get_group( $current_group_id );
 	$current_page = null;
-	if( $current_group !== null ) {
+	if ( $current_group !== null ) {
 		$current_page = $current_group->get_page( $current_page_id );
 	}
 

@@ -35,7 +35,7 @@ function register() {
  * Bootstrap module, when enabled.
  */
 function bootstrap() {
-	if ( in_array( Altis\get_environment_type(), ['development', 'local' ] ) ) {
+	if ( in_array( Altis\get_environment_type(), [ 'development', 'local' ], true ) ) {
 		add_filter( 'altis.documentation.sets', __NAMESPACE__ . '\filter_add_dev_docs_set' );
 	}
 	UI\bootstrap();
@@ -94,7 +94,7 @@ function get_default_set_id() : string {
 /**
  * Check if the passed string is a set id.
  *
- * @param string $id
+ * @param string $id The potential set id.
  *
  * @return bool
  */
@@ -112,7 +112,7 @@ function is_set_id( string $id ) : bool {
 function filter_add_dev_docs_set( array $sets ) : array {
 
 	// Are we already set up?
-	if ( ! empty( $sets[ DEV_DOCS_SET_ID] ) ) {
+	if ( ! empty( $sets[ DEV_DOCS_SET_ID ] ) ) {
 		return $sets;
 	}
 
@@ -149,7 +149,7 @@ function filter_add_dev_docs_set( array $sets ) : array {
 		$dev_set->add_group( $id, $module_docs );
 	}
 
-	$sets[ DEV_DOCS_SET_ID] = $dev_set;
+	$sets[ DEV_DOCS_SET_ID ] = $dev_set;
 
 	return $sets;
 }
@@ -356,6 +356,7 @@ function render_page( Page $page ) : string {
  *
  * @param string $group_id Group ID.
  * @param string $page_id Page ID.
+ * @param string $set_id Set ID.
  *
  * @return string Absolute URL to the page.
  */
@@ -363,7 +364,7 @@ function get_url_for_page( string $group_id, string $page_id, string $set_id = '
 	$base_url = admin_url( 'admin.php' );
 
 	// Default to whatever is the default set.
-	if ( empty( $set_id )) {
+	if ( empty( $set_id ) ) {
 		$set_id = Altis\Documentation\UI\get_current_set_id();
 	}
 
@@ -417,7 +418,7 @@ function convert_internal_link( string $url ) : string {
 			$set_id = '';
 			if ( is_set_id( $host ) ) {
 				$set_id = $host;
-				// Split path into group and path again
+				// Split path into group and path again.
 				$parts = explode( '/', $path, 3 );
 				[ $unused, $group, $path ] = $parts;
 			}

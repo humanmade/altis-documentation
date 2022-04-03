@@ -132,6 +132,7 @@ class Set {
 	/**
 	 * Set the default group ID.
 	 *
+	 * @param string $group_id Group ID.
 	 */
 	public function set_default_group_id( string $group_id ) : void {
 
