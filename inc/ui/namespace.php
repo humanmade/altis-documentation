@@ -26,31 +26,51 @@ function bootstrap() {
 /**
  * Register the Documentation admin page.
  *
- * We use a bit of a hack to not actually have the page added to the
- * admin-menu by setting the parent to `null`. This is then added
- * to the admin bar.
+ * We loop through all documentation sets adding a submenu for each.
+ * If there are none, we don't add the top level menu.
+ *
  */
 function register_menu() {
 	// Add top level page.
-	$hook = add_menu_page(
-		null,
+	$doc_sets = Documentation\get_documentation_sets();
+	if ( empty( $doc_sets ) ) {
+		return;
+	}
+
+	add_menu_page(
+		__( 'Documentation', 'altis' ),
 		__( 'Documentation', 'altis' ),
 		'edit_posts',
 		PAGE_SLUG
 	);
 
-	// Add our default dev docs.
-	$dev_set = Documentation\get_documentation_set( 'dev-docs' );
-	add_submenu_page(
-		PAGE_SLUG,
-		'',
-		$dev_set->get_title(),
-		'edit_posts',
-		PAGE_SLUG,
-		__NAMESPACE__ . '\\render_dev_docs_page'
-	);
+	$first_child = true; // The first in the list is the default menu item.
 
-	add_action( sprintf( 'load-%s', $hook ), __NAMESPACE__ . '\\load_page_assets' );
+	foreach ( $doc_sets as $set_id => $doc_set ) {
+		// Add a sub menu page with custom render callback.
+		$page_hook = add_submenu_page(
+			PAGE_SLUG,
+			$doc_set->get_title(),
+			$doc_set->get_title(),
+			'edit_posts',
+			$first_child ? PAGE_SLUG : sprintf( '%s-%s', PAGE_SLUG, $set_id ),
+			static function () use ( $set_id ) {
+				// Render this set of docs.
+				render_page( $set_id );
+			} );
+
+		// Add custom call back to load styles and scripts and to set page title tag.
+		add_action( "load-$page_hook", static function () use ( $set_id ) {
+				// Filter default set_id for this page. Add this hook here, so it is set up before the page renders.
+				add_filter( 'altis.documentation.default.set', static function () use ( $set_id ) : string {
+						return $set_id;
+					}, 10 );
+
+				load_page_assets();
+			} );
+
+		$first_child = false;
+	}
 }
 
 /**
@@ -61,9 +81,9 @@ function register_menu() {
 function admin_bar_menu( WP_Admin_Bar $wp_admin_bar ) {
 	$wp_admin_bar->add_menu( [
 		'parent' => 'altis',
-		'id'     => 'documentation',
-		'title'  => __( 'Documentation', 'altis' ),
-		'href'   => add_query_arg( 'page', PAGE_SLUG, admin_url( 'admin.php' ) ),
+		'id' => 'documentation',
+		'title' => __( 'Documentation', 'altis' ),
+		'href' => add_query_arg( 'page', PAGE_SLUG, admin_url( 'admin.php' ) ),
 	] );
 }
 
@@ -81,11 +101,23 @@ function load_page_assets() {
 	wp_enqueue_script( __NAMESPACE__, plugins_url( '/assets/script.js', Documentation\DIRECTORY . '/wp-is-dumb' ), [ 'highlightjs' ], '2019-04-19' );
 
 	// Determine the current page title.
-	$page = Documentation\get_page_by_id( get_current_group_id(), get_current_page_id(), get_current_set_id() );
+	$page = '';
+	$set_id = get_current_set_id();
+	$group_id = get_current_group_id( $set_id );
+	$group = Documentation\get_documentation_set( $set_id )->get_group( $group_id );
+	$page_id = get_current_page_id();
+
+	if ( ! is_null( $group ) ) {
+		if ( empty( $page_id ) ) {
+			$page_id = $group->get_default_page_id();
+		}
+		$page = $group->get_page( $page_id );
+	}
+
 	if ( $page ) {
 		$GLOBALS['title'] = $page->get_meta( 'title' );
 	} else {
-		$GLOBALS['title'] = __( 'Page Not Found', 'altis' );
+		$GLOBALS['title'] = get_admin_page_title(); // get it from the menu
 	}
 }
 
@@ -102,7 +134,7 @@ function get_current_set_id() : string {
 	 *
 	 */
 	// @codingStandardsIgnoreLine
-	return $_GET['set'] ?? apply_filters( 'altis.documentation.default.set', 'dev-docs' );
+	return $_GET['set'] ?? apply_filters( 'altis.documentation.default.set', '' );
 }
 
 /**
@@ -110,20 +142,14 @@ function get_current_set_id() : string {
  *
  * @param string $set_id The current set id.
  *
- * @return string Group ID if set, otherwise the default group.
+ * @return string Group ID if set, otherwise the default group for the set.
  */
 function get_current_group_id( string $set_id = '' ) : string {
 	$set_id = $set_id ?? get_current_set_id();
+	$set = Documentation\get_documentation_set( $set_id );
 
-	/**
-	 * Filter the default group id for the current set. If no query string parameter is found, the filter is applied.
-	 *
-	 * @param string $group_id The default group id.
-	 * @param string $set_id The current set id.
-	 *
-	 */
 	// @codingStandardsIgnoreLine
-	return $_GET['group'] ?? apply_filters( 'altis.documentation.default.group', 'welcome', $set_id );
+	return $_GET['group'] ?? $set->get_default_group_id();
 }
 
 /**
@@ -137,13 +163,6 @@ function get_current_page_id() {
 }
 
 /**
- * Wrapper function to call render_page with the correct set id. Called from Documentation menu.
- */
-function render_dev_docs_page() {
-	render_page( 'dev-docs' );
-}
-
-/**
  * Documentation page render callback.
  *
  * @param string $set_id The current Set id.
@@ -151,23 +170,29 @@ function render_dev_docs_page() {
 function render_page( string $set_id ) {
 
 	$set_id = $set_id ?? get_current_set_id();
-	$documentation = Documentation\get_documentation( $set_id );
-	$current_group = get_current_group_id( $set_id );
+	$current_group_id = get_current_group_id( $set_id );
 	$current_page_id = get_current_page_id();
-	$current_page = Documentation\get_page_by_id( $current_group, $current_page_id, $set_id );
+
+	$doc_set = Documentation\get_documentation_set( $set_id );
+	$current_group = $doc_set->get_group( $current_group_id );
+	$current_page = null;
+	if( $current_group !== null ) {
+		$current_page = $current_group->get_page( $current_page_id );
+	}
+
 	?>
 
 	<div class="altis-ui wrap">
 		<div class="altis-ui__main">
 			<nav>
-				<p class="altis-ui__doc-title"><?php echo esc_html_e( 'Documentation', 'altis' ) ?></p>
+				<p class="altis-ui__doc-title"><?php esc_html_e( 'Documentation', 'altis' ) ?></p>
 				<ul>
-					<?php foreach ( $documentation as $group => $gobj ) : ?>
+					<?php foreach ( $doc_set->get_groups() as $group_id => $gobj ) : ?>
 						<li
-							class="<?php echo $group === $current_group ? 'current' : '' ?> <?php echo $group === $current_group && ! $current_page_id ? 'active' : '' ?>"
+							class="<?php echo $group_id === $current_group_id ? 'current' : '' ?> <?php echo $group_id === $current_group_id && ! $current_page_id ? 'active' : '' ?>"
 						>
 							<a
-								href="<?php echo esc_attr( add_query_arg( [ 'set' => $set_id, 'group' => $group, 'id' => '' ] ) ); // phpcs:ignore ?>"
+								href="<?php echo esc_attr( add_query_arg( [ 'set' => $set_id, 'group' => $group_id, 'id' => '' ] ) ); // phpcs:ignore ?>"
 							>
 								<?php echo esc_html( $gobj->get_title() ) ?>
 							</a>
@@ -179,12 +204,12 @@ function render_page( string $set_id ) {
 										continue;
 									}
 									?>
-									<li class="<?php echo ( $current_group === $group && $current_page_id === $id ) ? 'active' : '' ?>">
-										<a href="<?php echo esc_attr( add_query_arg( [ 'set' => $set_id, 'group' => $group, 'id' => $id ] ) ); // phpcs:ignore ?>">
+									<li class="<?php echo ( $current_group_id === $group_id && $current_page_id === $id ) ? 'active' : '' ?>">
+										<a href="<?php echo esc_attr( add_query_arg( [ 'set' => $set_id, 'group' => $group_id, 'id' => $id ] ) ); // phpcs:ignore ?>">
 											<?php echo esc_html( $page->get_meta( 'title' ) ); ?>
 										</a>
 									</li>
-									<?php render_page_subpages( $page, $group, $current_page, $set_id ) ?>
+									<?php render_page_subpages( $page, $group_id, $current_page, $set_id ) ?>
 								<?php endforeach ?>
 							</ul>
 						</li>
@@ -208,7 +233,7 @@ function render_page( string $set_id ) {
 		'event' => 'documentation',
 		'properties' => [
 			'set' => $set_id,
-			'group' => $current_group,
+			'group' => $current_group_id,
 			'page' => $current_page_id,
 		],
 	] );
