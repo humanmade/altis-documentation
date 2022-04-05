@@ -60,8 +60,8 @@ function register_menu() {
 
 		// Add custom call back to load styles and scripts and to set page title tag.
 		add_action( "load-$page_hook", static function () use ( $set_id ) {
-			// Filter default set_id for this page. Add this hook here, so it is set up before the page renders.
-			add_filter( 'altis.documentation.default.set', static function () use ( $set_id ) : string {
+			// Filter current set_id for this page. Add this hook here, so it is set up before the page renders.
+			add_filter( 'altis.documentation.current.set', static function () use ( $set_id ) : string {
 				return $set_id;
 			}, 10 );
 
@@ -122,18 +122,20 @@ function load_page_assets() {
 
 /**
  * Get the current Set ID.
+ * If it is not set, try to get it from the admin page slug.
+ * Falls back to the filtered default.
  *
  * @return string Doc set ID if set, otherwise the default set.
  */
 function get_current_set_id() : string {
 	/**
-	 * Filter the default set ID. If no query string parameter is found, the filter is applied.
+	 * Filter the current set ID. If no query string parameter is found, the filter is applied.
 	 *
 	 * @param string $set_id The default set id.
 	 *
 	 * @return string The default set id.
 	 */
-	return $_GET['set'] ?? apply_filters( 'altis.documentation.default.set', '' ); // @codingStandardsIgnoreLine
+	return $_GET['set'] ?? apply_filters( 'altis.documentation.current.set', '' );
 }
 
 /**
