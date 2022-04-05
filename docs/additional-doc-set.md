@@ -55,13 +55,8 @@ add_action( 'admin_menu', static function () {
 			\Altis\Documentation\UI\render_page( PROJECT_DOCS_SET_ID );
 		} );
 
-	// Add custom call back to load styles and scripts and to set page title tag.
+	// Add custom call back to load styles and scripts.
 	add_action( "load-$page_hook", static function () {
-		// Filter current set_id for this page. Add this hook here, so it is set up before the page renders.
-		add_filter( 'altis.documentation.current.set', static function () : string {
-			return PROJECT_DOCS_SET_ID;
-		}, 10 );
-
 		\Altis\Documentation\UI\load_page_assets();
 	} );
 } );
