@@ -132,9 +132,7 @@ function get_current_set_id() : string {
 	 * @param string $set_id The current set id.
 	 * @return string The current set id.
 	 */
-	return $_GET['set'] ?? // @codingStandardsIgnoreLine
-		explode( PAGE_SLUG . '-', $_GET['page'] )[1] ??
-	    apply_filters( 'altis.documentation.current.set', $default );
+	return $_GET['set'] ?? explode( PAGE_SLUG . '-', $_GET['page'] )[1] ?? apply_filters( 'altis.documentation.current.set', $default ); // @codingStandardsIgnoreLine
 }
 
 /**
