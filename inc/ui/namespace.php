@@ -52,7 +52,7 @@ function register_menu() {
 			$doc_set->get_title(),
 			'edit_posts',
 			$first_child ? PAGE_SLUG : sprintf( '%s-%s', PAGE_SLUG, $set_id ),
-			 static function () use ( $set_id ) {
+			static function () use ( $set_id ) {
 				// Render this set of docs.
 				render_page( $set_id );
 			}
@@ -132,9 +132,9 @@ function get_current_set_id() : string {
 	 * @param string $set_id The current set id.
 	 * @return string The current set id.
 	 */
-	return $_GET['set'] ??
-	       explode( PAGE_SLUG . '-', $_GET['page'] )[1] ??
-	       apply_filters( 'altis.documentation.current.set', $default ); // @codingStandardsIgnoreLine
+	return $_GET['set'] ?? // @codingStandardsIgnoreLine
+		explode( PAGE_SLUG . '-', $_GET['page'] )[1] ??
+	    apply_filters( 'altis.documentation.current.set', $default );
 }
 
 /**
