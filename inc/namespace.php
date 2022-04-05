@@ -69,7 +69,6 @@ function get_documentation_sets() : array {
  * Returns an empty set if not found.
  *
  * @param string $set_id The required set id.
- *
  * @return Set The required Documentation Set or a new empty one.
  */
 function get_documentation_set( string $set_id ) : Set {
@@ -95,7 +94,6 @@ function get_default_set_id() : string {
  * Check if the passed string is a set id.
  *
  * @param string $id The potential set id.
- *
  * @return bool
  */
 function is_set_id( string $id ) : bool {
@@ -106,7 +104,6 @@ function is_set_id( string $id ) : bool {
  * Filter the $all_sets array to add the developer docs Set if it doesn't yet exist.
  *
  * @param Set[] $sets The array of Documentation sets.
- *
  * @return Set[] array
  */
 function filter_add_dev_docs_set( array $sets ) : array {
@@ -159,7 +156,6 @@ function filter_add_dev_docs_set( array $sets ) : array {
  *
  * @param string $id Module ID.
  * @param Module $module Module object.
- *
  * @return Group Documentation group for the module.
  */
 function generate_docs_for_module( $id, Module $module ) : ?Group {
@@ -179,7 +175,6 @@ function generate_docs_for_module( $id, Module $module ) : ?Group {
  *
  * @param Group $group Group object.
  * @param string $doc_dir The directory to add files from to the Group.
- *
  * @return Group Documentation group for the module.
  */
 function add_docs_for_group( Group $group, string $doc_dir ) : Group {
@@ -235,7 +230,6 @@ function add_docs_for_group( Group $group, string $doc_dir ) : Group {
  *
  * @param string $dir The directory to add the page for.
  * @param string $root_dir The root directory of the group, used to calculate page ids.
- *
  * @return Page|null
  */
 function get_page_for_dir( string $dir, string $root_dir ) : ?Page {
@@ -286,7 +280,6 @@ function get_page_for_dir( string $dir, string $root_dir ) : ?Page {
  *
  * @param string $root A root path to match against the relative path.
  * @param string $path Path for Markdown file (relative to documentation root).
- *
  * @return string Hierarchical slug for the document.
  */
 function get_slug_from_path( string $root, string $path ) : string {
@@ -307,7 +300,6 @@ function get_slug_from_path( string $root, string $path ) : string {
  *
  * @param string $file Path to the file to parse.
  * @param string $root Root directory for the file's owner.
- *
  * @return Page Parsed data for the file
  */
 function parse_file( string $file, string $root ) : Page {
@@ -342,12 +334,10 @@ function parse_file( string $file, string $root ) : Page {
  * Render a page from Markdown.
  *
  * @param Page $page Page to render.
- *
  * @return string HTML content for the page.
  */
 function render_page( Page $page ) : string {
 	$parsedown = new MarkdownParser( $page );
-
 	return $parsedown->text( $page->get_content() );
 }
 
@@ -399,7 +389,6 @@ function get_url_for_page( string $group_id, string $page_id, string $set_id = '
  * Note that relative links are not resolved, as there is no context to use.
  *
  * @param string $url Raw link (e.g. `docs://foo/bar`).
- *
  * @return string URL for usage in a browser.
  */
 function convert_internal_link( string $url ) : string {

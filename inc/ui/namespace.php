@@ -52,7 +52,7 @@ function register_menu() {
 			$doc_set->get_title(),
 			'edit_posts',
 			$first_child ? PAGE_SLUG : sprintf( '%s-%s', PAGE_SLUG, $set_id ),
-			static function () use ( $set_id ) {
+			 static function () use ( $set_id ) {
 				// Render this set of docs.
 				render_page( $set_id );
 			}
@@ -133,19 +133,17 @@ function get_current_set_id() : string {
 	 *
 	 * @return string The default set id.
 	 */
-	// @codingStandardsIgnoreLine
-	return $_GET['set'] ?? apply_filters( 'altis.documentation.default.set', '' );
+	return $_GET['set'] ?? apply_filters( 'altis.documentation.default.set', '' ); // @codingStandardsIgnoreLine
 }
 
 /**
  * Get the current group ID.
  *
  * @param string $set_id The current set id.
- *
  * @return string Group ID if set, otherwise the default group for the set.
  */
 function get_current_group_id( string $set_id = '' ) : string {
-	$set_id = $set_id ?? get_current_set_id();
+	$set_id = $set_id ?: get_current_set_id();
 	$set = Documentation\get_documentation_set( $set_id );
 
 	// @codingStandardsIgnoreLine
@@ -279,7 +277,6 @@ function render_page_subpages( Page $page, string $group, ?Page $current_page, s
  * Render the content for a page.
  *
  * @param Page|null $page The page object to render content for.
- *
  * @return string
  */
 function render_content( ?Page $page ) : string {
