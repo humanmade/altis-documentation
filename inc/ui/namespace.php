@@ -58,13 +58,8 @@ function register_menu() {
 			}
 		);
 
-		// Add custom call back to load styles and scripts and to set page title tag.
-		add_action( "load-$page_hook", static function () use ( $set_id ) {
-			// Filter current set_id for this page. Add this hook here, so it is set up before the page renders.
-			add_filter( 'altis.documentation.current.set', static function () use ( $set_id ) : string {
-				return $set_id;
-			}, 10 );
-
+		// Add custom call back to load styles and scripts.
+		add_action( "load-$page_hook", static function () {
 			load_page_assets();
 		} );
 
@@ -128,14 +123,18 @@ function load_page_assets() {
  * @return string Doc set ID if set, otherwise the default set.
  */
 function get_current_set_id() : string {
+	$sets = Documentation\get_documentation_sets();
+	$default = array_keys( $sets )[0] ?? '';
+
 	/**
-	 * Filter the current set ID. If no query string parameter is found, the filter is applied.
+	 * Filter the current set ID.
 	 *
-	 * @param string $set_id The default set id.
-	 *
-	 * @return string The default set id.
+	 * @param string $set_id The current set id.
+	 * @return string The current set id.
 	 */
-	return $_GET['set'] ?? apply_filters( 'altis.documentation.current.set', '' );
+	return $_GET['set'] ??
+	       explode( PAGE_SLUG . '-', $_GET['page'] )[1] ??
+	       apply_filters( 'altis.documentation.current.set', $default ); // @codingStandardsIgnoreLine
 }
 
 /**
