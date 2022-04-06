@@ -13,27 +13,27 @@ use Altis\Documentation\Set;
 
 const PROJECT_DOCS_SET_ID = 'project-docs';
 
-	// Custom user documentation Set.
-	add_filter( 'altis.documentation.sets', static function ( array $sets ) {
-		if ( empty( $sets[ PROJECT_DOCS_SET_ID ] ) ) {
-			// Create our documentation set
-			$doc_set = new Set( PROJECT_DOCS_SET_ID, 'Project Documentation' );
+// Custom user documentation Set.
+add_filter( 'altis.documentation.sets', static function ( array $sets ) {
+	if ( empty( $sets[ PROJECT_DOCS_SET_ID ] ) ) {
+		// Create our documentation set
+		$doc_set = new Set( PROJECT_DOCS_SET_ID, 'Project Documentation' );
 
-			// Add all documentation pages in a group.
-			$proj_docs = dirname( __DIR__ ) . '/project-docs';
-			$group = new Group( 'Project Guides' );
-			Altis\Documentation\add_docs_for_group( $group, $proj_docs );
+		// Add all documentation pages in a group.
+		$proj_docs = dirname( __DIR__ ) . '/project-docs';
+		$group = new Group( 'Project Guides' );
+		Altis\Documentation\add_docs_for_group( $group, $proj_docs );
 
-			// Add the group to the set
-			$doc_set->add_group( 'guides-group', $group );
-			$doc_set->set_default_group_id( 'guides-group' );
+		// Add the group to the set
+		$doc_set->add_group( 'guides-group', $group );
+		$doc_set->set_default_group_id( 'guides-group' );
 
-			// Add our set to the others.
-			$sets[ PROJECT_DOCS_SET_ID] = $doc_set;
-		}
+		// Add our set to the others.
+		$sets[ PROJECT_DOCS_SET_ID ] = $doc_set;
+	}
 
-		return $sets;
-	} );
+	return $sets;
+} );
 
 ```
 
