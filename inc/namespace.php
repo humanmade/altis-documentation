@@ -13,6 +13,7 @@ use DirectoryIterator;
 use Spyc;
 
 const DEV_DOCS_SET_ID = 'dev-docs';
+const USER_DOCS_SET_ID = 'user-docs';
 
 /**
  * Register module.
@@ -35,9 +36,14 @@ function register() {
  * Bootstrap module, when enabled.
  */
 function bootstrap() {
+	// Only add dev docs on dev/local.
 	if ( in_array( Altis\get_environment_type(), [ 'development', 'local' ], true ) ) {
 		add_filter( 'altis.documentation.sets', __NAMESPACE__ . '\filter_add_dev_docs_set' );
 	}
+
+	// Always add user docs set.
+	add_filter( 'altis.documentation.sets', __NAMESPACE__ . '\\filter_add_user_docs_set' );
+
 	UI\bootstrap();
 }
 
@@ -114,20 +120,20 @@ function filter_add_dev_docs_set( array $sets ) : array {
 	}
 
 	// Generate the default set.
-	$dev_set = new Set( DEV_DOCS_SET_ID, 'Developer Documentation' );
+	$dev_set = new Set( DEV_DOCS_SET_ID, __( 'Developer Documentation', 'altis' ) );
 
 	$other_docs = dirname( __DIR__ ) . '/other-docs';
 
-	$welcome = new Group( 'Welcome' );
+	$welcome = new Group( __( 'Welcome', 'altis' ) );
 	$welcome->add_page( '', parse_file( $other_docs . '/welcome.md', $other_docs ) );
 	$dev_set->add_group( 'welcome', $welcome );
 	$dev_set->set_default_group_id( 'welcome' );
 
-	$getting_started = new Group( 'Getting Started' );
+	$getting_started = new Group( __( 'Getting Started', 'altis' ) );
 	add_docs_for_group( $getting_started, $other_docs . '/getting-started' );
 	$dev_set->add_group( 'getting-started', $getting_started );
 
-	$guides = new Group( 'Guides' );
+	$guides = new Group( __( 'Guides', 'altis' ) );
 	add_docs_for_group( $guides, $other_docs . '/guides' );
 	$dev_set->add_group( 'guides', $guides );
 
@@ -152,14 +158,56 @@ function filter_add_dev_docs_set( array $sets ) : array {
 }
 
 /**
+ * Filter the $all_sets array to add the user guides Set if it doesn't yet exist.
+ *
+ * @param Set[] $sets The array of Documentation sets.
+ * @return Set[] array
+ */
+function filter_add_user_docs_set( array $sets ) : array {
+
+	// Are we already set up?
+	if ( ! empty( $sets[ USER_DOCS_SET_ID ] ) ) {
+		return $sets;
+	}
+
+	// Generate the default set.
+	$user_set = new Set( USER_DOCS_SET_ID, __( 'User Guides', 'altis' ) );
+	$user_set->set_default_group_id( 'documentation' );
+
+	// Add all the registered modules.
+	$modules = Module::get_all();
+	uasort( $modules, function ( Module $a, Module $b ) : int {
+		return $a->get_title() <=> $b->get_title();
+	} );
+
+	// Force docs module to the top.
+	unset( $modules['documentation'] );
+	$modules = array_merge( [ 'documentation' => Module::get( 'documentation' ) ], $modules );
+
+	foreach ( $modules as $id => $module ) {
+		$module_docs = generate_docs_for_module( $id, $module, 'user-docs' );
+		if ( $module_docs === null ) {
+			continue;
+		}
+
+		$user_set->add_group( $id, $module_docs );
+	}
+
+	$sets[ USER_DOCS_SET_ID ] = $user_set;
+
+	return $sets;
+}
+
+/**
  * Generate documentation for a module.
  *
  * @param string $id Module ID.
  * @param Module $module Module object.
+ * @param string $path The path to docs in the module.
  * @return Group Documentation group for the module.
  */
-function generate_docs_for_module( $id, Module $module ) : ?Group {
-	$doc_dir = realpath( path_join( $module->get_directory(), 'docs' ) );
+function generate_docs_for_module( $id, Module $module, string $path = 'docs' ) : ?Group {
+	$doc_dir = realpath( path_join( $module->get_directory(), $path ) );
 	if ( ! file_exists( $doc_dir ) ) {
 		// Skip this module.
 		return null;
