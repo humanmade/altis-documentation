@@ -39,7 +39,10 @@ function register_menu() {
 		__( 'Documentation', 'altis' ),
 		__( 'Documentation', 'altis' ),
 		'edit_posts',
-		PAGE_SLUG
+		PAGE_SLUG,
+		'',
+		'dashicons-book-alt',
+		3
 	);
 
 	$first_child = true; // The first in the list is the default menu item.
