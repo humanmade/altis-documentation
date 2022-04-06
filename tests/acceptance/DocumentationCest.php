@@ -21,11 +21,14 @@ class DocumentationCest {
 		$I->amOnAdminPage( '/' );
 
 		// See the Documentation link in menu.
-		$I->moveMouseOver( '.altis-logo-wrapper' );
 		$I->seeLink( 'Documentation' );
 
 		// Click the link to open the documentation.
 		$I->click( 'Documentation' );
+
+		// Doc sets are visible in submenu.
+		$I->seeLink( 'Developer Documentation' );
+		$I->seeLink( 'User Guides' );
 
 		// See the main title.
 		$I->seeElement( '.altis-ui__doc-title' );
@@ -36,6 +39,10 @@ class DocumentationCest {
 
 		// See the CMS H1 title.
 		$I->see( 'CMS', 'h1' );
+
+		// User guide section is visible.
+		$I->click( 'User Guides' );
+		$I->see( 'User Guides', 'h1' );
 	}
 
 }
