@@ -31,16 +31,23 @@ Note that relative links can only be used between documents in a single module, 
 
 Cross-linking refers to links from one module to another. This allows creating richer documentation, tying together various modules.
 
-To link from one module to another, use the special URL scheme `docs://`. This should be followed by the name of the documentation group (typically the module ID), followed by a slash, followed by the page ID (typically a file path within the module's documentation directory). The full format is:
+To link from one module to another, use the special URL scheme `docs://`. This should be followed by the name of the documentation group (typically the module ID), followed by a slash, followed by the page ID (typically a file path within the module's documentation directory). You can also link between Sets of documentation, for example from a developer document to a custom project guide, using an optional leading Set ID. 
+The full format is:
 
 ```
-docs://{group}/{id}
+docs://[{set}/]{group}/{id}
 ```
 
 For example, to link to the `branding.md` document in the CMS module (ID `cms`):
 
 ```md
 Consult the [branding documentation](docs://cms/branding.md)
+```
+
+Or to link to a `block-templates.md` document in the 'Layout guide' of your project's custom documentation set.
+
+```md
+All available [block templates](docs://project-docs/layout/block-templates.md) are listed in the [Layout guide](docs://project-docs/layout/)
 ```
 
 **Note:** while documentation group IDs generally align with module IDs, some special groups exist for meta documentation. This includes the Getting Started (ID `getting-started`) and Guides (ID `guides`) documentation, which are located in the `other-docs` directory of the Documentation module.

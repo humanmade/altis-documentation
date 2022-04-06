@@ -12,6 +12,8 @@ use Altis\Module;
 use DirectoryIterator;
 use Spyc;
 
+const DEV_DOCS_SET_ID = 'dev-docs';
+
 /**
  * Register module.
  */
@@ -33,72 +35,120 @@ function register() {
  * Bootstrap module, when enabled.
  */
 function bootstrap() {
+	if ( in_array( Altis\get_environment_type(), [ 'development', 'local' ], true ) ) {
+		add_filter( 'altis.documentation.sets', __NAMESPACE__ . '\filter_add_dev_docs_set' );
+	}
 	UI\bootstrap();
 }
 
 /**
- * Get all documentation groups.
+ * Return the list of all sets. Filtered on hook 'altis.documentation.sets'.
  *
- * @return Group[] Sorted list of groupse
+ * @return Set[] array
  */
-function get_documentation() : array {
-	static $docs;
+function get_documentation_sets() : array {
+	/**
+	 * All the documentation sets.
+	 *
+	 * @var Set[] $_all_sets All the documentation sets.
+	 */
+	static $_all_sets = [];
 
-	if ( ! empty( $docs ) ) {
-		return $docs;
+	/**
+	 * Filter available documentation sets.
+	 *
+	 * This allows modules to register additional documentation sets or replace the requested set.
+	 *
+	 * @param Set[] $doc_sets Map of set ID to Set object.
+	 */
+	return apply_filters( 'altis.documentation.sets', $_all_sets );
+}
+
+/**
+ * Get the required documentation set.
+ * Returns an empty set if not found.
+ *
+ * @param string $set_id The required set id.
+ * @return Set The required Documentation Set or a new empty one.
+ */
+function get_documentation_set( string $set_id ) : Set {
+	$sets = get_documentation_sets();
+
+	if ( ! empty( $sets[ $set_id ] ) ) {
+		return $sets[ $set_id ];
 	}
 
-	$modules = Module::get_all();
+	return new Set();
+}
+
+/**
+ * Get the default set id (the first one registered).
+ *
+ * @return string
+ */
+function get_default_set_id() : string {
+	return array_keys( get_documentation_sets() )[0];
+}
+
+/**
+ * Check if the passed string is a set id.
+ *
+ * @param string $id The potential set id.
+ * @return bool
+ */
+function is_set_id( string $id ) : bool {
+	return get_documentation_set( $id )->get_id() !== '';
+}
+
+/**
+ * Filter the $all_sets array to add the developer docs Set if it doesn't yet exist.
+ *
+ * @param Set[] $sets The array of Documentation sets.
+ * @return Set[] array
+ */
+function filter_add_dev_docs_set( array $sets ) : array {
+
+	// Are we already set up?
+	if ( ! empty( $sets[ DEV_DOCS_SET_ID ] ) ) {
+		return $sets;
+	}
+
+	// Generate the default set.
+	$dev_set = new Set( DEV_DOCS_SET_ID, 'Developer Documentation' );
 
 	$other_docs = dirname( __DIR__ ) . '/other-docs';
-	$docs = [
-		'welcome' => new Group( 'Welcome' ),
-		'getting-started' => new Group( 'Getting Started' ),
-		'guides' => new Group( 'Guides' ),
-	];
-	$docs['welcome']->add_page( '', parse_file( $other_docs . '/welcome.md', $other_docs ) );
-	add_docs_for_group( $docs['getting-started'], $other_docs . '/getting-started' );
-	add_docs_for_group( $docs['guides'], $other_docs . '/guides' );
 
+	$welcome = new Group( 'Welcome' );
+	$welcome->add_page( '', parse_file( $other_docs . '/welcome.md', $other_docs ) );
+	$dev_set->add_group( 'welcome', $welcome );
+	$dev_set->set_default_group_id( 'welcome' );
+
+	$getting_started = new Group( 'Getting Started' );
+	add_docs_for_group( $getting_started, $other_docs . '/getting-started' );
+	$dev_set->add_group( 'getting-started', $getting_started );
+
+	$guides = new Group( 'Guides' );
+	add_docs_for_group( $guides, $other_docs . '/guides' );
+	$dev_set->add_group( 'guides', $guides );
+
+	// Add all the registered modules.
+	$modules = Module::get_all();
 	uasort( $modules, function ( Module $a, Module $b ) : int {
 		return $a->get_title() <=> $b->get_title();
 	} );
 
 	foreach ( $modules as $id => $module ) {
 		$module_docs = generate_docs_for_module( $id, $module );
-		if ( empty( $module_docs ) ) {
+		if ( $module_docs === null ) {
 			continue;
 		}
 
-		$docs[ $id ] = $module_docs;
+		$dev_set->add_group( $id, $module_docs );
 	}
 
-	/**
-	 * Filter available documentation groups.
-	 *
-	 * This allows modules to register additional documentation groups.
-	 *
-	 * @param Group[] $docs Map of group ID to Group object.
-	 */
-	$docs = apply_filters( 'altis.documentation.groups', $docs );
+	$sets[ DEV_DOCS_SET_ID ] = $dev_set;
 
-	return $docs;
-}
-
-/**
- * Get a specific documentation page by ID.
- *
- * @param string $group Group ID.
- * @param string $id Page ID.
- * @return Page|null Page if available.
- */
-function get_page_by_id( string $group, string $id ) {
-	$documentation = get_documentation();
-	if ( empty( $documentation[ $group ] ) ) {
-		return null;
-	}
-
-	return $documentation[ $group ]->get_page( $id );
+	return $sets;
 }
 
 /**
@@ -178,8 +228,8 @@ function add_docs_for_group( Group $group, string $doc_dir ) : Group {
  *
  * This will recurse into sub directories, adding all those as subpages of the Page object.
  *
- * @param string $dir       The directory to add the page for.
- * @param string $root_dir  The root directory of the group, used to calculate page ids.
+ * @param string $dir The directory to add the page for.
+ * @param string $root_dir The root directory of the group, used to calculate page ids.
  * @return Page|null
  */
 function get_page_for_dir( string $dir, string $root_dir ) : ?Page {
@@ -232,26 +282,17 @@ function get_page_for_dir( string $dir, string $root_dir ) : ?Page {
  * @param string $path Path for Markdown file (relative to documentation root).
  * @return string Hierarchical slug for the document.
  */
-function get_slug_from_path( $root, $path ) {
+function get_slug_from_path( string $root, string $path ) : string {
 	if ( substr( $path, 0, strlen( $root ) ) !== $root ) {
 		// phpcs:ignore WordPress.Security.EscapeOutput.OutputNotEscaped
 		trigger_error( sprintf( 'Relative path %s is not within root %s', $path, $root ), E_USER_WARNING );
+
 		return $path;
 	}
 
 	$out_path = substr( $path, strlen( $root ) );
-	return trim( preg_replace( '/README\.md/i', '', $out_path ), '/' );
-}
 
-/**
- * Get a documentation group.
- *
- * @param string $id Group ID.
- * @return Group|null Group if available, null otherwise.
- */
-function get_documentation_group( $id ) : ?Group {
-	$docs = get_documentation();
-	return $docs[ $id ] ?: null;
+	return trim( preg_replace( '/README\.md/i', '', $out_path ), '/' );
 }
 
 /**
@@ -305,14 +346,30 @@ function render_page( Page $page ) : string {
  *
  * @param string $group_id Group ID.
  * @param string $page_id Page ID.
+ * @param string $set_id Set ID.
+ *
  * @return string Absolute URL to the page.
  */
-function get_url_for_page( $group_id, $page_id ) {
+function get_url_for_page( string $group_id, string $page_id, string $set_id = '' ) : string {
 	$base_url = admin_url( 'admin.php' );
+
+	// Default to whatever is the default set.
+	if ( empty( $set_id ) ) {
+		$set_id = Altis\Documentation\UI\get_current_set_id();
+	}
+
+	// Set the admin url appropriately.
+	if ( $set_id === Altis\Documentation\get_default_set_id() ) {
+		$page_slug = UI\PAGE_SLUG;
+	} else {
+		$page_slug = sprintf( '%s-%s', UI\PAGE_SLUG, $set_id );
+	}
+
 	$args = [
-		'page' => UI\PAGE_SLUG,
+		'page' => $page_slug,
 		'group' => $group_id,
 		'id' => $page_id,
+		'set' => $set_id,
 	];
 	$url = add_query_arg( urlencode_deep( $args ), $base_url );
 
@@ -334,7 +391,7 @@ function get_url_for_page( $group_id, $page_id ) {
  * @param string $url Raw link (e.g. `docs://foo/bar`).
  * @return string URL for usage in a browser.
  */
-function convert_internal_link( $url ) {
+function convert_internal_link( string $url ) : string {
 	$parts = wp_parse_url( $url );
 	if ( empty( $parts['scheme'] ) ) {
 		return $url;
@@ -346,8 +403,16 @@ function convert_internal_link( $url ) {
 	switch ( $parts['scheme'] ) {
 		case 'docs':
 			// Override href.
+			$group = $host; // This will be the group id unless it is a set id for a different set.
+			$set_id = '';
+			if ( is_set_id( $host ) ) {
+				$set_id = $host;
+				// Split path into group and path again.
+				$parts = explode( '/', $path, 3 );
+				[ $unused, $group, $path ] = $parts;
+			}
 			$slug = get_slug_from_path( '', $path );
-			$new_url = get_url_for_page( $host, $slug );
+			$new_url = get_url_for_page( $group, $slug, $set_id );
 			break;
 
 		case 'internal':

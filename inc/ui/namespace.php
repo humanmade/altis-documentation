@@ -25,22 +25,46 @@ function bootstrap() {
 
 /**
  * Register the Documentation admin page.
- *
- * We use a bit of a hack to not actually have the page added to the
- * admin-menu by setting the parent to `null`. This is then added
- * to the admin bar.
+ * We loop through all documentation sets adding a submenu for each.
+ * If there are none, we don't add the top level menu.
  */
 function register_menu() {
-	$hook = add_submenu_page(
-		null,
-		'',
-		'',
+	// Add top level page.
+	$doc_sets = Documentation\get_documentation_sets();
+	if ( empty( $doc_sets ) ) {
+		return;
+	}
+
+	add_menu_page(
+		__( 'Documentation', 'altis' ),
+		__( 'Documentation', 'altis' ),
 		'edit_posts',
-		PAGE_SLUG,
-		__NAMESPACE__ . '\\render_page'
+		PAGE_SLUG
 	);
 
-	add_action( sprintf( 'load-%s', $hook ), __NAMESPACE__ . '\\load_page' );
+	$first_child = true; // The first in the list is the default menu item.
+
+	foreach ( $doc_sets as $set_id => $doc_set ) {
+		// Add a sub menu page with custom render callback.
+		$page_hook = add_submenu_page(
+			PAGE_SLUG,
+			$doc_set->get_title(),
+			$doc_set->get_title(),
+			'edit_posts',
+			$first_child ? PAGE_SLUG : sprintf( '%s-%s', PAGE_SLUG, $set_id ),
+			static function () use ( $set_id ) {
+				// Render this set of docs.
+				render_page( $set_id );
+			}
+		);
+
+		// Add custom call back to load styles and scripts.
+		add_action( "load-$page_hook", static function () {
+			load_page_assets();
+		} );
+
+		$first_child = false;
+	}
 }
 
 /**
@@ -51,9 +75,9 @@ function register_menu() {
 function admin_bar_menu( WP_Admin_Bar $wp_admin_bar ) {
 	$wp_admin_bar->add_menu( [
 		'parent' => 'altis',
-		'id'     => 'documentation',
-		'title'  => __( 'Documentation', 'altis' ),
-		'href'   => add_query_arg( 'page', PAGE_SLUG, admin_url( 'admin.php' ) ),
+		'id' => 'documentation',
+		'title' => __( 'Documentation', 'altis' ),
+		'href' => add_query_arg( 'page', PAGE_SLUG, admin_url( 'admin.php' ) ),
 	] );
 }
 
@@ -62,7 +86,7 @@ function admin_bar_menu( WP_Admin_Bar $wp_admin_bar ) {
  *
  * We enqueue all the scripts and styles for the documentation page here.
  */
-function load_page() {
+function load_page_assets() {
 	wp_enqueue_style( 'highlightjs', plugins_url( '/assets/vs2015.min.css', Documentation\DIRECTORY . '/wp-is-dumb' ) );
 	wp_enqueue_script( 'highlightjs', plugins_url( '/assets/highlight.min.js', Documentation\DIRECTORY . '/wp-is-dumb' ) );
 	wp_enqueue_script( 'highlightjs-line-numbers', plugins_url( '/assets/highlightjs-line-numbers.min.js', Documentation\DIRECTORY . '/wp-is-dumb' ) );
@@ -71,22 +95,58 @@ function load_page() {
 	wp_enqueue_script( __NAMESPACE__, plugins_url( '/assets/script.js', Documentation\DIRECTORY . '/wp-is-dumb' ), [ 'highlightjs' ], '2019-04-19' );
 
 	// Determine the current page title.
-	$page = Documentation\get_page_by_id( get_current_group_id(), get_current_page_id() );
+	$page = '';
+	$set_id = get_current_set_id();
+	$group_id = get_current_group_id( $set_id );
+	$group = Documentation\get_documentation_set( $set_id )->get_group( $group_id );
+	$page_id = get_current_page_id();
+
+	if ( ! is_null( $group ) ) {
+		if ( empty( $page_id ) ) {
+			$page_id = $group->get_default_page_id();
+		}
+		$page = $group->get_page( $page_id );
+	}
+
 	if ( $page ) {
 		$GLOBALS['title'] = $page->get_meta( 'title' );
 	} else {
-		$GLOBALS['title'] = __( 'Page Not Found', 'altis' );
+		$GLOBALS['title'] = get_admin_page_title(); // Get it from the menu.
 	}
+}
+
+/**
+ * Get the current Set ID.
+ * If it is not set, try to get it from the admin page slug.
+ * Falls back to the filtered default.
+ *
+ * @return string Doc set ID if set, otherwise the default set.
+ */
+function get_current_set_id() : string {
+	$sets = Documentation\get_documentation_sets();
+	$default = array_keys( $sets )[0] ?? '';
+
+	/**
+	 * Filter the current set ID.
+	 *
+	 * @param string $set_id The current set id.
+	 * @return string The current set id.
+	 */
+	return $_GET['set'] ?? explode( PAGE_SLUG . '-', $_GET['page'] )[1] ?? apply_filters( 'altis.documentation.current.set', $default ); // @codingStandardsIgnoreLine
 }
 
 /**
  * Get the current group ID.
  *
- * @return string Group ID if set, otherwise the default group.
+ * @param string $set_id The current set id.
+ * @return string Group ID if set, otherwise the default group for the set.
  */
-function get_current_group_id() {
+function get_current_group_id( string $set_id = '' ) : string {
+	$set_id = $set_id ?: get_current_set_id();
+	$set = Documentation\get_documentation_set( $set_id );
+
 	// @codingStandardsIgnoreLine
-	return $_GET['group'] ?? 'welcome';
+	return $_GET['group'] ?? $set->get_default_group_id();
 }
 
 /**
@@ -101,25 +161,35 @@ function get_current_page_id() {
 
 /**
  * Documentation page render callback.
+ *
+ * @param string $set_id The current Set id.
  */
-function render_page() {
-	$documentation = Documentation\get_documentation();
-	$current_group = get_current_group_id();
+function render_page( string $set_id ) {
+
+	$set_id = $set_id ?? get_current_set_id();
+	$current_group_id = get_current_group_id( $set_id );
 	$current_page_id = get_current_page_id();
-	$current_page = Documentation\get_page_by_id( $current_group, $current_page_id );
+
+	$doc_set = Documentation\get_documentation_set( $set_id );
+	$current_group = $doc_set->get_group( $current_group_id );
+	$current_page = null;
+	if ( $current_group !== null ) {
+		$current_page = $current_group->get_page( $current_page_id );
+	}
+
 	?>
 
 	<div class="altis-ui wrap">
 		<div class="altis-ui__main">
 			<nav>
-				<p class="altis-ui__doc-title"><?php echo esc_html_e( 'Documentation', 'altis' ) ?></p>
+				<p class="altis-ui__doc-title"><?php esc_html_e( 'Documentation', 'altis' ) ?></p>
 				<ul>
-					<?php foreach ( $documentation as $group => $gobj ) : ?>
+					<?php foreach ( $doc_set->get_groups() as $group_id => $gobj ) : ?>
 						<li
-							class="<?php echo $group === $current_group ? 'current' : '' ?> <?php echo $group === $current_group && ! $current_page_id ? 'active' : '' ?>"
+							class="<?php echo $group_id === $current_group_id ? 'current' : '' ?> <?php echo $group_id === $current_group_id && ! $current_page_id ? 'active' : '' ?>"
 						>
 							<a
-								href="<?php echo esc_attr( add_query_arg( [ 'group' => $group, 'id' => '' ] ) ); // phpcs:ignore ?>"
+								href="<?php echo esc_attr( add_query_arg( [ 'set' => $set_id, 'group' => $group_id, 'id' => '' ] ) ); // phpcs:ignore ?>"
 							>
 								<?php echo esc_html( $gobj->get_title() ) ?>
 							</a>
@@ -131,12 +201,12 @@ function render_page() {
 										continue;
 									}
 									?>
-									<li class="<?php echo ( $current_group === $group && $current_page_id === $id ) ? 'active' : '' ?>">
-										<a href="<?php echo esc_attr( add_query_arg( compact( 'group', 'id' ) ) ); ?>">
+									<li class="<?php echo ( $current_group_id === $group_id && $current_page_id === $id ) ? 'active' : '' ?>">
+										<a href="<?php echo esc_attr( add_query_arg( [ 'set' => $set_id, 'group' => $group_id, 'id' => $id ] ) ); // phpcs:ignore ?>">
 											<?php echo esc_html( $page->get_meta( 'title' ) ); ?>
 										</a>
 									</li>
-									<?php render_page_subpages( $page, $group, $current_page ) ?>
+									<?php render_page_subpages( $page, $group_id, $current_page, $set_id ) ?>
 								<?php endforeach ?>
 							</ul>
 						</li>
@@ -154,18 +224,30 @@ function render_page() {
 	</div>
 
 	<?php
+
+	// Track this page view in Altis Telemetry.
+	do_action( 'altis.telemetry.track', [
+		'event' => 'documentation',
+		'properties' => [
+			'set' => $set_id,
+			'group' => $current_group_id,
+			'page' => $current_page_id,
+		],
+	] );
+
 }
 
 /**
- * Output the menu for a page's subp ages.
+ * Output the menu for a page's subpages.
  *
  * This recurses all subpages.
  *
  * @param Page $page Documentation page object.
  * @param string $group The documentation page group.
  * @param Page|null $current_page The current page object if set.
+ * @param string $set The current documentation set.
  */
-function render_page_subpages( Page $page, string $group, ?Page $current_page ) {
+function render_page_subpages( Page $page, string $group, ?Page $current_page, string $set ) {
 	if ( ! $page->get_subpages() ) {
 		return;
 	}
@@ -174,6 +256,7 @@ function render_page_subpages( Page $page, string $group, ?Page $current_page ) 
 		<?php
 		foreach ( $page->get_subpages() as $subpage_id => $subpage ) :
 			$permalink = add_query_arg( [
+				'set' => $set,
 				'group' => $group,
 				'id' => $subpage_id,
 			] );
@@ -182,7 +265,7 @@ function render_page_subpages( Page $page, string $group, ?Page $current_page ) 
 				<a href="<?php echo esc_url( $permalink ) ?>">
 					<?php echo esc_html( $subpage->get_meta( 'title' ) ) ?>
 				</a>
-				<?php render_page_subpages( $subpage, $group, $current_page ) ?>
+				<?php render_page_subpages( $subpage, $group, $current_page, $set ) ?>
 			</li>
 		<?php endforeach ?>
 	</ul>
