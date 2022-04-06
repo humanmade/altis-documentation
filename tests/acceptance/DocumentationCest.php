@@ -17,6 +17,9 @@ class DocumentationCest {
 	 */
 	public function testDocumentationLink( AcceptanceTester $I ) {
 		$I->wantToTest( 'Documentation link is shown, and page renders correctly.' );
+
+		$I->resizeWindow( 1200, 800 );
+
 		$I->loginAsAdmin();
 		$I->amOnAdminPage( '/' );
 
