@@ -11,10 +11,14 @@ There are 2 key steps to getting ready for a new version of PHP:
 
 |Altis|PHP Version|
 |-|-|
-|v7+|7.4|
+|v13+|8.0|
+|v11-v13|7.4-8.0|
+|v7-v11|7.4|
 |v5-v6|7.2-7.4|
 |v4|7.0-7.4|
 |v1-v3|7.0-7.2|
+
+**Note:** PHP 8.0 will only be available from the Altis v12 release date onwards. Altis v11 will run on it but with numerous warnings.
 
 ## Checking PHP Version Compatibiliity
 
@@ -68,15 +72,17 @@ First install the standard and dependencies using the following command:
 composer global require dealerdirect/phpcodesniffer-composer-installer phpcompatibility/php-compatibility
 ```
 
-Next run the standard against your codebase for the target PHP version, in this example PHP 7.4:
+Next run the standard against your codebase for the target PHP version, in this example PHP 8.0:
 
 ```
 phpcs -p --standard=PHPCompatibility \
-  --runtime-set testVersion 7.4 \
+  --runtime-set testVersion 8.0 \
   --extensions=php \
   -d memory_limit=1G \
   --ignore=wordpress,vendor/altis,\*/tests/\* .
 ```
+
+This can take a long time to run so may wish to run it just in your custom code directories.
 
 **Note:** You _must_ fix anything reported as an "Error". Warnings can be ignored at your discretion.
 
@@ -87,15 +93,10 @@ Fix any reported errors (ignoring those listed in the section below) by upgradin
 There are some known warnings in the following packages that you can safely ignore. Altis guarantees its core packages and their dependencies are verified as working with the versions outlined in the compatibility chart at the top of this page.
 
 - `aws/aws-sdk-php`
-- `guzzlehttp/promises`
 - `humanmade/batcache`
-- `humanmade/ludicrousdb`
-- `humanmade/wp-redis`
 - `phpunit/phpunit`
-- `sebastian/global-state`
-- `sebastian/object-enumerator`
-- `symfony/yaml`
 - `wp-phpunit/wp-phpunit`
+- `lucatume/wp-browser`
 
 You can add these to the ignored directories in the command when checking if desired; e.g. `--ignore=vendor/aws,vendor/guzzlehttp,...`.
 
