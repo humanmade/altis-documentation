@@ -14,8 +14,8 @@ There are 2 key steps to getting ready for a new version of PHP:
 |Altis|PHP Version|
 |-|-|
 |v13|8.0|
-|v12|7.4-8.0|
-|v11|7.4-8.0 (experimental)|
+|v12|7.4, 8.0|
+|v11|7.4, 8.0 (experimental)|
 |v7-v11|7.4|
 |v5-v6|7.2-7.4|
 |v4|7.0-7.4|
