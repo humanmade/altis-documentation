@@ -9,16 +9,17 @@ There are 2 key steps to getting ready for a new version of PHP:
 
 ## Altis Compatibility Chart
 
+**Note:** PHP 8.0 will officially be available from the Altis v12 release date onwards. Altis v11 will run on PHP 8.0 but support is experimental. Keep reading to learn how to prepare your application for a new PHP version.
+
 |Altis|PHP Version|
 |-|-|
-|v13+|8.0|
-|v11-v13|7.4-8.0|
+|v13|8.0|
+|v12|7.4-8.0|
+|v11|7.4-8.0 (experimental)|
 |v7-v11|7.4|
 |v5-v6|7.2-7.4|
 |v4|7.0-7.4|
 |v1-v3|7.0-7.2|
-
-**Note:** PHP 8.0 will only be available from the Altis v12 release date onwards. Altis v11 will run on it but with numerous warnings.
 
 ## Checking PHP Version Compatibiliity
 
