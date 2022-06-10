@@ -78,6 +78,32 @@ It's not unusual to want different configuration options for difference environm
 
 Environment configuration is merged with the global `altis` configuration, with the matching environment options overriding anything specific in the global configuration. The environment type is matched against the value return by the function `Altis\get_environment_type()`. The environment type will typically be any of `local`, `development`, `staging` or `production`.
 
+### Continuous Integration
+
+There is a special environment type you can use to override the configuration in CI environments which extends the `local` environment settings if any. Use the key `ci` to apply these settings:
+
+```json
+{
+	"name": "example/my-site",
+	"require": {
+		"altis/altis": "*",
+	},
+	"extra": {
+		"altis": {
+			"environments": {
+				"ci": {
+					"modules": {
+						"cloud": {
+							"cavalcade": false
+						}
+					}
+				}
+			}
+		}
+	}
+}
+```
+
 ## Custom Configuration
 
 When developing custom code and features, it's recommended to make use of the configuration file and APIs so all configuration can be centrally located and machine readable. By convention it's also recommended to use a namespace in the `extra.altis` object to ensure your custom configuration settings don't collide with Altis current or future settings.
