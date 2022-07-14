@@ -30,7 +30,7 @@ $ composer create-project altis/skeleton my-test-project
 
 (Replace `my-test-project` with any name you like.)
 
-Once created, use [Local Chassis](docs://local-chassis/) or [Local Server](docs://local-server) to run locally, and attempt to replicate the issue.
+Once created, use [Local Server](docs://local-server) to run locally, and attempt to replicate the issue.
 
 We recommend leaving configuration at its default settings initially, and turning on any configuration progressively as necessary.
 

@@ -70,8 +70,6 @@ For local development, you'll also need to add a local server to your developmen
 
 Local Server requires [Docker Desktop for Mac or Windows](https://www.docker.com/products/docker-desktop), or Docker Engine on Linux.
 
-If you are unable to run Docker Desktop or Docker Engine on your machine you can use the alternative local development environment based on [Chassis](https://chassis.io/). Chassis requires [Vagrant](https://www.vagrantup.com/) and [VirtualBox](https://www.virtualbox.org/).
-
 To set up Local Server for Altis, run the following inside your project's directory:
 
 ```
