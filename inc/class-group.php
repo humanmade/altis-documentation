@@ -122,9 +122,14 @@ class Group {
 	 * @return string
 	 */
 	public function get_default_page_id() : string {
+		// README.md out path and key is empty.
+		if ( isset( $this->pages[''] ) ) {
+			return '';
+		}
 		if ( count( $this->pages ) ) {
 			return array_keys( $this->pages )[0];
 		}
 		return '';
 	}
+
 }
