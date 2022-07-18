@@ -100,8 +100,9 @@ function load_page_assets() {
 	// Determine the current page title.
 	$page = '';
 	$set_id = get_current_set_id();
+	$set = Documentation\get_documentation_set( $set_id );
 	$group_id = get_current_group_id( $set_id );
-	$group = Documentation\get_documentation_set( $set_id )->get_group( $group_id );
+	$group = $set->get_group( $group_id );
 	$page_id = get_current_page_id();
 
 	if ( ! is_null( $group ) ) {
@@ -116,6 +117,9 @@ function load_page_assets() {
 	} else {
 		$GLOBALS['title'] = get_admin_page_title(); // Get it from the menu.
 	}
+
+	// Append doc set title.
+	$GLOBALS['title'] .= ' &#8212; ' . $set->get_title();
 }
 
 /**
