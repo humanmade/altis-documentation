@@ -158,6 +158,10 @@ composer require --dev altis/local-server
 
 To start the docker server run `composer serve`. You should now be able to see the site at https://my-project.altis.dev where "my-project" is the project directory name.
 
+### Docker alternative
+
+If you are unable to use Docker on your computer, consider trying a [GitHub Codespaces environment](docs://dev-tools/cloud-dev-env/), which makes it possible to spin up a complete Altis development environment within your browser, without having to install any additional software on your computer.
+
 ## Migrating from a single site install
 
 Altis is always configured to be a WordPress multisite, as such any sites that are not installed as multisite already, will need converting via the `multisite-convert` WP CLI command. Note that you will need to do this on your Cloud environments after deploying.
