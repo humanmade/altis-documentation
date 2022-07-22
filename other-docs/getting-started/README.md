@@ -86,6 +86,9 @@ To stop Local Server, run `composer server stop`.
 
 To start the virtual machine again run `composer serve`.
 
+### Docker alternative
+
+If you are unable to use Docker on your computer, consider trying a [GitHub Codespaces environment](docs://dev-tools/cloud-dev-env/), which makes it possible to spin up a complete Altis development environment within your browser, without having to install any additional software on your computer.
 
 ## Ready for development!
 
