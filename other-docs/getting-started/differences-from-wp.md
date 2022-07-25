@@ -23,7 +23,7 @@ You'll also see a `vendor/` directory, as well as some extra files including `co
 
 With Altis projects, you use [Composer](https://getcomposer.org/) to manage dependencies including Altis and WordPress. You can also [manage plugins and themes via Composer](third-party-plugins.md) if you want.
 
-Your `composer.json` contains your Composer manifest. This describes which libraries and tools to load in. If you've just created a new version of Altis, this will only contain Altis itself (`altis/altis`) as well as the local environments (`altis/local-chassis` and `altis/local-server`). These will be tied to a specific version of Altis (like `^10.0.0`).
+Your `composer.json` contains your Composer manifest. This describes which libraries and tools to load in. If you've just created a new version of Altis, this will only contain Altis itself (`altis/altis`) as well as the local environment (`altis/local-server`). These will be tied to a specific version of Altis (like `^10.0.0`).
 
 The main Altis package (`altis/altis`) will load in a bunch of dependencies, including WordPress and bundled plugins. **The version of WordPress you use is tied to the Altis version**, as are any bundled plugins. This means we can ensure all the functionality works well together. We support each major version [for a full year](docs://guides/long-term-support/) including backporting bugfixes and security patches.
 
