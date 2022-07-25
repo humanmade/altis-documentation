@@ -22,7 +22,6 @@ These requirements will help to avoid any errors and delays.
 1. If the upgrade is for a cloud environment, ensure the updated `composer.lock` has been committed and deployed
 1. If any patch updates were downloaded, in particular for the Cloud or Search modules you should reindex your content using one of the following commands:
    - Local Server: `composer server cli -- elasticpress index --setup --network-wide`
-   - Local Chassis: `composer chassis exec -- wp elasticpress index --setup --network-wide`
    - Cloud: `wp elasticpress index --setup --network-wide`
 
 After completing the above steps to ensure your environment is ready for the Elasticsearch upgrade, you can then proceed to the steps below.
@@ -33,19 +32,14 @@ It is recommended to update your local environment's Elasticsearch version befor
 
 1. Take a database back up of your existing local environment using WP CLI:
    - Local Server: `composer server exec -- wp db export database.sql`
-   - Local Chassis: `composer chassis exec -- wp db export database.sql`
 1. Destroy your existing local environment:
    - Local Server: `composer server destroy`
-   - Local Chassis: `composer chassis destroy`
-1. Require Local Server or Local Chassis version 9.0.0 or higher:
+1. Require Local Server version 9.0.0 or higher:
    ```sh
    composer require --dev --update-with-dependencies altis/local-server:^9.0.0
-   composer require --dev --update-with-dependencies altis/local-chassis:^9.0.0
    ```
-1. Upgrade if using Local Chassis by running `composer chassis upgrade`
 1. Start your environment and re-import your data:
    - Local Server: `composer server start && composer server exec -- wp db import database.sql`
-   - Local Chassis: `composer chassis start && composer chassis exec -- wp db import database.sql`
 
 **Note:** These local environment versions should be backwards compatible with older Altis versions but it is not guaranteed. Contact support if you experience issues.
 

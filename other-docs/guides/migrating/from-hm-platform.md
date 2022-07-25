@@ -160,15 +160,7 @@ To start the docker server run `composer serve`. You should now be able to see t
 
 ### Docker alternative
 
-If you are unable to use Docker you can use [Chassis for local development](docs://local-chassis/README.md). You will need to remove the existing Chassis install, and install the Altis module. If you have a setup script (such as `.bin/setup.sh`) you should remove any Chassis setup / installation steps.
-
-Once you have removed any existing Chassis install and related code, install the `altis/local-chassis` composer package as a dev dependency.
-
-```sh
-composer require --dev altis/local-chassis
-```
-
-Once completed, install and start your local server with `composer chassis init` and then `composer chassis start`. You should now be able to navigate to http://my-project.local to see the site, where "my-project" is your project directory name.
+If you are unable to use Docker on your computer, consider trying a [GitHub Codespaces environment](docs://dev-tools/cloud-dev-env/), which makes it possible to spin up a complete Altis development environment within your browser, without having to install any additional software on your computer.
 
 ## Migrating from a single site install
 
@@ -181,9 +173,6 @@ wp core multisite-convert
 
 # On Local Server
 composer server cli core multisite-convert
-
-# On Local Chassis
-composer server exec wp core multisite-convert
 ```
 
 **Important:** Part of the conversion process will reset your main site's permalink structure. You should reset this via the admin Permalinks page immediately.
@@ -195,9 +184,6 @@ wp cache flush
 
 # On Local Server
 composer server cli cache flush
-
-# On Local Chassis
-composer server exec wp cache flush
 ```
 
 There are several key differences between a single site and a multisite install:

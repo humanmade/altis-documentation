@@ -146,7 +146,6 @@ Next, we need to add some extra configuration to allow Altis to set itself up. O
             "altis/cms-installer": true,
             "altis/dev-tools-command": true,
             "altis/core": true,
-            "altis/local-chassis": true,
             "altis/local-server": true
         }
     }
@@ -163,7 +162,7 @@ Now, let's add Altis to your codebase.
 
 Run `composer require altis/altis` from the command line. You'll see Composer install Altis and its dependencies.
 
-Next, run `composer require --dev altis/local-chassis altis/local-server`. You'll see Composer install the [Local Chassis](docs://local-chassis/) and [Local Server](docs://local-server/).
+Next, run `composer require --dev altis/local-server`. You'll see Composer install the [Local Server](docs://local-server/).
 
 Once these have been installed, your codebase will contain some new directories and files, and should look like:
 
