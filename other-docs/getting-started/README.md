@@ -73,7 +73,7 @@ Local Server requires [Docker Desktop for Mac or Windows](https://www.docker.com
 To set up Local Server for Altis, run the following inside your project's directory:
 
 ```
-composer serve
+composer server start
 ```
 
 This will download and start all the services needed for Altis development.
@@ -84,7 +84,7 @@ If you used a directory name other than `my-project` the default URL will be `ht
 
 To stop Local Server, run `composer server stop`.
 
-To start the virtual machine again run `composer serve`.
+To start the virtual machine again run `composer server start`.
 
 ### Docker alternative
 
