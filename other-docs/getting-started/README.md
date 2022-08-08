@@ -19,7 +19,7 @@ With Altis, you will work on a **project**. This encompasses the codebase and th
 
 Altis is built on top of a WordPress foundation. WordPress and other dependencies of Altis are managed for you as part of the Altis version.
 
-Custom functionality on top of the Altis platform is implemented via WordPress **plugins**, and Altis is generally compatible with most WordPress plugins. (Subject to our [cloud environment limitations](https://docs.altis-dxp.com/cloud/limitations/).)
+Custom functionality on top of the Altis platform is implemented via WordPress **plugins**, and Altis is generally compatible with most WordPress plugins. (Subject to our [cloud environment limitations](docs://cloud/limitations.md).)
 
 Design and styling of sites is implemented via WordPress **themes**. Projects can contain many themes, and each site has a single theme active. Themes can be shared across sites, or used on only a single site.
 
