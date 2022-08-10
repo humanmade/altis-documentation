@@ -156,7 +156,7 @@ To install the [Docker development environment](docs://local-server/README.md) r
 composer require --dev altis/local-server
 ```
 
-To start the docker server run `composer serve`. You should now be able to see the site at https://my-project.altis.dev where "my-project" is the project directory name.
+To start the docker server run `composer server start`. You should now be able to see the site at https://my-project.altis.dev where "my-project" is the project directory name.
 
 ### Docker alternative
 
