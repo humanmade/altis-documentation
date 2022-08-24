@@ -8,59 +8,55 @@ Here’s where you’ll find an assortment of articles on all things Altis. From
 
 (Developers, you probably want the [developer documentation](https://docs.altis-dxp.com/). Although you’re very welcome to stick around and explore here too)
 
-  
-
 We’ve grouped the articles into the themes below. Start from the top and work your way down, or dive in wherever you want. Each article has plenty of links to related topics.
 
 ## Articles
-
 ### Content & content blocks
-- [[content-and-content-blocks/content-creation]]
-- [[Creating Content with Blocks]]
-- [[Experience Blocks]]
-- [[Reusable Blocks]]
+- [Content Creation](content-and-content-blocks/content-creation.md)
+- [Creating Content with Blocks](content-and-content-blocks/creating-content-with-blocks.md)
+- [Experience Blocks](content-and-content-blocks/experience-blocks.md)
+- [Reusable Blocks](content-and-content-blocks/reusable-blocks.md)
 
 ### Collaboration & users
-- [[Collaboration]]
-- [[Guest and Multiple Authors]]
-- [[Workflows]]
-- [[User Management]]
-- [[Roles and Permissions]]
-- [[Managing Permissions]]
+- [Collaboration](collaboration-and-users/collaboration.md)
+- [Guest and Multiple Authors](collaboration-and-users/guest-and-multiple-authors.md)
+- [Workflows](collaboration-and-users/workflows.md)
+- [User Management](collaboration-and-users/user-management.md)
+- [Roles and Permissions](collaboration-and-users/roles-and-permissions.md)
+- [Managing Permissions](collaboration-and-users/managing-permissions.md)
 
 ### Media
-- [[Images, Videos, and Documents]]
-- [[Editing Images]]
-- [[Global Media Library]]
+- [Images, Videos, and Documents](media/images-videos-and-documents.md)
+- [Editing Images](media/editing-images.md)
+- [Global Media Library](media/global-media-library.md)
 
 ### Personalising content
-- [[Personalisation]]
-- [[Personalised Content]]
-- [[Audiences]]
+- [Personalisation](personalising-content/personalisation.md)
+- [Personalised Content](personalising-content/personalised-content.md)
+- [Audiences](personalising-content/audiences.md)
 
 
 ### Insights
-- [[Insights]]
-- [[Configuration]]
-- [[Workflows]]
-- [[Audit Log]]
+- [Insights](insights/insights.md)
+- [Configuration](insights/configuration.md)
+- [Workflows](insights/workflows.md)
+- [Audit Log](insights/audit-log.md)
 
 ### Administration
-- [[Multisite]]
-- [[Creating New Sites]]
-- [[Configuration]]
-- [[Search]]
-- [[Plugins and Themes]]
+- [Multisite](administration/multisite.md)
+- [Creating New Sites](administration/creating-new-sites.md)
+- [Configuration](administration/configuration.md)
+- [Search](administration/search.md)
+- [Plugins and Themes](administration/plugins-and-themes.md)
 
 ### Security
-- [[Security]]
-- [[Single Sign-on]]
-- [[Two Factor Authentication]]
+- [Security](security/security.md)
+- [Single Sign-on](security/single-sign-on.md)
+- [Two Factor Authentication](security/two-factor-authentication.md)
 
 ### Data privacy
-- [[Privacy & Consent]]
-- [[Data Export and Erasure]]
-
+- [Privacy & Consent](data-privacy/privacy-and-consent.md)
+- [Data Export and Erasure](data-privacy/data-export-and-erasure.md)
 
 ---
 We are continually working on creating new guides and improving existing ones so if you have feedback or would like to see a guide on a particular topic don't hesitate to get in touch via [support@altis-dxp.com](mailto://support@altis-dxp.com) or by asking a question on the [Altis Dashboard](https://dashboard.altis-dxp.com/#/support/new/question).
