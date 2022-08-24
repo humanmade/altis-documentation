@@ -1,9 +1,9 @@
 ---
-title: Guest authors & multiple authors
+title: Guests & multiple authors
 order: 0
 ---
 
-# Guest authors and multiple authors
+# Guests  and multiple authors
 
 Want to publicly recognise your content creators and contributors? No problem—attribute them as authors. You can do this for both posts or pages. There are also options for managing—and showcasing—both in-house and external authors.
 
