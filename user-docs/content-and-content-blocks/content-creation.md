@@ -22,9 +22,9 @@ Before we get into how to create content, we should first cover the Editor sideb
 
 This relates to how you structure your content. It’s like laying the foundations of what you’re going to create. You can switch between Post and Block tabs with one click. 
 
-The sidebar varies slightly depending on whether you’re creating a page or a post. 
+The **sidebar varies** slightly depending on whether you’re creating a page or a post. 
 
-To hide or show the sidebar, click the black Settings cog icon:
+To hide or show the sidebar, click the black **Settings cog** icon:
 
 ![](../assets/content-creation-image12.png)
 
@@ -48,11 +48,11 @@ This gives you three options for your content:
 
 #### Publish 
 
-Publish immediately or schedule a date and time. Scheduling is useful for press releases, embargoed stories, publishing outside office hours, while on holiday, or in a different time zone.
+Publish immediately or **schedule** a date and time. Scheduling is useful for press releases, embargoed stories, publishing outside office hours, while on holiday, or in a different time zone.
 
 #### Stick to the top of the blog 
 
-Tick the box next to Make this post sticky. This makes your post always appear first in the order of published blogs:
+Tick the box next to **Make this post sticky**. This makes your post **always appear first** in the order of published blogs:
 ![](../assets/content-creation-image40.png)
 
 #### Pending review
@@ -65,11 +65,11 @@ Display the name of the author or authors (including [guests, multiple or extern
 
 #### Clone post
 
-Make an unpublished copy of the post. Useful for creating new posts without starting from scratch.
+Make an unpublished **copy** of the post. Useful for creating new posts without starting from scratch.
 
 ##### Create amendment
 
-Click this to work on a duplicate version. Make your edits. Then, after approval or review, click Publish Amendment to replace the current version:
+Click this to work on a duplicate version. Make your edits. Then, after approval or review, click **Publish Amendment** to replace the current version:
 ![](../assets/content-creation-image38.png)
 
 #### Move to Trash
@@ -82,24 +82,24 @@ Moves the post to the Trash. The post will stay there for 30 days by default bef
 
 ## Yoast SEO
 
-This is the powerful all-in-one SEO plugin built for WordPress. 
+This is the powerful all-in-one **SEO plugin** built for WordPress. 
 
 ![](../assets/content-creation-image53.png)
 
 ### Readability analysis
 
-Yoast scans your text to see if it’s easy to read and gives you feedback. Its algorithm checks things like whether you’re using complicated words, long sentences, active vs passive voice. It then gives you a rating and recommendations for improvement. Kind of like a helpful assistant.
+Yoast scans your text to see if it’s **easy to read** and gives you feedback. Its algorithm checks things like whether you’re using complicated words, long sentences, active vs passive voice. It then gives you a rating and recommendations for improvement. Kind of like a helpful assistant.
 
-For the full analysis, click the Readability tab under your post:
+For the full analysis, click the **Readability** tab under your post:
 ![](../assets/content-creation-image13.png)
 
-Want to give your post a better chance of being found and ranked by search engines? Click Improve your post with Yoast SEO:
+Want to give your post a better chance of being found and ranked by search engines? Click **Improve your post with Yoast SEO**:
 ![](../assets/content-creation-image37.png)
 
-Enter a word or phrase you want the post to be found for in search engines:
+Enter a word or phrase you want the post to be found for in **search engines**:
 ![](../assets/content-creation-image44.png)
 
-Click the ? icon for advice on this. Then click Get related keyphrases. You may be asked to login or register with Semrush. Click Approve: 
+Click the **? icon** for advice on this. Then click Get **related keyphrases**. You may be asked to login or register with Semrush. Click **Approve**: 
 ![](../assets/content-creation-image2.png)
 
 This gives you lots of keyphrases you can add to your content. 
@@ -113,15 +113,15 @@ The slug is the last part of the post’s URL. You can edit it here. Add some ke
 
 ![](../assets/content-creation-image23.png)
 
-You can assign every post to a category. This is useful when you want to organise posts by topics or themes. Click Add New category to add a category:
+You can assign every post to a category. This is useful when you want to **organise posts by topics or themes**. Click **Add New category** to add a category:
 ![](../assets/content-creation-image6.png)
 
-You can create your own categories and sub-categories. It keeps things organised in a hierarchy for you and your audience. For example, a category could be “UK news” and the sub-category could be “Politics”. 
+You can create your own **categories and sub-categories**. It keeps things organised in a hierarchy for you and your audience. For example, a category could be “UK news” and the sub-category could be “Politics”. 
 
 ## Tags
 ![](../assets/content-creation-image21.png)
 
-Tags are optional. You commonly use them when you want to be more specific about your post’s content. Think of them like social media hashtags. For example:
+Tags are **optional**. You commonly use them when you want to be more specific about your post’s content. Think of them like social media hashtags. For example:
 
 - Category: UK news
 - Sub-category: Politics
@@ -130,41 +130,41 @@ Tags are optional. You commonly use them when you want to be more specific about
 ## Featured image
 ![](../assets/content-creation-image5.png)
 
-Add an image that is displayed wherever (depending on your theme) the post appears. For example, in the list of posts. Featured images differ from images you add inside the content.
+Add an image that is displayed **wherever** (depending on your theme) the post appears. For example, in the list of posts. Featured images differ from images you add inside the content.
 
 ## Excerpt
 ![](../assets/content-creation-image33.png)
 
-Add a summary (1 or 2 sentences). Something that encourages the reader to click and read more. Depending on your theme, the excerpt may appear next to search results, archives, or anywhere else the post is previewed. 
+Add a summary (1 or 2 sentences). Something that **encourages the reader to click** and read more. Depending on your theme, the excerpt may appear next to **search results, archives**, or anywhere else the post is **previewed**. 
 
 ## Discussion
 ![](../assets/content-creation-image3.png)
 
-Tick "Allow comments" to allow people to comment on the post.
+Tick **Allow comments** to allow people to comment on the post.
 
-Tick "Allow pingbacks & trackbacks" to allow other blogs that link to your post to appear in your comments section. Part of their post may then be displayed or linked to in the comments section. This is usually deactivated by default, to avoid automated spam links appearing.
+Tick **Allow pingbacks & trackbacks** to allow other blogs that link to your post to appear in your comments section. Part of their post may then be displayed or linked to in the comments section. This is usually deactivated by default, to avoid automated spam links appearing.
 
 ## Attributes
 ![](../assets/content-creation-image20.png)
 
-Click to change your content’s layout. 
+Click to change your content’s **layout**. 
 
-If your theme provides additional templates, they will show here alongside the standard “Default template”.
+If your theme provides additional templates, they will show here alongside the standard “**Default template**”.
 
 Themes may provide templates like: 
-- Cover template: display the title of the post or page on top of the featured image
-- Full width template: removes sidebars so the reader can focus more on the content
+- **Cover template**: display the title of the post or page on top of the featured image
+- **Full width template**: removes sidebars so the reader can focus more on the content
 
 #### Featured image
 
 ![](../assets/content-creation-image5.png)
 
-Add an image that is displayed wherever the page appears. This depends on your theme, so for example it could appear in headers, search results, or when shared on social media.
+Add an image that is displayed **wherever** the page appears. This depends on your theme, so for example it could appear in headers, search results, or when shared on social media.
 
 #### Discussion
 ![](../assets/content-creation-image36.png)
 
-Tick "Allow comments" to allow people to leave a comment. These are usually deactivated by default.
+Tick **Allow comments** to allow people to leave a comment. These are usually deactivated by default.
 
 ---
 
