@@ -35,6 +35,7 @@ Any upgrade will usually require some modification to your project (for example,
 
 ## Upgrade Guides
 
+- [Version 12](./v12.md)
 - [Version 11](./v11.md)
 - [Version 10](./v10.md)
 - [Version 9](./v9.md)
