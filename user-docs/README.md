@@ -30,8 +30,8 @@ We’ve grouped the articles into the themes below. Start from the top and work 
 - [Editing Images](media/editing-images.md)
 - [Global Media Library](media/global-media-library.md)
 
-### Personalising content
-- [Personalisation](personalising-content/personalisation.md)
+### Content Experimentation
+- [Multivariant Testing](personalising-content/multivariant-testing.md)
 - [Personalised Content](personalising-content/personalised-content.md)
 - [Audiences](personalising-content/audiences.md)
 
