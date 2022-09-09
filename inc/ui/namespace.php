@@ -133,6 +133,11 @@ function get_current_set_id() : string {
 	$sets = Documentation\get_documentation_sets();
 	$default = array_keys( $sets )[0] ?? '';
 
+	// return early if page is not set.
+	if ( ! isset( $_GET['page'] ) ) {
+		return apply_filters( 'altis.documentation.current.set', $default );
+	}
+
 	/**
 	 * Filter the current set ID.
 	 *
