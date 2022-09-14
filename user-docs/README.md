@@ -39,7 +39,7 @@ We’ve grouped the articles into the themes below. Start from the top and work 
 ### Insights
 - [Insights](insights/insights.md)
 - [Configuration](insights/configuration.md)
-- [Audit Log](insights/audit-log.md)
+- [Audit Log](administration/audit-log.md)
 
 ### Administration
 - [Multisite](administration/multisite.md)
