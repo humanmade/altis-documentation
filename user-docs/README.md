@@ -39,7 +39,6 @@ We’ve grouped the articles into the themes below. Start from the top and work 
 ### Insights
 - [Insights](insights/insights.md)
 - [Configuration](insights/configuration.md)
-- [Workflows](insights/workflows.md)
 - [Audit Log](insights/audit-log.md)
 
 ### Administration
