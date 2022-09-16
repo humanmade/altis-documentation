@@ -23,7 +23,7 @@ We’ve grouped the articles into the themes below. Start from the top and work 
 - [Workflows](collaboration-and-users/workflows.md)
 - [User Management](collaboration-and-users/user-management.md)
 - [Roles and Permissions](collaboration-and-users/roles-and-permissions.md)
-- [Managing Permissions](collaboration-and-users/managing-permissions.md)
+- [Managing Roles](collaboration-and-users/managing-roles.md)
 
 ### Media
 - [Images, Videos, and Documents](media/images-videos-and-documents.md)
