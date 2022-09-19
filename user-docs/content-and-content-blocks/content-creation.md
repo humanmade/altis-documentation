@@ -280,7 +280,7 @@ To start over, click **Reset All**
 
 
 ##### Colour settings
-![](../assets/Screenshot%202022-09-19%20at%2011.16.14.png)
+![](../assets/content-creation-image67.png)
 
 You can **change** the colour of the **text** and the text **background**. 
 Click on a circle to choose a colour. There may be a set of colurs provided by the theme as well as a default set.
@@ -310,7 +310,7 @@ For example, imagine you’re publishing an in-depth **product review**. You’l
 8.  Add the anchor link name, making sure to put **#** at the start. Press Enter:
 	 ![](../assets/content-creation-image65.png)
 9.  Now, whenever someone clicks Conclusion, the page jumps to the Conclusion heading:
-	![](../assets/Screenshot%202022-09-19%20at%2011.40.21.png)
+	![](../assets/content-creation-image69.png)
 
 You also have the option to add a **CSS** class:
 ![](../assets/content-creation-image60.png)
