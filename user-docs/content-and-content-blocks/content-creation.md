@@ -234,7 +234,7 @@ These icons mean (left-to-right):
 
 ### How to use the Block tab: Posts & Pages
 
-Here’s a more detailed guide to [creating blocks](creating-content-with-blocks.md) [link: Creating content with blocks] if you prefer. Below is just an **overview**, to show you how blocks work with content creation.
+Here’s a more detailed guide to [creating blocks](creating-content-with-blocks.md) if you prefer. Below is just an **overview**, to show you how blocks work with content creation.
 
 #### How to add a block
 

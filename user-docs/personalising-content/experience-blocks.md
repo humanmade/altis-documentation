@@ -82,4 +82,4 @@ You’ll see three options:
 When you’ve made your choice, click **Publish**. Altis then **checks** that your Experience Blocks have valid conversion goals and fallback content:
 ![](../assets/experience-blocks-image11.png)
 
-Altis will now start recording [insights](../insights/insights.md) so you can see which variant performs the best.
+Altis will now start recording [insights](insights.md) so you can see which variant performs the best.

@@ -11,10 +11,10 @@ Here’s where you’ll find an assortment of articles on all things Altis. From
 We’ve grouped the articles into the themes below. Start from the top and work your way down, or dive in wherever you want. Each article has plenty of links to related topics.
 
 ## Articles
+
 ### Content & content blocks
 - [Content Creation](content-and-content-blocks/content-creation.md)
 - [Creating Content with Blocks](content-and-content-blocks/creating-content-with-blocks.md)
-- [Experience Blocks](content-and-content-blocks/experience-blocks.md)
 - [Reusable Blocks](content-and-content-blocks/reusable-blocks.md)
 
 ### Collaboration & users
@@ -32,12 +32,10 @@ We’ve grouped the articles into the themes below. Start from the top and work 
 
 ### Content Experimentation
 - [Multivariant Testing](personalising-content/multivariant-testing.md)
+- [Experience Blocks](personalising-content/experience-blocks.md)
 - [Personalised Content](personalising-content/personalised-content.md)
 - [Audiences](personalising-content/audiences.md)
-
-### Insights
-- [Insights](insights/insights.md)
-- [Audit Log](administration/audit-log.md)
+- [Insights](personalising-content/insights.md)
 
 ### Administration
 - [Multisite](administration/multisite.md)
@@ -47,6 +45,7 @@ We’ve grouped the articles into the themes below. Start from the top and work 
 - [Plugins and Themes](administration/plugins-and-themes.md)
 
 ### Security
+- [Audit Log](administration/audit-log.md)
 - [Security](security/security.md)
 - [Single Sign-on](security/single-sign-on.md)
 - [Two Factor Authentication](security/two-factor-authentication.md)

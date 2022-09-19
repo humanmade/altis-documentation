@@ -45,7 +45,7 @@ Click the dropdown to choose whether to **display a cookie consent banner**:
 
 ### Choose how long to store cookies
 
-By default cookies are stored for **30 days**. Changing this can impact your [analytics](../insights/insights.md) [link: Insights] and [audiences](../personalising-content/audiences.md). Here’s why.
+By default cookies are stored for **30 days**. Changing this can impact your [analytics](../personalising-content/insights.md) and [audiences](../personalising-content/audiences.md). Here’s why.
 
 Visitors who return to your website **within 30 days** show as repeat visitors. If they return after 30+ days, they count as a new visitor. This could be an issue if cookies expire on Day 30 and:
 

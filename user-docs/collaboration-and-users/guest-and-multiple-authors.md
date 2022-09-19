@@ -54,4 +54,4 @@ You can also keep authors **updated on what’s happening** with their content. 
 -   They’re **assigned** to a post or page
 -   Their post or page is **published**
 
-Of course, for some Guest Authors this won’t necessarily work. At least, for the Guest Author accounts that don’t include an email address. To solve this, consider setting up a [workflow](../insights/workflows.md) that notifies someone connected to the person instead. For example, if you published a post on behalf of a CEO, create a workflow that notifies their PA.
+Of course, for some Guest Authors this won’t necessarily work. At least, for the Guest Author accounts that don’t include an email address. To solve this, consider setting up a [workflow](workflows.md) that notifies someone connected to the person instead. For example, if you published a post on behalf of a CEO, create a workflow that notifies their PA.

@@ -5,7 +5,7 @@ order: 0
 
 # Managing roles
 
-Permissions are the individual capabilities that make up a user role link: [Roles & Permissions]. Each role comes with different permissions. You can assign different roles depending on the permissions you want a user to have. 
+Permissions are the individual capabilities that make up a [user role](roles-and-permissions.md). Each role comes with different permissions. You can assign different roles depending on the permissions you want a user to have. 
 
 For example, you can give some users a role with permissions to draft pages. Other users can be assigned a role with permissions to publish pages. Other users can have permissions to manage the pages. 
 

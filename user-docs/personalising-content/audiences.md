@@ -136,7 +136,7 @@ You can also save the Audience as a **draft**:
 
 You can now use Audiences for:
 
-- [Analytics](../insights/insights.md)
+- [Analytics](insights.md)
     Build up a segmented picture of how different groups act on your website
 - [Personalisation](../content-and-content-blocks/experience-blocks.md)
     Create experience blocks with content customised for every audience

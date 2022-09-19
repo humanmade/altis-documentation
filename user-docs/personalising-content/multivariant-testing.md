@@ -96,5 +96,5 @@ Each variant can have their own conversion goal:
 - **Submit** a form (when you’re asking for an enquiry, download, or anything involving some sort of transaction)
 ![](../assets/multivariant-testing-image8.png)
 
-You can now track the results by checking [Insights](../insights/insights.md) in the dashboard:
+You can now track the results by checking [Insights](insights.md) in the dashboard:
 ![](../assets/multivariant-testing-image11.png)

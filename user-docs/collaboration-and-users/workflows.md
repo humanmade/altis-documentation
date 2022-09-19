@@ -89,7 +89,7 @@ Add as many as you want, and click the X to remove:
 You can choose to notify them:
 
 - Via **Email**
-    The email address (or addresses – you can send a group email) is taken from the User account [link: User management]
+    The email address (or addresses – you can send a group email) is taken from the [User account](user-management.md)
 	![](../assets/workflows-image2.png)
     - In **Slack**
     Add the [webhook URL](https://api.slack.com/messaging/webhooks) and channel.

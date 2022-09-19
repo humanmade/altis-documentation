@@ -55,7 +55,7 @@ Prefer to create a **personalised variant from scratch**? Just click the **+** n
 
 ### Choosing a conversion goal
 
-You can also attach a conversion goal to each personalised content variant. You can then track each variant’s performance. The results can be found in Insights [link: Insights]. 
+You can also attach a conversion goal to each personalised content variant. You can then track each variant’s performance. The results can be found in [Insights](insights.md). 
 
 After defining your audience, click the **dropdown** under **Choose a conversion goal**:
 ![](../assets/personalised-content-image1.png)
