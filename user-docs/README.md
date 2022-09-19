@@ -35,10 +35,8 @@ We’ve grouped the articles into the themes below. Start from the top and work 
 - [Personalised Content](personalising-content/personalised-content.md)
 - [Audiences](personalising-content/audiences.md)
 
-
 ### Insights
 - [Insights](insights/insights.md)
-- [Configuration](insights/configuration.md)
 - [Audit Log](administration/audit-log.md)
 
 ### Administration
