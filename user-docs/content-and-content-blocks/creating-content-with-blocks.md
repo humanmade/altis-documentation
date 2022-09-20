@@ -31,7 +31,7 @@ You can set text and background colours on a per-block basis, enabling you to **
 ![|600](../assets/creating-with-blocks-image35.png)
 
 By clicking on the chequered area, you can **choose specific colours**. You can click the hue in the big box or move the sliders:
-![|300](../assets/creating-with-blocks-image36.png)
+![](../assets/creating-with-blocks-image36.png|width=300)
 
  You can also click the slider icon to choose Hexadecimal, RGB, or HSL:
 ![|300](../assets/creating-with-blocks-image3.png)
@@ -41,8 +41,7 @@ By clicking on the chequered area, you can **choose specific colours**. You can 
 Advanced
 
 Click the advanced tab to add a custom CSS class. It can then pick up styles for your block from [custom CSS](https://wordpress.com/support/editing-css/) you create:
-
-![](https://lh5.googleusercontent.com/w-zRFF62DDPJKvQrzyu7CpSmpku_YBVuuUxmzkZi9Gg-OrmVPOnUHtQhyCu0Whg6QeTqWjUnmGhR4-zWtzr1sKdpi81ignhkq7dlPgwtaYdS8o4-y69PmnieH2BVXEbW_JoojDuMNUv0S-gWmWI3PfPQ8KUqJRUEpmtYe61guuziUKj6xe7pIYKe)
+![](../assets/creating-with-blocks-image24.png)
 
 ## Top menu
 
