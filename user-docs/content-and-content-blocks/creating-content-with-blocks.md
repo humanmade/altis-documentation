@@ -31,7 +31,7 @@ You can set text and background colours on a per-block basis, enabling you to **
 ![|600](../assets/creating-with-blocks-image35.png)
 
 By clicking on the chequered area, you can **choose specific colours**. You can click the hue in the big box or move the sliders:
-![](../assets/creating-with-blocks-image36.png | width=300)
+![](../assets/creating-with-blocks-image36.png)
 
  You can also click the slider icon to choose Hexadecimal, RGB, or HSL:
 ![|300](../assets/creating-with-blocks-image3.png)
