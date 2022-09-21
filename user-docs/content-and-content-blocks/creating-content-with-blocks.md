@@ -28,7 +28,7 @@ Here’s where you can change the paragraph’s **font size**, either with relat
 ### Colour settings
 
 You can set text and background colours on a per-block basis, enabling you to **call attention** to important content.
-![|600](../assets/creating-with-blocks-image35.png)
+![](../assets/creating-with-blocks-image35.png)
 
 By clicking on the chequered area, you can **choose specific colours**. You can click the hue in the big box or move the sliders:
 ![](../assets/creating-with-blocks-image36.png)
