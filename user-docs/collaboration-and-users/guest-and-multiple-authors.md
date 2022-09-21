@@ -1,6 +1,6 @@
 ---
 title: Guests & multiple authors
-order: 0
+order: 10
 ---
 
 # Guests and multiple authors

@@ -1,6 +1,6 @@
 ---
 title:
-order: 0
+order: 30
 ---
 
 # User management
@@ -60,7 +60,7 @@ This opens your list of users. Hover over a user and you’ll see the following 
 - **Edit** the user’s details and profile
 - **Remove** the user’s account from the site (they’ll no longer have access)
 - **View** the user’s list of posts on the website
-- **Send password reset**. This can be for [security](../security/security.md) reasons such as stolen passwords or suspected breaches. Or simply for a forgotten password request. The user receives an email with a link that takes them to a password reset page. Altis can automatically generate a password or the user can create their own password. Altis will advise on password strength as you type, such as the “very weak” example below:
+- **Send password reset**. This can be for [README](../security/README.md) reasons such as stolen passwords or suspected breaches. Or simply for a forgotten password request. The user receives an email with a link that takes them to a password reset page. Altis can automatically generate a password or the user can create their own password. Altis will advise on password strength as you type, such as the “very weak” example below:
 ![](../assets/user-management-image6.png)
 
 After resetting the password, the user is **automatically logged out of any other devices** they may be using.

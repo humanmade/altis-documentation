@@ -1,11 +1,11 @@
 ---
 title:
-order: 0
+order: 10
 ---
 
 # Data export and erasure
 
-Alongside [privacy and consent](privacy-and-consent.md), **data protection** is another area where website owners have to comply. 
+Alongside [privacy and consent](README.md), **data protection** is another area where website owners have to comply. 
 
 In Europe, this mainly means the **General Data Protection Regulation (GDPR)**. Where people have the right to ask for, and request deletion of, any data you hold about them. For any requests, you get **30 days** to respond. 
 

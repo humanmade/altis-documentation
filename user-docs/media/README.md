@@ -1,6 +1,6 @@
 ---
-title:
-order: 0
+title: Media
+order: 30
 ---
 
 # Images, Videos, and Documents

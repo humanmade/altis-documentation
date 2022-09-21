@@ -1,6 +1,6 @@
 ---
-title:
-order: 0
+title: Data Privacy
+order: 70
 ---
 
 # Privacy & consent

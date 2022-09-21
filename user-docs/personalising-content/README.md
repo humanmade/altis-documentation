@@ -1,6 +1,6 @@
 ---
-title:
-order: 0
+title: Content Experimentation
+order: 40
 ---
 
 # Multivariant Testing
@@ -61,7 +61,7 @@ When this happens, the **Author** and **Admin** get notifications. 
 
 Setting up different versions is one thing. You can also test different blocks, and give them a conversion goal. You’ll see the results, know what’s working, and discover what needs changing. 
 
-Start [creating your content](../content-and-content-blocks/content-creation.md).
+Start [creating your content](../content-and-content-blocks/README.md).
 
 Add an A/B test [block](../content-and-content-blocks/creating-content-with-blocks.md):
 ![](../assets/multivariant-testing-image16.png)

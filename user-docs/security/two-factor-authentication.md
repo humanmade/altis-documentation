@@ -1,6 +1,6 @@
 ---
 title:
-order: 0
+order: 30
 ---
 
 # Two-factor authentication (2FA)

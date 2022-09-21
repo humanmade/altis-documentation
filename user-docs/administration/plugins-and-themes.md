@@ -1,6 +1,6 @@
 ---
 title:
-order: 0
+order: 40
 ---
 
 # Plugins and themes

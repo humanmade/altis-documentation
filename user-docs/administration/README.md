@@ -1,6 +1,6 @@
 ---
-title:
-order: 0
+title: Administration
+order: 50
 ---
 
 # Configuring Altis admin
