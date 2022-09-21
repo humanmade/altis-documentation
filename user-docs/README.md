@@ -1,4 +1,9 @@
-# User Guides
+---
+title: Welcome
+order: 10
+---
+
+# Welcome
 
 ![](./assets/banner-welcome.png)
 
