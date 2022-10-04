@@ -11,15 +11,15 @@ There are 2 key steps to getting ready for a new version of PHP:
 
 **Note:** PHP 8.0 will officially be available from the Altis v12 release date onwards. Altis v11 will run on PHP 8.0 but support is experimental. Keep reading to learn how to prepare your application for a new PHP version.
 
-| Altis  | PHP 7.4        | PHP 8.0        |
-| ------ | -------------- | -------------- |
-| v13    |                | **Supported**  |
-| v12    | *Deprecated*   | **Supported**  |
-| v11    | **Supported**  | *Experimental* |
-| v10    | **Supported**  |                |
-| v9     | **Supported**  |                |
-| v8     | **Supported**  |                |
-| v7     | **Supported**  |                |
+| Altis  | PHP 7.4        | PHP 8.0        | PHP 8.1        |
+| ------ | -------------- | -------------- |--------------- |
+| v13    |                | **Supported**  | **Supported**  |
+| v12    | *Deprecated*   | **Supported**  | **Supported**  |
+| v11    | **Supported**  | *Experimental* |                |
+| v10    | **Supported**  |                |                |
+| v9     | **Supported**  |                |                |
+| v8     | **Supported**  |                |                |
+| v7     | **Supported**  |                |                |
 
 
 ## Checking PHP Version Compatibiliity
@@ -34,7 +34,7 @@ In your `composer.json` you may have some code like the following:
 {
     "config": {
         "platform": {
-            "php": "7.2"
+            "php": "7.4"
         }
     }
 }
@@ -107,7 +107,7 @@ You can add these to the ignored directories in the command when checking if des
 Once you are confident that your application is compatible with the version of PHP to upgrade to you should do the following:
 
 1. Deploy the updated application to the environment you wish to update, we recommend starting with your non production environments first
-2. Create a support ticket for the target environment with the type "Task", titled "Upgrade to PHP 7.4", replacing "7.4" with the target version if necessary
+2. Create a support ticket for the target environment with the type "Task", titled "Upgrade to PHP 8.0", replacing "8.0" with the target version if necessary
 
 **Note:** If you are upgrading to an Altis version that is not compatible with the environment's current PHP version you will need to request that the environment is updated _prior_ to deploying the upgrade.
 
