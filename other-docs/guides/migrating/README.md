@@ -137,8 +137,8 @@ Next, we need to add some extra configuration to allow Altis to set itself up. O
     },
     "config": {
         "platform": {
-            "php": "7.4.13",
-            "ext-mbstring": "7.4.13"
+            "php": "8.0",
+            "ext-mbstring": "8.0"
         },
         "allow-plugins": {
             "composer/installers": true,
