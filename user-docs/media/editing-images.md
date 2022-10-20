@@ -1,5 +1,4 @@
 ---
-title:
 order: 10
 ---
 
@@ -68,7 +67,7 @@ Give the image square or rounded corners, and set the default style:
 - Change **image size** (thumbnail, medium, large, full size)
 - Edit **dimensions**, either entering the numbers or adjusting by percentage (25%, 50%, 75%, 100% of original size)
 ![](../assets/editing-images-image11.png)
- 
+
 ### Advanced
 
 - Add a **title attribute**. Depending on the visitors browser, this may appear when you hover over the image.
