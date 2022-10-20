@@ -5,6 +5,8 @@ order: 20
 
 # Collaboration
 
+![](../assets/altis-header-13.png)
+
 Here’s how to keep everyone working on your website aligned, consistent, and collaborative. Even when they’re working separately on different pages (and posts). Explore how to create multiple roles, set up editorial workflows, schedule publishing times, and design shared templates.
 
 ## User roles

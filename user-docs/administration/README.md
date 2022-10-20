@@ -2,8 +2,9 @@
 title: Administration
 order: 50
 ---
-
 # Configuring Altis admin
+
+![](../assets/altis-header-04.png)
 
 Customisation and personalisation aren’t just for your audience. You can configure Altis to suit the way you prefer to work. Change the **layout**, reduce **distractions**, set different **defaults**. Whatever helps your workflow, means fewer clicks, or just arranges things how you want.
 
