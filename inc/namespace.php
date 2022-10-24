@@ -172,7 +172,12 @@ function filter_add_user_docs_set( array $sets ) : array {
 
 	// Generate the default set.
 	$user_set = new Set( USER_DOCS_SET_ID, __( 'User Guides', 'altis' ) );
-	$user_set->set_default_group_id( 'documentation' );
+	//$user_set->set_default_group_id( 'documentation' );
+	$user_docs = dirname( __DIR__ ) . '/user-docs';
+	$user_group = new Group( __( 'User Guides', 'altis' ) );
+	$user_group->add_page( '', parse_file( $user_docs . '/welcome.md', $user_docs ) );
+	$user_set->add_group( 'user-guides', $user_group );
+	$user_set->set_default_group_id( 'user-guides' );
 
 	// Add all the registered modules.
 	$modules = Module::get_all();
@@ -182,7 +187,6 @@ function filter_add_user_docs_set( array $sets ) : array {
 
 	// Force docs module to the top.
 	unset( $modules['documentation'] );
-	$modules = array_merge( [ 'documentation' => Module::get( 'documentation' ) ], $modules );
 
 	foreach ( $modules as $id => $module ) {
 		$module_docs = generate_docs_for_module( $id, $module, 'user-docs' );
@@ -192,6 +196,7 @@ function filter_add_user_docs_set( array $sets ) : array {
 
 		$user_set->add_group( $id, $module_docs );
 	}
+	$modules = array_merge( [ 'documentation' => Module::get( 'documentation' ) ], $modules );
 
 	$sets[ USER_DOCS_SET_ID ] = $user_set;
 
