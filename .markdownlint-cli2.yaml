@@ -1,0 +1,30 @@
+# Markdown lint YAML configuration
+
+# Default state for all rules
+default: true
+
+# Path to configuration file to extend
+extends: null
+
+# MD025/single-title/single-h1 - Multiple top-level headings in the same document
+MD025:
+  # Heading level
+  level: 1
+  # RegExp for matching title in front matter
+  # ML: Change the Regex to look for a non-empty title in front-matter
+  front_matter_title: "^\\s*title\\s*[:=].+"
+
+# MD013/line-length - Line length
+# ML: Allow longer line lengths, 80 -> 120.
+MD013:
+  # Number of characters
+  line_length: 120
+  # Number of characters for headings
+  heading_line_length: 120
+  # Number of characters for code blocks
+  code_block_line_length: 120
+  # Include code blocks
+  code_blocks: true
+  # Include tables
+  tables: false
+  # Include headings
