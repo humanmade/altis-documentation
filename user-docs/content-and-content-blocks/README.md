@@ -1,9 +1,10 @@
 ---
-title:
 order: 10
 ---
 
 # Content Creation
+
+![](../assets/altis-header-11.png)
 
 Below you’ll find plenty of explanations and how-to’s for creating, publishing, and customising your content. It’s a fairly long list, but that’s because there’s so much you can do. As you’ll see below...
 

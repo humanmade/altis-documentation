@@ -1,9 +1,10 @@
 ---
-title:
 order: 60
 ---
 
 # Security
+
+![](../assets/altis-header-15.png)
 
 Altis gives you multiple options for securing your website. From logging in and authentication, to managing passwords and limiting page access. You can set many of these up yourself—without advanced coding or development . 
 

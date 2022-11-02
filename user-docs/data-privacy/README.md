@@ -5,6 +5,8 @@ order: 70
 
 # Privacy & consent
 
+![](../assets/altis-header-10.png)
+
 Website owners usually have national or international privacy laws to follow. This can mean explaining to users what you do with any data collected, and showing how you comply with GDPR, CCPA, and relevant directives and regulations. Alongside giving users the option to give or refuse consent. For all this, you need online privacy policies and consent functions. 
 
 Without these, there’s a risk of fines and/or legal action, plus potential loss of consumer trust. Particularly if you’re collecting Personally Identifiable Information (PII) during interactions and transactions. 

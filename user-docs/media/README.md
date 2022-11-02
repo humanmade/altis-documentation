@@ -5,6 +5,8 @@ order: 30
 
 # Images, Videos, and Documents
 
+![](../assets/altis-header-08.png)
+
 All of your images, videos and documents are stored and managed in the **Media Library**. Below are some of the common paths to get you there. Plus you can see how to **add**, **insert** and **edit**. ([Editing images](editing-images.md) goes into more detail on this).
 
 ## Storing images, videos & documents
