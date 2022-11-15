@@ -11,15 +11,19 @@ For example, you can give some users a role with permissions to draft pages. Oth
 ## How to manage roles
 
 Head to **Users** in your dashboard:
+
 ![](../assets/managing-roles-image2.png)
 
 For **existing user** permissions, **hover** over their name and click **Edit**:
+
 ![](../assets/managing-roles-image4.png)
 
 For **new users**, click **Add New**:
+
 ![](../assets/managing-roles-image3.png)
 
 Click the dropdown next to **Role**:
+
 ![](../assets/managing-roles-image1.png)
 
 Permissions are related to the [Role](roles-and-permissions.md).

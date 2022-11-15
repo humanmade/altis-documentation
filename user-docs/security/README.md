@@ -17,14 +17,17 @@ You can **limit what users** can do on your website. After all, not everyone nee
 ### How to manage security for a user
 
 Imagine you’re adding a new user. In your dashboard, click **Users > Add new**:
+
 ![](../assets/security-image4.png)
 
 Click the dropdown to assign their role (what these [roles and permissions](../collaboration-and-users/roles-and-permissions.md) mean):
+
 ![](../assets/security-image7.png)
 
 You can also register **security keys**. These are physical Universal 2nd Factor (U2F)
 USB keys. Users plug these into their machines to login, giving you another option to support [Two-Factor Authentication (2FA)](two-factor-authentication.md). 
 Scroll down to **Security Keys** and click **Register New Key**:
+
 ![](../assets/security-image8.png)
 
 ## Application passwords
@@ -32,9 +35,11 @@ Scroll down to **Security Keys** and click **Register New Key**:
 Does your website use any **external apps**, **services**, or **APIs**? You can create passwords for these “non-humans” to access what they need. Without giving them access to your actual website. 
 
 Open your **User profile** and scroll down to **Application Passwords**. Add the app name. Then click **Add New Application Password**:
+
 ![](../assets/security-image5.png)
 
 The password now appears. **Save this somewhere**–you can’t retrieve it. The application now appears in your application list, with a **Revoke button** if you need to cancel access:
+
 ![](../assets/security-image1.png)
 
 ## Two-factor authentication (2FA)
@@ -44,6 +49,7 @@ You’ll have come across 2FA if you use internet banking. Maybe you’ve activa
 ## Password strength
 
 When you add a user, you’ll be asked to include a password. You can use the **automatically generated** password, or click to add your own. Altis will let you know how **strong** (or **weak**) the password is:
+
 ![](../assets/security-image6.png)
 
 ## How to hide or limit page/post visibility
@@ -55,6 +61,7 @@ These are useful when you’ve created content that **isn’t for public view**.
 - Contains private documents for view/download
 
 In the sidebar, click **Public** (next to **Visibility**):
+
 ![](../assets/security-image3.png)
 
 You’ll see the three options. Click the relevant radio button to set the page:
@@ -65,5 +72,7 @@ You’ll see the three options. Click the relevant radio button to set the page:
     Only logged-in admins and editors can view the page/post. Anyone else trying to access the URL will be redirected to the login screen
 - **Password protected**
     After clicking this option, set a password, and click Update:
+
 ![](../assets/security-image2.png)
-	Depending on your theme, anyone arriving on the page may see the page title, along with a password prompt.
+
+Depending on your theme, anyone arriving on the page may see the page title, along with a password prompt.

@@ -31,21 +31,25 @@ The workflow also includes a **button** to view. 
 ## How to create a workflow
 
 Click Workflows in your dashboard, and click Add new:
+
 ![](../assets/workflows-image11.png)
 
 Let’s create a workflow that **notifies you when someone publishes a post**.
 
 Give your workflow a **title**:
+
 ![](../assets/workflows-image1.png)
 
 ### How to set when the workflow runs
 
 After you’ve added a title, click the dropdown under **When should the workflow run?**
+
 ![](../assets/workflows-image8.png)
 
 ### How to configure workflow notifications
 
 You can now add a workflow **notification**:
+
 ![](../assets/workflows-image6.png)
 
 You can add a subject line and a message. Of course, you could just type in “A post has been published”. But that might not be very helpful on its own. Particularly if lots of posts are being published. 
@@ -67,6 +71,7 @@ New post **%title%** from **%author%** published
 The main message has more room. Let’s add the content and the URL with our own words:
 
 Published at **%url%** and contains **%content%** 
+
 ![](../assets/workflows-image5.png)
 
 ### How to notify specific people in a workflow
@@ -80,9 +85,11 @@ Click the dropdown to automatically notify:
 - All users
 - Assignees
 - Post authors
+
 ![](../assets/workflows-image10.png)
 
 Add as many as you want, and click the X to remove:
+
 ![](../assets/workflows-image9.png)
 
 You can choose to notify them:
@@ -101,7 +108,9 @@ You can add multiple channels, and click **X** to remove a channel.
 ### How to activate a workflow
 
 All ready? Click the **enable toggle** to activate your workflow and click **Save**:
+
 ![](../assets/workflows-image4.png)
 
 The workflow is now running:
+
 ![](../assets/workflows-image7.png)
