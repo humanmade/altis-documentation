@@ -3,9 +3,9 @@ title: Content Experimentation
 order: 40
 ---
 
-# Multivariant Testing
+# Multivariate Testing
 
-Multivariant testing allows you to run scheduled A/B tests across content and copy to maximise your audience engagement and continually refine your personalisation strategy.
+Multivariate testing allows you to run scheduled A/B tests across content and copy to maximise your audience engagement and continually refine your personalisation strategy.
 
 You can test variations of your pages scientifically. Set dimensions beforehand, so you automatically remove any risks of **bias**. Run tests based on your **hypothesis**. Then wait until Altis notifies you that a test has **won**. 
 
