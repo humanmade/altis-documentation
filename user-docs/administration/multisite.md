@@ -33,9 +33,11 @@ There are three ways to set up a multisite::
 ## How to view multisites
 
 Hover over **My sites > Network Admin** and click **Sites**:
+
 ![](../assets/multisite-image2.png)
 
 This shows you all the sites on the network:
+
 ![](../assets/multisite-image7.png)
 
 You can see:
@@ -45,34 +47,41 @@ You can see:
 - Registered date
 - Number of users
 - Whether [ElasticPress](https://www.elasticpress.io/) is enabled
+
 ![](../assets/multisite-image8.png)
 
 ## How to edit multisites
 
 Hover over the site you want to edit and click **Edit**:
+
 ![](../assets/multisite-image1.png)
 
 You can make edits across four tabs:
+
 ![](../assets/multisite-image9.png)
 
 ### Info tab
 
 Edit dates when the site was registered or updated. Change whether the site should be available to the public and appear in search engine results, and/or whether it should be marked as for a mature audience (rated X):
+
 ![](../assets/multisite-image3.png)
 
 ### Users tab
 
 Click to edit (including changing permissions), remove, view and reset passwords. You can do this individually, or use the bulk action dropdown:
+
 ![](../assets/multisite-image6.png)
 
 ### Themes tab
 
 Shows all the themes on the site. To activate a theme for a site, visit the specific site’s dashboard:
+
 ![](../assets/multisite-image4.png)
 
 ### Settings tab
 
 Some complex settings cannot be changed on this screen. These will say SERIALIZED DATA:
+
 ![](../assets/multisite-image5.png)
 
 The rest of the settings can be changed as normal.

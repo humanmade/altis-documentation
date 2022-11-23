@@ -54,6 +54,7 @@ Publish immediately or **schedule** a date and time. Scheduling is useful for pr
 #### Stick to the top of the blog 
 
 Tick the box next to **Make this post sticky**. This makes your post **always appear first** in the order of published blogs:
+
 ![](../assets/content-creation-image40.png)
 
 #### Pending review
@@ -71,6 +72,7 @@ Make an unpublished **copy** of the post. Useful for creating new posts without 
 ##### Create amendment
 
 Click this to work on a duplicate version. Make your edits. Then, after approval or review, click **Publish Amendment** to replace the current version:
+
 ![](../assets/content-creation-image38.png)
 
 #### Move to Trash
@@ -92,20 +94,25 @@ This is the powerful all-in-one **SEO plugin** built for WordPress. 
 Yoast scans your text to see if it’s **easy to read** and gives you feedback. Its algorithm checks things like whether you’re using complicated words, long sentences, active vs passive voice. It then gives you a rating and recommendations for improvement. Kind of like a helpful assistant.
 
 For the full analysis, click the **Readability** tab under your post:
+
 ![](../assets/content-creation-image13.png)
 
 Want to give your post a better chance of being found and ranked by search engines? Click **Improve your post with Yoast SEO**:
+
 ![](../assets/content-creation-image37.png)
 
 Enter a word or phrase you want the post to be found for in **search engines**:
+
 ![](../assets/content-creation-image44.png)
 
 Click the **? icon** for advice on this. Then click Get **related keyphrases**. You may be asked to login or register with Semrush. Click **Approve**: 
+
 ![](../assets/content-creation-image2.png)
 
 This gives you lots of keyphrases you can add to your content. 
 
 ## Permalinks
+
 ![](../assets/content-creation-image49.png)
 
 The slug is the last part of the post’s URL. You can edit it here. Add some keywords, or shorten the URL if your title has lots of words.
@@ -115,11 +122,13 @@ The slug is the last part of the post’s URL. You can edit it here. Add some ke
 ![](../assets/content-creation-image23.png)
 
 You can assign every post to a category. This is useful when you want to **organise posts by topics or themes**. Click **Add New category** to add a category:
+
 ![](../assets/content-creation-image6.png)
 
 You can create your own **categories and sub-categories**. It keeps things organised in a hierarchy for you and your audience. For example, a category could be “UK news” and the sub-category could be “Politics”. 
 
 ## Tags
+
 ![](../assets/content-creation-image21.png)
 
 Tags are **optional**. You commonly use them when you want to be more specific about your post’s content. Think of them like social media hashtags. For example:
@@ -129,16 +138,19 @@ Tags are **optional**. You commonly use them when you want to be more specific a
 - Tag: Prime Minister
 
 ## Featured image
+
 ![](../assets/content-creation-image5.png)
 
 Add an image that is displayed **wherever** (depending on your theme) the post appears. For example, in the list of posts. Featured images differ from images you add inside the content.
 
 ## Excerpt
+
 ![](../assets/content-creation-image33.png)
 
 Add a summary (1 or 2 sentences). Something that **encourages the reader to click** and read more. Depending on your theme, the excerpt may appear next to **search results, archives**, or anywhere else the post is **previewed**. 
 
 ## Discussion
+
 ![](../assets/content-creation-image3.png)
 
 Tick **Allow comments** to allow people to comment on the post.
@@ -146,6 +158,7 @@ Tick **Allow comments** to allow people to comment on the post.
 Tick **Allow pingbacks & trackbacks** to allow other blogs that link to your post to appear in your comments section. Part of their post may then be displayed or linked to in the comments section. This is usually deactivated by default, to avoid automated spam links appearing.
 
 ## Attributes
+
 ![](../assets/content-creation-image20.png)
 
 Click to change your content’s **layout**. 
@@ -163,11 +176,13 @@ Themes may provide templates like: 
 Add an image that is displayed **wherever** the page appears. This depends on your theme, so for example, it could appear in headers, search results, or when shared on social media.
 
 #### Discussion
+
 ![](../assets/content-creation-image36.png)
 
 Tick **Allow comments** to allow people to leave a comment. These are usually deactivated by default.
 
 ### Page attributes
+
 ![](../assets/content-creation-image29.png)
 
 Click to change your content’s **layout**. 
@@ -188,9 +203,11 @@ For people reading left-to-right, you could use this when you want to show a 3-s
 Posts and Pages are found underneath your dashboard. 
 
 Click **Pages** to view currently published pages, and click **Add New** to… well, add a new page:
+
 ![](../assets/content-creation-image39.png)
 
 It’s the same for Posts:
+
 ![](../assets/content-creation-image24.png)
 
 ### Title
@@ -200,9 +217,11 @@ Add a title for the content. This is the main headline to grab your reader’s a
 ### Write or add block
 
 You can either click and start typing underneath the title, or click the + to add a block:
+
 ![](../assets/content-creation-image43.png)
 
 As you start typing, a **toolbar** appears above your text:
+
 ![](../assets/content-creation-image14.png)
 
 ### Toolbar
@@ -240,14 +259,17 @@ Here’s a more detailed guide to [creating blocks](creating-content-with-blocks
 #### How to add a block
 
 Click the **+ sign**:
+
 ![](../assets/content-creation-image31.png)
 
 You’ll see a selection of common blocks to use:
+
 ![](../assets/content-creation-image47.png)
 
 Choose one of these, or click **Browse all** to open up the full selection.
 
 For this example, we’ll choose a Paragraph:
+
 ![](../assets/content-creation-image52.png)
 
 The paragraph block allows you to easily craft content and is the default block type for text added to the editor. It’s probably the block you will use most.
@@ -259,6 +281,7 @@ You can also choose the paragraph block from the “Block Inserter” (+) pop-up
 [https://wordpress.org/support/files/2019/03/paragraph.mp4](https://wordpress.org/support/files/2019/03/paragraph.mp4) 
 
 Now, on the sidebar, the Block tab shows options for editing the block:
+
 ![](../assets/content-creation-image57.png)
 
 ##### Typography
@@ -267,6 +290,7 @@ Click to adjust the **font size**. Your theme will include a set of standard siz
 
 - Default = matches your theme’s default font
 - Custom = click the **set custom size icon** to add your own custom size font
+
 ![](../assets/content-creation-image58.png)
 
 Clicking the **View Options** (three dots) menu allows you to control
@@ -275,12 +299,13 @@ Clicking the **View Options** (three dots) menu allows you to control
 - Letter Case,
 - Letter spacing, and
 - Reset All
+
 ![](../assets/content-creation-image59.png)
 
 To start over, click **Reset All**
 
-
 ##### Colour settings
+
 ![](../assets/content-creation-image67.png)
 
 You can **change** the colour of the **text** and the text **background**. 
@@ -288,6 +313,7 @@ Click on a circle to choose a colour. There may be a set of colurs provided by t
 Click on the chequered area to pick a custom color or add a **hex code**.
 
 ##### Anchor links/page jumps
+
 ![](../assets/content-creation-image60.png)
 
 If your post has multiple headings, you can use **HTML anchors**. Also known as **in-page jumps**. Your users’ thumbs will thank you for these. 
@@ -314,11 +340,13 @@ For example, imagine you’re publishing an in-depth **product review**. You’l
 	![](../assets/content-creation-image69.png)
 
 You also have the option to add a **CSS** class:
+
 ![](../assets/content-creation-image60.png)
 
 ## How to publish content
 
 After you’ve created your content, you can either click to:
+
 ![](../assets/content-creation-image54.png)
 
 - **Save draft**
@@ -329,20 +357,27 @@ After you’ve created your content, you can either click to:
     ![](../assets/content-creation-image66.png)
 - **Publish**
     Click to publish your content immediately. This opens up the publication checklist, visibility settings, options to change the publish date and time of publication, and Yoast analysis
+
     ![](../assets/content-creation-image45.png)
 - **Settings**
+
     ![](../assets/content-creation-image22.png)
+
     Click the Settings icon to open the Post & Block sidebar 
 - **Publication checklist**
+
     ![](../assets/content-creation-image27.png)
+
     Click the tick icon to open the Publication Checklist. This shows recommended tasks to complete before publication.
 
     Your development team may change the publishing checklist to match your specific in-house requirements. You can also click the **Skip checks toggle button** to publish without completing the checklist:
+
 ![](../assets/content-creation-image16.png)
 
 ## After you’ve published content
 
 Congratulations! Your content is out there, ready to go viral, inspire and convert your audience, and whatever else you want it to do.
+
 ![](../assets/content-creation-image11.png)
 
 You can now:
@@ -353,6 +388,7 @@ You can now:
 ### How to unpublish content
 
 Go back to the content and click **Switch to draft**:
+
 ![](../assets/content-creation-image15.png)
 
 Just remember that anyone trying to view the page will get a 404. So this might not be the best option if the page URL has already been shared. For example, on social media, as part of a campaign, or in an email. 
@@ -362,14 +398,17 @@ A negative experience could annoy your users, and can also affect your SEO. Cons
 #### How to redirect a URL
 
 Click **Redirects**:
+
 ![](../assets/content-creation-image42.png)
 
 Click **Add new**:
+
 ![](../assets/content-creation-image1.png)
 
 ### How to edit published content
 
 Open the content, make your edits and then **click Update**:
+
 ![](../assets/content-creation-image15.png)
 
 ### How to clone published content
@@ -379,15 +418,19 @@ Open the content, make your edits and then **click Update**:
 An amendment is similar to a clone, because it creates a **copy of an already published** post or page. Multiple people can collaborate on the amendment. Then when it’s ready, click **Publish Amendment** and it **replaces** the original.
 
 Hover over the page or post to be amended and click **Create Amendment**:
+
 ![](../assets/content-creation-image34.png)
 
 You can now make edits, save drafts, and preview. Just like you would normally in WordPress. The only difference is a **reminder message** to tell you that you’re editing an Amendment:
+
 ![](../assets/content-creation-image10.png)
 
 For anybody else collaborating, they can see the Amendment in the dashboard:
+
 ![](../assets/content-creation-image35.png)
 
 When you’re ready, click **Publish Amendment**:
+
 ![](../assets/content-creation-image48.png)
 
 This gives you two options:
@@ -412,7 +455,9 @@ Or maybe you want changes to happen while you are:
 - Lacking reliable Wi-Fi 
 
 In the **sidebar**, click the date and time next to Publish Amendment:
+
 ![](../assets/content-creation-image50.png)
 
 This opens a **calendar**. You can now set when the amendment goes live, down to the very minute:
+
 ![](../assets/content-creation-image41.png)
