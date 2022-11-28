@@ -104,15 +104,12 @@ You can add these to the ignored directories in the command when checking if des
 
 ## Requesting A Cloud Environment Update
 
-Once you are confident that your application is compatible with the version of PHP to upgrade to you should do the following:
+Once you are confident that your application is compatible with the version of PHP to upgrade to you should do the following for each environment:
 
-1. Deploy the updated application to the environment you wish to update, we recommend starting with your non production environments first
-2. Create a support ticket for the target environment with the type "Task", titled "Upgrade to PHP 8.0", replacing "8.0" with the target version if necessary
+1. Create a support ticket for the target environment with the type "Task", titled "Upgrade to PHP 8.0", replacing "8.0" with the target version if necessary ( noting that the updated PHP version will not be deployed automatically until the next application deployment ).
+2. Wait for the Altis team to confirm the environment has been updated.
+3. Deploy the updated application code.
 
-**Note:** If you are upgrading to an Altis version that is not compatible with the environment's current PHP version you will need to request that the environment is updated _prior_ to deploying the upgrade.
+**Note:** We recommend starting with your non production environments first.
 
 See the [Getting Help With Altis guide](../getting-help-with-altis.md) for more information on creating support tickets.
-
-The Altis team will follow up with you on the ticket once the environment has been updated.
-
-Once your environment has been upgraded, the PHP upgrade will take effect upon the next application deployment.
