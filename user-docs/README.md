@@ -25,7 +25,6 @@ We’ve grouped the articles into the themes below. Start from the top and work 
 ### Collaboration & users
 - [Collaboration](collaboration-and-users/README.md)
 - [Guest and Multiple Authors](collaboration-and-users/guest-and-multiple-authors.md)
-- [Workflows](collaboration-and-users/workflows.md)
 - [User Management](collaboration-and-users/user-management.md)
 - [Roles and Permissions](collaboration-and-users/roles-and-permissions.md)
 - [Managing Roles](collaboration-and-users/managing-roles.md)

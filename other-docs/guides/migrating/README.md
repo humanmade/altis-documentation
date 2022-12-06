@@ -105,7 +105,6 @@ Currently, Altis bundles the following plugins:
 - `tachyon-plugin`
 - `two-factor`
 - `wordpress-seo`
-- `workflows`
 - `wp-redis`
 - `wp-simple-saml`
 - `wp-user-signups`

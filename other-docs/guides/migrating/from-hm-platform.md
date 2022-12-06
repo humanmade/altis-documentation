@@ -57,7 +57,6 @@ Do the same for `hm-platform` if you have this project dependency. Altis also in
 - `tachyon-plugin`
 - `two-factor`
 - `wordpress-seo`
-- `workflows`
 - `wp-redis`
 - `wp-simple-saml`
 - `wp-user-signups`
