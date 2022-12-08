@@ -59,7 +59,7 @@ Tick the box next to **Make this post sticky**. This makes your post **always ap
 
 #### Pending review
 
-As part of a workflow ([see workflows documentation](../collaboration-and-users/workflows.md)), you may be required to have posts reviewed before being published. Contributors can only save for review.
+As part of your organization's editorial workflow, you may be required to have posts reviewed before being published. Contributors can only save for review.
 
 #### Select authors
 
