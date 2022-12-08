@@ -40,7 +40,6 @@ Do the same for `hm-platform` if you have this project dependency. Altis also in
 - `debug-bar-elasticpress`
 - `delegated-oauth`
 - `elasticpress`
-- `extended-cpts`
 - `gaussholder`
 - `hm-gtm`
 - `hm-redirects`
