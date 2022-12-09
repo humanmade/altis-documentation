@@ -356,23 +356,15 @@ After you’ve created your content, you can either click to:
     See how your content will look on **desktop**, **mobile** or **tablet**
     ![](../assets/content-creation-image66.png)
 - **Publish**
-    Click to publish your content immediately. This opens up the publication checklist, visibility settings, options to change the publish date and time of publication, and Yoast analysis
+- Click to publish your content immediately. This opens up the visibility settings, options to change the publish date and time of
+publication, and Yoast analysis
 
-    ![](../assets/content-creation-image45.png)
+  ![](../assets/content-creation-image45.png)
 - **Settings**
 
     ![](../assets/content-creation-image22.png)
 
     Click the Settings icon to open the Post & Block sidebar 
-- **Publication checklist**
-
-    ![](../assets/content-creation-image27.png)
-
-    Click the tick icon to open the Publication Checklist. This shows recommended tasks to complete before publication.
-
-    Your development team may change the publishing checklist to match your specific in-house requirements. You can also click the **Skip checks toggle button** to publish without completing the checklist:
-
-![](../assets/content-creation-image16.png)
 
 ## After you’ve published content
 

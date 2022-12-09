@@ -93,7 +93,6 @@ Currently, Altis bundles the following plugins:
 - `hm-redirects`
 - `ludicrousdb`
 - `meta-tags`
-- `publication-checklist`
 - `query-monitor`
 - `require-login`
 - `safe-svg`
