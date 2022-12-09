@@ -9,7 +9,10 @@ order: 10
 
 Welcome to the Altis User Guides. This documentation is here to help you get the best out of Altis' advanced features and become a power user.
 
-Here’s where you’ll find an assortment of articles on all things Altis. From creating content with personalisation, to serving up experiences for multiple audiences. From running A/B tests to understand your visitors, to building workflows that simply make your life easier. Plus much more. All the features you’ll need to create, manage and grow your Altis website.
+Here’s where you’ll find an assortment of articles on all things Altis. From
+creating content with personalisation, to serving up experiences for multiple
+audiences. To running A/B tests to understand your visitors. Plus much more. All
+the features you’ll need to create, manage and grow your Altis website.
 
 (Developers, you probably want the [developer documentation](https://docs.altis-dxp.com/). Although you’re very welcome to stick around and explore here too)
 

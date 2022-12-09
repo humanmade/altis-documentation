@@ -45,7 +45,6 @@ Do the same for `hm-platform` if you have this project dependency. Altis also in
 - `hm-redirects`
 - `ludicrousdb`
 - `meta-tags`
-- `publication-checklist`
 - `query-monitor`
 - `require-login`
 - `safe-svg`
