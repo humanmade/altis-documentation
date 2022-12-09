@@ -10,7 +10,7 @@ What’s more, Microsoft 365 (or whichever external service you choose) still do
 
 ## How to set up SSO
 
-Ask your developer to use the [Altis SSO developer documentation](https://docs.altis-dxp.com/sso/). This includes links to supported authorisation providers [SAML 2.0](https://docs.altis-dxp.com/sso/saml-2-0/) and [WordPress](https://docs.altis-dxp.com/sso/wordpress/).
+Ask your developer to use the [Altis SSO developer documentation](https://docs.altis-dxp.com/sso/). This includes links to supported authorisation provider [SAML 2.0](https://docs.altis-dxp.com/sso/saml-2-0/).
 
 Your users can then login with their chosen SSO login credentials. The screenshot below shows Hootsuite offering their users SSO:
 
