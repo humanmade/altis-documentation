@@ -32,3 +32,11 @@ Sitemap: https://your-domain.tlc/special-sitemap.xml
 ROBOTS;
 }
 ```
+
+#### Sitemaps support
+
+Altis no longer includes support for additional sitemaps functionality via the
+Yoast SEO plugin. Instead you can use the built in functionality provided out of
+the box by WordPress, which is enabled automatically. Additionally, several
+off-the-shelf plugins (including Yoast SEO) provide functionality to enhance or
+replace WordPress' functionality.
