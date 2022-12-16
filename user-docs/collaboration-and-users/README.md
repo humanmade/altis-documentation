@@ -52,10 +52,3 @@ Let’s start with who you’re collaborating with. Your **users**, and their **
 - Editors can create **Guest Author** accounts
 
 [More on Guests & Multiple Authors](guest-and-multiple-authors.md)
-
-### SEO roles
-
-These roles are for users in charge of getting your content indexed and ranked by search engines. You can give them freedom to edit the **SEO-related settings**. They’re based on the [Yoast definitions](https://yoast.com/seo-roles/) of:
-
-- SEO Manager
-- SEO Editor

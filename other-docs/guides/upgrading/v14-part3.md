@@ -40,3 +40,16 @@ Yoast SEO plugin. Instead you can use the built in functionality provided out of
 the box by WordPress, which is enabled automatically. Additionally, several
 off-the-shelf plugins (including Yoast SEO) provide functionality to enhance or
 replace WordPress' functionality.
+
+#### Yoast SEO Plugin
+
+Altis no longer provides the Yoast SEO plugin. However you can install the
+off-the-shelf plugin in your projects `composer.json` file.
+
+```shell
+## Add the Yoast SEO plugin
+composer require "wppackagist/wordpress-seo"
+```
+
+If you are using the premium version of the plugin, follow
+these [instructions on the Yoast website](https://yoast.com/help/how-to-install-yoast-plugins-using-composer/).

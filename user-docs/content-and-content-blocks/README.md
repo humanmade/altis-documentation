@@ -83,34 +83,6 @@ Moves the post to the Trash. The post will stay there for 30 days by default bef
 - Clone
 - Restore
 
-## Yoast SEO
-
-This is the powerful all-in-one **SEO plugin** built for WordPress. 
-
-![](../assets/content-creation-image53.png)
-
-### Readability analysis
-
-Yoast scans your text to see if it’s **easy to read** and gives you feedback. Its algorithm checks things like whether you’re using complicated words, long sentences, active vs passive voice. It then gives you a rating and recommendations for improvement. Kind of like a helpful assistant.
-
-For the full analysis, click the **Readability** tab under your post:
-
-![](../assets/content-creation-image13.png)
-
-Want to give your post a better chance of being found and ranked by search engines? Click **Improve your post with Yoast SEO**:
-
-![](../assets/content-creation-image37.png)
-
-Enter a word or phrase you want the post to be found for in **search engines**:
-
-![](../assets/content-creation-image44.png)
-
-Click the **? icon** for advice on this. Then click Get **related keyphrases**. You may be asked to login or register with Semrush. Click **Approve**: 
-
-![](../assets/content-creation-image2.png)
-
-This gives you lots of keyphrases you can add to your content. 
-
 ## Permalinks
 
 ![](../assets/content-creation-image49.png)
@@ -356,10 +328,11 @@ After you’ve created your content, you can either click to:
     See how your content will look on **desktop**, **mobile** or **tablet**
     ![](../assets/content-creation-image66.png)
 - **Publish**
-- Click to publish your content immediately. This opens up the visibility settings, options to change the publish date and time of
-publication, and Yoast analysis
+- Click to publish your content immediately. This opens up the visibility settings and options to change the publish date and time of
+publication.
 
   ![](../assets/content-creation-image45.png)
+
 - **Settings**
 
     ![](../assets/content-creation-image22.png)
@@ -375,7 +348,6 @@ Congratulations! Your content is out there, ready to go viral, inspire and conve
 You can now:
 - View the content
 - Copy its link
-- spread the word on social media (if you’ve set these up in Yoast)
 
 ### How to unpublish content
 
