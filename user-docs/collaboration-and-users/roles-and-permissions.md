@@ -45,6 +45,6 @@ Guest authors can be attributed to a page or post without having to register or 
 
 ## Roles with plugins
 
-Some plugins can generate additional roles. For example, the SEO plugin Yoast comes with Altis. That’s why there are two extra roles from Yoast: [SEO Editor and SEO Manager](https://yoast.com/seo-roles/):
+Some plugins can generate additional roles. For example, the SEO plugin from Yoast. That’s why there are two extra roles from Yoast:
 
 ![](../assets/roles-and-permissions-image1.png)

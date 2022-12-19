@@ -84,7 +84,6 @@ This opens all the available types of blocks:
 - Design
 - Widgets
 - Embeds
-- Yoast structured data blocks
 
 To add/remove any of these, click the **tick box**. You can remove all the blocks in a category or individual elements within categories:
 

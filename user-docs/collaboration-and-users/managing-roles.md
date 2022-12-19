@@ -30,7 +30,7 @@ Permissions are related to the [Role](roles-and-permissions.md).
 
 ## Role permissions
 
-### Super Administrator 
+### Super Administrator
 
 This role has the broadest level of permissions across your entire network. They can do everything on each of your [websites](../administration/multisite.md). For security reasons it’s best to limit this role to as few people as necessary.
 
@@ -53,15 +53,3 @@ Contributors can write and manage their own posts – but can’t publish or upl
 ### Subscriber
 
 This role can manage their own profile on a website. They can also access private content to read and/or leave comments, but can’t create content. This is the most limited set of permissions, often suitable when you only want to give a user permission to login and view content. 
-
-### SEO role permissions
-
-The Yoast plugin powers the Altis SEO module. That’s why you get two extra roles for SEO-related functions. Both are useful if you’re using an external SEO agency. Where you want to limit their permissions to the rest of the site. Each role has different permissions for configuring and improving your site’s search engine visibility and ranking:
-
-#### SEO Manager
-
-Has full permissions within the Yoast plugin, including editing the plugin settings.
-
-SEO Editor
-
-Permissions are limited to managing SEO content (such as meta titles and descriptions) in pages and posts.
