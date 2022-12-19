@@ -30,7 +30,6 @@ Do the same for `hm-platform` if you have this project dependency. Altis also in
 - `aws-rekognition`
 - `aws-ses-wp-mail`
 - `aws-xray`
-- `authorship`
 - `batcache`
 - `browser-security`
 - `cavalcade`

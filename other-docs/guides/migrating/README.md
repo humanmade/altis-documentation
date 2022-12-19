@@ -78,7 +78,6 @@ Currently, Altis bundles the following plugins:
 - `aws-rekognition`
 - `aws-ses-wp-mail`
 - `aws-xray`
-- `authorship`
 - `batcache`
 - `browser-security`
 - `cavalcade`
