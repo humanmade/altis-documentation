@@ -87,7 +87,6 @@ Currently, Altis bundles the following plugins:
 - `debug-bar-elasticpress`
 - `delegated-oauth`
 - `elasticpress`
-- `gaussholder`
 - `hm-gtm`
 - `hm-redirects`
 - `ludicrousdb`
