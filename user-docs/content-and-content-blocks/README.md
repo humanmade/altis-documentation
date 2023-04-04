@@ -65,22 +65,11 @@ As part of your organization's editorial workflow, you may be required to have p
 
 Display the name of the author or authors (including [guests, multiple or external](../collaboration-and-users/guest-and-multiple-authors.md)) next to the post.
 
-#### Clone post
-
-Make an unpublished **copy** of the post. Useful for creating new posts without starting from scratch.
-
-##### Create amendment
-
-Click this to work on a duplicate version. Make your edits. Then, after approval or review, click **Publish Amendment** to replace the current version:
-
-![](../assets/content-creation-image38.png)
-
 #### Move to Trash
 
 Moves the post to the Trash. The post will stay there for 30 days by default before being deleted permanently. Unless you choose to:
 
 - Manually delete immediately
-- Clone
 - Restore
 
 ## Permalinks
@@ -374,54 +363,3 @@ Click **Add new**:
 Open the content, make your edits and then **click Update**:
 
 ![](../assets/content-creation-image15.png)
-
-### How to clone published content
-
-## How (and when) to amend content
-
-An amendment is similar to a clone, because it creates a **copy of an already published** post or page. Multiple people can collaborate on the amendment. Then when it’s ready, click **Publish Amendment** and it **replaces** the original.
-
-Hover over the page or post to be amended and click **Create Amendment**:
-
-![](../assets/content-creation-image34.png)
-
-You can now make edits, save drafts, and preview. Just like you would normally in WordPress. The only difference is a **reminder message** to tell you that you’re editing an Amendment:
-
-![](../assets/content-creation-image10.png)
-
-For anybody else collaborating, they can see the Amendment in the dashboard:
-
-![](../assets/content-creation-image35.png)
-
-When you’re ready, click **Publish Amendment**:
-
-![](../assets/content-creation-image48.png)
-
-This gives you two options:
-
-- **Save changes and compare**
-    Choose this and you can view changes between the original and the amended versions before publishing
-- **Publish Amendment**
-    Choose this and the amendment goes live **straightaway**. Although maybe you want to **delay when the amendment goes live**? That’s when you can **schedule** amendments (see below for how)
-
-### Scheduling amendments
-
-An amendment is great when you want to **plan your edits in advance**. Maybe you want to **schedule** a page changing from:
-
-- “New product coming soon” to “New product now available”
-- “Sale finishes at midnight” to “Sale now closed”
-- “The winner will be announced here at 2pm…” to “The winner is…”
-
-Or maybe you want changes to happen while you are:
-
-- In a meeting
-- On leave or away from the office
-- Lacking reliable Wi-Fi 
-
-In the **sidebar**, click the date and time next to Publish Amendment:
-
-![](../assets/content-creation-image50.png)
-
-This opens a **calendar**. You can now set when the amendment goes live, down to the very minute:
-
-![](../assets/content-creation-image41.png)

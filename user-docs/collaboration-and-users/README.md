@@ -48,7 +48,6 @@ Let’s start with who you’re collaborating with. Your **users**, and their **
 
 ### Differences with Altis compared to WordPress
 
-- Administrators and Editors can **clone** and **amend** pages
 - Editors can create **Guest Author** accounts
 
 [More on Guests & Multiple Authors](guest-and-multiple-authors.md)
