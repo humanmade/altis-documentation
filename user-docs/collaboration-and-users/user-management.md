@@ -23,8 +23,8 @@ You’ll be assigning every user with a role. So before we dive into the “how-
 - **Subscriber** – can manage their profile
 - **Guest author** - can be attributed to a page or post without having a user account
 
-### Differences with Altis 
-- Administrators and Editors can **clone** and **amend** pages
+### Differences with Altis
+
 - Editors can create **Guest Author** accounts
 
 ### Adding existing users already on your network

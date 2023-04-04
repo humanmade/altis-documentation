@@ -65,7 +65,6 @@ be assigned a user account.
 
 ## Roles with extra Altis permissions
 
-- Administrators and Editors can **clone** and **amend** pages
 - Editors can create **Guest Author** accounts
 
 ## Roles with plugins
