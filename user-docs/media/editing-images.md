@@ -1,5 +1,4 @@
 ---
-title:
 order: 10
 ---
 
@@ -12,6 +11,7 @@ Want to edit an image after it's been uploaded to your website? No problem—Alt
 Go to your [Media Library](global-media-library.md) and click the image you want to edit.
 
 You can change the image’s **orientation and angle**:
+
 ![](../assets/editing-images-image7.png)
 
 Click an icon to:
@@ -27,23 +27,29 @@ Click an icon to:
 Altis uses machine learning to identify the most important part of an image. Any cropping, for example, with thumbnail images, then takes place around this focal point. 
 
 For example, see how the lemon is off center in this picture:
+
 ![](../assets/editing-images-image9.jpg)
 
 Upload the image, and Altis identifies the **lemon** as the **focal point**.
 
 Any **cropping**, such as for the thumbnail, will now be done while making sure the lemon stays as the focal point:
+
 ![](../assets/editing-images-image3.png)
 
 You can also change the image’s **focal point**. For example, imagine the focal point is the corner of the slate. Click on this area to define the focal point:
+
 ![](../assets/editing-images-image2.png)
 
 Now see how Altis adjusts the cropping to match the new focal point:
+
 ![](../assets/editing-images-image6.png)
 
 You can also change the cropping for individual images. While keeping the focal point in the same place. Simply click on one of the images and edit the cropping. Below we’ve selected the Medium image, moving and resizing the crop:
+
 ![](../assets/editing-images-image4.png)
 
 You have three options (left-to-right):
+
 ![](../assets/editing-images-image8.png)
 
 - Confirm crop
@@ -53,6 +59,7 @@ You have three options (left-to-right):
 ## How to edit images used in your content 
 
 1. Insert an image **when you’re creating** a page or post. Then click the added image, and the sidebar opens:
+
 ![](../assets/editing-images-image1.png)
 
 You can now edit:
@@ -60,6 +67,7 @@ You can now edit:
 ### Styles
 
 Give the image square or rounded corners, and set the default style:
+
 ![](../assets/editing-images-image5.png)
 
 ### Image settings & size
@@ -67,13 +75,15 @@ Give the image square or rounded corners, and set the default style:
 - Add **alt text**, describing the image
 - Change **image size** (thumbnail, medium, large, full size)
 - Edit **dimensions**, either entering the numbers or adjusting by percentage (25%, 50%, 75%, 100% of original size)
+
 ![](../assets/editing-images-image11.png)
- 
+
 ### Advanced
 
 - Add a **title attribute**. Depending on the visitors browser, this may appear when you hover over the image.
 - Add an **anchor** to the image block. This creates a URL people can click and arrive on the image block. Place this link on the same page, and users can click and [jump to the image](https://wordpress.org/support/article/page-jumps/)
 - Include **additional CSS** to customize and style the block
+
 ![](../assets/editing-images-image10.png)
 
 ## Default image sizes (and how to change them)

@@ -1,5 +1,4 @@
 ---
-title:
 order: 30
 ---
 
@@ -38,11 +37,13 @@ Planning to **publish documents**? No problem. Upload any of these file types an
 ## How to configure your site search
 
 Scroll down your dashboard and click **Search config**:
+
 ![](../assets/search-image3.png)
 
 ### Synonyms to show related words
 
 Here’s where you can make your **results work for all your audiences**. For the times when they can’t find the exact word, use regional spellings/slang, or simply make a typo:
+
 ![](../assets/search-image4.png)
 
 Add alternative versions of words (one entry per line) for: 
@@ -67,12 +68,15 @@ These are words like “it”, “of”, “and”. Add these if you don’t wan
 Accelerate and Enterprise tier customers have access to **Altis Analytics**. If your website displays the search bar, you’ll be able to see the words and phrases visitors are typing in. 
 
 Under **Dashboard**, click **Analytics**:
+
 ![](../assets/search-image5.png)
 
 Click **Last 7 days** to change the date range:
+
 ![](../assets/search-image1.png)
 
 Then look under **Search terms** to see the results over your chosen time period:
+
 ![](../assets/search-image2.png)
 
 ## How to connect site search to Google Analytics

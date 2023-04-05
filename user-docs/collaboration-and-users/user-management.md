@@ -1,5 +1,4 @@
 ---
-title:
 order: 30
 ---
 
@@ -10,6 +9,7 @@ Managing people can be complicated–but managing your website users isn’t. Ev
 ## How to add users
 
 In your dashboard click **Users > Add new**:
+
 ![](../assets/user-management-image5.png)
 
 ### A bit about user roles
@@ -23,8 +23,8 @@ You’ll be assigning every user with a role. So before we dive into the “how-
 - **Subscriber** – can manage their profile
 - **Guest author** - can be attributed to a page or post without having a user account
 
-### Differences with Altis 
-- Administrators and Editors can **clone** and **amend** pages
+### Differences with Altis
+
 - Editors can create **Guest Author** accounts
 
 ### Adding existing users already on your network
@@ -46,21 +46,25 @@ You just have to:
 - Assign a **role**
 - Decide whether to skip sending a **confirmation email**. This email contains a link which the recipient clicks to **activate their account**. If they **don’t click**, they **can’t login** and the username can’t be reused within 24 hours. If you don’t tick the box, the user account is created without sending an email to the recipient. You will need to instruct them to reset their password.
 - Click **Add New User**
+
 ![](../assets/user-management-image7.png)
 
 ### How to edit users 
 
 Click **Users**:
+
 ![](../assets/user-management-image8.png)
 
 #### Remove, edit, reset passwords
 
 This opens your list of users. Hover over a user and you’ll see the following options to click:
+
 ![](../assets/user-management-image2.png)
 - **Edit** the user’s details and profile
 - **Remove** the user’s account from the site (they’ll no longer have access)
 - **View** the user’s list of posts on the website
 - **Send password reset**. This can be for [README](../security/README.md) reasons such as stolen passwords or suspected breaches. Or simply for a forgotten password request. The user receives an email with a link that takes them to a password reset page. Altis can automatically generate a password or the user can create their own password. Altis will advise on password strength as you type, such as the “very weak” example below:
+
 ![](../assets/user-management-image6.png)
 
 After resetting the password, the user is **automatically logged out of any other devices** they may be using.
@@ -68,6 +72,7 @@ After resetting the password, the user is **automatically logged out of any othe
 ### Editing user profiles
 
 Depending on a website’s theme and plugins, Administrators can edit user profiles and users can edit their own profiles. Click **User > Profile**:
+
 ![](../assets/user-management-image10.png)
 
 Options may include:
@@ -82,13 +87,16 @@ Options may include:
 
     ![](https://lh3.googleusercontent.com/LDjCuZqObg5hgtqD8VFH9Dl0HEA4zsU6QmKm-C07WwtcYeJtxoK1rm12vwg0QSCex5_unrquzCzU94nQB19sxPrToI6nmuKriTpFCaNqXA06oOP_63EOvrl9_MpliypqJASwHShNr0592WrjP4RJBpmEDHo9tbpdgTVnocLVm6HqNUVGgHdHbAs5)
 - Yoast SEO settings (these details will be inserted into the author's page on the site to be used by search engines)
+
 ![](../assets/user-management-image4.png)
 
 #### Bulk edit users
 
 You can use the **Bulk Edit** to remove or reset passwords for all or multiple users. Tick the box next to **Username** to select all:
+
 ![](../assets/user-management-image3.png)
 
 Tick the Bulk actions **dropdown** to view options, then click **Apply**:
+
 ![](../assets/user-management-image9.png)
 

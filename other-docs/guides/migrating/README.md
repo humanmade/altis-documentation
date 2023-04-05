@@ -78,7 +78,6 @@ Currently, Altis bundles the following plugins:
 - `aws-rekognition`
 - `aws-ses-wp-mail`
 - `aws-xray`
-- `authorship`
 - `batcache`
 - `browser-security`
 - `cavalcade`
@@ -88,13 +87,10 @@ Currently, Altis bundles the following plugins:
 - `debug-bar-elasticpress`
 - `delegated-oauth`
 - `elasticpress`
-- `extended-cpts`
-- `gaussholder`
 - `hm-gtm`
 - `hm-redirects`
 - `ludicrousdb`
 - `meta-tags`
-- `publication-checklist`
 - `query-monitor`
 - `require-login`
 - `safe-svg`
@@ -105,7 +101,6 @@ Currently, Altis bundles the following plugins:
 - `tachyon-plugin`
 - `two-factor`
 - `wordpress-seo`
-- `workflows`
 - `wp-redis`
 - `wp-simple-saml`
 - `wp-user-signups`
@@ -137,8 +132,8 @@ Next, we need to add some extra configuration to allow Altis to set itself up. O
     },
     "config": {
         "platform": {
-            "php": "7.4.13",
-            "ext-mbstring": "7.4.13"
+            "php": "8.0",
+            "ext-mbstring": "8.0"
         },
         "allow-plugins": {
             "composer/installers": true,

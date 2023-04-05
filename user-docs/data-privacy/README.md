@@ -5,6 +5,8 @@ order: 70
 
 # Privacy & consent
 
+![](../assets/altis-header-10.png)
+
 Website owners usually have national or international privacy laws to follow. This can mean explaining to users what you do with any data collected, and showing how you comply with GDPR, CCPA, and relevant directives and regulations. Alongside giving users the option to give or refuse consent. For all this, you need online privacy policies and consent functions. 
 
 Without these, there’s a risk of fines and/or legal action, plus potential loss of consumer trust. Particularly if you’re collecting Personally Identifiable Information (PII) during interactions and transactions. 
@@ -14,9 +16,11 @@ WordPress also needs to know which website page is your privacy policy. That’s
 ## How to add a privacy policy
 
 In your dashboard hover over **Settings** and click **Privacy**:
+
 ![](../assets/privacy-consent-image5.png)
 
 **Do you already have a privacy policy page?** Click the dropdown next to **Select a Privacy Policy** and select the page:
+
 ![](../assets/privacy-consent-image6.png)
 
 **Not yet created a privacy policy?** Altis will help you create one.
@@ -28,6 +32,7 @@ Click the **Create Privacy Policy Page** button. 
 This opens a **template** with multiple blocks. These are dynamic, so any plugins or custom code may mean additional sections appear as suggestions. Read these to see whether they should be added to your privacy policy.  
 
 The headings include **topics** that a privacy policy often covers. The paragraphs include some **ideas** for what to include. Of course, site administrators can **rearrange, edit and delete** these.
+
 ![](../assets/privacy-consent-image8.png)
 
 Make your changes and click **Publish** when you’re done. The Privacy Policy is now stored among your pages.
@@ -41,6 +46,7 @@ Anyone who’s ever been online has stumbled across a cookie consent banner. Whe
 ### How to configure a cookie banner
 
 Click the dropdown to choose whether to **display a cookie consent banner**:
+
 ![](../assets/privacy-consent-image9.png)
 
 ### Choose how long to store cookies
@@ -57,6 +63,7 @@ Visitors who return to your website **within 30 days** show as repeat visitors. 
     Imagine a visitor clicks your ad and visits your website. They go away and compare you to other websites. On Day 31 they return to convert. By then, they’re a new user and you won’t know they came back because of the ad. 
 
 If you do want to change the number of days, click the white box and add the number:
+
 ![](../assets/privacy-consent-image7.png)
 
 ### How to edit cookie banner options
@@ -67,17 +74,21 @@ You have two options for what to show on the banner:
     The simplest option. Visitors click once to make their choice.
 - **All cookie categories**
     Visitors can choose which types of cookies to allow or deny.
+
 ![](../assets/privacy-consent-image1.png)
 
 ### How to edit the cookie banner message
 
 You can edit the text directly. The toolbar has a few CMS editing features you’ll probably recognise:
+
 ![](../assets/privacy-consent-image4.png)
 
 ### How to create a cookie policy page
 
 You can either choose an existing cookie policy page to link to. One you’ve already created in your Pages. Or you can click **Create Cookie Policy Page**:
+
 ![](../assets/privacy-consent-image2.png)
 
 This opens up a **template**. Just like the Privacy Policy template, you’ll see editable headlines and paragraph blocks which vary depending on your plugins and any customisation. These are just to guide you and give you ideas for what to include:
+
 ![](../assets/privacy-consent-image3.png)

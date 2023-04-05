@@ -30,7 +30,6 @@ Do the same for `hm-platform` if you have this project dependency. Altis also in
 - `aws-rekognition`
 - `aws-ses-wp-mail`
 - `aws-xray`
-- `authorship`
 - `batcache`
 - `browser-security`
 - `cavalcade`
@@ -40,13 +39,10 @@ Do the same for `hm-platform` if you have this project dependency. Altis also in
 - `debug-bar-elasticpress`
 - `delegated-oauth`
 - `elasticpress`
-- `extended-cpts`
-- `gaussholder`
 - `hm-gtm`
 - `hm-redirects`
 - `ludicrousdb`
 - `meta-tags`
-- `publication-checklist`
 - `query-monitor`
 - `require-login`
 - `safe-svg`
@@ -57,7 +53,6 @@ Do the same for `hm-platform` if you have this project dependency. Altis also in
 - `tachyon-plugin`
 - `two-factor`
 - `wordpress-seo`
-- `workflows`
 - `wp-redis`
 - `wp-simple-saml`
 - `wp-user-signups`
