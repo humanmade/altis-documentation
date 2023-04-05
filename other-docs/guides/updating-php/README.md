@@ -113,3 +113,22 @@ Once you are confident that your application is compatible with the version of P
 **Note:** We recommend starting with your non production environments first.
 
 See the [Getting Help With Altis guide](../getting-help-with-altis.md) for more information on creating support tickets.
+
+The Altis team will follow up with you on the ticket once the environment has been updated.
+
+Once your environment has been upgraded, the PHP upgrade will take effect upon the next application deployment.
+
+
+## Re-Enable Composer's Platform Check
+
+If you previously disabled the platform check in Composer, you can now re-enable it once everything has been upgraded. Remove the `"platform-check": false` line if you added it.
+
+Additionally, we recommend setting the PHP version explicitly, which will ensure the correct packages are installed for your PHP version.
+
+The easiest way to add this is to run:
+
+```sh
+composer config platform.php 8.0
+```
+
+(Replace 8.0 with your desired new PHP version.)
