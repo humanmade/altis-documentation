@@ -49,7 +49,7 @@ The Elasticsearch version can also be configured for each local environment shou
 
 ## Requesting An Update To A Cloud Environment
 
-To update Elasticsearch on your Cloud environments you must raise a support request with the type "Request and infrastructure change".
+To update Elasticsearch on your Cloud environments you must raise a support request with the type "Request a change".
 
 [See the "Getting Help With Altis" guide to learn how to raise support requests](../getting-help-with-altis.md).
 
