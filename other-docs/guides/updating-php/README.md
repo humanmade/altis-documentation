@@ -13,6 +13,7 @@ There are 2 key steps to getting ready for a new version of PHP:
 
 | Altis | PHP 7.4      | PHP 8.0       | PHP 8.1       | PHP 8.2        |
 |-------|--------------|---------------|---------------|----------------|
+| v16   |              | **Supported** | **Supported** | *Experimental* |
 | v15   |              | **Supported** | **Supported** | *Experimental* |
 | v14   |              | **Supported** | **Supported** |                |
 | v13   |              | **Supported** | **Supported** |                |
