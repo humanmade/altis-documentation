@@ -14,7 +14,7 @@ For example, if Altis has quarterly releases (i.e. four releases per year), each
 <figcaption align="center"><b>This diagram illustrates the overlapping support timelines for releases</b></figcaption>
 </figure>
 
-For the current releases see the [releases page](docs:/releases)
+For the current releases see the [releases page](/releases)
 
 ## Long-term support policy
 
