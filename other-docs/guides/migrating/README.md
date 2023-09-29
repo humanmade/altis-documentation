@@ -85,12 +85,10 @@ Currently, Altis bundles the following plugins:
 - `consent-api`
 - `clean-html`
 - `debug-bar-elasticpress`
-- `delegated-oauth`
 - `elasticpress`
 - `hm-gtm`
 - `hm-redirects`
 - `ludicrousdb`
-- `meta-tags`
 - `query-monitor`
 - `require-login`
 - `safe-svg`
@@ -132,8 +130,8 @@ Next, we need to add some extra configuration to allow Altis to set itself up. O
     },
     "config": {
         "platform": {
-            "php": "8.0",
-            "ext-mbstring": "8.0"
+            "php": "8.1",
+            "ext-mbstring": "8.1"
         },
         "allow-plugins": {
             "composer/installers": true,
