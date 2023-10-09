@@ -62,4 +62,4 @@ We’ve grouped the articles into the themes below. Start from the top and work 
 - [Data Export and Erasure](data-privacy/data-export-and-erasure.md)
 
 ---
-We are continually working on creating new guides and improving existing ones so if you have feedback or would like to see a guide on a particular topic don't hesitate to get in touch via [support@altis-dxp.com](mailto://support@altis-dxp.com) or by asking a question on the [Altis Dashboard](https://dashboard.altis-dxp.com/#/support/new/question).
+We are continually working on creating new guides and improving existing ones so if you have feedback or would like to see a guide on a particular topic don't hesitate to get in touch via [support@altis-dxp.com](mailto:support@altis-dxp.com) or by asking a question on the [Altis Dashboard](https://dashboard.altis-dxp.com/#/support/new/question).
