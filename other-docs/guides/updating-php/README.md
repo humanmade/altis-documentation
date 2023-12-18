@@ -10,16 +10,16 @@ There are 2 key steps to getting ready for a new version of PHP:
 ## Altis Compatibility Chart
 
 
-| Altis  | PHP 8.0       | PHP 8.1       | PHP 8.2        |
-|--------|---------------|---------------|----------------|
-| v17    | **Supported** | **Supported** | *Experimental* |
-| v16    | **Supported** | **Supported** | *Experimental* |
-| v15    | **Supported** | **Supported** | *Experimental* |
-| v14    | **Supported** | **Supported** |                |
-| v13    | **Supported** | **Supported** |                |
+| Altis | PHP 8.0        | PHP 8.1       | PHP 8.2        |
+|-------|----------------|---------------|----------------|
+| v18   | **Deprecated** | **Supported** | *Supported*    |
+| v17   | **Deprecated** | **Supported** | *Experimental* |
+| v16   | **Deprecated** | **Supported** | *Experimental* |
+| v15   | **Deprecated** | **Supported** | *Experimental* |
+| v14   | **Deprecated** | **Supported** |                |
 
 
-## Checking PHP Version Compatibiliity
+## Checking PHP Version Compatibility
 
 **Note:** Before carrying out the following tasks locally, ensure your application is fully installed so that all code that will be deployed to the cloud is present.
 
