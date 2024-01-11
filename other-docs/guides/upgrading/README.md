@@ -8,17 +8,17 @@ _If you are migrating an existing install to Altis check out the [migrating guid
 
 When new versions of Altis are released you will need to manually upgrade your project to the new version. New versions can bring anything from breaking changes to new features. It's important you read the changelog / upgrade notes for the specific version you are upgrading to. When upgrading multiple versions at once, be sure to follow the release notes on all intermediate versions.
 
-To switch the version of Altis for your project, modify the version constraint for the `altis/altis` dependency in your `composer.json`. For example, to upgrade to Altis version 17.
+To switch the version of Altis for your project, modify the version constraint for the `altis/altis` dependency in your `composer.json`. For example, to upgrade to Altis version 18.
 
 ```json
 {
 	"name": "company-name/my-site",
 	"require": {
-		"altis/altis": "^17.0.0"
+		"altis/altis": "^18.0.0"
 	},
 	"require-dev": {
-		"altis/local-chassis": "^17.0.0",
-		"altis/local-server": "^17.0.0"
+		"altis/local-chassis": "^18.0.0",
+		"altis/local-server": "^18.0.0"
 	}
 }
 ```
@@ -35,6 +35,7 @@ Any upgrade will usually require some modification to your project (for example,
 
 ## Upgrade Guides
 
+- [Version 18](./v18.md)
 - [Version 17](./v17.md)
 - [Version 16](./v16.md)
 - [Version 15](./v15.md)
