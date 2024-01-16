@@ -120,7 +120,7 @@ When the most updated data has been imported into the database, a search-and-rep
 The following command would change all entries in the database containing `domain-production.altis.cloud` to `domain.com`. We recommend testing the change first using the `--dry-run` flag to make sure no unexpected tables are affected.
 
 ```bash
-wp search-replace domain-production.altis.cloud domain.com --all-tables --network --url=domain-production.altis.cloud
+wp search-replace domain-production.altis.cloud domain.com --network
 ```
 
 This step will need to be repeated for any subdomains you have. Be sure to flush the cache when you are done, otherwise the old URLs will still be saved in the object cache.
