@@ -358,6 +358,11 @@ function parse_file( string $file, string $root ) : Page {
 	$meta = [];
 	preg_match( '#^---(.+)---\n+#Us', $raw, $yaml_matches );
 	if ( $yaml_matches ) {
+		// This library seems to have problems with its autoload configuration
+		// sometimes so we need to ensure it's available.
+		if ( ! class_exists( 'Spyc' ) ) {
+			require_once Altis\ROOT_DIR . '/vendor/mustangostang/spyc/Spyc.php';
+		}
 		$meta = Spyc::YAMLLoadString( $yaml_matches[1] );
 		// Strip YAML doc from the header.
 		$raw = substr( $raw, strlen( $yaml_matches[0] ) );
