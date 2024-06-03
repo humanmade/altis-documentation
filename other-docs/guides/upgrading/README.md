@@ -21,7 +21,6 @@ your `composer.json`. For example, to upgrade to Altis version 19.
 		"altis/altis": "^19.0.0"
 	},
 	"require-dev": {
-		"altis/local-chassis": "^19.0.0",
 		"altis/local-server": "^19.0.0"
 	}
 }
