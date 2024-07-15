@@ -21,8 +21,8 @@ These requirements will help to avoid any errors and delays.
 1. Ensure all Altis modules are fully up to date by running `composer update "altis/*" --with-all-dependencies`
 1. If the upgrade is for a cloud environment, ensure the updated `composer.lock` has been committed and deployed
 1. If any patch updates were downloaded, in particular for the Cloud or Search modules you should reindex your content using one of the following commands:
-   - Local Server: `composer server cli -- elasticpress index --setup --network-wide`
-   - Cloud: `wp elasticpress index --setup --network-wide`
+   - Local Server: `composer server cli -- elasticpress sync --setup --network-wide`
+   - Cloud: `wp elasticpress sync --setup --network-wide`
 
 After completing the above steps to ensure your environment is ready for the Elasticsearch upgrade, you can then proceed to the steps below.
 
