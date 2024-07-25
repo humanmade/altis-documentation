@@ -5,7 +5,7 @@ order: 20
 
 # Collaboration
 
-![](../assets/altis-header-13.png)
+![Collaboration banner](../assets/altis-header-13.png)
 
 Here’s how to keep everyone working on your website aligned, consistent, and
 collaborative. Even when they’re working separately on different pages (and
@@ -14,35 +14,36 @@ design shared templates.
 
 ## User roles
 
-Let’s start with who you’re collaborating with. Your **users**, and their **roles**. These will look familiar if you’ve ever ventured into WordPress-related surroundings. Naturally, you get some Altis-powered features on top.
+Let’s start with who you’re collaborating with. Your **users**, and their **roles**. These will look familiar if you’ve ever
+ventured into WordPress-related surroundings. Naturally, you get some Altis-powered features on top.
 
-### What different roles can do: 
+### What different roles can do
 
 #### Administrator
 
 - Access to all administration features within the site
 
-#### Editor 
+#### Editor
 
 - Publish and manage their own and other users’ posts and pages
 - Upload files
 - Manage categories
 
-#### Author  
+#### Author
 
 - Publish and manage their own posts
 - Upload files
 - Manage categories
 
-#### Contributor 
+#### Contributor
 
 - Write and manage their own posts (can’t publish)
 
-#### Subscriber 
+#### Subscriber
 
 - Manage their profile
 
-#### Guest author 
+#### Guest author
 
 - Be attributed to a page or post without having a user account
 
@@ -51,3 +52,5 @@ Let’s start with who you’re collaborating with. Your **users**, and their **
 - Editors can create **Guest Author** accounts
 
 [More on Guests & Multiple Authors](guest-and-multiple-authors.md)
+
+<!-- markdownlint-disable-file MD025 -->

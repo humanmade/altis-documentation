@@ -29,24 +29,24 @@ In your `composer.json` you may have some code like the following:
 
 ```json
 {
-	"config": {
-		"platform": {
-			"php": "8.1"
-		}
-	}
+    "config": {
+        "platform": {
+            "php": "8.1"
+        }
+    }
 }
 ```
 
 If present, and the PHP version does not match the version you are upgrading to you should update it to reflect the new
 target PHP version.
 
-In addition you _must_ add the following setting in the `config` property of your `composer.json` file:
+In addition you *must* add the following setting in the `config` property of your `composer.json` file:
 
 ```json
 {
-	"config": {
-		"platform-check": false
-	}
+    "config": {
+        "platform-check": false
+    }
 }
 ```
 
@@ -57,7 +57,7 @@ This will prevent Composer from exiting your application early while your cloud 
 The first task is to ensure your application has the latest patch versions of all Altis modules by running the following
 command in your project root:
 
-```
+```shell
 composer update "altis/*" --with-all-dependencies
 ```
 
@@ -65,19 +65,19 @@ Afterwards commit the updated `composer.lock` file.
 
 ### Run The Compatibility Check
 
-The next step is using the PHP Compatibility package for PHP Code Sniffer. The guide belows shows you how to install and
+The next step is using the PHP Compatibility package for PHP Code Sniffer. The guide below shows you how to install and
 use this tool globally, however you may wish to install them directly in your project and use them in CI as part of your
 code linting process.
 
 First install the standard and dependencies using the following command:
 
-```
+```shell
 composer global require dealerdirect/phpcodesniffer-composer-installer phpcompatibility/php-compatibility
 ```
 
 Next run the standard against your codebase for the target PHP version, in this example PHP 8.1:
 
-```
+```shell
 phpcs -p --standard=PHPCompatibility \
   --runtime-set testVersion 8.1 \
   --extensions=php \
@@ -87,7 +87,7 @@ phpcs -p --standard=PHPCompatibility \
 
 This can take a long time to run so may wish to run it just in your custom code directories.
 
-**Note:** You _must_ fix anything reported as an "Error". Warnings can be ignored at your discretion.
+**Note:** You *must* fix anything reported as an "Error". Warnings can be ignored at your discretion.
 
 Fix any reported errors (ignoring those listed in the section below) by upgrading affected third party plugins and
 amending first party custom code as needed following your standard code review and deployment processes.
