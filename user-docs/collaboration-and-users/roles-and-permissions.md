@@ -16,7 +16,7 @@ These will be familiar if you’ve used WordPress before.
 
 Has access to all administration features (including setup and upgrade) of
 your [multisite networks](../administration/multisite.md). If you’re using
-multisite networks, only this role has permission to post unfiltered html,
+multisite networks, only this role has permission to post unfiltered HTML,
 including `<iframe>`, `<embed>` and JavaScript.
 
 ### Administrator
@@ -24,7 +24,7 @@ including `<iframe>`, `<embed>` and JavaScript.
 Administrators have access to all administration features within a single
 website. It’s the role with the most power on your website. From controlling
 content and users, to managing plugins and themes. For single sites,
-Administrators (and Editors) can also post unfiltered html. Consider them as
+Administrators (and Editors) can also post unfiltered HTML. Consider them as
 your site owner when deciding who to assign as Administrator.
 
 ### Editor
@@ -48,7 +48,7 @@ or remove them.
 Contributors can create and edit their own posts. This includes being able to
 add existing categories and create their own tags. However, this role can’t
 publish posts or upload media files. This is a relatively safe option when
-you’re onboarding new writers. You just need to decide if being unable to add
+you’re training new writers. You just need to decide if being unable to add
 images is an issue.
 
 ### Subscriber
@@ -72,4 +72,4 @@ be assigned a user account.
 Some plugins can generate additional roles. For example, the SEO plugin from
 Yoast. That’s why there are two extra roles from Yoast in the image below:
 
-![](../assets/roles-and-permissions-image1.png)
+![Screenshot of roles dropdown](../assets/roles-and-permissions-image1.png)
