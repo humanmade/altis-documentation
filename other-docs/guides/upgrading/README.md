@@ -12,16 +12,16 @@ specific version you are upgrading to. When upgrading multiple versions at once,
 all intermediate versions.
 
 To switch the version of Altis for your project, modify the version constraint for the `altis/altis` dependency in
-your `composer.json`. For example, to upgrade to Altis version 20.
+your `composer.json`. For example, to upgrade to Altis version 21.
 
 ```json
 {
     "name": "company-name/my-site",
     "require": {
-        "altis/altis": "^20.0.0"
+        "altis/altis": "^21.0.0"
     },
     "require-dev": {
-        "altis/local-server": "^20.0.0"
+        "altis/local-server": "^21.0.0"
     }
 }
 ```
@@ -32,7 +32,7 @@ Next run `rm -rf vendor` on MacOS or Linux, or on Windows `rmdir vendor`.
 latest version of the package is used during the upgrade process. We are working to improve this process in future
 releases.
 
-Next, run `composer update` to pull in the latest version of the packages.
+Next, run `composer update -W   ` to pull in the latest version of the packages.
 
 This will generate a new `composer.lock` file. Both the `composer.json` and `composer.lock` should be committed to
 version control, and deployed.
@@ -43,6 +43,7 @@ with "BREAKING: " in the version release notes.
 
 ## Upgrade Guides
 
+- [Version 21](./v21.md)
 - [Version 20](./v20.md)
 - [Version 19](./v19.md)
 - [Version 18](./v18.md)
