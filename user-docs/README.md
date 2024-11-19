@@ -10,10 +10,8 @@ order: 10
 Welcome to the Altis User Guides. This documentation is here to help you get the best out of Altis' advanced features and become a
 power user.
 
-Here’s where you’ll find an assortment of articles on all things Altis. From
-creating content with personalisation, to serving up experiences for multiple
-audiences. To running A/B tests to understand your visitors. Plus much more. All
-the features you’ll need to create, manage and grow your Altis website.
+Here’s where you’ll find an assortment of articles on all things Altis. All the features you’ll need to create, manage and grow your
+Altis website.
 
 (Developers, you probably want the [developer documentation](https://docs.altis-dxp.com/). Although you’re welcome to stick
 around and explore here too)
@@ -42,14 +40,6 @@ article has plenty of links to related topics.
 - [Images, Videos, and Documents](media/README.md)
 - [Editing Images](media/editing-images.md)
 - [Global Media Library](media/global-media-library.md)
-
-### Content Experimentation
-
-- [Multivariant Testing](personalising-content/README.md)
-- [Experience Blocks](personalising-content/experience-blocks.md)
-- [Personalised Content](personalising-content/personalised-content.md)
-- [Audiences](personalising-content/audiences.md)
-- [Insights](personalising-content/insights.md)
 
 ### Administration
 
