@@ -61,23 +61,8 @@ Click the dropdown to choose whether to **display a cookie consent banner**:
 
 ### Choose how long to store cookies
 
-By default cookies are stored for **30 days**. Changing this can impact your [analytics](../personalising-content/insights.md)
-and [audiences](../personalising-content/audiences.md). Here’s why.
-
-Visitors who return to your website **within 30 days** show as repeat visitors. If they return after 30+ days, they count as a new
-visitor. This could be an issue if cookies expire on Day 30 and:
-
-- **Your website greets returning visitors differently**.
-  A visitor returning on Day 31+ won’t get a “Welcome back” message. Instead they’ll get your “Welcome to our website” message for
-  new visitors.
-- **You’re running A/B tests comparing first-time and returning visitor behavior**
-  Visitors returning after 30+ days will be counted as new visitors- **You’re tracking impact of PPC ads**
-                                                                     Imagine a visitor clicks your ad and visits your website. They
-                                                                     go away and compare you to other websites. On Day 31 they
-                                                                     return to convert. By then, they’re a new user and you won’t
-                                                                     know they came back because of the ad.
-
-If you do want to change the number of days, click the white box and add the number:
+By default cookies are stored for **30 days**. 
+If you want to change the number of days, click the white box and add the number:
 
 ![Screenshot cookie expiration input box](../assets/privacy-consent-image7.png)
 
