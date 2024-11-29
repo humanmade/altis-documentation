@@ -84,7 +84,6 @@ If there are blocks you never use, you can remove them from the list of blocks. 
 
 This opens all the available types of blocks:
 
-- Experience blocks
 - Text
 - Media
 - Design
