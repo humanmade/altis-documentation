@@ -12,10 +12,10 @@ There are 2 key steps to getting ready for a new version of PHP:
 
 | Altis | PHP 8.0        | PHP 8.1       | PHP 8.2        | PHP 8.3        |
 |-------|----------------|---------------|----------------|----------------|
+| v21   |                | **Supported** | *Supported*    | *Experimental* |
 | v20   |                | **Supported** | *Supported*    | *Experimental* |
 | v19   |                | **Supported** | *Supported*    |                |
 | v18   | **Deprecated** | **Supported** | *Supported*    |                |
-| v17   | **Deprecated** | **Supported** | *Experimental* |                |
 
 ## Checking PHP Version Compatibility
 
@@ -30,7 +30,7 @@ In your `composer.json` you may have some code like the following:
 {
     "config": {
         "platform": {
-            "php": "8.1"
+            "php": "8.2"
         }
     }
 }
@@ -74,11 +74,11 @@ First install the standard and dependencies using the following command:
 composer global require dealerdirect/phpcodesniffer-composer-installer phpcompatibility/php-compatibility
 ```
 
-Next run the standard against your codebase for the target PHP version, in this example PHP 8.1:
+Next run the standard against your codebase for the target PHP version, in this example PHP 8.2:
 
 ```shell
 phpcs -p --standard=PHPCompatibility \
-  --runtime-set testVersion 8.1 \
+  --runtime-set testVersion 8.2 \
   --extensions=php \
   -d memory_limit=1G \
   --ignore=wordpress,vendor/altis,\*/tests/\* .
@@ -111,7 +111,7 @@ e.g. `--ignore=vendor/aws,vendor/guzzlehttp,...`.
 Once you are confident that your application is compatible with the version of PHP to upgrade to you should do the
 following for each environment:
 
-1. Create a support ticket for the target environment with the type "Task", titled "Upgrade to PHP 8.1", replacing "8.1"
+1. Create a support ticket for the target environment with the type "Task", titled "Upgrade to PHP 8.2", replacing "8.2"
    with the target version if necessary ( noting that the updated PHP version will not be deployed automatically until
    the next application deployment ).
 2. Wait for the Altis team to confirm the environment has been updated.
@@ -136,7 +136,7 @@ your PHP version.
 The easiest way to add this is to run:
 
 ```sh
-composer config platform.php 8.1
+composer config platform.php 8.2
 ```
 
-(Replace 8.1 with your desired new PHP version.)
+(Replace 8.2 with your desired new PHP version.)
