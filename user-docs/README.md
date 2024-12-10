@@ -63,7 +63,6 @@ article has plenty of links to related topics.
 
 ---
 We are continually working on creating new guides and improving existing ones so if you have feedback or would like to see a guide
-on a particular topic don't hesitate to get in touch via [support@Altis-dxp.com](mailto:support@altis-dxp.com) or by asking a
-question on the [Altis Dashboard](https://dashboard.altis-dxp.com/#/support/new/question).
+on a particular topic don't hesitate to get in touch via the [Altis Dashboard](support://new).
 
 <!-- markdownlint-disable-file MD025 -->
