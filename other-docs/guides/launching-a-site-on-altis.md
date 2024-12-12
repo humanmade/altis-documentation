@@ -158,7 +158,7 @@ wp cache flush
 ### DNS Switch
 
 After the database is updated and the site is ready to go, contact Altis Support to let them know that you are ready for the DNS
-switch to your new site.
+switch to your new site. See also [DNS Configuration](docs://cloud/dns-configuration.md).
 
 During this period, your temporary production site (e.g. `domain-production.altis.cloud`) will be inaccessible. While the DNS
 updates are going through, you will want to remove the `require-login` setting in the Altis configuration file unless you have
