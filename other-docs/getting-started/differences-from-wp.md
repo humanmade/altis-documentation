@@ -110,7 +110,7 @@ local environments, we bundle [Query Monitor](docs://dev-tools/) and extend it w
 
 ## Migrating an existing WordPress site to Altis
 
-We have [a step-by-step guide to moving an existing WordPress site](docs://guides/migrating-from-wordpress/). This will walk you
+We have [a step-by-step guide to moving an existing WordPress site](docs://guides/migrating/). This will walk you
 through converting an existing codebase across to Altis.
 
 Our [launch guidance](docs://guides/launching-a-site-on-altis/) covers how to migrate your database and uploads across to Altis as
