@@ -1,0 +1,3 @@
+# My Altis SSL Certificate Common Name uses my Altis domain, and not my main site domain? 
+
+This is the standard configuration for Altis. The CN uses the "primary" domain name, which is one controlled by Altis; when domains are added or removed via the Altis Dashboard's domains feature, we then add or remove them from the SAN list and replace the certificates. This should have no impact on your environment's or SEO, as support for SANs is widespread.
