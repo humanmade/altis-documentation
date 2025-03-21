@@ -137,6 +137,10 @@ function filter_add_dev_docs_set( array $sets ) : array {
 	add_docs_for_group( $guides, $other_docs . '/guides' );
 	$dev_set->add_group( 'guides', $guides );
 
+	$faq = new Group( __( 'FAQ', 'altis' ) );
+	add_docs_for_group( $faq, $other_docs . '/faq' );
+	$dev_set->add_group( 'faq', $faq );
+
 	// Add all the registered modules.
 	$modules = Module::get_all();
 	uasort( $modules, function ( Module $a, Module $b ) : int {
