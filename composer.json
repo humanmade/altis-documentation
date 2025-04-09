@@ -18,7 +18,7 @@
 		]
 	},
 	"require": {
-		"php": ">=7.1",
+		"php": ">=8.2",
 		"erusev/parsedown": "~1.7.4",
 		"mustangostang/spyc": "^0.6.3"
 	},
