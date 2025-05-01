@@ -118,7 +118,7 @@ class Page {
 			$order_b = $b->get_meta( 'order' ) ?? 0;
 
 			if ( $order_a === $order_b ) {
-				return strnatcasecmp( $a->get_meta( 'title' ), $b->get_meta( 'title' ) );
+				return strnatcasecmp( $a->get_meta( 'title' ) ?? '', $b->get_meta( 'title' ) ?? '' );
 			}
 
 			return $order_a <=> $order_b;
