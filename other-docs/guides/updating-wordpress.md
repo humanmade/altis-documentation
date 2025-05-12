@@ -14,5 +14,5 @@ This will update the `altis/cms` module to the latest version and update any dep
 version including WordPress itself.
 
 Note this will only update bug fix and security releases of WordPress. If there is a new major version of WordPress, that will be
-included in a later version of Altis. If you want to update to a new major version you will need to update to the latest version of
-Altis.
+included in a later version of Altis. If you want to update to a new major version you will need to [update to the latest version of
+Altis](docs://guides/upgrading/).
