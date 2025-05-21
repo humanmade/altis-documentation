@@ -10,12 +10,13 @@ There are 2 key steps to getting ready for a new version of PHP:
 
 ## Altis Compatibility Chart
 
-| Altis | PHP 8.1       | PHP 8.2        | PHP 8.3        |
-|-------|---------------|----------------|----------------|
-| v22   | **Supported** | **Supported**  | **Supported**  |
-| v21   | **Supported** | **Supported**  | *Experimental* |
-| v20   | **Supported** | **Supported**  | *Experimental* |
-| v19   | **Supported** | **Supported**  |                |
+| Altis | PHP 8.1       | PHP 8.2       | PHP 8.3        |
+|-------|---------------|---------------|----------------|
+| v23   | *Deprecated*  | **Supported** | **Supported**  |
+| v22   | **Supported** | **Supported** | **Supported**  |
+| v21   | **Supported** | **Supported** | *Experimental* |
+| v20   | **Supported** | **Supported** | *Experimental* |
+| v19   | **Supported** | **Supported** |                |
 
 ## Checking PHP Version Compatibility
 
