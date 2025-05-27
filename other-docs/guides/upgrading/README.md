@@ -18,10 +18,10 @@ your `composer.json`. For example, to upgrade to Altis version 21.
 {
     "name": "company-name/my-site",
     "require": {
-        "altis/altis": "^21.0.0"
+        "altis/altis": "^23.0.0"
     },
     "require-dev": {
-        "altis/local-server": "^21.0.0"
+        "altis/local-server": "^23.0.0"
     }
 }
 ```
@@ -43,6 +43,8 @@ with "BREAKING: " in the version release notes.
 
 ## Upgrade Guides
 
+- [Version 23](./v23.md)
+- [Version 22](./v22.md)
 - [Version 21](./v21.md)
 - [Version 20](./v20.md)
 - [Version 19](./v19.md)
