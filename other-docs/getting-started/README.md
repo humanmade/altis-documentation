@@ -35,9 +35,12 @@ Collectively, your cloud environments belong to a single **Altis instance**.)
 
 ## Prerequisites
 
-In order to start development, you will need to have PHP installed. If you are starting a fresh project, we recommend installing **the latest version available for your platform**. 
+In order to start development, you will need to have PHP installed. If you are starting a fresh project, we recommend installing
+**the latest version available for your platform**. 
 
-**Note:** Your locally installed PHP veersion is only a prerequisite to install Altis. The actual PHP version to be used for running your project(s) is provided as a docker container, specific to each Altis version we maintain. Refer to our [PHP Version Guide](docs://nightly/guides/updating-php/) for up-to-date compatibility, testing and upgrading information.
+**Note:** Your locally installed PHP version is only a prerequisite to install Altis. The actual PHP version to be used for running 
+your project(s) is provided as a docker container, specific to each Altis version we maintain. Refer to our [PHP Version Guide](docs://nightly/guides/updating-php/)
+for up-to-date compatibility, testing and upgrading information.
 
 For detailed instructions on how to install PHP for various operating systems, see [how to install PHP](install-php.md).
 

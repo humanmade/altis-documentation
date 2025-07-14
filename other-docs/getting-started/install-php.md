@@ -36,7 +36,8 @@ Zend Engine v4.4.10, Copyright (c) Zend Technologies
     with Zend OPcache v8.4.10, Copyright (c), by Zend Technologies
 ```
 
-([Alternative ways to install PHP on macOS](https://www.php.net/manual/en/install.macosx.packages.php) are available on PHP project website.)
+([Alternative ways to install PHP on macOS](https://www.php.net/manual/en/install.macosx.packages.php) are available on PHP project
+website.)
 
 ## Install PHP on Windows
 
@@ -75,6 +76,9 @@ Zend Engine v4.2.28, Copyright (c) Zend Technologies
     with Zend OPcache v8.2.28, Copyright (c), by Zend Technologies
 ```
 
-**Note:**  Different Linux distributions will have different PHP versions in their package repositories (above output is from `debian`). If you want to install the latest PHP version, you may consider [building from source](https://www.php.net/manual/en/install.unix.source.php). 
+**Note:**  Different Linux distributions will have different PHP versions in their package repositories (above output is from
+`debian`). If you want to install the latest PHP version, you may consider [building from source](https://www.php.net/manual/en/install.unix.source.php). 
 
-**Note:** Your locally installed PHP veersion is only a prerequisite to install Altis. The actual PHP version to be used when running your project(s) is provided as a docker container, specific to each Altis version we maintain. Refer to our [PHP Version Guide](docs://nightly/guides/updating-php/) for up-to-date compatibility, testing and upgrading information.
+**Note:** Your locally installed PHP veersion is only a prerequisite to install Altis. The actual PHP version to be used when
+running your project(s) is provided as a docker container, specific to each Altis version we maintain. Refer to our
+[PHP Version Guide](docs://nightly/guides/updating-php/) for up-to-date compatibility, testing and upgrading information.
