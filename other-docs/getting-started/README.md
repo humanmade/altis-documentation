@@ -33,6 +33,17 @@ run locally with Docker. For testing and quality assurance, you'll use your **no
 development and staging. And when you're ready to go live, your **production environment** will serve live traffic to users. (
 Collectively, your cloud environments belong to a single **Altis instance**.)
 
+## Prerequisites
+
+In order to start development, you will need to have PHP installed. If you are starting a fresh project, we recommend installing
+**the latest version available for your platform**. 
+
+**Note:** Your locally installed PHP version is only a prerequisite to install Altis. The actual PHP version to be used for running 
+your project(s) is provided as a docker container, specific to each Altis version we maintain. Refer to our [PHP Version Guide](docs://nightly/guides/updating-php/)
+for up-to-date compatibility, testing and upgrading information.
+
+For detailed instructions on how to install PHP for various operating systems, see [how to install PHP](install-php.md).
+
 ## Creating a new Altis project
 
 The quickest way to get started with Altis is to use Composer. If you don't already have
