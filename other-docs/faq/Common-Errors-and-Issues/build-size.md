@@ -22,8 +22,8 @@ It can also be the case that your Node modules directory has inflated the build 
 
 To remove your Node modules directory via your build-script, you can add something like:
 
-# Clean up node_modules to reduce the size of the build
 ```
+# Clean up node_modules to reduce the size of the build
 find . -name 'node_modules' -type d -prune -exec rm -rf '{}' +
 ```
 
