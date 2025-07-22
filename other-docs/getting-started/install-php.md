@@ -41,7 +41,7 @@ website.)
 
 ## Install PHP on Windows
 
-The Windows install is outlined in detail in [Running Local Server on Windows](docs://local-server/windows/).
+The Windows install is outlined in detail in [Running Local Server on Windows](docs://local-server/windows.md).
 
 ## Install PHP on Linux
 
@@ -81,4 +81,4 @@ Zend Engine v4.2.28, Copyright (c) Zend Technologies
 
 **Note:** Your locally installed PHP version is only a prerequisite to install Altis. The actual PHP version to be used when
 running your project(s) is provided as a docker container, specific to each Altis version we maintain. Refer to our
-[PHP Version Guide](docs://nightly/guides/updating-php/) for up-to-date compatibility, testing and upgrading information.
+[PHP Version Guide](docs://guides/updating-php/) for up-to-date compatibility, testing and upgrading information.
