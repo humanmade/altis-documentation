@@ -1,5 +1,6 @@
 ---
 title: FAQ
+order: 90
 ---
 
 # Frequently Asked Questions
