@@ -1,5 +1,6 @@
 ---
 title: FAQ
+order: 1000
 ---
 
 # Frequently Asked Questions
