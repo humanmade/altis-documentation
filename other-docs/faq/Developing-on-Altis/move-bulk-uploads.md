@@ -1,6 +1,7 @@
-#  How to move uploads in bulk from one directory to another. 
+# How to move uploads in bulk from one directory to another.
 
-The AWS CLI is installed on the Sandbox instance for each Altis Environment. To access the Sandbox, simply head to the CLI Tab on the selected Altis Environment you wish to work on.
+The AWS CLI is installed on the Sandbox instance for each Altis Environment. To access the Sandbox, simply head to the CLI Tab on
+the selected Altis Environment you wish to work on.
 
 To copy a directory to another, first get the S3 Uploads Bucket for your environment by running the following:
 
@@ -8,7 +9,8 @@ To copy a directory to another, first get the S3 Uploads Bucket for your environ
 $ env | grep S3_UPLOADS_BUCKET=
 ```
 
-This should return your environment variable and the value. The value of the environment variable is your S3 Bucket for this environment.
+This should return your environment variable and the value. The value of the environment variable is your S3 Bucket for this
+environment.
 
 We can ensure all the permissions are still functioning as expected by running:
 

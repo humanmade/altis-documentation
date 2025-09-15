@@ -35,15 +35,10 @@ Using timestamps for the versions should be OK, but it's possible that this may 
 Altis. Because there are multiple servers serving your files, the timestamps for each file could mismatch; this shouldn't normally
 cause an issue.
 
-Our advice is to generate the version string within the build process:
-https://docs.altis-dxp.com/cloud/static-file-caching/
+Our advice is to [generate the version string within the build process](docs://cloud/static-file-caching/).
 
-Read more about integrity checking:
+Read more about integrity checking: with Altis [Subresource Integrity](docs://security/browser/#subresource-integrity) and on
+MDN: https://developer.mozilla.org/en-US/docs/Web/Security/Subresource_Integrity
 
-https://docs.altis-dxp.com/security/browser/#subresource-integrity
+Further steps on [debugging](docs://guides/getting-help-with-altis/debugging/)
 
-https://developer.mozilla.org/en-US/docs/Web/Security/Subresource_Integrity
-
-Further steps on debugging:
-
-https://docs.altis-dxp.com/guides/getting-help-with-altis/debugging/
