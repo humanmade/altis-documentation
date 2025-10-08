@@ -1,6 +1,6 @@
 # Can I download logs from the Altis Dashboard?
 
-Partially. The only available logs to export and download are the CDN access logs. All other logs are not available for export. You can do this simply by heading to your Altis environment, in the menu for that environment, select 'Logs', then 'Access Logs'.
+You can download CDN access logs for local analysis of your traffic. You can do this simply by heading to your Altis environment, in the menu for that environment, select 'Logs', then 'Access Logs'.
 
 You can select the sample date you wish to download. Note that this will be a large amount of data, so we recommend starting with a small sample of less than 24 hours to get a sense of the amount of data you'd be working with.
 
