@@ -22,7 +22,7 @@ You can read more about SRI here: <https://developer.mozilla.org/en-US/docs/Web/
 
 In a nutshell, this is typically due to caching and/or the version number of the asset wasn't updated.
 
-When Altis outputs scripts and styles onto the page, it includes a hash for the SRI, in a special HTML integrity attribute. This hash is
+When Altis outputs scripts and styles onto the page, it includes a hash of the SRI in a special HTML integrity attribute. This hash is
 generated within PHP by reading the file from disk, applying hashing algorithms, and then storing it in the object cache keyed
 against the file path and the version specified in the code. (In other words, it calls
 `wp_cache_set( '/content/your/file.css?1.2.3.4', 'sha384-...', 'altis_integrity' )`)
