@@ -29,7 +29,7 @@ against the file path and the version specified in the code. (In other words, it
 
 In addition, static files are cached by the CDN, where the file is cached for one year using the path and the query string as the cache key.
 
-In cases where the contents of a file are updated, the version within the codebase needs to be changed in order to invalidate both of these caches. If the version isn't updated, the CDN will continue to serve a stale version of the file (as the CDN's cache key won't have changed), and the backend will also continue to serve the old hash (as it pulls it from the cache). This causes the file to continue to be served correctly but without the latest updates.
+In cases where the contents of a file are updated, the version within the codebase needs to be changed to invalidate both of these caches. If the version isn't updated, the CDN will continue to serve a stale version of the file (as the CDN's cache key won't have changed), and the backend will also continue to serve the old hash (as it pulls it from the cache). This causes the file to continue to be served correctly but without the latest updates.
 
 If the CDN and the backend cache become out of sync, this can cause the file to not be loaded. This occurs only in the edge case where the file is updated without changing the version number, and either the object cache entry is evicted or cleared or the CDN cache entry is evicted. Either of these will cause the file contents as seen by the CDN and the backend to not match, and the hashes to mismatch. (It's also possible for your browser to cache this; however, this only causes issues when you're doing things like CDN invalidation.)
 
