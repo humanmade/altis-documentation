@@ -18,7 +18,7 @@ The browser does this by hashing the file it downloads and comparing that hash t
 
 You can read more about SRI here: <https://developer.mozilla.org/en-US/docs/Web/Security/Subresource_Integrity>
 
-## What if this error is getting thrown, when it shouldn't be?
+## What if this error is getting thrown when it shouldn't be?
 
 In a nutshell, this is typically due to caching and/or the version number of the asset wasn't updated.
 
