@@ -20,7 +20,7 @@ You can read more about SRI here: <https://developer.mozilla.org/en-US/docs/Web/
 
 ## What if this error is getting thrown, when it shouldn't be?
 
-In a nutshell, this is typically due to caching, and/or the version number of the asset wasn't updated.
+In a nutshell, this is typically due to caching and/or the version number of the asset wasn't updated.
 
 When Altis outputs scripts and styles onto the page, it includes a hash for the SRI, in a special HTML integrity attribute. This hash is
 generated within PHP by reading the file from disk, applying hashing algorithms, and then storing it in the object cache keyed
