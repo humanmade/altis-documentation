@@ -1,3 +1,8 @@
+---
+## This page should come first
+order: -999
+---
+
 # Welcome
 
 ![Welcome banner](./assets/banner-welcome.png)

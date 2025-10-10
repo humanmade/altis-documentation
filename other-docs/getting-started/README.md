@@ -1,3 +1,6 @@
+---
+order: -100
+---
 # Getting Started
 
 ![Getting started banner](./assets/banner-getting-started.png)
