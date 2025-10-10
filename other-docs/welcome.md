@@ -13,7 +13,7 @@ Altis is a next-generation, enterprise-ready WordPress platform that raises the 
 
 What this means for you:
 
-- Comes with batteries-included modules for things like authentication content modeling, search, and performance –
+- Comes with batteries-included modules for things like authentication, content modeling, search, and performance –
   all replaceable or extensible as needed.
 - Provides a consistent development experience with unified tooling, environments, and documentation to keep teams productive and
   aligned.
