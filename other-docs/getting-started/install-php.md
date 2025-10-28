@@ -70,10 +70,11 @@ php -v
 You should see an output similar to 
 
 ```shell
-PHP 8.2.28 (cli) (built: Mar 13 2025 18:21:38) (NTS)
+PHP 8.3.27 (cli) (built: Oct 21 2025 14:53:41) (NTS)
 Copyright (c) The PHP Group
-Zend Engine v4.2.28, Copyright (c) Zend Technologies
-    with Zend OPcache v8.2.28, Copyright (c), by Zend Technologies
+Zend Engine v4.3.27, Copyright (c) Zend Technologies
+  with Xdebug v3.4.5, Copyright (c) 2002-2025, by Derick Rethans
+  with Zend OPcache v8.3.27, Copyright (c), by Zend Technologies
 ```
 
 **Note:**  Different Linux distributions will have different PHP versions in their package repositories (above output is from
