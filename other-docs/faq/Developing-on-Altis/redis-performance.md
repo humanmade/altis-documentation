@@ -1,6 +1,6 @@
 # Optimising Object Cache performance at scale
 
-Altis runs in a distributed, scalable architecture, allowing us to scale WordPress applications to any size. Solving one scaling problem can often introduce new challenges further on, and so at large scale developers need to start thinking about Network IO as a potential bottleneck.
+Altis runs in a distributed, scalable architecture, allowing us to scale WordPress applications to any size. Solving one scaling problem can sometimes introduce new challenges further on, and so at large scale developers need to start thinking about Network IO as a potential bottleneck.
 
 Primarily, managing the size of objects in a remote object cache can become critical as scaling network bandwidth isn't always possible.
 
