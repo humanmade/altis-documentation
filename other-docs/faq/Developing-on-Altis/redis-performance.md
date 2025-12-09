@@ -12,7 +12,7 @@ These technologies are very fast and, at scale, push a lot of bandwidth through 
 
 ## Where to start?
 
-Profiling your application is the only way to unblock this performance bottleneck. Replicating this kind of problem can be difficult in a local environment. Even non-production live environments may not exhibit problems. With the Altis CLI, available in the [Altis Dashboard](https://dashboard.altis-dxp.com/), is where you're best placed to start debugging your application.
+Profiling your application is the only way to unblock this performance bottleneck. Replicating this kind of problem can be difficult in a local environment. Even non-production live environments may not exhibit problems. The Altis CLI, available in the [Altis Dashboard](https://dashboard.altis-dxp.com/), is where you're best placed to start debugging your application.
 
 [`wp shell`](https://developer.wordpress.org/cli/commands/shell/) will allow you to start interacting with a bootstrapped WordPress install. WordPress core and plugins are loaded, the object cache is initialised, and you can execute arbitrary PHP in that context. This makes `wp shell` an ideal tool for inspecting Redis behaviour and profiling cache usage.
 
