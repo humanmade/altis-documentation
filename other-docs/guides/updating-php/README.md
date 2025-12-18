@@ -16,7 +16,6 @@ There are 2 key steps to getting ready for a new version of PHP:
 | v24   |               | **Supported**  | **Supported** | *Deprecated*  |
 | v23   |               | **Supported**  | **Supported** | *Deprecated*  |
 | v22   |               | **Supported**  | **Supported** | **Supported** |
-| v21   |               | *Experimental* | **Supported** | **Supported** |
 
 ## Checking PHP Version Compatibility
 
