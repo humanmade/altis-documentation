@@ -43,6 +43,7 @@ with "BREAKING: " in the version release notes.
 
 ## Upgrade Guides
 
+- [Version 26](./v26.md)
 - [Version 25](./v25.md)
 - [Version 24](./v24.md)
 - [Version 23](./v23.md)
