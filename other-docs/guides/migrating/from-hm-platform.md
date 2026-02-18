@@ -227,9 +227,13 @@ setting in the `composer.json` setting `extra.altis.modules.cloud.email-from-add
 
 ```json
 {
-    "modules": {
-        "cloud": {
-            "email-from-address": "webmaster@mydomainname.com"
+    "extra": {
+        "altis": {
+            "modules": {
+                "cloud": {
+                    "email-from-address": "webmaster@mydomainname.com"
+                }
+            }
         }
     }
 }
@@ -243,9 +247,13 @@ on-boarded with Altis as a brand, you can disable the branding via the `altis.mo
 
 ```json
 {
-    "modules": {
-        "cms": {
-            "branding": false
+    "extra": {
+        "altis": {
+            "modules": {
+                "cms": {
+                    "branding": false
+                }
+            }
         }
     }
 }
