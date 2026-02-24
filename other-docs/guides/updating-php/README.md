@@ -106,24 +106,29 @@ page.
 You can add these to the ignored directories in the command when checking if desired;
 e.g. `--ignore=vendor/aws,vendor/guzzlehttp,...`.
 
-## Requesting A Cloud Environment Update
+## Upgrading the Altis Cloud Environment
 
-Once you are confident that your application is compatible with the version of PHP to upgrade to you should do the
-following for each environment:
+When you're happy your custom application code, themes, plugins, and dependencies are fully compatible with the target PHP version. *It is recommended to test the upgrade in a non-production environment first.*
 
-1. Create a support ticket for the target environment with the type "Task", titled "Upgrade to PHP 8.3", replacing "8.3"
-   with the target version if necessary ( noting that the updated PHP version will not be deployed automatically until
-   the next application deployment ).
-2. Wait for the Altis team to confirm the environment has been updated.
-3. Deploy the updated application code.
+Steps to change the PHP version:
 
-**Note:** We recommend starting with your non production environments first.
+1. Log in to the Altis Dashboard:
+   https://dashboard.altis-dxp.com/
 
-See the [Getting Help With Altis guide](../getting-help-with-altis.md) for more information on creating support tickets.
+2. Select the environment where you want to update the PHP version (e.g., Development, Staging, or Production).
 
-The Altis team will follow up with you on the ticket once the environment has been updated.
+3. Navigate to:
+   Settings → Environment
 
-Once your environment has been upgraded, the PHP upgrade will take effect upon the next application deployment.
+4. In the Environment panel, locate the PHP version selector and choose the desired supported PHP version from the dropdown. Click Update to save the change.
+
+5. Trigger a deployment - The PHP version change will not take effect until a new deployment is performed. Go to the Release tab in the Altis Dashboard and initiate a new deployment (or redeploy the latest release). Once the deployment finishes successfully, the environment will be running the selected PHP version.
+
+Post-upgrade recommendations:
+- Verify the site loads correctly.
+- Check application logs for PHP warnings or errors.
+- Test critical functionality and background jobs.
+- Monitor performance and error reporting for a short period after deployment.
 
 ## Re-Enable Composer's Platform Check
 
