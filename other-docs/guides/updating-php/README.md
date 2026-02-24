@@ -108,7 +108,7 @@ e.g. `--ignore=vendor/aws,vendor/guzzlehttp,...`.
 
 ## Upgrading the Altis Cloud Environment
 
-When you're happy your custom application code, themes, plugins, and dependencies are fully compatible with the target PHP version. *It is recommended to test the upgrade in a non-production environment first.*
+When you're happy your custom application code, themes, plugins, and dependencies are fully compatible with the target PHP version, *it is recommended to test the upgrade in a non-production environment first.*
 
 Steps to change the PHP version:
 
@@ -120,7 +120,7 @@ Steps to change the PHP version:
 3. Navigate to:
    Settings → Environment
 
-4. In the Environment panel, locate the PHP version selector and choose the desired supported PHP version from the dropdown. Click Update to save the change.
+4. In the Environment panel, locate the PHP version selector and choose the desired supported PHP version from the dropdown. Click the `Update` button to save the change.
 
 5. Trigger a deployment - The PHP version change will not take effect until a new deployment is performed. Go to the Release tab in the Altis Dashboard and initiate a new deployment (or redeploy the latest release). Once the deployment finishes successfully, the environment will be running the selected PHP version.
 
