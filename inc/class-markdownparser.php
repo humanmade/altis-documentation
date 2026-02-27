@@ -176,12 +176,17 @@ class MarkdownParser extends Parsedown {
 	 */
 	protected function blockHeader( $data ) {
 		$block = parent::blockHeader( $data );
-		$id = sanitize_title_with_dashes( $block['element']['text'] );
+		if ( empty( $block ) ) {
+			return $block;
+		}
+
+		$text = $block['element']['handler']['argument'];
+		$id = sanitize_title_with_dashes( $text );
 
 		// Use a manual ID if provided.
-		if ( preg_match( '/^(.+) ?\{#(.+?)\}$/', $block['element']['text'], $matches ) ) {
+		if ( preg_match( '/^(.+) ?\{#(.+?)\}$/', $text, $matches ) ) {
 			$id = $matches[2];
-			$block['element']['text'] = $matches[1];
+			$block['element']['handler']['argument'] = $matches[1];
 		}
 
 		return [
@@ -192,8 +197,7 @@ class MarkdownParser extends Parsedown {
 					'id' => $id,
 					'class' => 'header-anchor',
 				],
-				'handler' => 'elements',
-				'text' => [ $block['element'] ],
+				'elements' => [ $block['element'] ],
 			],
 		];
 	}
