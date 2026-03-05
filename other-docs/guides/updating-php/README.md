@@ -112,8 +112,7 @@ When you're happy your custom application code, themes, plugins, and dependencie
 
 Steps to change the PHP version:
 
-1. Log in to the Altis Dashboard:
-   https://dashboard.altis-dxp.com/
+1. Log in to the [Altis Dashboard](https://dashboard.altis-dxp.com/).
 
 2. Select the environment where you want to update the PHP version (e.g., Development, Staging, or Production).
 
