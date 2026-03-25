@@ -262,7 +262,7 @@ Maybe you find yourself often creating a layout with the same blocks. For exampl
 
 ![Screenshot](../assets/creating-with-blocks-image19.png)
 
-You can save this as a template that can be reused. View [Reusable blocks](reusable-blocks.md) to see how.
+You can save this as a synced pattern that can be reused. View [Synced Patterns](reusable-blocks.md) to see how.
 
 #### How to edit multiple blocks of the same type
 

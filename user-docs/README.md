@@ -25,7 +25,7 @@ article has plenty of links to related topics.
 
 - [Content Creation](content-and-content-blocks/README.md)
 - [Creating Content with Blocks](content-and-content-blocks/creating-content-with-blocks.md)
-- [Reusable Blocks](content-and-content-blocks/reusable-blocks.md)
+- [Synced Patterns](content-and-content-blocks/reusable-blocks.md)
 
 ### Collaboration & users
 
