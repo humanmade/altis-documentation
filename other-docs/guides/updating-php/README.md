@@ -12,10 +12,10 @@ There are 2 key steps to getting ready for a new version of PHP:
 
 | Altis | PHP 8.4       | PHP 8.3        | PHP 8.2       | PHP 8.1       |
 |-------|---------------|----------------|---------------|---------------|
+| v26   | **Supported** | **Supported**  | *Deprecated*  | *Deprecated*  |
 | v25   | **Supported** | **Supported**  | *Deprecated*  | *Deprecated*  |
 | v24   |               | **Supported**  | **Supported** | *Deprecated*  |
 | v23   |               | **Supported**  | **Supported** | *Deprecated*  |
-| v22   |               | **Supported**  | **Supported** | **Supported** |
 
 ## Checking PHP Version Compatibility
 
