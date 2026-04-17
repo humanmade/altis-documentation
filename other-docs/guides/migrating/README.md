@@ -71,7 +71,6 @@ them.
 
 Currently, Altis bundles the following plugins:
 
-- `altis-reusable-blocks`
 - `asset-loader`
 - `aws-analytics`
 - `aws-rekognition`
