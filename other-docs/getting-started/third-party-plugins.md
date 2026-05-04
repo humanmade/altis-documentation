@@ -39,9 +39,9 @@ into the correct directory:
 
 Some plugins are not available natively on Packagist, and are available only via
 the [WordPress.org Plugin Repository](https://wordpress.org/plugins/). These can be installed via a third-party Composer repository
-called [WordPress Packagist](https://wpackagist.org/).
+called [WP Packages](https://wp-packages.org/).
 
-To set up and configure WordPress Packagist, first add the custom repository to your project's `composer.json` under
+To set up and configure WP Packages, first add the custom repository to your project's `composer.json` under
 a `repositories` key:
 
 ```json
@@ -49,20 +49,20 @@ a `repositories` key:
     "repositories": [
         {
             "type": "composer",
-            "url": "https://wpackagist.org"
+            "url": "https://repo.wp-packages.org"
         }
     ]
 }
 ```
 
-To install plugins, you can now use `composer require wpackagist-plugin/{plugin-name}`, where `{plugin-name}` is the "slug" of the
+To install plugins, you can now use `composer require wp-plugin/{plugin-name}`, where `{plugin-name}` is the "slug" of the
 plugin from the WordPress.org Plugin Repository to install.
 
 For example, [Akismet](https://wordpress.org/plugins/akismet/) is available at `https://wordpress.org/plugins/akismet/`, so the "
 slug" of the plugin is `akismet`. You can install this with:
 
 ```sh
-composer require wpackagist-plugin/akismet
+composer require wp-plugin/akismet
 ```
 
 ## Managing Plugins Manually
