@@ -41,8 +41,13 @@ Some plugins are not available natively on Packagist, and are available only via
 the [WordPress.org Plugin Repository](https://wordpress.org/plugins/). These can be installed via a third-party Composer repository
 called [WP Packages](https://wp-packages.org/).
 
-To set up and configure WP Packages, first add the custom repository to your project's `composer.json` under
-a `repositories` key:
+To set up and configure WP Packages, run the following command from your project root:
+
+```sh
+composer config repositories.wp-packages composer https://repo.wp-packages.org
+```
+
+Or add the repository manually to your project's `composer.json` under a `repositories` key:
 
 ```json
 {
