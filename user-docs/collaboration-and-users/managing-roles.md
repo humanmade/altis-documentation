@@ -51,7 +51,7 @@ managing content and writers, rather than making technical changes.
 ### Author
 
 Authors have permission to publish and manage their own posts, including deleting their own posts they’ve previously published. They
-can upload media and create reusable blocks, including editing and deleting their own blocks. Authors can also choose existing
+can upload media and create synced patterns, including editing and deleting their own patterns. Authors can also choose existing
 categories and add their own tags.
 
 ### Contributor

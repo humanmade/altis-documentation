@@ -234,7 +234,7 @@ These icons mean (left-to-right):
   - **Insert** a new block **after** the block
   - **Move** block to another section
   - Edit block as **HTML**
-  - **Add** block to [Reusable blocks](reusable-blocks.md)
+  - **Create pattern** (synced) from block — see [Synced Patterns](reusable-blocks.md)
   - **Group** block
   - **Remove** block
 

@@ -32,14 +32,14 @@ your site owner when deciding who to assign as Administrator.
 Editors can publish and manage their own and other users’ posts and pages. They
 can also moderate comments and manage categories and links. This role is
 primarily focused on content, so can’t make changes or updates to themes or
-plugins. Editors can also create and edit reusable blocks, but they can’t delete
+plugins. Editors can also create and edit synced patterns, but they can’t delete
 them.
 
 ### Author
 
 Authors can create, publish and delete their own posts. This includes uploading
-media files and creating reusable blocks–and editing and deleting reusable
-blocks they’ve created. This role can also add existing categories and tags.
+media files and creating synced patterns–and editing and deleting synced
+patterns they’ve created. This role can also add existing categories and tags.
 Authors can also view comments (including pending) but can’t moderate, publish
 or remove them.
 
