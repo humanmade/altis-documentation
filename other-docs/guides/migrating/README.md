@@ -133,8 +133,8 @@ following lines inside the top-level object (make sure to add any commas as need
     },
     "config": {
         "platform": {
-            "php": "8.3",
-            "ext-mbstring": "8.3"
+            "php": "8.4",
+            "ext-mbstring": "8.4"
         },
         "allow-plugins": {
             "composer/installers": true,

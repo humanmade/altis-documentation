@@ -30,7 +30,7 @@ In your `composer.json` you may have some code like the following:
 {
     "config": {
         "platform": {
-            "php": "8.3"
+            "php": "8.4"
         }
     }
 }
@@ -74,11 +74,11 @@ First install the standard and dependencies using the following command:
 composer global require dealerdirect/phpcodesniffer-composer-installer phpcompatibility/php-compatibility
 ```
 
-Next run the standard against your codebase for the target PHP version, in this example PHP 8.3:
+Next run the standard against your codebase for the target PHP version, in this example PHP 8.4:
 
 ```shell
 phpcs -p --standard=PHPCompatibility \
-  --runtime-set testVersion 8.3 \
+  --runtime-set testVersion 8.4 \
   --extensions=php \
   -d memory_limit=1G \
   --ignore=wordpress,vendor/altis,\*/tests/\* .
@@ -140,7 +140,7 @@ your PHP version.
 The easiest way to add this is to run:
 
 ```sh
-composer config platform.php 8.3
+composer config platform.php 8.4
 ```
 
-(Replace 8.3 with your desired new PHP version.)
+(Replace 8.4 with your desired new PHP version.)
