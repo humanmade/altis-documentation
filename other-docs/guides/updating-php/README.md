@@ -30,7 +30,7 @@ In your `composer.json` you may have some code like the following:
 {
     "config": {
         "platform": {
-            "php": "8.3"
+            "php": "8.4"
         }
     }
 }
@@ -108,7 +108,8 @@ e.g. `--ignore=vendor/aws,vendor/guzzlehttp,...`.
 
 ## Upgrading the Altis Cloud Environment
 
-When you're happy your custom application code, themes, plugins, and dependencies are fully compatible with the target PHP version, *it is recommended to test the upgrade in a non-production environment first.*
+When you're happy your custom application code, themes, plugins, and dependencies are fully compatible with the target PHP version, 
+*it is recommended to test the upgrade in a non-production environment first.*
 
 Steps to change the PHP version:
 
@@ -119,9 +120,12 @@ Steps to change the PHP version:
 3. Navigate to:
    Settings → Environment
 
-4. In the Environment panel, locate the PHP version selector and choose the desired supported PHP version from the dropdown. Click the `Update` button to save the change.
+4. In the Environment panel, locate the PHP version selector and choose the desired supported PHP version from the dropdown. Click 
+   the `Update` button to save the change.
 
-5. Trigger a deployment - The PHP version change will not take effect until a new deployment is performed. Go to the Release tab in the Altis Dashboard and initiate a new deployment (or redeploy the latest release). Once the deployment finishes successfully, the environment will be running the selected PHP version.
+5. Trigger a deployment - The PHP version change will not take effect until a new deployment is performed. Go to the Release tab in 
+   the Altis Dashboard and initiate a new deployment (or redeploy the latest release). Once the deployment finishes successfully, 
+   the environment will be running the selected PHP version.
 
 Post-upgrade recommendations:
 - Verify the site loads correctly.
@@ -140,7 +144,7 @@ your PHP version.
 The easiest way to add this is to run:
 
 ```sh
-composer config platform.php 8.3
+composer config platform.php 8.4
 ```
 
 (Replace 8.3 with your desired new PHP version.)
