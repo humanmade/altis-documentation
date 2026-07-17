@@ -52,12 +52,9 @@ A typical setup we see is:
 
 ### Altis review bot
 
-Code being deployed to Altis Cloud environments must pass through a series of [automated checks](docs://guides/code-review/).
+Altis provides an optional bot called `altis-review` that can run a series of [automated checks](docs://guides/code-review/) on code being deployed to Altis Cloud environments. These checks test for known performance and security flaws, and are offered as a convenient way to catch issues automatically. You're free to use your own review tools instead if you prefer.
 
-These checks are performed by a bot called `altis-review`, and test for known performance and security flaws.
-
-This bot needs to be installed in your repository per [the installation instructions](docs://guides/code-review/) for any applicable
-Service Level Agreements (SLA) to apply to your instance.
+To use the bot, install it in your repository following [the installation instructions](docs://guides/code-review/).
 
 ## Your first cloud environment
 
