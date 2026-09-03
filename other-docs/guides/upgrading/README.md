@@ -12,16 +12,16 @@ specific version you are upgrading to. When upgrading multiple versions at once,
 all intermediate versions.
 
 To switch the version of Altis for your project, modify the version constraint for the `altis/altis` dependency in
-your `composer.json`. For example, to upgrade to Altis version 25.
+your `composer.json`. For example, to upgrade to Altis version 28.
 
 ```json
 {
     "name": "company-name/my-site",
     "require": {
-        "altis/altis": "^27.0.0"
+        "altis/altis": "^28.0.0"
     },
     "require-dev": {
-        "altis/local-server": "^27.0.0"
+        "altis/local-server": "^28.0.0"
     }
 }
 ```
@@ -43,6 +43,7 @@ with "BREAKING: " in the version release notes.
 
 ## Upgrade Guides
 
+- [Version 28](./v28.md)
 - [Version 27](./v27.md)
 - [Version 26](./v26.md)
 - [Version 25](./v25.md)
