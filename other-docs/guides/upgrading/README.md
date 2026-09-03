@@ -12,7 +12,7 @@ specific version you are upgrading to. When upgrading multiple versions at once,
 all intermediate versions.
 
 To switch the version of Altis for your project, modify the version constraint for the `altis/altis` dependency in
-your `composer.json`. For example, to upgrade to Altis version 25.
+your `composer.json`. For example, to upgrade to Altis version 28.
 
 ```json
 {
