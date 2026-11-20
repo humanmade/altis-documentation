@@ -35,7 +35,7 @@ Once you’ve created your repository, you’ll need to give Altis access. You c
 - **The [@humanmade-cloud user](https://github.com/humanmade-cloud).** Add the user to your repository with admin access (we need
   this in order to manage webhooks and other deployment settings).
 
-Let us know which you are using when we set up your environments. Node.js environments currently need the @humanmade-cloud user.
+Let us know which you are using when we set up your environments. Node.js environments currently only support the @humanmade-cloud user.
 
 We recommend setting up this repository and access ahead of your contract beginning, as this is required to allow us to set up your
 first cloud environment.
