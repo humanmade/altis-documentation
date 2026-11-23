@@ -30,8 +30,8 @@ performance.
 Once you’ve created your repository, you’ll need to give Altis access. You can do this in one of two ways:
 
 - **The Altis Cloud GitHub app.** Install the app on your GitHub organization from **Settings** > **Connections** in the Altis
-  Dashboard, and choose which repositories Altis can access. Connections is turned on by request, so
-  [contact Altis support](support://new) to use it. See [Connections](docs://cloud/dashboard/connections/) for the full steps.
+  Dashboard, and choose which repositories Altis can access. See [Connections](docs://cloud/dashboard/connections/) for the full
+  steps.
 - **The [@humanmade-cloud user](https://github.com/humanmade-cloud).** Add the user to your repository with admin access (we need
   this in order to manage webhooks and other deployment settings).
 
