@@ -27,9 +27,15 @@ Altis requires the use of GitHub as well as branches to deploy to cloud environm
 branch, and you need to use a pull request-based workflow to make changes. Code will be automatically reviewed for security and
 performance.
 
-Once you’ve created your repository, you’ll need to give Altis access. Add
-the [@humanmade-cloud user](https://github.com/humanmade-cloud) to your repository with admin access (we need this in order to
-manage webhooks and other deployment settings).
+Once you’ve created your repository, you’ll need to give Altis access. You can do this in one of two ways:
+
+- **The Altis Cloud GitHub app.** Install the app on your GitHub organization from **Settings** > **Connections** in the Altis
+  Dashboard, and choose which repositories Altis can access. See [Connections](docs://cloud/dashboard/connections/) for the full
+  steps.
+- **The [@humanmade-cloud user](https://github.com/humanmade-cloud).** Add the user to your repository with admin access (we need
+  this in order to manage webhooks and other deployment settings).
+
+Let us know which you are using when we set up your environments. Node.js environments currently only support the @humanmade-cloud user.
 
 We recommend setting up this repository and access ahead of your contract beginning, as this is required to allow us to set up your
 first cloud environment.
